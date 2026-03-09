@@ -1,42 +1,41 @@
 /**
- * AutoCuts Landing Page Interactions
+ * AutoCuts landing page interactions
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Reveal Elements on Scroll
-    const revealElements = document.querySelectorAll('.reveal');
+    document.body.classList.add('motion-ready');
 
+    const revealElements = document.querySelectorAll('.reveal');
     const revealObserverOptions = {
         threshold: 0.15,
         rootMargin: '0px 0px -50px 0px'
     };
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Optional: Stop observing once revealed
                 observer.unobserve(entry.target);
             }
         });
     }, revealObserverOptions);
 
-    revealElements.forEach(el => {
-        revealObserver.observe(el);
+    revealElements.forEach((element) => {
+        revealObserver.observe(element);
     });
 
-    // 2. Smooth Scrolling for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            
-            // Skip if it's just '#'
-            if (targetId === '#') return;
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', (event) => {
+            const targetId = anchor.getAttribute('href');
+
+            if (!targetId || targetId === '#') {
+                return;
+            }
 
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
-                e.preventDefault();
+                event.preventDefault();
                 targetElement.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -45,17 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Navbar Background Opacity on Scroll
     const nav = document.querySelector('nav');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('bg-surface-0/90', 'border-ui-border');
-            nav.classList.remove('bg-surface-0/0', 'border-transparent');
-        } else {
-            // Optional: Make fully transparent at top if desired
-            // nav.classList.remove('bg-surface-0/90', 'border-ui-border');
-            // nav.classList.add('bg-surface-0/0', 'border-transparent');
-        }
-    });
+
+    if (nav) {
+        const syncNavState = () => {
+            if (window.scrollY > 32) {
+                nav.classList.add('bg-surface-0/90');
+            } else {
+                nav.classList.remove('bg-surface-0/90');
+            }
+        };
+
+        syncNavState();
+        window.addEventListener('scroll', syncNavState);
+    }
 });
