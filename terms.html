@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | AutoCuts</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        surface: {
+                            0: '#000000',
+                            1: '#0a0a0a',
+                            2: '#111111',
+                            3: '#161616',
+                            4: '#1a1a1a',
+                        },
+                        ui: {
+                            border: 'rgba(255, 255, 255, 0.08)',
+                            accent: 'rgba(255, 255, 255, 0.2)',
+                            text: '#999999',
+                        },
+                        brand: {
+                            keep: '#4ade80',
+                            cut: '#f87171',
+                            warn: '#fbbf24',
+                            anim: '#a78bfa',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-surface-0 text-white font-sans antialiased overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-50 bg-surface-0/80 backdrop-blur-xl border-b border-ui-border">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-surface-2 border border-brand-keep flex items-center justify-center">
+                    <i data-lucide="scissors" class="w-4 h-4 text-brand-keep"></i>
+                </div>
+                <span class="font-semibold tracking-tight text-lg">AutoCuts</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="text-sm text-ui-text hover:text-white transition-colors">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Terms of Service</h1>
+                <p class="text-ui-text">Last updated: March 8, 2026</p>
+            </div>
+
+            <div class="prose prose-invert max-w-none text-zinc-300 space-y-8">
+                <section>
+                    <h2 class="text-2xl font-semibold text-white mb-4">1. Agreement to Terms</h2>
+                    <p class="leading-relaxed">
+                        By accessing or using AutoCuts ("the Service"), you agree to be bound by these Terms of Service. If you disagree with any part of the terms, you do not have permission to access the Service. AutoCuts provides an AI-powered video editing platform that processes user-uploaded media.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-white mb-4">2. User Content and Ownership</h2>
+                    <ul class="list-disc pl-5 space-y-2 leading-relaxed">
+                        <li><strong>Your Ownership:</strong> You retain all of your ownership rights in your videos, audio, and materials ("User Content") that you upload to the Service.</li>
+                        <li><strong>License to Process:</strong> By uploading User Content, you grant AutoCuts a worldwide, non-exclusive, royalty-free license strictly to use, copy, reproduce, process, adapt, and modify such User Content solely for the purpose of providing the Service to you (e.g., transcribing, cutting, and rendering).</li>
+                        <li><strong>Responsibility:</strong> You are solely responsible for your User Content. You represent and warrant that you have all necessary rights, licenses, and permissions to upload the content and that the content does not infringe on the intellectual property rights of any third party.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-white mb-4">3. Acceptable Use</h2>
+                    <p class="leading-relaxed">You agree not to use the Service to upload, process, or distribute content that:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-2 leading-relaxed">
+                        <li>Is illegal, threatening, abusive, harassing, or promotes violence.</li>
+                        <li>Contains extreme gore, non-consensual sexual content, or child exploitation material.</li>
+                        <li>Infringes upon any patent, trademark, trade secret, copyright, or other proprietary rights.</li>
+                        <li>Contains software viruses, malware, or any other computer code designed to disrupt the Service.</li>
+                    </ul>
+                    <p class="mt-2 leading-relaxed">AutoCuts reserves the right, but is not obligated, to monitor User Content and suspend or terminate accounts that violate these terms.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-white mb-4">4. Credits and Billing</h2>
+                    <ul class="list-disc pl-5 space-y-2 leading-relaxed">
+                        <li><strong>Credit Usage:</strong> Processing, analyzing, and rendering videos requires AutoCuts credits. The amount of credits consumed depends on the duration and complexity of the processing workload.</li>
+                        <li><strong>Purchases:</strong> All purchases of credits are final. Credits are non-refundable and hold no monetary value outside of the Service.</li>
+                        <li><strong>Expiration:</strong> Unless explicitly stated in a subscription plan, purchased credits may expire if the account remains inactive for a period of 12 consecutive months.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-white mb-4">5. Disclaimer regarding AI and Outputs</h2>
+                    <p class="leading-relaxed">
+                        AutoCuts utilizes artificial intelligence and machine learning algorithms to generate transcripts, detect pacing, and suggest edits. You acknowledge that AI is probabilistic and the outputs (the "Edits") may occasionally be inaccurate, incomplete, or inappropriate for your specific use case. It is your responsibility to review all Edits in the provided workspace before rendering and exporting the final video. AutoCuts makes no warranties regarding the absolute accuracy of the automated edits.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-white mb-4">6. Limitation of Liability</h2>
+                    <p class="leading-relaxed">
+                        TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL AUTOCUTS, ITS DIRECTORS, EMPLOYEES, PARTNERS, OR SUPPLIERS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (I) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SERVICE; (II) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE SERVICE; OR (III) UNAUTHORIZED ACCESS, USE OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-white mb-4">7. As-Is Provision</h2>
+                    <p class="leading-relaxed">
+                        Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement, or course of performance.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-white mb-4">8. Termination</h2>
+                    <p class="leading-relaxed">
+                        We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the Service will immediately cease and your User Content may be deleted.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-semibold text-white mb-4">9. Contact</h2>
+                    <p class="leading-relaxed">
+                        If you have any questions about these Terms, please contact us at legal@autocuts.ai.
+                    </p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-ui-border bg-surface-0 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-surface-2 border border-brand-keep flex items-center justify-center">
+                    <i data-lucide="scissors" class="w-4 h-4 text-brand-keep"></i>
+                </div>
+                <span class="font-semibold text-lg">AutoCuts</span>
+            </div>
+            <div class="flex items-center justify-center gap-6 text-sm text-ui-text">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="terms.html" class="text-white">Terms of Service</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+            </div>
+            <p class="mt-8 text-sm text-ui-text">&copy; 2026 AutoCuts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
