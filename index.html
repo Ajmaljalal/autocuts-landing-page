@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoCuts | AI Video Editor for Talking-Head Content</title>
-    <meta name="description" content="AutoCuts turns raw talking-head recordings into publish-ready edits with AI-powered silence removal, EDL review, animation suggestions, and fast final renders.">
-    <meta name="keywords" content="AI video editor, talking-head video editor, automatic video editing, EDL review, creator workflow, video editing AI">
-    <link rel="canonical" href="https://autocuts.ai/">
 
-    <meta property="og:title" content="AutoCuts | AI Video Editor for Talking-Head Content">
-    <meta property="og:description" content="Turn raw talking videos into publish-ready cuts in minutes with reviewable AI cuts, animation suggestions, and a workflow built for creators and teams.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://autocuts.ai/">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AutoCuts | AI Video Editor for Talking-Head Content</title>
+        <meta name="description"
+            content="AutoCuts turns raw talking-head recordings into publish-ready edits with AI-powered silence removal, EDL review, animation suggestions, and fast final renders.">
+        <meta name="keywords"
+            content="AI video editor, talking-head video editor, automatic video editing, EDL review, creator workflow, video editing AI">
+        <link rel="canonical" href="https://autocuts.ai/">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="AutoCuts | AI Video Editor for Talking-Head Content">
-    <meta name="twitter:description" content="AI-powered talking-head editing with silence removal, EDL review, animation suggestions, and cloud rendering.">
+        <meta property="og:title" content="AutoCuts | AI Video Editor for Talking-Head Content">
+        <meta property="og:description"
+            content="Turn raw talking videos into publish-ready cuts in minutes with reviewable AI cuts, animation suggestions, and a workflow built for creators and teams.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://autocuts.ai/">
 
-    <script type="application/ld+json">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="AutoCuts | AI Video Editor for Talking-Head Content">
+        <meta name="twitter:description"
+            content="AI-powered talking-head editing with silence removal, EDL review, animation suggestions, and cloud rendering.">
+
+        <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Organization",
@@ -26,7 +31,7 @@
             "description": "AI video editor for talking-head content with reviewable edit decisions and animation suggestions."
         }
     </script>
-    <script type="application/ld+json">
+        <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "FAQPage",
@@ -67,278 +72,356 @@
         }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        surface: {
-                            0: '#000000',
-                            1: '#0a0a0a',
-                            2: '#111111',
-                            3: '#161616',
-                            4: '#1a1a1a',
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            surface: {
+                                0: '#000000',
+                                1: '#0a0a0a',
+                                2: '#111111',
+                                3: '#161616',
+                                4: '#1a1a1a',
+                            },
+                            ui: {
+                                border: 'rgba(255, 255, 255, 0.08)',
+                                accent: 'rgba(255, 255, 255, 0.2)',
+                                text: '#999999',
+                            },
+                            brand: {
+                                keep: '#4ade80',
+                                cut: '#f87171',
+                                warn: '#fbbf24',
+                                anim: '#a78bfa',
+                            }
                         },
-                        ui: {
-                            border: 'rgba(255, 255, 255, 0.08)',
-                            accent: 'rgba(255, 255, 255, 0.2)',
-                            text: '#999999',
+                        fontFamily: {
+                            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
                         },
-                        brand: {
-                            keep: '#4ade80',
-                            cut: '#f87171',
-                            warn: '#fbbf24',
-                            anim: '#a78bfa',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                    },
+                    }
                 }
-            }
-        };
-    </script>
+            };
+        </script>
 
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body class="bg-surface-0 text-white font-sans antialiased overflow-x-hidden">
-    <nav class="fixed top-0 w-full z-50 bg-surface-0/80 backdrop-blur-xl border-b border-ui-border">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
-            <a href="#top" class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg bg-surface-2 border border-brand-keep flex items-center justify-center">
-                    <i data-lucide="scissors" class="w-4 h-4 text-brand-keep"></i>
-                </div>
-                <span class="font-semibold tracking-tight text-lg">AutoCuts</span>
-            </a>
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#workflow" class="text-sm text-ui-text hover:text-white transition-colors">Workflow</a>
-                <a href="#compare" class="text-sm text-ui-text hover:text-white transition-colors">Why AutoCuts</a>
-                <a href="#faq" class="text-sm text-ui-text hover:text-white transition-colors">FAQ</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="#" class="px-4 py-2 text-sm font-medium bg-white text-black rounded-lg hover:bg-gray-100 transition-colors">
-                    Try AutoCuts
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://unpkg.com/lucide@latest"></script>
+    </head>
+
+    <body class="bg-surface-0 text-white font-sans antialiased overflow-x-hidden">
+        <nav class="fixed top-0 w-full z-50 bg-surface-0/80 backdrop-blur-xl border-b border-ui-border">
+            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
+                <a href="#top" class="flex items-center gap-2">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-surface-2 border border-brand-keep flex items-center justify-center">
+                        <i data-lucide="scissors" class="w-4 h-4 text-brand-keep"></i>
+                    </div>
+                    <span class="font-semibold tracking-tight text-lg">AutoCuts</span>
                 </a>
-            </div>
-        </div>
-    </nav>
-
-    <main id="top" class="relative z-10">
-        <section class="pt-52 pb-16 px-6">
-            <div class="max-w-6xl mx-auto">
-                <div class="max-w-4xl mx-auto text-center reveal">
-                    <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
-                        Edit less. Publish more.
-                    </h1>
-
-                    <p class="text-lg md:text-xl text-ui-text max-w-2xl mx-auto leading-relaxed mb-10">
-                        AutoCuts removes dead air, adds animations, and turns raw video recordings into publish-ready cuts in minutes.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="#" class="h-12 px-8 flex items-center justify-center text-sm font-medium bg-white text-black rounded-xl hover:bg-gray-100 transition-transform hover:scale-[1.02] w-full sm:w-auto">
-                            Try AutoCuts
-                        </a>
-                        <a href="#workflow" class="h-12 px-8 flex items-center justify-center gap-2 text-sm font-medium bg-surface-2 border border-ui-border text-white rounded-xl hover:bg-surface-3 transition-colors w-full sm:w-auto">
-                            <i data-lucide="play-circle" class="w-4 h-4"></i>
-                            See the Workflow
-                        </a>
-                    </div>
-
-                    <div class="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs text-ui-text">
-                        <span class="px-3 py-1.5 rounded-full border border-ui-border bg-surface-1">Tutorials</span>
-                        <span class="px-3 py-1.5 rounded-full border border-ui-border bg-surface-1">Course clips</span>
-                        <span class="px-3 py-1.5 rounded-full border border-ui-border bg-surface-1">Explainers</span>
-                        <span class="px-3 py-1.5 rounded-full border border-ui-border bg-surface-1">Podcasts</span>
-                        <span class="px-3 py-1.5 rounded-full border border-ui-border bg-surface-1">YouTube videos</span>
-                    </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#workflow" class="text-sm text-ui-text hover:text-white transition-colors">Workflow</a>
+                    <a href="#compare" class="text-sm text-ui-text hover:text-white transition-colors">Why AutoCuts</a>
+                    <a href="#faq" class="text-sm text-ui-text hover:text-white transition-colors">FAQ</a>
                 </div>
+                <div class="flex items-center gap-4">
+                    <a href="#"
+                        class="px-4 py-2 text-sm font-medium bg-white text-black rounded-lg hover:bg-gray-100 transition-colors">
+                        Try AutoCuts
+                    </a>
+                </div>
+            </div>
+        </nav>
 
-                <div class="mt-12 reveal perspective-container">
-                    <div class="rounded-[2.5rem] border border-ui-border/50 bg-surface-1/40 p-3 device-shadow relative backdrop-blur-sm z-10 group">
-                        <div class="glow-effect rounded-[2.5rem]"></div>
-                        <div class="rounded-3xl border border-ui-border bg-surface-0 overflow-hidden flex h-[640px] lg:h-[720px] relative z-10 shadow-2xl">
-                            <div class="w-64 border-r border-ui-border bg-surface-0 hidden md:flex md:flex-col">
-                                <div class="h-14 flex items-center px-4 border-b border-ui-border gap-2">
-                                    <div class="w-6 h-6 rounded bg-surface-2 border border-ui-border flex items-center justify-center">
-                                        <i data-lucide="folder" class="w-3 h-3 text-white"></i>
+        <main id="top" class="relative z-10">
+            <section class="pt-52 pb-16 px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="max-w-4xl mx-auto text-center reveal">
+                        <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
+                            Edit less. Publish more.
+                        </h1>
+
+                        <p class="text-lg md:text-xl text-ui-text max-w-2xl mx-auto leading-relaxed mb-10">
+                            AutoCuts removes dead air, adds animations, and turns raw video recordings into
+                            publish-ready cuts in minutes.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <a href="#"
+                                class="h-12 px-8 flex items-center justify-center text-sm font-medium bg-white text-black rounded-xl hover:bg-gray-100 transition-transform hover:scale-[1.02] w-full sm:w-auto">
+                                Try AutoCuts
+                            </a>
+                            <a href="#workflow"
+                                class="h-12 px-8 flex items-center justify-center gap-2 text-sm font-medium bg-surface-2 border border-ui-border text-white rounded-xl hover:bg-surface-3 transition-colors w-full sm:w-auto">
+                                <i data-lucide="play-circle" class="w-4 h-4"></i>
+                                See the Workflow
+                            </a>
+                        </div>
+
+                        <div class="mt-8 flex flex-wrap items-center justify-center gap-3 text-xs text-ui-text">
+                            <span class="px-3 py-1.5 rounded-full border border-ui-border bg-surface-1">Tutorials</span>
+                            <span class="px-3 py-1.5 rounded-full border border-ui-border bg-surface-1">Course
+                                clips</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full border border-ui-border bg-surface-1">Explainers</span>
+                            <span class="px-3 py-1.5 rounded-full border border-ui-border bg-surface-1">Podcasts</span>
+                            <span class="px-3 py-1.5 rounded-full border border-ui-border bg-surface-1">YouTube
+                                videos</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 reveal perspective-container">
+                        <div
+                            class="rounded-[2.5rem] border border-ui-border/50 bg-surface-1/40 p-3 device-shadow relative backdrop-blur-sm z-10 group">
+                            <div class="glow-effect rounded-[2.5rem]"></div>
+                            <div
+                                class="rounded-3xl border border-ui-border bg-surface-0 overflow-hidden flex h-[640px] lg:h-[720px] relative z-10 shadow-2xl">
+                                <div class="w-64 border-r border-ui-border bg-surface-0 hidden md:flex md:flex-col">
+                                    <div class="h-14 flex items-center px-4 border-b border-ui-border gap-2">
+                                        <div
+                                            class="w-6 h-6 rounded bg-surface-2 border border-ui-border flex items-center justify-center">
+                                            <i data-lucide="folder" class="w-3 h-3 text-white"></i>
+                                        </div>
+                                        <span class="text-sm font-medium">Project</span>
                                     </div>
-                                    <span class="text-sm font-medium">Project</span>
+                                    <div class="p-4">
+                                        <div class="text-xs font-semibold text-ui-text mb-4 uppercase tracking-wider">
+                                            Pipeline</div>
+                                        <div class="space-y-1">
+                                            <div
+                                                class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-brand-keep opacity-70">
+                                                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Upload
+                                            </div>
+                                            <div
+                                                class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-brand-keep opacity-70">
+                                                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Ingestion
+                                            </div>
+                                            <div
+                                                class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-brand-keep opacity-70">
+                                                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Analysis
+                                            </div>
+                                            <div
+                                                class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-brand-keep opacity-70">
+                                                <i data-lucide="check-circle-2" class="w-4 h-4"></i> EDL Generation
+                                            </div>
+                                            <div
+                                                class="flex items-center gap-3 px-3 py-2 rounded-md text-sm bg-surface-2 border border-ui-border text-white">
+                                                <i data-lucide="scissors" class="w-4 h-4 text-brand-keep"></i> EDL
+                                                Review
+                                            </div>
+                                            <div
+                                                class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-ui-text">
+                                                <i data-lucide="circle" class="w-4 h-4"></i> Rendering
+                                            </div>
+                                            <div
+                                                class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-ui-text">
+                                                <i data-lucide="circle" class="w-4 h-4"></i> Animation Review
+                                            </div>
+                                            <div
+                                                class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-ui-text">
+                                                <i data-lucide="circle" class="w-4 h-4"></i> Preview
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="p-4">
-                                    <div class="text-xs font-semibold text-ui-text mb-4 uppercase tracking-wider">Pipeline</div>
-                                    <div class="space-y-1">
-                                        <div class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-brand-keep opacity-70">
-                                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Upload
-                                        </div>
-                                        <div class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-brand-keep opacity-70">
-                                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Ingestion
-                                        </div>
-                                        <div class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-brand-keep opacity-70">
-                                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Analysis
-                                        </div>
-                                        <div class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-brand-keep opacity-70">
-                                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> EDL Generation
-                                        </div>
-                                        <div class="flex items-center gap-3 px-3 py-2 rounded-md text-sm bg-surface-2 border border-ui-border text-white">
-                                            <i data-lucide="scissors" class="w-4 h-4 text-brand-keep"></i> EDL Review
-                                        </div>
-                                        <div class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-ui-text">
-                                            <i data-lucide="circle" class="w-4 h-4"></i> Rendering
-                                        </div>
-                                        <div class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-ui-text">
-                                            <i data-lucide="circle" class="w-4 h-4"></i> Animation Review
-                                        </div>
-                                        <div class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-ui-text">
-                                            <i data-lucide="circle" class="w-4 h-4"></i> Preview
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="flex-1 flex flex-col bg-surface-1">
-                                <div class="h-14 border-b border-ui-border bg-surface-0 flex items-center justify-between px-6 gap-4">
-                                    <div>
-                                        <div class="text-sm font-medium">Founder Update - Product Walkthrough</div>
-                                        <div class="text-[10px] uppercase tracking-[0.24em] text-ui-text mt-1">EDL Review Workspace</div>
-                                    </div>
-                                    <div class="flex items-center gap-3 shrink-0">
-                                        <button class="text-sm text-ui-text hover:text-white flex items-center gap-2">
-                                            <i data-lucide="refresh-cw" class="w-4 h-4"></i> Regenerate
-                                        </button>
-                                        <button class="px-4 py-1.5 text-sm font-medium bg-brand-keep text-black rounded-md hover:bg-brand-keep/90 transition-colors flex items-center gap-2">
-                                            <i data-lucide="check" class="w-4 h-4"></i> Render
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="flex-1 p-6">
-                                    <div class="mb-8">
-                                        <div class="flex flex-wrap items-end gap-6 mb-3">
-                                            <div>
-                                                <div class="text-[10px] text-ui-text uppercase tracking-wider mb-1">Original</div>
-                                                <div class="text-xl font-medium">6m 02s</div>
-                                            </div>
-                                            <div>
-                                                <div class="text-[10px] text-ui-text uppercase tracking-wider mb-1">Edited</div>
-                                                <div class="text-xl font-medium">5m 52s</div>
-                                            </div>
-                                            <div>
-                                                <div class="text-[10px] text-brand-keep uppercase tracking-wider mb-1">Cuts Surfaced</div>
-                                                <div class="text-xl font-medium text-brand-keep">16</div>
-                                            </div>
-                                            <div>
-                                                <div class="text-[10px] text-brand-anim uppercase tracking-wider mb-1">Animation Suggestions</div>
-                                                <div class="text-xl font-medium text-brand-anim">6</div>
-                                            </div>
+                                <div class="flex-1 flex flex-col bg-surface-1">
+                                    <div
+                                        class="h-14 border-b border-ui-border bg-surface-0 flex items-center justify-between px-6 gap-4">
+                                        <div>
+                                            <div class="text-sm font-medium">Founder Update - Product Walkthrough</div>
+                                            <div class="text-[10px] uppercase tracking-[0.24em] text-ui-text mt-1">EDL
+                                                Review Workspace</div>
                                         </div>
-                                        <div class="h-1.5 w-full bg-surface-2 rounded-full overflow-hidden flex">
-                                            <div class="w-[18%] bg-brand-keep/80 border-r border-surface-0"></div>
-                                            <div class="w-[5%] bg-brand-cut/70 border-r border-surface-0"></div>
-                                            <div class="w-[21%] bg-brand-keep/80 border-r border-surface-0"></div>
-                                            <div class="w-[9%] bg-brand-anim/80 border-r border-surface-0"></div>
-                                            <div class="w-[17%] bg-brand-keep/80 border-r border-surface-0"></div>
-                                            <div class="w-[4%] bg-brand-cut/70 border-r border-surface-0"></div>
-                                            <div class="w-[8%] bg-brand-anim/80 border-r border-surface-0"></div>
-                                            <div class="flex-1 bg-brand-keep/80"></div>
+                                        <div class="flex items-center gap-3 shrink-0">
+                                            <button
+                                                class="text-sm text-ui-text hover:text-white flex items-center gap-2">
+                                                <i data-lucide="refresh-cw" class="w-4 h-4"></i> Regenerate
+                                            </button>
+                                            <button
+                                                class="px-4 py-1.5 text-sm font-medium bg-brand-keep text-black rounded-md hover:bg-brand-keep/90 transition-colors flex items-center gap-2">
+                                                <i data-lucide="check" class="w-4 h-4"></i> Render
+                                            </button>
                                         </div>
                                     </div>
 
-                                    <div class="space-y-6">
-                                        <div class="bg-surface-2/60 border border-ui-border rounded-2xl overflow-hidden">
-                                            <div class="px-4 py-3 border-b border-ui-border flex justify-between items-center text-xs text-ui-text font-medium uppercase tracking-wider">
-                                                <span>Intro: what this tool does</span>
-                                                <span>0m 00s - 0m 37s</span>
+                                    <div class="flex-1 p-6">
+                                        <div class="mb-8">
+                                            <div class="flex flex-wrap items-end gap-6 mb-3">
+                                                <div>
+                                                    <div class="text-[10px] text-ui-text uppercase tracking-wider mb-1">
+                                                        Original</div>
+                                                    <div class="text-xl font-medium">6m 02s</div>
+                                                </div>
+                                                <div>
+                                                    <div class="text-[10px] text-ui-text uppercase tracking-wider mb-1">
+                                                        Edited</div>
+                                                    <div class="text-xl font-medium">5m 52s</div>
+                                                </div>
+                                                <div>
+                                                    <div
+                                                        class="text-[10px] text-brand-keep uppercase tracking-wider mb-1">
+                                                        Cuts Surfaced</div>
+                                                    <div class="text-xl font-medium text-brand-keep">16</div>
+                                                </div>
+                                                <div>
+                                                    <div
+                                                        class="text-[10px] text-brand-anim uppercase tracking-wider mb-1">
+                                                        Animation Suggestions</div>
+                                                    <div class="text-xl font-medium text-brand-anim">6</div>
+                                                </div>
                                             </div>
+                                            <div class="h-1.5 w-full bg-surface-2 rounded-full overflow-hidden flex">
+                                                <div class="w-[18%] bg-brand-keep/80 border-r border-surface-0"></div>
+                                                <div class="w-[5%] bg-brand-cut/70 border-r border-surface-0"></div>
+                                                <div class="w-[21%] bg-brand-keep/80 border-r border-surface-0"></div>
+                                                <div class="w-[9%] bg-brand-anim/80 border-r border-surface-0"></div>
+                                                <div class="w-[17%] bg-brand-keep/80 border-r border-surface-0"></div>
+                                                <div class="w-[4%] bg-brand-cut/70 border-r border-surface-0"></div>
+                                                <div class="w-[8%] bg-brand-anim/80 border-r border-surface-0"></div>
+                                                <div class="flex-1 bg-brand-keep/80"></div>
+                                            </div>
+                                        </div>
 
-                                            <div class="p-4 space-y-4">
-                                                <div class="flex flex-col lg:flex-row gap-4 p-3 bg-surface-0 border border-ui-border rounded-xl relative opacity-55">
-                                                    <div class="w-full lg:w-48 aspect-video bg-surface-2 rounded border border-ui-border flex items-center justify-center overflow-hidden relative">
-                                                        <div class="absolute inset-0 bg-brand-cut/10"></div>
-                                                        <i data-lucide="volume-x" class="w-6 h-6 text-ui-text"></i>
-                                                    </div>
-                                                    <div class="flex-1">
-                                                        <div class="flex items-center justify-between gap-3 mb-2">
-                                                            <div class="flex items-center gap-3 flex-wrap">
-                                                                <span class="text-sm font-medium text-ui-text">0:00.0 - 0:02.1</span>
-                                                                <span class="text-xs text-ui-text">2.1s</span>
-                                                                <span class="text-xs text-brand-cut">Detected dead air</span>
-                                                            </div>
-                                                            <div class="text-xs border border-ui-border px-2 py-1 rounded text-ui-text">Cut</div>
-                                                        </div>
-                                                        <p class="text-sm text-ui-text italic">(room tone and setup pause)</p>
-                                                    </div>
+                                        <div class="space-y-6">
+                                            <div
+                                                class="bg-surface-2/60 border border-ui-border rounded-2xl overflow-hidden">
+                                                <div
+                                                    class="px-4 py-3 border-b border-ui-border flex justify-between items-center text-xs text-ui-text font-medium uppercase tracking-wider">
+                                                    <span>Intro: what this tool does</span>
+                                                    <span>0m 00s - 0m 37s</span>
                                                 </div>
 
-                                                <div class="flex flex-col lg:flex-row gap-4 p-3 bg-surface-0 border border-ui-border rounded-xl relative">
-                                                    <div class="absolute top-0 left-0 w-1 h-full bg-brand-keep rounded-l-xl"></div>
-                                                    <div class="w-full lg:w-48 aspect-video bg-surface-2 rounded border border-ui-border flex items-center justify-center relative overflow-hidden group">
-                                                        <div class="absolute inset-0 bg-surface-3"></div>
-                                                        <div class="absolute inset-0 bg-brand-keep/10"></div>
-                                                        <span class="absolute top-2 left-2 text-[10px] font-bold bg-surface-0/80 px-1.5 py-0.5 rounded text-white">SPEAKER</span>
-                                                        <button class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                                            <i data-lucide="play" class="w-4 h-4 text-white ml-0.5"></i>
-                                                        </button>
-                                                    </div>
-                                                    <div class="flex-1">
-                                                        <div class="flex items-center justify-between gap-3 mb-2">
-                                                            <div class="flex items-center gap-3 flex-wrap">
-                                                                <span class="text-sm font-medium">0:02.1 - 0:18.4</span>
-                                                                <span class="text-xs text-ui-text">16.3s</span>
-                                                                <div class="flex items-center gap-2 lg:ml-4">
-                                                                    <span class="text-xs font-medium">Add animation</span>
-                                                                    <div class="w-8 h-4 bg-surface-2 rounded-full border border-ui-border relative cursor-pointer">
-                                                                        <div class="w-3 h-3 bg-ui-text rounded-full absolute left-0.5 top-0.5"></div>
-                                                                    </div>
+                                                <div class="p-4 space-y-4">
+                                                    <div
+                                                        class="flex flex-col lg:flex-row gap-4 p-3 bg-surface-0 border border-ui-border rounded-xl relative opacity-55">
+                                                        <div
+                                                            class="w-full lg:w-48 aspect-video bg-surface-2 rounded border border-ui-border flex items-center justify-center overflow-hidden relative">
+                                                            <div class="absolute inset-0 bg-brand-cut/10"></div>
+                                                            <i data-lucide="volume-x" class="w-6 h-6 text-ui-text"></i>
+                                                        </div>
+                                                        <div class="flex-1">
+                                                            <div class="flex items-center justify-between gap-3 mb-2">
+                                                                <div class="flex items-center gap-3 flex-wrap">
+                                                                    <span
+                                                                        class="text-sm font-medium text-ui-text">0:00.0
+                                                                        - 0:02.1</span>
+                                                                    <span class="text-xs text-ui-text">2.1s</span>
+                                                                    <span class="text-xs text-brand-cut">Detected dead
+                                                                        air</span>
                                                                 </div>
+                                                                <div
+                                                                    class="text-xs border border-ui-border px-2 py-1 rounded text-ui-text">
+                                                                    Cut</div>
                                                             </div>
-                                                            <button class="text-xs border border-ui-border px-2 py-1 rounded text-ui-text hover:text-white transition-colors flex items-center gap-1">
-                                                                <i data-lucide="rotate-ccw" class="w-3 h-3"></i> Keep
+                                                            <p class="text-sm text-ui-text italic">(room tone and setup
+                                                                pause)</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div
+                                                        class="flex flex-col lg:flex-row gap-4 p-3 bg-surface-0 border border-ui-border rounded-xl relative">
+                                                        <div
+                                                            class="absolute top-0 left-0 w-1 h-full bg-brand-keep rounded-l-xl">
+                                                        </div>
+                                                        <div
+                                                            class="w-full lg:w-48 aspect-video bg-surface-2 rounded border border-ui-border flex items-center justify-center relative overflow-hidden group">
+                                                            <div class="absolute inset-0 bg-surface-3"></div>
+                                                            <div class="absolute inset-0 bg-brand-keep/10"></div>
+                                                            <span
+                                                                class="absolute top-2 left-2 text-[10px] font-bold bg-surface-0/80 px-1.5 py-0.5 rounded text-white">SPEAKER</span>
+                                                            <button
+                                                                class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                                                <i data-lucide="play"
+                                                                    class="w-4 h-4 text-white ml-0.5"></i>
                                                             </button>
                                                         </div>
-                                                        <p class="text-sm leading-relaxed text-gray-300">
-                                                            Today I want to show you how AutoCuts turns a rough talking-head recording into a publish-ready edit without scrubbing a timeline for an hour.
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="flex flex-col lg:flex-row gap-4 p-3 bg-surface-0 border border-brand-anim/50 rounded-xl relative">
-                                                    <div class="absolute top-0 left-0 w-1 h-full bg-brand-anim rounded-l-xl"></div>
-                                                    <div class="w-full lg:w-48 aspect-video bg-surface-2 rounded border border-ui-border flex items-center justify-center relative overflow-hidden group">
-                                                        <div class="absolute inset-0 bg-surface-3"></div>
-                                                        <div class="absolute inset-0 bg-brand-anim/10"></div>
-                                                        <span class="absolute top-2 left-2 text-[10px] font-bold bg-surface-0/80 px-1.5 py-0.5 rounded text-white">SPEAKER</span>
-                                                        <span class="absolute top-2 right-2 text-[10px] font-bold bg-brand-anim text-black px-1.5 py-0.5 rounded">ANIMATION</span>
-                                                        <button class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                                            <i data-lucide="play" class="w-4 h-4 text-white ml-0.5"></i>
-                                                        </button>
-                                                    </div>
-                                                    <div class="flex-1">
-                                                        <div class="flex items-center justify-between gap-3 mb-2">
-                                                            <div class="flex items-center gap-3 flex-wrap">
-                                                                <span class="text-sm font-medium">0:18.4 - 0:36.8</span>
-                                                                <span class="text-xs text-ui-text">18.4s</span>
-                                                                <div class="flex items-center gap-2 lg:ml-4">
-                                                                    <span class="text-xs font-medium text-brand-anim">Add animation</span>
-                                                                    <div class="w-8 h-4 bg-brand-anim rounded-full relative cursor-pointer">
-                                                                        <div class="w-3 h-3 bg-white rounded-full absolute right-0.5 top-0.5"></div>
+                                                        <div class="flex-1">
+                                                            <div class="flex items-center justify-between gap-3 mb-2">
+                                                                <div class="flex items-center gap-3 flex-wrap">
+                                                                    <span class="text-sm font-medium">0:02.1 -
+                                                                        0:18.4</span>
+                                                                    <span class="text-xs text-ui-text">16.3s</span>
+                                                                    <div class="flex items-center gap-2 lg:ml-4">
+                                                                        <span class="text-xs font-medium">Add
+                                                                            animation</span>
+                                                                        <div
+                                                                            class="w-8 h-4 bg-surface-2 rounded-full border border-ui-border relative cursor-pointer">
+                                                                            <div
+                                                                                class="w-3 h-3 bg-ui-text rounded-full absolute left-0.5 top-0.5">
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
+                                                                <button
+                                                                    class="text-xs border border-ui-border px-2 py-1 rounded text-ui-text hover:text-white transition-colors flex items-center gap-1">
+                                                                    <i data-lucide="rotate-ccw" class="w-3 h-3"></i>
+                                                                    Keep
+                                                                </button>
                                                             </div>
-                                                            <button class="text-xs border border-ui-border px-2 py-1 rounded text-ui-text hover:text-white transition-colors flex items-center gap-1">
-                                                                <i data-lucide="sparkles" class="w-3 h-3"></i> Suggested
+                                                            <p class="text-sm leading-relaxed text-gray-300">
+                                                                Today I want to show you how AutoCuts turns a rough
+                                                                talking-head recording into a publish-ready edit without
+                                                                scrubbing a timeline for an hour.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div
+                                                        class="flex flex-col lg:flex-row gap-4 p-3 bg-surface-0 border border-brand-anim/50 rounded-xl relative">
+                                                        <div
+                                                            class="absolute top-0 left-0 w-1 h-full bg-brand-anim rounded-l-xl">
+                                                        </div>
+                                                        <div
+                                                            class="w-full lg:w-48 aspect-video bg-surface-2 rounded border border-ui-border flex items-center justify-center relative overflow-hidden group">
+                                                            <div class="absolute inset-0 bg-surface-3"></div>
+                                                            <div class="absolute inset-0 bg-brand-anim/10"></div>
+                                                            <span
+                                                                class="absolute top-2 left-2 text-[10px] font-bold bg-surface-0/80 px-1.5 py-0.5 rounded text-white">SPEAKER</span>
+                                                            <span
+                                                                class="absolute top-2 right-2 text-[10px] font-bold bg-brand-anim text-black px-1.5 py-0.5 rounded">ANIMATION</span>
+                                                            <button
+                                                                class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                                                <i data-lucide="play"
+                                                                    class="w-4 h-4 text-white ml-0.5"></i>
                                                             </button>
                                                         </div>
-                                                        <p class="text-sm leading-relaxed text-gray-300">
-                                                            We can zoom into the EDL review, show the suggested motion cue on the product dashboard, and render the final cut once the pacing looks right.
-                                                        </p>
+                                                        <div class="flex-1">
+                                                            <div class="flex items-center justify-between gap-3 mb-2">
+                                                                <div class="flex items-center gap-3 flex-wrap">
+                                                                    <span class="text-sm font-medium">0:18.4 -
+                                                                        0:36.8</span>
+                                                                    <span class="text-xs text-ui-text">18.4s</span>
+                                                                    <div class="flex items-center gap-2 lg:ml-4">
+                                                                        <span
+                                                                            class="text-xs font-medium text-brand-anim">Add
+                                                                            animation</span>
+                                                                        <div
+                                                                            class="w-8 h-4 bg-brand-anim rounded-full relative cursor-pointer">
+                                                                            <div
+                                                                                class="w-3 h-3 bg-white rounded-full absolute right-0.5 top-0.5">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <button
+                                                                    class="text-xs border border-ui-border px-2 py-1 rounded text-ui-text hover:text-white transition-colors flex items-center gap-1">
+                                                                    <i data-lucide="sparkles" class="w-3 h-3"></i>
+                                                                    Suggested
+                                                                </button>
+                                                            </div>
+                                                            <p class="text-sm leading-relaxed text-gray-300">
+                                                                We can zoom into the EDL review, show the suggested
+                                                                motion cue on the product dashboard, and render the
+                                                                final cut once the pacing looks right.
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -349,384 +432,497 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="py-24 border-t border-ui-border bg-surface-1">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="max-w-3xl mx-auto text-center mb-12 reveal">
-                    <div class="text-[11px] uppercase tracking-[0.28em] text-ui-text mb-4">Built For</div>
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">Made for creators shipping spoken video every week.</h2>
-                    <p class="text-lg text-ui-text">
-                        Stop wasting hours on manual editing. Let AutoCuts handle the tedious work of cutting silence and adding animations so you can focus on creating content.
-                    </p>
-                </div>
-
-                <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-3xl border border-ui-border bg-surface-0 p-8 md:p-10 reveal relative overflow-hidden group">
-                        <div class="absolute -right-6 -top-6 p-8 opacity-[0.08] group-hover:opacity-[0.15] group-hover:scale-110 transition-all duration-500 pointer-events-none">
-                            <i data-lucide="mic" class="w-48 h-48 text-white"></i>
-                        </div>
-                        <div class="relative z-10">
-                            <div class="w-10 h-10 rounded-xl bg-surface-2 border border-ui-border flex items-center justify-center mb-6">
-                                <i data-lucide="mic" class="w-5 h-5 text-white"></i>
-                            </div>
-                            <h3 class="text-2xl font-semibold mb-3 tracking-tight">Creators</h3>
-                            <p class="text-ui-text leading-relaxed max-w-sm">Move faster on shorts and explainers. Stop redoing the same tedious timeline cleanup every single week.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="rounded-3xl border border-ui-border bg-surface-0 p-8 md:p-10 reveal relative overflow-hidden group">
-                        <div class="absolute -right-6 -top-6 p-8 opacity-[0.08] group-hover:opacity-[0.15] group-hover:scale-110 transition-all duration-500 pointer-events-none">
-                            <i data-lucide="graduation-cap" class="w-48 h-48 text-white"></i>
-                        </div>
-                        <div class="relative z-10">
-                            <div class="w-10 h-10 rounded-xl bg-surface-2 border border-ui-border flex items-center justify-center mb-6">
-                                <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
-                            </div>
-                            <h3 class="text-2xl font-semibold mb-3 tracking-tight">Educators</h3>
-                            <p class="text-ui-text leading-relaxed max-w-sm">Turn raw lessons into clear course clips while keeping the pacing natural and completely easy to follow.</p>
-                        </div>
+            <section class="py-24 border-t border-ui-border bg-surface-1">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="max-w-3xl mx-auto text-center mb-12 reveal">
+                        <div class="text-[11px] uppercase tracking-[0.28em] text-ui-text mb-4">Built For</div>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">Made for creators shipping spoken
+                            video every week.</h2>
+                        <p class="text-lg text-ui-text">
+                            Stop wasting hours on manual editing. Let AutoCuts handle the tedious work of cutting
+                            silence and adding animations so you can focus on creating content.
+                        </p>
                     </div>
 
-                    <div class="rounded-3xl border border-ui-border bg-surface-0 p-8 md:p-10 reveal relative overflow-hidden group">
-                        <div class="absolute -right-6 -bottom-6 p-8 opacity-[0.08] group-hover:opacity-[0.15] group-hover:scale-110 transition-all duration-500 pointer-events-none">
-                            <i data-lucide="briefcase-business" class="w-48 h-48 text-white"></i>
-                        </div>
-                        <div class="relative z-10">
-                            <div class="w-10 h-10 rounded-xl bg-surface-2 border border-ui-border flex items-center justify-center mb-6">
-                                <i data-lucide="briefcase-business" class="w-5 h-5 text-white"></i>
+                    <div class="grid gap-4 md:grid-cols-2">
+                        <div
+                            class="rounded-3xl border border-ui-border bg-surface-0 p-8 md:p-10 reveal relative overflow-hidden group">
+                            <div
+                                class="absolute -right-6 -top-6 p-8 opacity-[0.08] group-hover:opacity-[0.15] group-hover:scale-110 transition-all duration-500 pointer-events-none">
+                                <i data-lucide="mic" class="w-48 h-48 text-white"></i>
                             </div>
-                            <h3 class="text-2xl font-semibold mb-3 tracking-tight">Founders</h3>
-                            <p class="text-ui-text leading-relaxed max-w-sm">Record product updates and demos without losing hours to manual cleanup before you can share them.</p>
-                        </div>
-                    </div>
-
-                    <div class="rounded-3xl border border-ui-border bg-surface-0 p-8 md:p-10 reveal relative overflow-hidden group">
-                        <div class="absolute -right-6 -bottom-6 p-8 opacity-[0.08] group-hover:opacity-[0.15] group-hover:scale-110 transition-all duration-500 pointer-events-none">
-                            <i data-lucide="layers-3" class="w-48 h-48 text-white"></i>
-                        </div>
-                        <div class="relative z-10">
-                            <div class="w-10 h-10 rounded-xl bg-surface-2 border border-ui-border flex items-center justify-center mb-6">
-                                <i data-lucide="layers-3" class="w-5 h-5 text-white"></i>
-                            </div>
-                            <h3 class="text-2xl font-semibold mb-3 tracking-tight">Content Teams</h3>
-                            <p class="text-ui-text leading-relaxed max-w-sm">Standardize a repeatable review flow for recurring episodes, internal updates, and client-facing video.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="workflow" class="py-24">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="max-w-3xl mx-auto text-center mb-12 reveal">
-                    <div class="text-[11px] uppercase tracking-[0.28em] text-ui-text mb-4">Signature Workflow</div>
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">Review before you render.</h2>
-                    <p class="text-lg text-ui-text leading-relaxed">
-                        AutoCuts is a focused review system. The AI does the first pass, and you approve the final story.
-                    </p>
-                </div>
-                <div class="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] items-start">
-                    <div class="reveal">
-                        <div class="space-y-3">
-                            <div class="rounded-2xl border border-ui-border bg-surface-1 p-5">
-                                <div class="flex items-center gap-3 mb-3">
-                                    <div class="w-8 h-8 rounded-lg border border-ui-border bg-surface-2 flex items-center justify-center text-xs font-semibold">1</div>
-                                    <h3 class="text-base font-semibold">Detect dead air and weak moments</h3>
+                            <div class="relative z-10">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-surface-2 border border-ui-border flex items-center justify-center mb-6">
+                                    <i data-lucide="mic" class="w-5 h-5 text-white"></i>
                                 </div>
-                                <p class="text-sm text-ui-text">Silence and filler are surfaced as decisions so you don't have to hunt for them.</p>
+                                <h3 class="text-2xl font-semibold mb-3 tracking-tight">Creators</h3>
+                                <p class="text-ui-text leading-relaxed max-w-sm">Move faster on shorts and explainers.
+                                    Stop redoing the same tedious timeline cleanup every single week.</p>
                             </div>
-                            <div class="rounded-2xl border border-ui-border bg-surface-1 p-5">
-                                <div class="flex items-center gap-3 mb-3">
-                                    <div class="w-8 h-8 rounded-lg border border-ui-border bg-surface-2 flex items-center justify-center text-xs font-semibold">2</div>
-                                    <h3 class="text-base font-semibold">Review cuts and pacing</h3>
-                                </div>
-                                <p class="text-sm text-ui-text">Keep the moments that matter, restore edge cases, and maintain a natural rhythm.</p>
+                        </div>
+
+                        <div
+                            class="rounded-3xl border border-ui-border bg-surface-0 p-8 md:p-10 reveal relative overflow-hidden group">
+                            <div
+                                class="absolute -right-6 -top-6 p-8 opacity-[0.08] group-hover:opacity-[0.15] group-hover:scale-110 transition-all duration-500 pointer-events-none">
+                                <i data-lucide="graduation-cap" class="w-48 h-48 text-white"></i>
                             </div>
-                            <div class="rounded-2xl border border-ui-border bg-surface-1 p-5">
-                                <div class="flex items-center gap-3 mb-3">
-                                    <div class="w-8 h-8 rounded-lg border border-ui-border bg-surface-2 flex items-center justify-center text-xs font-semibold">3</div>
-                                    <h3 class="text-base font-semibold">Approve animations selectively</h3>
+                            <div class="relative z-10">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-surface-2 border border-ui-border flex items-center justify-center mb-6">
+                                    <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
                                 </div>
-                                <p class="text-sm text-ui-text">Motion is optional. AutoCuts suggests it only where it improves clarity.</p>
+                                <h3 class="text-2xl font-semibold mb-3 tracking-tight">Educators</h3>
+                                <p class="text-ui-text leading-relaxed max-w-sm">Turn raw lessons into clear course
+                                    clips while keeping the pacing natural and completely easy to follow.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="rounded-3xl border border-ui-border bg-surface-0 p-8 md:p-10 reveal relative overflow-hidden group">
+                            <div
+                                class="absolute -right-6 -bottom-6 p-8 opacity-[0.08] group-hover:opacity-[0.15] group-hover:scale-110 transition-all duration-500 pointer-events-none">
+                                <i data-lucide="briefcase-business" class="w-48 h-48 text-white"></i>
+                            </div>
+                            <div class="relative z-10">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-surface-2 border border-ui-border flex items-center justify-center mb-6">
+                                    <i data-lucide="briefcase-business" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <h3 class="text-2xl font-semibold mb-3 tracking-tight">Founders</h3>
+                                <p class="text-ui-text leading-relaxed max-w-sm">Record product updates and demos
+                                    without losing hours to manual cleanup before you can share them.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="rounded-3xl border border-ui-border bg-surface-0 p-8 md:p-10 reveal relative overflow-hidden group">
+                            <div
+                                class="absolute -right-6 -bottom-6 p-8 opacity-[0.08] group-hover:opacity-[0.15] group-hover:scale-110 transition-all duration-500 pointer-events-none">
+                                <i data-lucide="layers-3" class="w-48 h-48 text-white"></i>
+                            </div>
+                            <div class="relative z-10">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-surface-2 border border-ui-border flex items-center justify-center mb-6">
+                                    <i data-lucide="layers-3" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <h3 class="text-2xl font-semibold mb-3 tracking-tight">Content Teams</h3>
+                                <p class="text-ui-text leading-relaxed max-w-sm">Standardize a repeatable review flow
+                                    for recurring episodes, internal updates, and client-facing video.</p>
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <div class="rounded-3xl border border-ui-border bg-surface-1 p-6 device-shadow reveal">
-                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                            <div>
-                                <div class="text-[11px] uppercase tracking-[0.28em] text-ui-text">Decision Stream</div>
-                                <h3 class="text-2xl font-semibold mt-3">One focused place to approve the edit.</h3>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 space-y-4">
-                            <div class="rounded-2xl border border-ui-border bg-surface-0 p-4">
-                                <div class="flex items-center justify-between gap-4 mb-3">
-                                    <div class="flex items-center gap-3">
-                                        <span class="text-xs uppercase tracking-[0.24em] text-ui-text">Keep</span>
-                                        <span class="text-sm font-medium">"This is the part where we show the value immediately."</span>
+            <section id="workflow" class="py-24">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="max-w-3xl mx-auto text-center mb-12 reveal">
+                        <div class="text-[11px] uppercase tracking-[0.28em] text-ui-text mb-4">Signature Workflow</div>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">Review before you render.</h2>
+                        <p class="text-lg text-ui-text leading-relaxed">
+                            AutoCuts is a focused review system. The AI does the first pass, and you approve the final
+                            story.
+                        </p>
+                    </div>
+                    <div class="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] items-start">
+                        <div class="reveal">
+                            <div class="space-y-3">
+                                <div class="rounded-2xl border border-ui-border bg-surface-1 p-5">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-8 h-8 rounded-lg border border-ui-border bg-surface-2 flex items-center justify-center text-xs font-semibold">
+                                            1</div>
+                                        <h3 class="text-base font-semibold">Detect dead air and weak moments</h3>
                                     </div>
-                                    <span class="text-xs text-brand-keep">Natural pacing</span>
+                                    <p class="text-sm text-ui-text">Silence and filler are surfaced as decisions so you
+                                        don't have to hunt for them.</p>
                                 </div>
-                                <div class="h-2 rounded-full bg-surface-2 overflow-hidden">
-                                    <div class="h-full w-[72%] bg-brand-keep/80"></div>
-                                </div>
-                            </div>
-
-                            <div class="rounded-2xl border border-ui-border bg-surface-0 p-4">
-                                <div class="flex items-center justify-between gap-4 mb-3">
-                                    <div class="flex items-center gap-3">
-                                        <span class="text-xs uppercase tracking-[0.24em] text-ui-text">Cut</span>
-                                        <span class="text-sm font-medium">"(um)... let me restart that sentence..."</span>
+                                <div class="rounded-2xl border border-ui-border bg-surface-1 p-5">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-8 h-8 rounded-lg border border-ui-border bg-surface-2 flex items-center justify-center text-xs font-semibold">
+                                            2</div>
+                                        <h3 class="text-base font-semibold">Review cuts and pacing</h3>
                                     </div>
-                                    <span class="text-xs text-brand-cut">Low-value moment</span>
+                                    <p class="text-sm text-ui-text">Keep the moments that matter, restore edge cases,
+                                        and maintain a natural rhythm.</p>
                                 </div>
-                                <div class="h-2 rounded-full bg-surface-2 overflow-hidden">
-                                    <div class="h-full w-[18%] bg-brand-cut/80"></div>
-                                </div>
-                            </div>
-
-                            <div class="rounded-2xl border border-brand-anim/40 bg-surface-0 p-4">
-                                <div class="flex items-center justify-between gap-4 mb-3">
-                                    <div class="flex items-center gap-3">
-                                        <span class="text-xs uppercase tracking-[0.24em] text-ui-text">Suggest Motion</span>
-                                        <span class="text-sm font-medium">"Zoom into the product dashboard when the workflow is explained."</span>
+                                <div class="rounded-2xl border border-ui-border bg-surface-1 p-5">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-8 h-8 rounded-lg border border-ui-border bg-surface-2 flex items-center justify-center text-xs font-semibold">
+                                            3</div>
+                                        <h3 class="text-base font-semibold">Approve animations selectively</h3>
                                     </div>
-                                    <span class="text-xs text-brand-anim">Optional animation</span>
-                                </div>
-                                <div class="h-2 rounded-full bg-surface-2 overflow-hidden">
-                                    <div class="h-full w-[44%] bg-brand-anim/80"></div>
+                                    <p class="text-sm text-ui-text">Motion is optional. AutoCuts suggests it only where
+                                        it improves clarity.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-6 rounded-3xl border border-ui-border bg-surface-0 p-5 signal-rail">
-                            <div class="flex items-center justify-between gap-4">
-                                <div class="text-sm font-medium">Decision rail</div>
-                                <div class="text-xs text-ui-text">Cuts, keeps, and motion cues in one pass</div>
+                        <div class="rounded-3xl border border-ui-border bg-surface-1 p-6 device-shadow reveal">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                                <div>
+                                    <div class="text-[11px] uppercase tracking-[0.28em] text-ui-text">Decision Stream
+                                    </div>
+                                    <h3 class="text-2xl font-semibold mt-3">One focused place to approve the edit.</h3>
+                                </div>
                             </div>
-                            <div class="mt-4 flex h-3 rounded-full overflow-hidden bg-surface-2">
-                                <div class="w-[16%] bg-brand-keep/85 border-r border-surface-0"></div>
-                                <div class="w-[6%] bg-brand-cut/75 border-r border-surface-0"></div>
-                                <div class="w-[24%] bg-brand-keep/85 border-r border-surface-0"></div>
-                                <div class="w-[10%] bg-brand-anim/85 border-r border-surface-0"></div>
-                                <div class="w-[14%] bg-brand-keep/85 border-r border-surface-0"></div>
-                                <div class="w-[5%] bg-brand-cut/75 border-r border-surface-0"></div>
-                                <div class="w-[9%] bg-brand-anim/85 border-r border-surface-0"></div>
-                                <div class="flex-1 bg-brand-keep/85"></div>
+
+                            <div class="mt-6 space-y-4">
+                                <div class="rounded-2xl border border-ui-border bg-surface-0 p-4">
+                                    <div class="flex items-center justify-between gap-4 mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-xs uppercase tracking-[0.24em] text-ui-text">Keep</span>
+                                            <span class="text-sm font-medium">"This is the part where we show the value
+                                                immediately."</span>
+                                        </div>
+                                        <span class="text-xs text-brand-keep">Natural pacing</span>
+                                    </div>
+                                    <div class="h-2 rounded-full bg-surface-2 overflow-hidden">
+                                        <div class="h-full w-[72%] bg-brand-keep/80"></div>
+                                    </div>
+                                </div>
+
+                                <div class="rounded-2xl border border-ui-border bg-surface-0 p-4">
+                                    <div class="flex items-center justify-between gap-4 mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-xs uppercase tracking-[0.24em] text-ui-text">Cut</span>
+                                            <span class="text-sm font-medium">"(um)... let me restart that
+                                                sentence..."</span>
+                                        </div>
+                                        <span class="text-xs text-brand-cut">Low-value moment</span>
+                                    </div>
+                                    <div class="h-2 rounded-full bg-surface-2 overflow-hidden">
+                                        <div class="h-full w-[18%] bg-brand-cut/80"></div>
+                                    </div>
+                                </div>
+
+                                <div class="rounded-2xl border border-brand-anim/40 bg-surface-0 p-4">
+                                    <div class="flex items-center justify-between gap-4 mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-xs uppercase tracking-[0.24em] text-ui-text">Suggest
+                                                Motion</span>
+                                            <span class="text-sm font-medium">"Zoom into the product dashboard when the
+                                                workflow is explained."</span>
+                                        </div>
+                                        <span class="text-xs text-brand-anim">Optional animation</span>
+                                    </div>
+                                    <div class="h-2 rounded-full bg-surface-2 overflow-hidden">
+                                        <div class="h-full w-[44%] bg-brand-anim/80"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mt-5 grid gap-3 sm:grid-cols-3 text-xs">
-                                <div class="rounded-2xl border border-ui-border bg-surface-1 px-3 py-3 text-ui-text">Green keeps the delivery natural.</div>
-                                <div class="rounded-2xl border border-ui-border bg-surface-1 px-3 py-3 text-ui-text">Red removes dead air and weak takes.</div>
-                                <div class="rounded-2xl border border-ui-border bg-surface-1 px-3 py-3 text-ui-text">Purple suggests motion only where it helps comprehension.</div>
+
+                            <div class="mt-6 rounded-3xl border border-ui-border bg-surface-0 p-5 signal-rail">
+                                <div class="flex items-center justify-between gap-4">
+                                    <div class="text-sm font-medium">Decision rail</div>
+                                    <div class="text-xs text-ui-text">Cuts, keeps, and motion cues in one pass</div>
+                                </div>
+                                <div class="mt-4 flex h-3 rounded-full overflow-hidden bg-surface-2">
+                                    <div class="w-[16%] bg-brand-keep/85 border-r border-surface-0"></div>
+                                    <div class="w-[6%] bg-brand-cut/75 border-r border-surface-0"></div>
+                                    <div class="w-[24%] bg-brand-keep/85 border-r border-surface-0"></div>
+                                    <div class="w-[10%] bg-brand-anim/85 border-r border-surface-0"></div>
+                                    <div class="w-[14%] bg-brand-keep/85 border-r border-surface-0"></div>
+                                    <div class="w-[5%] bg-brand-cut/75 border-r border-surface-0"></div>
+                                    <div class="w-[9%] bg-brand-anim/85 border-r border-surface-0"></div>
+                                    <div class="flex-1 bg-brand-keep/85"></div>
+                                </div>
+                                <div class="mt-5 grid gap-3 sm:grid-cols-3 text-xs">
+                                    <div
+                                        class="rounded-2xl border border-ui-border bg-surface-1 px-3 py-3 text-ui-text">
+                                        Green keeps the delivery natural.</div>
+                                    <div
+                                        class="rounded-2xl border border-ui-border bg-surface-1 px-3 py-3 text-ui-text">
+                                        Red removes dead air and weak takes.</div>
+                                    <div
+                                        class="rounded-2xl border border-ui-border bg-surface-1 px-3 py-3 text-ui-text">
+                                        Purple suggests motion only where it helps comprehension.</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <section id="compare" class="py-24 border-t border-ui-border bg-surface-1">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="max-w-3xl mx-auto text-center mb-12 reveal">
+                        <div class="text-[11px] uppercase tracking-[0.28em] text-ui-text mb-4">Why AutoCuts</div>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">Built for editing, not endless
+                            timelines.</h2>
+                        <p class="text-lg text-ui-text">
+                            AutoCuts is purpose-built for spoken content and fast reviewable decisions, skipping the
+                            tedious timeline scrub.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-6 lg:grid-cols-2">
+                        <div
+                            class="rounded-3xl border border-ui-border bg-surface-0 p-8 md:p-10 reveal relative overflow-hidden">
+                            <div class="absolute inset-0 bg-surface-1/50"></div>
+                            <div class="relative z-10">
+                                <div class="flex items-center gap-3 mb-8">
+                                    <div
+                                        class="w-12 h-12 rounded-xl border border-ui-border bg-surface-2 flex items-center justify-center">
+                                        <i data-lucide="clock-3" class="w-6 h-6 text-ui-text"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-semibold tracking-tight text-zinc-400">Traditional workflow
+                                    </h3>
+                                </div>
+                                <div class="space-y-4 text-sm text-zinc-500">
+                                    <div class="flex items-start gap-3">
+                                        <i data-lucide="x" class="w-5 h-5 text-cut/70 shrink-0 mt-0.5"></i>
+                                        <p>Scrub the timeline manually to find pauses and filler.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i data-lucide="x" class="w-5 h-5 text-cut/70 shrink-0 mt-0.5"></i>
+                                        <p>Trim weak takes one section at a time.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i data-lucide="x" class="w-5 h-5 text-cut/70 shrink-0 mt-0.5"></i>
+                                        <p>Repeat the same cleanup loop for every single video.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="rounded-3xl border border-brand-keep/30 bg-surface-0 p-8 md:p-10 reveal relative overflow-hidden group">
+                            <div
+                                class="absolute inset-0 bg-brand-keep/[0.02] group-hover:bg-brand-keep/[0.04] transition-colors duration-500">
+                            </div>
+                            <div class="relative z-10">
+                                <div class="flex items-center gap-3 mb-8">
+                                    <div
+                                        class="w-12 h-12 rounded-xl border border-brand-keep/30 bg-surface-2 flex items-center justify-center shadow-[0_0_20px_rgba(74,222,128,0.15)] group-hover:scale-110 transition-transform duration-500">
+                                        <i data-lucide="scissors" class="w-6 h-6 text-brand-keep"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-semibold tracking-tight text-white">AutoCuts workflow</h3>
+                                </div>
+                                <div class="space-y-4 text-sm text-zinc-300">
+                                    <div class="flex items-start gap-3">
+                                        <i data-lucide="check" class="w-5 h-5 text-brand-keep shrink-0 mt-0.5"></i>
+                                        <p>Upload once and let AI surface cut decisions instantly.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i data-lucide="check" class="w-5 h-5 text-brand-keep shrink-0 mt-0.5"></i>
+                                        <p>Review keeps, cuts, and restores in a fast text-based workspace.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i data-lucide="check" class="w-5 h-5 text-brand-keep shrink-0 mt-0.5"></i>
+                                        <p>Render the final cut once the story is approved.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-4 md:grid-cols-3 mt-6">
+                        <div class="rounded-2xl border border-ui-border bg-surface-0 p-6 reveal">
+                            <i data-lucide="rotate-ccw" class="w-6 h-6 text-white mb-4"></i>
+                            <h3 class="font-semibold text-lg mb-2">Restore what should stay</h3>
+                            <p class="text-sm text-ui-text">AI cut too aggressively? Restore the moment in one click
+                                instead of rebuilding a sequence.</p>
+                        </div>
+                        <div class="rounded-2xl border border-ui-border bg-surface-0 p-6 reveal">
+                            <i data-lucide="pause-circle" class="w-6 h-6 text-white mb-4"></i>
+                            <h3 class="font-semibold text-lg mb-2">Keep natural pauses</h3>
+                            <p class="text-sm text-ui-text">AutoCuts preserves rhythm and delivery. We don't just
+                                compress time blindly.</p>
+                        </div>
+                        <div class="rounded-2xl border border-ui-border bg-surface-0 p-6 reveal">
+                            <i data-lucide="sparkles" class="w-6 h-6 text-brand-anim mb-4"></i>
+                            <h3 class="font-semibold text-lg mb-2">Approve motion selectively</h3>
+                            <p class="text-sm text-ui-text">Animation suggestions are visible before render. You stay in
+                                absolute control.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="faq" class="py-24 border-t border-ui-border bg-surface-1">
+                <div class="max-w-4xl mx-auto px-6">
+                    <div class="text-center reveal">
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-10">FAQ</h2>
+                    </div>
+
+                    <div class="mt-8 space-y-4">
+                        <details class="faq-item rounded-2xl border border-ui-border bg-surface-0 p-5 reveal">
+                            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+                                <span class="text-lg font-semibold">What videos does AutoCuts work best for?</span>
+                                <span class="faq-indicator text-ui-text text-2xl leading-none">+</span>
+                            </summary>
+                            <p class="text-sm text-ui-text leading-relaxed mt-4">
+                                AutoCuts is best for talking-head formats: tutorials, explainers, product demos,
+                                podcasts, course clips, team updates, and any repeated spoken-video workflow where
+                                cleanup and pacing matter.
+                            </p>
+                        </details>
+
+                        <details class="faq-item rounded-2xl border border-ui-border bg-surface-0 p-5 reveal">
+                            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+                                <span class="text-lg font-semibold">Can I review cuts before export?</span>
+                                <span class="faq-indicator text-ui-text text-2xl leading-none">+</span>
+                            </summary>
+                            <p class="text-sm text-ui-text leading-relaxed mt-4">
+                                Yes. That is the point of the EDL-style workflow. AutoCuts surfaces decisions so you can
+                                restore what should stay, keep natural pauses, and approve the final story before
+                                render.
+                            </p>
+                        </details>
+
+                        <details class="faq-item rounded-2xl border border-ui-border bg-surface-0 p-5 reveal">
+                            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+                                <span class="text-lg font-semibold">Does AutoCuts replace a full editor like Premiere or
+                                    CapCut?</span>
+                                <span class="faq-indicator text-ui-text text-2xl leading-none">+</span>
+                            </summary>
+                            <p class="text-sm text-ui-text leading-relaxed mt-4">
+                                Not completely, and it does not need to. AutoCuts is a focused editor for spoken
+                                content. It wins when your bottleneck is repetitive cleanup, pacing review, and
+                                render-ready approval, not full cinematic post-production.
+                            </p>
+                        </details>
+
+                        <details class="faq-item rounded-2xl border border-ui-border bg-surface-0 p-5 reveal">
+                            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+                                <span class="text-lg font-semibold">How do credits work?</span>
+                                <span class="faq-indicator text-ui-text text-2xl leading-none">+</span>
+                            </summary>
+                            <p class="text-sm text-ui-text leading-relaxed mt-4">
+                                Credits are used for the processing and render workload. You can start with free
+                                credits, then increase usage as your publishing cadence or team volume grows.
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-24">
+                <div class="max-w-4xl mx-auto px-6 text-center reveal">
+                    <div class="rounded-3xl border border-ui-border bg-surface-1 p-8 md:p-12 device-shadow">
+                        <h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-5">Edit less. Publish more.</h2>
+                        <p class="text-lg md:text-xl text-ui-text max-w-2xl mx-auto mb-8">
+                            AutoCuts gives you a faster path from raw spoken video to an approved final cut, without
+                            hiding the editorial decisions that matter.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <a href="#"
+                                class="h-12 px-8 flex items-center justify-center text-sm font-medium bg-white text-black rounded-xl hover:bg-gray-100 transition-transform hover:scale-[1.02] w-full sm:w-auto">
+                                Start With Free Credits
+                            </a>
+                            <a href="#workflow"
+                                class="h-12 px-8 flex items-center justify-center text-sm font-medium bg-surface-0 border border-ui-border text-white rounded-xl hover:bg-surface-2 transition-colors w-full sm:w-auto">
+                                Review the Workflow
+                            </a>
+                        </div>
+                        <p class="text-sm text-ui-text mt-5">Built for creators, educators, founders, and content teams
+                            shipping spoken video at speed.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-surface-0 border-t border-ui-border relative overflow-hidden pt-20 pb-10">
+            <!-- Subtle background glow for the footer -->
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-keep/[0.03] blur-[120px] rounded-full pointer-events-none">
             </div>
-        </section>
 
-        <section id="compare" class="py-24 border-t border-ui-border bg-surface-1">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="max-w-3xl mx-auto text-center mb-12 reveal">
-                    <div class="text-[11px] uppercase tracking-[0.28em] text-ui-text mb-4">Why AutoCuts</div>
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-5">Built for editing, not endless timelines.</h2>
-                    <p class="text-lg text-ui-text">
-                        AutoCuts is purpose-built for spoken content and fast reviewable decisions, skipping the tedious timeline scrub.
-                    </p>
-                </div>
-
-                <div class="grid gap-6 lg:grid-cols-2">
-                    <div class="rounded-3xl border border-ui-border bg-surface-0 p-8 md:p-10 reveal relative overflow-hidden">
-                        <div class="absolute inset-0 bg-surface-1/50"></div>
-                        <div class="relative z-10">
-                            <div class="flex items-center gap-3 mb-8">
-                                <div class="w-12 h-12 rounded-xl border border-ui-border bg-surface-2 flex items-center justify-center">
-                                    <i data-lucide="clock-3" class="w-6 h-6 text-ui-text"></i>
-                                </div>
-                                <h3 class="text-2xl font-semibold tracking-tight text-zinc-400">Traditional workflow</h3>
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="flex flex-col items-center mb-16">
+                    <!-- Branding & Mission -->
+                    <div class="flex flex-col items-center max-w-2xl mx-auto mb-16 text-center">
+                        <a href="#top" class="inline-flex items-center gap-2 mb-6 group">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-surface-2 border border-brand-keep/40 flex items-center justify-center shadow-[0_0_15px_rgba(74,222,128,0.1)] group-hover:border-brand-keep group-hover:shadow-[0_0_20px_rgba(74,222,128,0.2)] transition-all duration-300">
+                                <i data-lucide="scissors" class="w-5 h-5 text-brand-keep"></i>
                             </div>
-                            <div class="space-y-4 text-sm text-zinc-500">
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="x" class="w-5 h-5 text-cut/70 shrink-0 mt-0.5"></i>
-                                    <p>Scrub the timeline manually to find pauses and filler.</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="x" class="w-5 h-5 text-cut/70 shrink-0 mt-0.5"></i>
-                                    <p>Trim weak takes one section at a time.</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="x" class="w-5 h-5 text-cut/70 shrink-0 mt-0.5"></i>
-                                    <p>Repeat the same cleanup loop for every single video.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="rounded-3xl border border-brand-keep/30 bg-surface-0 p-8 md:p-10 reveal relative overflow-hidden group">
-                        <div class="absolute inset-0 bg-brand-keep/[0.02] group-hover:bg-brand-keep/[0.04] transition-colors duration-500"></div>
-                        <div class="relative z-10">
-                            <div class="flex items-center gap-3 mb-8">
-                                <div class="w-12 h-12 rounded-xl border border-brand-keep/30 bg-surface-2 flex items-center justify-center shadow-[0_0_20px_rgba(74,222,128,0.15)] group-hover:scale-110 transition-transform duration-500">
-                                    <i data-lucide="scissors" class="w-6 h-6 text-brand-keep"></i>
-                                </div>
-                                <h3 class="text-2xl font-semibold tracking-tight text-white">AutoCuts workflow</h3>
-                            </div>
-                            <div class="space-y-4 text-sm text-zinc-300">
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-brand-keep shrink-0 mt-0.5"></i>
-                                    <p>Upload once and let AI surface cut decisions instantly.</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-brand-keep shrink-0 mt-0.5"></i>
-                                    <p>Review keeps, cuts, and restores in a fast text-based workspace.</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-brand-keep shrink-0 mt-0.5"></i>
-                                    <p>Render the final cut once the story is approved.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid gap-4 md:grid-cols-3 mt-6">
-                    <div class="rounded-2xl border border-ui-border bg-surface-0 p-6 reveal">
-                        <i data-lucide="rotate-ccw" class="w-6 h-6 text-white mb-4"></i>
-                        <h3 class="font-semibold text-lg mb-2">Restore what should stay</h3>
-                        <p class="text-sm text-ui-text">AI cut too aggressively? Restore the moment in one click instead of rebuilding a sequence.</p>
-                    </div>
-                    <div class="rounded-2xl border border-ui-border bg-surface-0 p-6 reveal">
-                        <i data-lucide="pause-circle" class="w-6 h-6 text-white mb-4"></i>
-                        <h3 class="font-semibold text-lg mb-2">Keep natural pauses</h3>
-                        <p class="text-sm text-ui-text">AutoCuts preserves rhythm and delivery. We don't just compress time blindly.</p>
-                    </div>
-                    <div class="rounded-2xl border border-ui-border bg-surface-0 p-6 reveal">
-                        <i data-lucide="sparkles" class="w-6 h-6 text-brand-anim mb-4"></i>
-                        <h3 class="font-semibold text-lg mb-2">Approve motion selectively</h3>
-                        <p class="text-sm text-ui-text">Animation suggestions are visible before render. You stay in absolute control.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="faq" class="py-24 border-t border-ui-border bg-surface-1">
-            <div class="max-w-4xl mx-auto px-6">
-                <div class="text-center reveal">
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-10">FAQ</h2>
-                </div>
-
-                <div class="mt-8 space-y-4">
-                    <details class="faq-item rounded-2xl border border-ui-border bg-surface-0 p-5 reveal">
-                        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-                            <span class="text-lg font-semibold">What videos does AutoCuts work best for?</span>
-                            <span class="faq-indicator text-ui-text text-2xl leading-none">+</span>
-                        </summary>
-                        <p class="text-sm text-ui-text leading-relaxed mt-4">
-                            AutoCuts is best for talking-head formats: tutorials, explainers, product demos, podcasts, course clips, team updates, and any repeated spoken-video workflow where cleanup and pacing matter.
-                        </p>
-                    </details>
-
-                    <details class="faq-item rounded-2xl border border-ui-border bg-surface-0 p-5 reveal">
-                        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-                            <span class="text-lg font-semibold">Can I review cuts before export?</span>
-                            <span class="faq-indicator text-ui-text text-2xl leading-none">+</span>
-                        </summary>
-                        <p class="text-sm text-ui-text leading-relaxed mt-4">
-                            Yes. That is the point of the EDL-style workflow. AutoCuts surfaces decisions so you can restore what should stay, keep natural pauses, and approve the final story before render.
-                        </p>
-                    </details>
-
-                    <details class="faq-item rounded-2xl border border-ui-border bg-surface-0 p-5 reveal">
-                        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-                            <span class="text-lg font-semibold">Does AutoCuts replace a full editor like Premiere or CapCut?</span>
-                            <span class="faq-indicator text-ui-text text-2xl leading-none">+</span>
-                        </summary>
-                        <p class="text-sm text-ui-text leading-relaxed mt-4">
-                            Not completely, and it does not need to. AutoCuts is a focused editor for spoken content. It wins when your bottleneck is repetitive cleanup, pacing review, and render-ready approval, not full cinematic post-production.
-                        </p>
-                    </details>
-
-                    <details class="faq-item rounded-2xl border border-ui-border bg-surface-0 p-5 reveal">
-                        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-                            <span class="text-lg font-semibold">How do credits work?</span>
-                            <span class="faq-indicator text-ui-text text-2xl leading-none">+</span>
-                        </summary>
-                        <p class="text-sm text-ui-text leading-relaxed mt-4">
-                            Credits are used for the processing and render workload. You can start with free credits, then increase usage as your publishing cadence or team volume grows.
-                        </p>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24">
-            <div class="max-w-4xl mx-auto px-6 text-center reveal">
-                <div class="rounded-3xl border border-ui-border bg-surface-1 p-8 md:p-12 device-shadow">
-                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-5">Edit less. Publish more.</h2>
-                    <p class="text-lg md:text-xl text-ui-text max-w-2xl mx-auto mb-8">
-                        AutoCuts gives you a faster path from raw spoken video to an approved final cut, without hiding the editorial decisions that matter.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="#" class="h-12 px-8 flex items-center justify-center text-sm font-medium bg-white text-black rounded-xl hover:bg-gray-100 transition-transform hover:scale-[1.02] w-full sm:w-auto">
-                            Start With Free Credits
+                            <span
+                                class="font-bold text-xl tracking-tight text-white group-hover:text-brand-keep transition-colors duration-300">AutoCuts</span>
                         </a>
-                        <a href="#workflow" class="h-12 px-8 flex items-center justify-center text-sm font-medium bg-surface-0 border border-ui-border text-white rounded-xl hover:bg-surface-2 transition-colors w-full sm:w-auto">
-                            Review the Workflow
-                        </a>
-                    </div>
-                    <p class="text-sm text-ui-text mt-5">Built for creators, educators, founders, and content teams shipping spoken video at speed.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="border-t border-ui-border bg-surface-0 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr] mb-12">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-surface-2 border border-brand-keep flex items-center justify-center">
-                            <i data-lucide="scissors" class="w-4 h-4 text-brand-keep"></i>
+                        <p class="text-ui-text/80 text-sm leading-relaxed mb-8">
+                            The workflow-specific AI editor for spoken content. Remove dead air, review editorial
+                            decisions, approve animations, and render faster.
+                        </p>
+                        <div class="flex items-center justify-center gap-4">
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                                class="w-10 h-10 rounded-full bg-surface-2 border border-ui-border flex items-center justify-center text-ui-text hover:text-white hover:border-white/20 hover:bg-surface-3 transition-all duration-300">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                                class="w-10 h-10 rounded-full bg-surface-2 border border-ui-border flex items-center justify-center text-ui-text hover:text-white hover:border-white/20 hover:bg-surface-3 transition-all duration-300">
+                                <i data-lucide="linkedin" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+                                class="w-10 h-10 rounded-full bg-surface-2 border border-ui-border flex items-center justify-center text-ui-text hover:text-white hover:border-white/20 hover:bg-surface-3 transition-all duration-300">
+                                <i data-lucide="youtube" class="w-4 h-4"></i>
+                            </a>
                         </div>
-                        <span class="font-semibold text-lg">AutoCuts</span>
                     </div>
-                    <p class="text-sm text-ui-text max-w-md leading-relaxed">
-                        A workflow-specific AI editor for spoken content. Cut dead air, review editorial decisions, approve animation suggestions, and render faster.
-                    </p>
+
+                    <!-- Navigation Links -->
+                    <div class="flex flex-row justify-center gap-x-24 w-full">
+                        <div class="text-center">
+                            <h4 class="font-semibold text-white mb-6 text-sm tracking-wide">Product</h4>
+                            <ul class="space-y-4">
+                                <li><a href="#workflow"
+                                        class="text-sm text-ui-text/80 hover:text-brand-keep transition-colors duration-200">Workflow</a>
+                                </li>
+                                <li><a href="#compare"
+                                        class="text-sm text-ui-text/80 hover:text-brand-keep transition-colors duration-200">Why
+                                        AutoCuts</a></li>
+                                <li><a href="#pricing"
+                                        class="text-sm text-ui-text/80 hover:text-brand-keep transition-colors duration-200 inline-flex items-center justify-center gap-2">Pricing
+                                        <span
+                                            class="px-1.5 py-0.5 rounded-full bg-brand-keep/10 text-brand-keep text-[10px] font-bold uppercase tracking-wider">Soon</span></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="text-center">
+                            <h4 class="font-semibold text-white mb-6 text-sm tracking-wide">Resources</h4>
+                            <ul class="space-y-4">
+                                <li><a href="#faq"
+                                        class="text-sm text-ui-text/80 hover:text-white transition-colors duration-200">FAQ</a>
+                                </li>
+                                <li><a href="privacy.html"
+                                        class="text-sm text-ui-text/80 hover:text-white transition-colors duration-200">Privacy
+                                        Policy</a></li>
+                                <li><a href="terms.html"
+                                        class="text-sm text-ui-text/80 hover:text-white transition-colors duration-200">Terms
+                                        of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                <div>
-                    <h4 class="font-medium mb-4">Product</h4>
-                    <div class="space-y-3 text-sm text-ui-text">
-                        <a href="#workflow" class="block hover:text-white transition-colors">Workflow</a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="font-medium mb-4">Resources</h4>
-                    <div class="space-y-3 text-sm text-ui-text">
-                        <a href="#compare" class="block hover:text-white transition-colors">Why AutoCuts</a>
-                        <a href="#faq" class="block hover:text-white transition-colors">FAQ</a>
-                        <a href="privacy.html" class="block hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="terms.html" class="block hover:text-white transition-colors">Terms of Service</a>
+                <div
+                    class="flex flex-col items-center justify-center pt-8 border-t border-ui-border/50 text-sm text-ui-text/60 gap-4">
+                    <p>&copy; 2026 AutoCuts. All rights reserved.</p>
+                    <div class="flex items-center justify-center gap-2">
+                        <span>Built with</span>
+                        <i data-lucide="heart" class="w-3.5 h-3.5 text-brand-cut fill-brand-cut/20"></i>
+                        <span>for creators.</span>
                     </div>
                 </div>
             </div>
+        </footer>
 
-            <div class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-ui-border text-sm text-ui-text gap-4">
-                <p>&copy; 2026 AutoCuts. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        <script>
+            lucide.createIcons();
+        </script>
+        <script src="script.js"></script>
+    </body>
 
-    <script>
-        lucide.createIcons();
-    </script>
-    <script src="script.js"></script>
-</body>
 </html>
