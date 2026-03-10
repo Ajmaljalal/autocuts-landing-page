@@ -1,171 +1,220 @@
 <!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | AutoCuts</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        surface: {
-                            0: '#000000',
-                            1: '#0a0a0a',
-                            2: '#111111',
-                            3: '#161616',
-                            4: '#1a1a1a',
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Privacy Policy | AutoCuts</title>
+        <meta name="description" content="Privacy Policy for AutoCuts AI video editor.">
+        <link rel="icon" type="image/png" href="img/icon.png">
+        <link rel="apple-touch-icon" href="img/icon.png">
+
+        <meta property="og:title" content="Privacy Policy | AutoCuts">
+        <meta property="og:description" content="Privacy Policy for AutoCuts AI video editor.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://autocuts.ai/privacy.html">
+        <meta property="og:image" content="https://autocuts.ai/img/og-image.png">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Privacy Policy | AutoCuts">
+        <meta name="twitter:description" content="Privacy Policy for AutoCuts AI video editor.">
+        <meta name="twitter:image" content="https://autocuts.ai/img/og-image.png">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            surface: {
+                                0: '#000000',
+                                1: '#0a0a0a',
+                                2: '#111111',
+                                3: '#161616',
+                                4: '#1a1a1a',
+                            },
+                            ui: {
+                                border: 'rgba(255, 255, 255, 0.08)',
+                                accent: 'rgba(255, 255, 255, 0.2)',
+                                text: '#999999',
+                            },
+                            brand: {
+                                keep: '#4ade80',
+                                cut: '#f87171',
+                                warn: '#fbbf24',
+                                anim: '#a78bfa',
+                            }
                         },
-                        ui: {
-                            border: 'rgba(255, 255, 255, 0.08)',
-                            accent: 'rgba(255, 255, 255, 0.2)',
-                            text: '#999999',
+                        fontFamily: {
+                            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
                         },
-                        brand: {
-                            keep: '#4ade80',
-                            cut: '#f87171',
-                            warn: '#fbbf24',
-                            anim: '#a78bfa',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                    },
+                    }
                 }
-            }
-        };
-    </script>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body class="bg-surface-0 text-white font-sans antialiased overflow-x-hidden">
-    <nav class="fixed top-0 w-full z-50 bg-surface-0/80 backdrop-blur-xl border-b border-ui-border">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg bg-surface-2 border border-brand-keep flex items-center justify-center">
-                    <i data-lucide="scissors" class="w-4 h-4 text-brand-keep"></i>
+            };
+        </script>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://unpkg.com/lucide@latest"></script>
+    </head>
+
+    <body class="bg-surface-0 text-white font-sans antialiased overflow-x-hidden">
+        <nav class="fixed top-0 w-full z-50 bg-surface-0/80 backdrop-blur-xl border-b border-ui-border">
+            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-surface-2 border border-brand-keep flex items-center justify-center">
+                        <i data-lucide="scissors" class="w-4 h-4 text-brand-keep"></i>
+                    </div>
+                    <span class="font-semibold tracking-tight text-lg">AutoCuts</span>
+                </a>
+                <div class="flex items-center gap-4">
+                    <a href="index.html" class="text-sm text-ui-text hover:text-white transition-colors">Back to
+                        Home</a>
                 </div>
-                <span class="font-semibold tracking-tight text-lg">AutoCuts</span>
-            </a>
-            <div class="flex items-center gap-4">
-                <a href="index.html" class="text-sm text-ui-text hover:text-white transition-colors">Back to Home</a>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <main class="relative z-10 pt-32 pb-24">
-        <div class="max-w-3xl mx-auto px-6">
-            <div class="mb-12">
-                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Privacy Policy</h1>
-                <p class="text-ui-text">Last updated: March 8, 2026</p>
-            </div>
-
-            <div class="prose prose-invert max-w-none text-zinc-300 space-y-8">
-                <section>
-                    <h2 class="text-2xl font-semibold text-white mb-4">1. Introduction</h2>
-                    <p class="leading-relaxed">
-                        At AutoCuts ("we", "our", or "us"), we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (autocuts.ai) and use our AI video editing service.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-semibold text-white mb-4">2. Information We Collect</h2>
-                    <ul class="list-disc pl-5 space-y-2 leading-relaxed">
-                        <li><strong>Account Information:</strong> Name, email address, password, and billing information (processed securely via third-party payment providers).</li>
-                        <li><strong>User Content:</strong> Video files, audio files, transcripts, and metadata that you upload to our platform for processing.</li>
-                        <li><strong>Usage Data:</strong> Information about how you use our service, including processing times, credit usage, interaction with editing tools, and rendering history.</li>
-                        <li><strong>Device Data:</strong> IP address, browser type, operating system, and diagnostic data to ensure the stability of our platform.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-semibold text-white mb-4">3. How We Use Your Information</h2>
-                    <ul class="list-disc pl-5 space-y-2 leading-relaxed">
-                        <li><strong>To Provide the Service:</strong> We process your video and audio files using artificial intelligence to generate transcripts, detect silence, and suggest edits.</li>
-                        <li><strong>Service Improvement:</strong> We analyze anonymized usage patterns to improve our AI models, processing speed, and user interface. We do not use your private video content to train public AI models without your explicit consent.</li>
-                        <li><strong>Account Management:</strong> To manage your credits, process payments, and provide customer support.</li>
-                        <li><strong>Security:</strong> To detect, prevent, and address technical issues and fraudulent activity.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-semibold text-white mb-4">4. Data Processing and Storage</h2>
-                    <p class="leading-relaxed">
-                        Your User Content (videos and audio) is stored securely on cloud infrastructure (e.g., AWS, GCP). After a project is completed or deleted by you, we remove the raw and processed media files from our active servers in accordance with our data retention policies, typically within 30 days of project deletion. Transcripts and metadata may be retained for account history and billing compliance.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-semibold text-white mb-4">5. Third-Party Service Providers</h2>
-                    <p class="leading-relaxed">
-                        We may employ third-party companies and individuals to facilitate our Service ("Service Providers"), including:
-                    </p>
-                    <ul class="list-disc pl-5 mt-2 space-y-2 leading-relaxed">
-                        <li>Cloud hosting providers (for file storage and processing)</li>
-                        <li>AI transcription and analysis APIs</li>
-                        <li>Payment processors (e.g., Stripe)</li>
-                        <li>Analytics and crash reporting tools</li>
-                    </ul>
-                    <p class="mt-2 leading-relaxed">These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-semibold text-white mb-4">6. Security of Data</h2>
-                    <p class="leading-relaxed">
-                        The security of your data is important to us. We implement industry-standard encryption in transit (HTTPS) and at rest. However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-semibold text-white mb-4">7. Your Rights</h2>
-                    <p class="leading-relaxed">
-                        Depending on your location (such as the GDPR in Europe or CCPA in California), you may have the right to access, update, delete, or restrict the processing of your personal information. You can exercise these rights by contacting our support team or managing your account settings.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-semibold text-white mb-4">8. Changes to This Privacy Policy</h2>
-                    <p class="leading-relaxed">
-                        We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. You are advised to review this Privacy Policy periodically for any changes.
-                    </p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-semibold text-white mb-4">9. Contact Us</h2>
-                    <p class="leading-relaxed">
-                        If you have any questions about this Privacy Policy, please contact us at legal@autocuts.ai.
-                    </p>
-                </section>
-            </div>
-        </div>
-    </main>
-
-    <footer class="border-t border-ui-border bg-surface-0 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="flex items-center justify-center gap-2 mb-6">
-                <div class="w-8 h-8 rounded-lg bg-surface-2 border border-brand-keep flex items-center justify-center">
-                    <i data-lucide="scissors" class="w-4 h-4 text-brand-keep"></i>
+        <main class="relative z-10 pt-32 pb-24">
+            <div class="max-w-3xl mx-auto px-6">
+                <div class="mb-12">
+                    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Privacy Policy</h1>
+                    <p class="text-ui-text">Last updated: March 8, 2026</p>
                 </div>
-                <span class="font-semibold text-lg">AutoCuts</span>
-            </div>
-            <div class="flex items-center justify-center gap-6 text-sm text-ui-text">
-                <a href="index.html" class="hover:text-white transition-colors">Home</a>
-                <a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a>
-                <a href="privacy.html" class="text-white">Privacy Policy</a>
-            </div>
-            <p class="mt-8 text-sm text-ui-text">&copy; 2026 AutoCuts. All rights reserved.</p>
-        </div>
-    </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
-</body>
+                <div class="prose prose-invert max-w-none text-zinc-300 space-y-8">
+                    <section>
+                        <h2 class="text-2xl font-semibold text-white mb-4">1. Introduction</h2>
+                        <p class="leading-relaxed">
+                            At AutoCuts ("we", "our", or "us"), we respect your privacy and are committed to protecting
+                            your personal data. This Privacy Policy explains how we collect, use, disclose, and
+                            safeguard your information when you visit our website (autocuts.ai) and use our AI video
+                            editing service.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold text-white mb-4">2. Information We Collect</h2>
+                        <ul class="list-disc pl-5 space-y-2 leading-relaxed">
+                            <li><strong>Account Information:</strong> Name, email address, password, and billing
+                                information (processed securely via third-party payment providers).</li>
+                            <li><strong>User Content:</strong> Video files, audio files, transcripts, and metadata that
+                                you upload to our platform for processing.</li>
+                            <li><strong>Usage Data:</strong> Information about how you use our service, including
+                                processing times, credit usage, interaction with editing tools, and rendering history.
+                            </li>
+                            <li><strong>Device Data:</strong> IP address, browser type, operating system, and diagnostic
+                                data to ensure the stability of our platform.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold text-white mb-4">3. How We Use Your Information</h2>
+                        <ul class="list-disc pl-5 space-y-2 leading-relaxed">
+                            <li><strong>To Provide the Service:</strong> We process your video and audio files using
+                                artificial intelligence to generate transcripts, detect silence, and suggest edits.</li>
+                            <li><strong>Service Improvement:</strong> We analyze anonymized usage patterns to improve
+                                our AI models, processing speed, and user interface. We do not use your private video
+                                content to train public AI models without your explicit consent.</li>
+                            <li><strong>Account Management:</strong> To manage your credits, process payments, and
+                                provide customer support.</li>
+                            <li><strong>Security:</strong> To detect, prevent, and address technical issues and
+                                fraudulent activity.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold text-white mb-4">4. Data Processing and Storage</h2>
+                        <p class="leading-relaxed">
+                            Your User Content (videos and audio) is stored securely on cloud infrastructure (e.g., AWS,
+                            GCP). After a project is completed or deleted by you, we remove the raw and processed media
+                            files from our active servers in accordance with our data retention policies, typically
+                            within 30 days of project deletion. Transcripts and metadata may be retained for account
+                            history and billing compliance.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold text-white mb-4">5. Third-Party Service Providers</h2>
+                        <p class="leading-relaxed">
+                            We may employ third-party companies and individuals to facilitate our Service ("Service
+                            Providers"), including:
+                        </p>
+                        <ul class="list-disc pl-5 mt-2 space-y-2 leading-relaxed">
+                            <li>Cloud hosting providers (for file storage and processing)</li>
+                            <li>AI transcription and analysis APIs</li>
+                            <li>Payment processors (e.g., Stripe)</li>
+                            <li>Analytics and crash reporting tools</li>
+                        </ul>
+                        <p class="mt-2 leading-relaxed">These third parties have access to your Personal Data only to
+                            perform these tasks on our behalf and are obligated not to disclose or use it for any other
+                            purpose.</p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold text-white mb-4">6. Security of Data</h2>
+                        <p class="leading-relaxed">
+                            The security of your data is important to us. We implement industry-standard encryption in
+                            transit (HTTPS) and at rest. However, no method of transmission over the Internet or
+                            electronic storage is 100% secure. While we strive to use commercially acceptable means to
+                            protect your Personal Data, we cannot guarantee its absolute security.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold text-white mb-4">7. Your Rights</h2>
+                        <p class="leading-relaxed">
+                            Depending on your location (such as the GDPR in Europe or CCPA in California), you may have
+                            the right to access, update, delete, or restrict the processing of your personal
+                            information. You can exercise these rights by contacting our support team or managing your
+                            account settings.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold text-white mb-4">8. Changes to This Privacy Policy</h2>
+                        <p class="leading-relaxed">
+                            We may update our Privacy Policy from time to time. We will notify you of any changes by
+                            posting the new Privacy Policy on this page and updating the "Last updated" date. You are
+                            advised to review this Privacy Policy periodically for any changes.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-semibold text-white mb-4">9. Contact Us</h2>
+                        <p class="leading-relaxed">
+                            If you have any questions about this Privacy Policy, please contact us at legal@autocuts.ai.
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <footer class="border-t border-ui-border bg-surface-0 pt-16 pb-8">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-surface-2 border border-brand-keep flex items-center justify-center">
+                        <i data-lucide="scissors" class="w-4 h-4 text-brand-keep"></i>
+                    </div>
+                    <span class="font-semibold text-lg">AutoCuts</span>
+                </div>
+                <div class="flex items-center justify-center gap-6 text-sm text-ui-text">
+                    <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="privacy.html" class="text-white">Privacy Policy</a>
+                </div>
+                <p class="mt-8 text-sm text-ui-text">&copy; 2026 AutoCuts. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script>
+            lucide.createIcons();
+        </script>
+    </body>
+
 </html>
