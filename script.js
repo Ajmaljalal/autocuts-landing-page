@@ -1,30 +1,138 @@
-/**
- * AutoCuts landing page interactions
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('motion-ready');
+    const siteNav = document.querySelector('[data-site-nav]');
+    const storyScroll = document.querySelector('[data-story-scroll]');
+    const storyScenes = Array.from(document.querySelectorAll('.story-scene'));
+    const storyPrompt = document.querySelector('.story-prompt');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let frameId = 0;
 
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserverOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+    const smoothstep = (value) => value * value * (3 - (2 * value));
+
+    const syncNavState = () => {
+        if (!(siteNav instanceof HTMLElement)) {
+            return;
+        }
+
+        siteNav.classList.toggle('is-scrolled', window.scrollY > 24);
     };
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, revealObserverOptions);
+    const clearStoryState = () => {
+        document.body.classList.remove('story-ready');
 
-    revealElements.forEach((element) => {
-        revealObserver.observe(element);
+        storyScenes.forEach((scene) => {
+            scene.classList.remove('is-active');
+            scene.removeAttribute('aria-hidden');
+            scene.style.removeProperty('--scene-visibility');
+            scene.style.removeProperty('--scene-distance');
+        });
+
+        if (storyScroll instanceof HTMLElement) {
+            storyScroll.style.removeProperty('--story-progress');
+        }
+
+        if (storyPrompt instanceof HTMLElement) {
+            storyPrompt.classList.remove('is-hidden');
+        }
+    };
+
+    const updateStory = () => {
+        syncNavState();
+
+        if (!(storyScroll instanceof HTMLElement) || storyScenes.length === 0) {
+            return;
+        }
+
+        if (prefersReducedMotion.matches) {
+            clearStoryState();
+            return;
+        }
+
+        document.body.classList.add('story-ready');
+
+        const viewportHeight = Math.max(window.innerHeight, 1);
+        const scrollRange = Math.max(storyScroll.offsetHeight - viewportHeight, 1);
+        const offset = clamp(window.scrollY - storyScroll.offsetTop, 0, scrollRange);
+        const progress = offset / scrollRange;
+        const maxSceneIndex = Math.max(storyScenes.length - 1, 0);
+        const position = progress * maxSceneIndex;
+
+        storyScroll.style.setProperty('--story-progress', progress.toFixed(4));
+
+        storyScenes.forEach((scene, index) => {
+            const distance = index - position;
+            const visibility = smoothstep(clamp(1 - Math.abs(distance), 0, 1));
+
+            scene.style.setProperty('--scene-visibility', visibility.toFixed(4));
+            scene.style.setProperty('--scene-distance', distance.toFixed(4));
+            scene.classList.toggle('is-active', Math.abs(distance) < 0.55);
+            scene.setAttribute('aria-hidden', visibility < 0.08 ? 'true' : 'false');
+        });
+
+        if (storyPrompt instanceof HTMLElement) {
+            storyPrompt.classList.toggle('is-hidden', progress > 0.08);
+        }
+    };
+
+    const requestFrame = () => {
+        if (frameId !== 0) {
+            return;
+        }
+
+        frameId = window.requestAnimationFrame(() => {
+            frameId = 0;
+            updateStory();
+        });
+    };
+
+    const scrollToScene = (sceneIndex) => {
+        const targetIndex = clamp(sceneIndex, 0, Math.max(storyScenes.length - 1, 0));
+        const targetScene = storyScenes[targetIndex];
+
+        if (!(targetScene instanceof HTMLElement)) {
+            return;
+        }
+
+        if (prefersReducedMotion.matches || !document.body.classList.contains('story-ready')) {
+            targetScene.scrollIntoView({
+                behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+                block: 'start'
+            });
+            return;
+        }
+
+        if (!(storyScroll instanceof HTMLElement)) {
+            return;
+        }
+
+        const targetTop = storyScroll.offsetTop + (targetIndex * window.innerHeight);
+
+        window.scrollTo({
+            top: targetTop,
+            behavior: 'smooth'
+        });
+    };
+
+    document.querySelectorAll('[data-target-scene]').forEach((element) => {
+        element.addEventListener('click', (event) => {
+            const sceneIndexValue = element.getAttribute('data-target-scene');
+
+            if (sceneIndexValue === null) {
+                return;
+            }
+
+            const sceneIndex = Number(sceneIndexValue);
+
+            if (Number.isNaN(sceneIndex)) {
+                return;
+            }
+
+            event.preventDefault();
+            scrollToScene(sceneIndex);
+        });
     });
 
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    document.querySelectorAll('a[href^="#"]:not([data-target-scene])').forEach((anchor) => {
         anchor.addEventListener('click', (event) => {
             const targetId = anchor.getAttribute('href');
 
@@ -34,28 +142,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const targetElement = document.querySelector(targetId);
 
-            if (targetElement) {
-                event.preventDefault();
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            if (!(targetElement instanceof HTMLElement)) {
+                return;
             }
+
+            event.preventDefault();
+            targetElement.scrollIntoView({
+                behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+                block: 'start'
+            });
         });
     });
 
-    const nav = document.querySelector('nav');
+    syncNavState();
+    updateStory();
 
-    if (nav) {
-        const syncNavState = () => {
-            if (window.scrollY > 32) {
-                nav.classList.add('bg-surface-0/90');
-            } else {
-                nav.classList.remove('bg-surface-0/90');
-            }
-        };
-
-        syncNavState();
-        window.addEventListener('scroll', syncNavState);
-    }
+    window.addEventListener('scroll', requestFrame, { passive: true });
+    window.addEventListener('resize', requestFrame);
+    prefersReducedMotion.addEventListener('change', requestFrame);
 });
