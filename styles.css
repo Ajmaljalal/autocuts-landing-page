@@ -133,9 +133,10 @@ a {
 }
 
 .brand-wordmark {
+    font-family: "Manrope", system-ui, -apple-system, sans-serif;
     font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: -0.04em;
+    font-weight: 800;
+    letter-spacing: -0.015em;
     white-space: nowrap;
 }
 
