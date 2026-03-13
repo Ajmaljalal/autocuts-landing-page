@@ -288,12 +288,13 @@ body.story-ready .story-scene {
     align-items: stretch;
     opacity: calc(0.08 + var(--scene-visibility, 0) * 0.92);
     transform: translate3d(0, calc(var(--scene-distance, 0) * 64px), 0) scale(calc(0.93 + var(--scene-visibility, 0) * 0.07));
-    filter: blur(calc((1 - var(--scene-visibility, 0)) * 18px));
+    visibility: hidden;
     pointer-events: none;
-    will-change: opacity, transform, filter;
+    will-change: opacity, transform;
 }
 
 body.story-ready .story-scene.is-active {
+    visibility: visible;
     pointer-events: auto;
 }
 
@@ -1175,7 +1176,6 @@ body.story-ready .story-prompt {
     top: 0;
     left: 50%;
     width: min(70rem, 90vw);
-    height: 24rem;
     transform: translateX(-50%);
     background: radial-gradient(circle, rgba(74, 222, 128, 0.1), transparent 62%);
     filter: blur(90px);

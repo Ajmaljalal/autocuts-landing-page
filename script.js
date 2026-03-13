@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const storyPrompt = document.querySelector('.story-prompt');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let frameId = 0;
+    let activeSceneIndex = -1;
+    let activeStoryProgress = -1;
 
     const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-    const smoothstep = (value) => value * value * (3 - (2 * value));
 
     const syncNavState = () => {
         if (!(siteNav instanceof HTMLElement)) {
@@ -19,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const clearStoryState = () => {
         document.body.classList.remove('story-ready');
+        activeSceneIndex = -1;
+        activeStoryProgress = -1;
 
         storyScenes.forEach((scene) => {
             scene.classList.remove('is-active');
@@ -53,24 +56,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const viewportHeight = Math.max(window.innerHeight, 1);
         const scrollRange = Math.max(storyScroll.offsetHeight - viewportHeight, 1);
         const offset = clamp(window.scrollY - storyScroll.offsetTop, 0, scrollRange);
-        const progress = offset / scrollRange;
         const maxSceneIndex = Math.max(storyScenes.length - 1, 0);
-        const position = progress * maxSceneIndex;
+        const rawPosition = offset / viewportHeight;
+        const nextActiveSceneIndex = clamp(Math.round(rawPosition), 0, maxSceneIndex);
+        const snappedProgress = maxSceneIndex > 0 ? nextActiveSceneIndex / maxSceneIndex : 0;
 
-        storyScroll.style.setProperty('--story-progress', progress.toFixed(4));
+        if (Math.abs(snappedProgress - activeStoryProgress) > 0.0001) {
+            activeStoryProgress = snappedProgress;
+            storyScroll.style.setProperty('--story-progress', snappedProgress.toFixed(4));
+        }
 
-        storyScenes.forEach((scene, index) => {
-            const distance = index - position;
-            const visibility = smoothstep(clamp(1 - Math.abs(distance), 0, 1));
+        if (nextActiveSceneIndex !== activeSceneIndex) {
+            activeSceneIndex = nextActiveSceneIndex;
 
-            scene.style.setProperty('--scene-visibility', visibility.toFixed(4));
-            scene.style.setProperty('--scene-distance', distance.toFixed(4));
-            scene.classList.toggle('is-active', Math.abs(distance) < 0.55);
-            scene.setAttribute('aria-hidden', visibility < 0.08 ? 'true' : 'false');
-        });
+            storyScenes.forEach((scene, index) => {
+                const isActive = index === activeSceneIndex;
+                const distance = index - activeSceneIndex;
+                const visibility = isActive ? 1 : 0;
+
+                scene.style.setProperty('--scene-visibility', visibility.toFixed(4));
+                scene.style.setProperty('--scene-distance', distance.toFixed(4));
+                scene.classList.toggle('is-active', isActive);
+                scene.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+            });
+        }
 
         if (storyPrompt instanceof HTMLElement) {
-            storyPrompt.classList.toggle('is-hidden', progress > 0.08);
+            storyPrompt.classList.toggle('is-hidden', activeSceneIndex > 0);
         }
     };
 
