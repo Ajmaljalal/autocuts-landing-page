@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const storyScenes = Array.from(document.querySelectorAll('.story-scene'));
     const storyPrompt = document.querySelector('.story-prompt');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const isMobileStoryLayout = window.matchMedia('(max-width: 820px)');
     let frameId = 0;
     let activeSceneIndex = -1;
     let activeStoryProgress = -1;
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        if (prefersReducedMotion.matches) {
+        if (prefersReducedMotion.matches || isMobileStoryLayout.matches) {
             clearStoryState();
             return;
         }
@@ -172,4 +173,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', requestFrame, { passive: true });
     window.addEventListener('resize', requestFrame);
     prefersReducedMotion.addEventListener('change', requestFrame);
+    isMobileStoryLayout.addEventListener('change', requestFrame);
 });
