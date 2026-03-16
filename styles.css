@@ -2999,6 +2999,187 @@ body.story-ready .story-prompt {
         justify-content: flex-start;
     }
 
+    /* ─── Redesigned sections mobile ─── */
+
+    /* Titles */
+    .pain-scene__title .scene-title,
+    .cta-scene__title .scene-title {
+        font-size: clamp(1.6rem, 7vw, 2.4rem);
+        white-space: normal;
+        text-align: center;
+    }
+
+    .pain-scene__title,
+    .cta-scene__title {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Compare panel — stack vertically */
+    .compare-panel {
+        flex-direction: column;
+    }
+
+    .compare-panel__divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .compare-panel__half {
+        padding: 1.25rem;
+    }
+
+    .compare-task {
+        gap: 0.6rem;
+        padding: 0.75rem 0.85rem;
+    }
+
+    .compare-task strong { font-size: 0.85rem; }
+    .compare-task span { font-size: 0.75rem; }
+
+    /* Engine flow — stack pipeline vertically */
+    .engine-flow__pipeline {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .engine-waveform {
+        width: 100%;
+        flex: none;
+        height: 2.8rem;
+    }
+
+    .engine-waveform--raw {
+        mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    }
+
+    .engine-waveform--refined {
+        mask-image: linear-gradient(to top, black 55%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to top, black 55%, transparent 100%);
+    }
+
+    .engine-flow__connector {
+        width: 2px;
+        height: 1.5rem;
+    }
+
+    .engine-flow__connector--in {
+        background: linear-gradient(to bottom, rgba(248, 113, 113, 0.35), rgba(167, 139, 250, 0.5));
+    }
+
+    .engine-flow__connector--out {
+        background: linear-gradient(to bottom, rgba(167, 139, 250, 0.5), rgba(45, 212, 160, 0.35));
+    }
+
+    .engine-flow__pulse {
+        left: 50%;
+        top: -6px;
+        transform: translateX(-50%);
+        animation: pipelineFlowV 1.6s linear infinite;
+    }
+
+    .engine-flow__pulse--out {
+        animation: pipelineFlowV 1.6s linear infinite 0.8s;
+    }
+
+    @keyframes pipelineFlowV {
+        0%   { top: -6px; opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+    }
+
+    .engine-ai-node {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .engine-ai-logo {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .engine-flow__meta {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .engine-flow__meta-col--right {
+        text-align: center;
+    }
+
+    .engine-flow__meta-col--right .engine-tags {
+        justify-content: center;
+    }
+
+    .engine-flow__meta-spacer {
+        display: none;
+    }
+
+    .engine-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .engine-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .engine-board {
+        padding: 1.25rem;
+    }
+
+    /* Workflow steps — 2-column grid */
+    .workflow-steps-row {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .wf-step {
+        flex: 0 0 calc(50% - 0.375rem);
+        min-width: 0;
+    }
+
+    .wf-step:last-child {
+        flex: 0 0 100%;
+    }
+
+    .wf-connector {
+        display: none;
+    }
+
+    .workflow-board {
+        padding: 1.25rem;
+    }
+
+    /* CTA board */
+    .cta-board {
+        padding: 1.25rem;
+    }
+
+    .cta-board__pillars {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+
+    .cta-pillar__divider {
+        width: 100%;
+        height: 1px;
+        margin: 0;
+    }
+
+    .cta-board__testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-board__btn {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.05rem;
+    }
+
 }
 
 @media (max-width: 560px) {
@@ -3047,6 +3228,54 @@ body.story-ready .story-prompt {
 
     .site-footer__top {
         padding-top: calc(var(--nav-height) + 1.25rem);
+    }
+
+    /* ─── Small screen overrides for redesigned sections ─── */
+
+    .pain-scene__title .scene-title,
+    .cta-scene__title .scene-title {
+        font-size: clamp(1.35rem, 6.5vw, 2rem);
+    }
+
+    .compare-panel__half {
+        padding: 1rem;
+    }
+
+    .compare-tiles {
+        grid-template-columns: 1fr;
+    }
+
+    .engine-features {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-steps-row {
+        gap: 0.6rem;
+    }
+
+    .wf-step {
+        flex: 0 0 100%;
+    }
+
+    .wf-step__title { font-size: 0.9rem; }
+    .wf-step__desc  { font-size: 0.72rem; }
+
+    .cta-board__publish {
+        padding: 1rem;
+    }
+
+    .cta-board__btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .cta-board__chips {
+        gap: 0.35rem;
+    }
+
+    .cta-chip {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.65rem;
     }
 }
 
