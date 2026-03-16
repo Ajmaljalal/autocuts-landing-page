@@ -133,8 +133,9 @@
                 <p class="scene-eyebrow">AI video editor for creators who ship weekly</p>
                 <h1 class="scene-title font-display">Edit less. Publish more.</h1>
                 <p class="scene-description">
-                  AutoCuts removes dead air, cleans noisy audio, and suggests motion emphasis automatically,
-                  so you skip repetitive timeline work and keep full editorial control.
+                  Never spend another hour scrubbing dead air, re-listening to noisy takes, or deciding
+                  frame by frame where a zoom should land — AutoCuts handles all of it before you even open the
+                  timeline.
                 </p>
 
                 <div class="scene-actions">
@@ -171,74 +172,82 @@
 
               <div class="scene-visual">
                 <div class="hero-console panel">
-                  <span class="panel-badge">Raw to ready</span>
+                  <div class="hero-console__toprow">
+                    <span class="panel-badge">Raw to ready</span>
+                    <button class="hero-console__publish-btn">Publish Now</button>
+                  </div>
 
                   <div class="hero-console__header">
                     <div>
                       <p class="panel-label">Tonight&rsquo;s recording</p>
-                      <h3>weekly-update.mp4</h3>
+                      <h3>onboarding-guide-v2.mp4</h3>
                     </div>
-                    <span class="hero-console__state">Publish-ready</span>
                   </div>
 
                   <div class="hero-console__preview">
                     <div class="hero-console__workspace">
+
                       <article class="hero-console__clip">
-                        <div class="hero-console__thumb" aria-hidden="true"></div>
+                        <div class="hero-console__thumb hero-console__thumb--highlight" aria-hidden="true">
+                          <div class="waveform" data-color="teal"></div>
+                        </div>
                         <div class="hero-console__meta">
-                          <span class="hero-console__clip-title">Opening hook</span>
-                          <div class="hero-console__meta-bars" aria-hidden="true">
-                            <span></span>
-                            <span></span>
+                          <span class="hero-console__clip-title">Key Workflow Introduction</span>
+                          <div class="hero-console__progress-bar">
+                            <span class="hero-console__progress-fill hero-console__progress-fill--highlight"></span>
                           </div>
                         </div>
-                        <span class="hero-console__decision hero-console__decision--motion">Animation</span>
-                        <span class="hero-console__time">0:12 - 0:33</span>
+                        <span class="hero-console__decision hero-console__decision--highlight">HIGHLIGHT
+                          <em>(Animated)</em></span>
+                        <span class="hero-console__time">0:05 - 0:35</span>
                       </article>
 
                       <article class="hero-console__clip">
-                        <div class="hero-console__thumb hero-console__thumb--alt" aria-hidden="true"></div>
+                        <div class="hero-console__thumb hero-console__thumb--optimize" aria-hidden="true">
+                          <div class="waveform" data-color="amber"></div>
+                        </div>
                         <div class="hero-console__meta">
-                          <span class="hero-console__clip-title">Main takeaway</span>
-                          <div class="hero-console__meta-bars" aria-hidden="true">
-                            <span></span>
-                            <span></span>
+                          <span class="hero-console__clip-title">Integration Features: Slack</span>
+                          <div class="hero-console__progress-bar">
+                            <span class="hero-console__progress-fill hero-console__progress-fill--optimize"></span>
                           </div>
                         </div>
-                        <span class="hero-console__decision hero-console__decision--keep">Keep</span>
-                        <span class="hero-console__time">0:34 - 1:06</span>
+                        <span class="hero-console__decision hero-console__decision--optimize">OPTIMIZE
+                          <em>(Retain)</em></span>
+                        <span class="hero-console__time">0:36 - 1:15</span>
                       </article>
 
                       <article class="hero-console__clip">
-                        <div class="hero-console__thumb hero-console__thumb--dark" aria-hidden="true"></div>
+                        <div class="hero-console__thumb hero-console__thumb--trim" aria-hidden="true">
+                          <div class="waveform" data-color="pink"></div>
+                        </div>
                         <div class="hero-console__meta">
-                          <span class="hero-console__clip-title">Retake + filler</span>
-                          <div class="hero-console__meta-bars" aria-hidden="true">
-                            <span></span>
-                            <span></span>
+                          <span class="hero-console__clip-title">Repeats and Filler</span>
+                          <div class="hero-console__progress-bar">
+                            <span class="hero-console__progress-fill hero-console__progress-fill--trim"></span>
                           </div>
                         </div>
-                        <span class="hero-console__decision hero-console__decision--cut">Cut</span>
-                        <span class="hero-console__time">1:07 - 1:21</span>
+                        <span class="hero-console__decision hero-console__decision--trim">TRIM
+                          <em>(Redundant)</em></span>
+                        <span class="hero-console__time">1:16 - 1:30</span>
                       </article>
 
                       <div class="hero-console__overview">
-                        <span class="hero-console__overview-label">Timeline overview</span>
+                        <span class="hero-console__overview-label">Timeline Overview</span>
                         <div class="hero-console__overview-track" aria-hidden="true">
-                          <span class="hero-console__overview-segment hero-console__overview-segment--keep"></span>
-                          <span class="hero-console__overview-segment hero-console__overview-segment--motion"></span>
-                          <span class="hero-console__overview-segment hero-console__overview-segment--cut"></span>
-                          <span class="hero-console__overview-segment hero-console__overview-segment--keep"></span>
-                          <span class="hero-console__overview-segment hero-console__overview-segment--noise"></span>
+                          <span class="hero-console__overview-segment hero-console__overview-segment--highlight"></span>
+                          <span class="hero-console__overview-segment hero-console__overview-segment--optimize"></span>
+                          <span class="hero-console__overview-segment hero-console__overview-segment--trim"></span>
+                          <span class="hero-console__overview-segment hero-console__overview-segment--lavender"></span>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="hero-console__chips">
-                    <span class="status-chip status-chip--cut">Pauses removed</span>
-                    <span class="status-chip status-chip--noise">Noise cleaned</span>
-                    <span class="status-chip status-chip--motion">Motion suggested</span>
+                  <div class="hero-console__chips" style="margin-top: 1.1rem;">
+                    <span class="status-chip status-chip--trim">Silences Trimmed</span>
+                    <span class="status-chip status-chip--optimize">Levelled Audio</span>
+                    <span class="status-chip status-chip--slate">Flow Smoothed</span>
                   </div>
                 </div>
               </div>
@@ -246,80 +255,116 @@
           </article>
 
           <article class="story-scene story-scene--pain" data-scene-index="1">
-            <div class="scene-shell">
-              <div class="scene-copy">
+            <div class="scene-shell scene-shell--full">
+              <div class="pain-scene__title">
                 <p class="scene-eyebrow">The part creators hate</p>
-                <h2 class="scene-title font-display">You record for 12 minutes. Editing steals the next 2 hours.</h2>
-                <p class="scene-description">
-                  The pain is never the camera. It is replaying the same line, cutting every pause,
-                  cleaning background noise, and deciding where motion should land one tiny choice at a time.
-                </p>
-                <p class="scene-note">
-                  Your idea is ready. The timeline is what slows everything down.
-                </p>
-                <p class="scene-note scene-note--lift">
-                  Most creators recover a full workday every week after switching to automated first-pass edits.
-                </p>
+                <h2 class="scene-title font-display">You record for 12 minutes.<br>Editing steals the next 2 hours.</h2>
               </div>
-
-              <div class="scene-visual">
-                <div class="pain-board panel">
-                  <span class="panel-badge panel-badge--danger">Manual editing spiral</span>
-
-                  <div class="pain-board__header">
-                    <div>
-                      <p class="panel-label">Every upload repeats the same loop</p>
-                      <h3>One raw take. Dozens of small fixes.</h3>
+              <div class="scene-visual scene-visual--full">
+                <div class="compare-panel panel">
+                  <!-- Left: manual -->
+                  <div class="compare-panel__half compare-panel__half--before">
+                    <span class="compare-badge compare-badge--before">Without AutoCuts</span>
+                    <div class="compare-panel__head">
+                      <div>
+                        <p class="panel-label">Every upload repeats the same loop</p>
+                        <h3 class="compare-panel__headline">One raw take.<br>Dozens of small fixes.</h3>
+                      </div>
+                      <div class="compare-clock compare-clock--before">
+                        <span>2h</span>
+                        <small>gone</small>
+                      </div>
                     </div>
 
-                    <div class="pain-board__clock">
-                      <span>2h</span>
-                      <small>gone</small>
+                    <div class="compare-tasks">
+                      <article class="compare-task">
+                        <i data-lucide="search"></i>
+                        <div>
+                          <strong>Scrub the timeline</strong>
+                          <span>Find every dead gap manually.</span>
+                        </div>
+                        <b>24m</b>
+                      </article>
+                      <article class="compare-task">
+                        <i data-lucide="volume-2"></i>
+                        <div>
+                          <strong>Clean the room noise</strong>
+                          <span>Air hum, keyboard taps, random hiss.</span>
+                        </div>
+                        <b>18m</b>
+                      </article>
+                      <article class="compare-task">
+                        <i data-lucide="scissors"></i>
+                        <div>
+                          <strong>Trim weak takes</strong>
+                          <span>Restarted lines and filler words.</span>
+                        </div>
+                        <b>31m</b>
+                      </article>
+                    </div>
+
+                    <div class="compare-footer">
+                      <span>Then the next upload asks for the exact same work again.</span>
+                      <div class="compare-meter compare-meter--before"><span></span></div>
                     </div>
                   </div>
 
-                  <div class="pain-board__tasks">
-                    <article class="pain-task">
-                      <i data-lucide="search"></i>
-                      <div>
-                        <strong>Scrub the timeline</strong>
-                        <span>Find every dead gap manually.</span>
-                      </div>
-                      <b>24m</b>
-                    </article>
+                  <!-- Divider -->
+                  <div class="compare-panel__divider" aria-hidden="true"></div>
 
-                    <article class="pain-task">
-                      <i data-lucide="scissors"></i>
+                  <!-- Right: AutoCuts -->
+                  <div class="compare-panel__half compare-panel__half--after">
+                    <span class="compare-badge compare-badge--after">With AutoCuts</span>
+                    <div class="compare-panel__head">
                       <div>
-                        <strong>Trim weak takes</strong>
-                        <span>Restarted lines and filler words.</span>
+                        <p class="panel-label">Every upload gets smarter</p>
+                        <h3 class="compare-panel__headline">One raw take.<br>One smart pass.</h3>
                       </div>
-                      <b>31m</b>
-                    </article>
-
-                    <article class="pain-task">
-                      <i data-lucide="volume-2"></i>
-                      <div>
-                        <strong>Clean the room noise</strong>
-                        <span>Air hum, keyboard taps, random hiss.</span>
+                      <div class="compare-clock compare-clock--after">
+                        <small>Total</small>
+                        <span>11m</span>
+                        <small>used</small>
                       </div>
-                      <b>18m</b>
-                    </article>
+                    </div>
 
-                    <article class="pain-task">
-                      <i data-lucide="sparkles"></i>
-                      <div>
-                        <strong>Add motion by hand</strong>
-                        <span>Zooms, emphasis, polish, and pacing.</span>
-                      </div>
-                      <b>29m</b>
-                    </article>
-                  </div>
+                    <div class="compare-tiles">
+                      <article class="compare-tile">
+                        <div class="compare-tile__top">
+                          <i data-lucide="cpu"></i>
+                          <b>2m</b>
+                        </div>
+                        <strong>AI Gap Detection</strong>
+                        <span>Dead air and pauses found instantly.</span>
+                      </article>
+                      <article class="compare-tile">
+                        <div class="compare-tile__top">
+                          <i data-lucide="mic"></i>
+                          <b>1m</b>
+                        </div>
+                        <strong>Noise Reduction</strong>
+                        <span>Room tone cleaned automatically.</span>
+                      </article>
+                      <article class="compare-tile">
+                        <div class="compare-tile__top">
+                          <i data-lucide="film"></i>
+                          <b>3m</b>
+                        </div>
+                        <strong>Take Selection</strong>
+                        <span>Best takes surfaced, weak ones flagged.</span>
+                      </article>
+                      <article class="compare-tile">
+                        <div class="compare-tile__top">
+                          <i data-lucide="sparkles"></i>
+                          <b>5m</b>
+                        </div>
+                        <strong>Motion Suggestions</strong>
+                        <span>Zooms and pacing added where they land.</span>
+                      </article>
+                    </div>
 
-                  <div class="pain-board__footer">
-                    <span>Then the next upload asks for the exact same work again.</span>
-                    <div class="pain-board__meter">
-                      <span></span>
+                    <div class="compare-footer">
+                      <span>The next upload ships faster using what AutoCuts learned.</span>
+                      <div class="compare-meter compare-meter--after"><span></span></div>
                     </div>
                   </div>
                 </div>
@@ -328,274 +373,270 @@
           </article>
 
           <article class="story-scene story-scene--engine" data-scene-index="2">
-            <div class="scene-shell">
-              <div class="scene-copy">
-                <p class="scene-eyebrow">What AutoCuts takes over</p>
-                <h2 class="scene-title font-display">AutoCuts handles the heavy edit before you touch a timeline.</h2>
-                <p class="scene-description">
-                  It removes dead air, cleans distracting background noise, and suggests tasteful
-                  motion only where emphasis helps the story land.
-                </p>
+            <div class="scene-shell scene-shell--full">
 
-                <div class="scene-tags scene-tags--stacked">
-                  <span class="scene-tag scene-tag--accent">Recover hours from repetitive edits</span>
-                  <span class="scene-tag scene-tag--accent">Keep pacing natural and punchy</span>
-                  <span class="scene-tag scene-tag--accent">Approve every keep and cut</span>
-                </div>
+              <div class="pain-scene__title">
+                <p class="scene-eyebrow">What AutoCuts takes over</p>
+                <h2 class="scene-title font-display">The first edit happens<br>before you touch a timeline.</h2>
               </div>
 
-              <div class="scene-visual">
-                <div class="engine-panel panel">
-                  <span class="panel-badge panel-badge--accent">AutoCuts pass</span>
+              <div class="scene-visual scene-visual--full">
+                <div class="engine-board panel">
 
-                  <div class="engine-panel__header">
-                    <div>
-                      <p class="panel-label">Cleanup, pacing, and motion</p>
-                      <h3>The first edit happens automatically.</h3>
-                    </div>
-                    <span class="engine-panel__state">Editing now</span>
-                  </div>
+                  <!-- Flow: Raw → AI → Refined -->
+                  <div class="engine-flow" aria-label="Processing pipeline">
 
-                  <div class="signal-stack" aria-hidden="true">
-                    <div class="signal-row signal-row--raw">
-                      <span class="signal-bar" style="--bar: 58%; --delay: 0.05s;"></span>
-                      <span class="signal-bar" style="--bar: 78%; --delay: 0.15s;"></span>
-                      <span class="signal-bar" style="--bar: 44%; --delay: 0.25s;"></span>
-                      <span class="signal-bar" style="--bar: 90%; --delay: 0.35s;"></span>
-                      <span class="signal-bar" style="--bar: 36%; --delay: 0.45s;"></span>
-                      <span class="signal-bar" style="--bar: 68%; --delay: 0.55s;"></span>
-                      <span class="signal-bar" style="--bar: 30%; --delay: 0.65s;"></span>
-                      <span class="signal-bar" style="--bar: 74%; --delay: 0.75s;"></span>
-                      <span class="signal-bar" style="--bar: 52%; --delay: 0.85s;"></span>
-                      <span class="signal-bar" style="--bar: 80%; --delay: 0.95s;"></span>
+                    <!-- Single pipeline row -->
+                    <div class="engine-flow__pipeline">
+                      <div class="engine-waveform engine-waveform--raw" id="ewRaw"></div>
+                      <div class="engine-flow__connector engine-flow__connector--in" aria-hidden="true">
+                        <span class="engine-flow__pulse"></span>
+                      </div>
+                      <div class="engine-ai-node">
+                        <img src="img/icon.png" alt="AutoCuts" class="engine-ai-logo">
+                      </div>
+                      <div class="engine-flow__connector engine-flow__connector--out" aria-hidden="true">
+                        <span class="engine-flow__pulse engine-flow__pulse--out"></span>
+                      </div>
+                      <div class="engine-waveform engine-waveform--refined" id="ewRefined"></div>
                     </div>
 
-                    <div class="signal-row signal-row--clean">
-                      <span class="signal-bar" style="--bar: 72%; --delay: 0.08s;"></span>
-                      <span class="signal-bar" style="--bar: 18%; --delay: 0.18s;"></span>
-                      <span class="signal-bar" style="--bar: 66%; --delay: 0.28s;"></span>
-                      <span class="signal-bar" style="--bar: 14%; --delay: 0.38s;"></span>
-                      <span class="signal-bar" style="--bar: 70%; --delay: 0.48s;"></span>
-                      <span class="signal-bar" style="--bar: 20%; --delay: 0.58s;"></span>
-                      <span class="signal-bar" style="--bar: 64%; --delay: 0.68s;"></span>
-                      <span class="signal-bar" style="--bar: 16%; --delay: 0.78s;"></span>
-                      <span class="signal-bar" style="--bar: 74%; --delay: 0.88s;"></span>
-                      <span class="signal-bar" style="--bar: 22%; --delay: 0.98s;"></span>
+                    <!-- Labels + tags below -->
+                    <div class="engine-flow__meta">
+                      <div class="engine-flow__meta-col">
+                        <p class="engine-flow__label">Raw clutter</p>
+                        <div class="engine-tags engine-tags--raw">
+                          <span>um</span><span>ah</span><span>…</span><span>um</span><span>ah</span>
+                        </div>
+                      </div>
+                      <div class="engine-flow__meta-spacer"></div>
+                      <div class="engine-flow__meta-col engine-flow__meta-col--right">
+                        <p class="engine-flow__label">Refined result</p>
+                        <div class="engine-tags engine-tags--refined">
+                          <span class="engine-tag--gap">Gap removed</span>
+                          <span class="engine-tag--zoom">Zooms added</span>
+                          <span class="engine-tag--noise">Noise cleared</span>
+                        </div>
+                      </div>
                     </div>
 
-                    <div class="signal-row signal-row--motion">
-                      <span class="signal-bar" style="--bar: 24%; --delay: 0.12s;"></span>
-                      <span class="signal-bar" style="--bar: 36%; --delay: 0.24s;"></span>
-                      <span class="signal-bar" style="--bar: 18%; --delay: 0.36s;"></span>
-                      <span class="signal-bar" style="--bar: 48%; --delay: 0.48s;"></span>
-                      <span class="signal-bar" style="--bar: 22%; --delay: 0.60s;"></span>
-                      <span class="signal-bar" style="--bar: 42%; --delay: 0.72s;"></span>
-                      <span class="signal-bar" style="--bar: 20%; --delay: 0.84s;"></span>
-                      <span class="signal-bar" style="--bar: 54%; --delay: 0.96s;"></span>
-                      <span class="signal-bar" style="--bar: 26%; --delay: 1.08s;"></span>
-                      <span class="signal-bar" style="--bar: 40%; --delay: 1.20s;"></span>
-                    </div>
                   </div>
 
-                  <div class="engine-grid">
-                    <article class="engine-tile engine-tile--cut">
-                      <span class="engine-tile__title">Dead air removed</span>
-                      <p>Weak starts, filler, and awkward gaps are surfaced immediately.</p>
+                  <!-- Feature cards -->
+                  <div class="engine-features">
+                    <article class="engine-feature">
+                      <div class="engine-feature__icon engine-feature__icon--cut">
+                        <i data-lucide="scissors"></i>
+                      </div>
+                      <div>
+                        <strong>Dead air &amp; filler words</strong>
+                        <span>Weak starts, pauses, and gaps surfaced and removed instantly.</span>
+                      </div>
                     </article>
-
-                    <article class="engine-tile engine-tile--noise">
-                      <span class="engine-tile__title">Noise cleaned</span>
-                      <p>Distracting room tone is reduced so your voice stays up front.</p>
+                    <article class="engine-feature">
+                      <div class="engine-feature__icon engine-feature__icon--noise">
+                        <i data-lucide="mic"></i>
+                      </div>
+                      <div>
+                        <strong>Spectral denoising</strong>
+                        <span>Room hum, keyboard taps, and hiss cleaned so your voice leads.</span>
+                      </div>
                     </article>
-
-                    <article class="engine-tile engine-tile--motion">
-                      <span class="engine-tile__title">Motion suggested</span>
-                      <p>Animations only appear where they help the point hit harder.</p>
+                    <article class="engine-feature">
+                      <div class="engine-feature__icon engine-feature__icon--motion">
+                        <i data-lucide="sparkles"></i>
+                      </div>
+                      <div>
+                        <strong>Intelligent motion</strong>
+                        <span>Zooms and emphasis appear only where they make the point hit harder.</span>
+                      </div>
+                    </article>
+                    <article class="engine-feature">
+                      <div class="engine-feature__icon engine-feature__icon--anim">
+                        <i data-lucide="wand-2"></i>
+                      </div>
+                      <div>
+                        <strong>Animation</strong>
+                        <span>Smooth transitions and b-roll added where they keep the viewer engaged.</span>
+                      </div>
                     </article>
                   </div>
 
-                  <div class="engine-results" aria-label="Editing outcomes">
-                    <article class="engine-results__card">
-                      <span>Up to</span>
-                      <strong>92%</strong>
-                      <p>fewer manual cuts per video</p>
+                  <!-- Stat cards -->
+                  <div class="engine-stats">
+                    <article class="engine-stat">
+                      <p class="engine-stat__label">Up to</p>
+                      <strong class="engine-stat__number">92%</strong>
+                      <p class="engine-stat__desc">fewer manual cuts per video</p>
                     </article>
-                    <article class="engine-results__card">
-                      <span>Average</span>
-                      <strong>3.2x</strong>
-                      <p>faster from raw take to publish</p>
+                    <article class="engine-stat">
+                      <p class="engine-stat__label">Average</p>
+                      <strong class="engine-stat__number">3.2x</strong>
+                      <p class="engine-stat__desc">faster from raw take to publish</p>
                     </article>
-                    <article class="engine-results__card">
-                      <span>Creator-rated</span>
-                      <strong>4.9/5</strong>
-                      <p>for "keeps my voice and pacing"</p>
+                    <article class="engine-stat">
+                      <p class="engine-stat__label">Creator-rated</p>
+                      <strong class="engine-stat__number">4.9<small>/5</small></strong>
+                      <p class="engine-stat__desc">for "keeps my voice and pacing"</p>
                     </article>
                   </div>
+
                 </div>
               </div>
             </div>
           </article>
 
           <article class="story-scene story-scene--workflow" data-scene-index="3">
-            <div class="scene-shell">
-              <div class="scene-copy">
+            <div class="scene-shell scene-shell--full">
+
+              <div class="pain-scene__title">
                 <p class="scene-eyebrow">A simple path from raw to ready</p>
-                <h2 class="scene-title font-display">Five steps. Under 10 minutes. No editing skills needed.</h2>
-                <p class="scene-description">
-                  Upload your video, let AutoCuts analyze it, clean it up, add motion suggestions, and
-                  hand you an intuitive approval pass — so you decide what stays and what goes.
-                </p>
+                <h2 class="scene-title font-display">Five steps. Under 10 minutes.<br>No editing skills needed.</h2>
               </div>
 
-              <div class="scene-visual">
-                <div class="workflow-map panel">
-                  <span class="panel-badge">Under 10 minutes</span>
+              <div class="scene-visual scene-visual--full">
+                <div class="workflow-board panel">
 
-                  <div class="workflow-map__header">
-                    <div>
-                      <p class="panel-label">The flow is intentionally simple</p>
-                      <h3>Everything important is easy to follow.</h3>
+                  <!-- Connected step cards -->
+                  <div class="workflow-steps-row" aria-label="Workflow steps">
+
+                    <article class="wf-step">
+                      <span class="wf-step__num">01</span>
+                      <div class="wf-step__icon">
+                        <i data-lucide="upload"></i>
+                      </div>
+                      <h4 class="wf-step__title">Upload</h4>
+                      <p class="wf-step__desc">Drag &amp; drop your raw video footage.</p>
+                    </article>
+
+                    <div class="wf-connector" aria-hidden="true">
+                      <span class="wf-connector__pulse"></span>
                     </div>
 
-                    <div class="workflow-map__time">
-                      <span>10 min</span>
-                      <small>not hours</small>
+                    <article class="wf-step">
+                      <span class="wf-step__num">02</span>
+                      <div class="wf-step__icon">
+                        <i data-lucide="search"></i>
+                      </div>
+                      <h4 class="wf-step__title">Analyze</h4>
+                      <p class="wf-step__desc">Instant AI whole-video mapping.</p>
+                    </article>
+
+                    <div class="wf-connector" aria-hidden="true">
+                      <span class="wf-connector__pulse"></span>
                     </div>
-                  </div>
 
-                  <div class="workflow-steps">
-                    <article class="workflow-step">
-                      <span class="workflow-step__number font-display">01</span>
-                      <i data-lucide="upload"></i>
-                      <h4>Upload</h4>
-                      <p>Drop in the raw video.</p>
+                    <article class="wf-step wf-step--active">
+                      <span class="wf-step__num">03</span>
+                      <div class="wf-step__icon">
+                        <i data-lucide="scissors"></i>
+                      </div>
+                      <h4 class="wf-step__title">Auto edit</h4>
+                      <p class="wf-step__desc">Trim pauses and bad takes.</p>
                     </article>
 
-                    <article class="workflow-step">
-                      <span class="workflow-step__number font-display">02</span>
-                      <i data-lucide="search"></i>
-                      <h4>Analyze</h4>
-                      <p>AutoCuts maps the whole take.</p>
+                    <div class="wf-connector" aria-hidden="true">
+                      <span class="wf-connector__pulse"></span>
+                    </div>
+
+                    <article class="wf-step">
+                      <span class="wf-step__num">04</span>
+                      <div class="wf-step__icon">
+                        <i data-lucide="sparkles"></i>
+                      </div>
+                      <h4 class="wf-step__title">Add motion</h4>
+                      <p class="wf-step__desc">Intelligent visual motion suggestions.</p>
                     </article>
 
-                    <article class="workflow-step">
-                      <span class="workflow-step__number font-display">03</span>
-                      <i data-lucide="scissors"></i>
-                      <h4>Auto edit</h4>
-                      <p>Pauses and weak moments are cleaned up.</p>
+                    <div class="wf-connector" aria-hidden="true">
+                      <span class="wf-connector__pulse"></span>
+                    </div>
+
+                    <article class="wf-step">
+                      <span class="wf-step__num">05</span>
+                      <div class="wf-step__icon">
+                        <i data-lucide="check-circle-2"></i>
+                      </div>
+                      <h4 class="wf-step__title">Approve</h4>
+                      <p class="wf-step__desc">You decide what stays and what goes.</p>
                     </article>
 
-                    <article class="workflow-step">
-                      <span class="workflow-step__number font-display">04</span>
-                      <i data-lucide="sparkles"></i>
-                      <h4>Add motion</h4>
-                      <p>Helpful animation cues are suggested.</p>
-                    </article>
-
-                    <article class="workflow-step">
-                      <span class="workflow-step__number font-display">05</span>
-                      <i data-lucide="check-circle-2"></i>
-                      <h4>Approve</h4>
-                      <p>You decide what stays and what goes.</p>
-                    </article>
                   </div>
                 </div>
               </div>
             </div>
           </article>
+
 
           <article class="story-scene story-scene--cta" data-scene-index="4">
-            <div class="scene-shell">
-              <div class="scene-copy">
+            <div class="scene-shell scene-shell--full">
+
+              <div class="cta-scene__title">
                 <p class="scene-eyebrow">Keep the momentum</p>
                 <h2 class="scene-title font-display">Your next video, done before the momentum disappears.</h2>
-                <p class="scene-description">
-                  Record it. Let AutoCuts clean it up, shape the pacing, suggest the motion, and give
-                  you a final approval pass while the idea is still fresh.
-                </p>
-
-                <div class="scene-actions">
-                  <a href="#" class="primary-button primary-button--large">Get started</a>
-                </div>
-
-                <p class="scene-note">
-                  Built for creators, educators, founders, and content teams shipping spoken video on a schedule.
-                </p>
-
               </div>
 
-              <div class="scene-visual">
-                <div class="publish-card panel">
-                  <div class="publish-card__top">
-                    <div>
-                      <p class="panel-label">Final approval</p>
-                      <h3>Ready to render</h3>
+              <div class="scene-visual scene-visual--full">
+                <div class="cta-board panel">
+
+                  <!-- Timeline + chips row -->
+                  <div class="cta-board__publish">
+                    <div class="cta-board__publish-head">
+                      <div>
+                        <p class="panel-label">Final approval pass</p>
+                        <h3 class="cta-board__publish-title">Ready to render</h3>
+                      </div>
+                      <span class="cta-board__approved">
+                        <i data-lucide="check-circle-2"></i>
+                        Approved
+                      </span>
                     </div>
-                    <span class="publish-card__status">Approved</span>
-                  </div>
-
-                  <div class="publish-card__summary">
-                    <div class="publish-card__summary-item">
-                      <span>Cut pass</span>
-                      <strong>Done</strong>
+                    <div class="cta-board__timeline" aria-hidden="true">
+                      <span class="cta-board__seg cta-board__seg--keep" style="flex:24;"></span>
+                      <span class="cta-board__seg cta-board__seg--cut" style="flex:8;"></span>
+                      <span class="cta-board__seg cta-board__seg--keep" style="flex:18;"></span>
+                      <span class="cta-board__seg cta-board__seg--motion" style="flex:12;"></span>
+                      <span class="cta-board__seg cta-board__seg--keep" style="flex:20;"></span>
+                      <span class="cta-board__seg cta-board__seg--noise" style="flex:7;"></span>
+                      <span class="cta-board__seg cta-board__seg--keep" style="flex:11;"></span>
                     </div>
-                    <div class="publish-card__summary-item">
-                      <span>Noise cleanup</span>
-                      <strong>Done</strong>
-                    </div>
-                    <div class="publish-card__summary-item">
-                      <span>Motion cues</span>
-                      <strong>Reviewed</strong>
+                    <div class="cta-board__chips">
+                      <span class="cta-chip cta-chip--done"><i data-lucide="scissors"></i>Cut pass done</span>
+                      <span class="cta-chip cta-chip--done"><i data-lucide="mic"></i>Noise cleaned</span>
+                      <span class="cta-chip cta-chip--done"><i data-lucide="sparkles"></i>Motion reviewed</span>
+                      <span class="cta-chip cta-chip--note">Fully yours</span>
                     </div>
                   </div>
 
-                  <div class="publish-card__rail" aria-hidden="true">
-                    <span class="publish-card__segment publish-card__segment--keep" style="width: 24%;"></span>
-                    <span class="publish-card__segment publish-card__segment--cut" style="width: 8%;"></span>
-                    <span class="publish-card__segment publish-card__segment--keep" style="width: 18%;"></span>
-                    <span class="publish-card__segment publish-card__segment--motion" style="width: 12%;"></span>
-                    <span class="publish-card__segment publish-card__segment--keep" style="width: 20%;"></span>
-                    <span class="publish-card__segment publish-card__segment--noise" style="width: 7%;"></span>
-                    <span class="publish-card__segment publish-card__segment--keep" style="width: 11%;"></span>
+                  <!-- Value pillars -->
+                  <div class="cta-board__pillars">
+                    <div class="cta-pillar">
+                      <strong>Under 10 min</strong>
+                      <span>to a reviewable edit</span>
+                    </div>
+                    <div class="cta-pillar__divider"></div>
+                    <div class="cta-pillar">
+                      <strong>No timeline grind</strong>
+                      <span>for every upload</span>
+                    </div>
+                    <div class="cta-pillar__divider"></div>
+                    <div class="cta-pillar">
+                      <strong>Full control</strong>
+                      <span>over every keep or cut</span>
+                    </div>
                   </div>
 
-                  <p class="publish-card__caption">
-                    Cleaned. Paced. Motion-assisted. Still fully yours.
-                  </p>
-                </div>
+                  <!-- CTA -->
+                  <div class="cta-board__action">
+                    <a href="#" class="cta-board__btn">Get started now →</a>
+                    <p class="cta-board__note">No editing skills needed. No timeline required.</p>
+                  </div>
 
-                <div class="cta-pillars">
-                  <div class="metric-card">
-                    <span>Under 10 min</span>
-                    <strong>to a reviewable edit</strong>
-                  </div>
-                  <div class="metric-card">
-                    <span>No timeline grind</span>
-                    <strong>for every upload</strong>
-                  </div>
-                  <div class="metric-card">
-                    <span>You stay in control</span>
-                    <strong>over every keep or cut</strong>
-                  </div>
-                </div>
-
-                <div class="social-proof-grid">
-                  <article class="social-proof-card">
-                    <p>
-                      "I used to lose half a day to cleanup edits. AutoCuts gives me a reviewable cut before my coffee gets cold."
-                    </p>
-                    <span>Jules M. - YouTube educator</span>
-                  </article>
-                  <article class="social-proof-card">
-                    <p>
-                      "It keeps my speaking rhythm intact while removing the awkward pauses and noisy room tone. Huge time saver."
-                    </p>
-                    <span>Daria K. - SaaS founder</span>
-                  </article>
                 </div>
               </div>
             </div>
           </article>
+
 
           <div class="story-prompt" aria-hidden="true">
             <span>Scroll to continue</span>
@@ -633,6 +674,35 @@
 
     <script>
       lucide.createIcons();
+    </script>
+    <script>
+      document.querySelectorAll('.waveform').forEach(waveform => {
+        const heights = [35, 55, 70, 90, 60, 80, 45, 95, 65, 75, 50, 85, 40, 70, 90, 55, 80, 45, 65, 75, 50, 60];
+        heights.forEach((h, i) => {
+          const bar = document.createElement('span');
+          bar.className = 'waveform-bar';
+          bar.style.height = `${h}%`;
+          bar.style.animationDelay = `${(i * 0.07).toFixed(2)}s`;
+          bar.style.animationDuration = `${1.1 + (i % 5) * 0.14}s`;
+          waveform.appendChild(bar);
+        });
+      });
+
+      // Engine board waveforms
+      const rawHeights = [80,40,95,25,70,55,90,30,85,45,100,20,75,50,88,35,65,92,28,78,42,96,22,72,83,38,97,27,68,52,91,32,87,43,99,18,77,48,86,36,63,94,26,74,44,98,21,69,82,37,80,40,95,25,70,55,90,30,85,45,100,20,75,50,88,35,65,92,28,78,42,96,22,72,83,38,97,27,68,52,91,32,87,43,99,18,77,48,86,36,63,94,26,74,44,98,21,69,82,37,93,80,42,95,30,70,55,88,25,85,48,100,22,75,52,90,35,65,94,28,78,44,96,20,72,83,40,97,27,68,50,91,38,87,45,99,18,77,43,86,32,63,92,26,74,36,98,21,69,82];
+      const refinedHeights = [65,70,68,72,66,74,68,70,72,66,68,74,70,66,72,68,70,66,74,70,68,72,66,70,65,71,69,73,67,75,69,71,73,67,69,75,71,67,73,69,71,67,75,71,69,73,67,71,66,72,65,70,68,72,66,74,68,70,72,66,68,74,70,66,72,68,70,66,74,70,68,72,66,70,65,71,69,73,67,75,69,71,73,67,69,75,71,67,73,69,71,67,75,71,69,73,67,71,66,72,68,65,70,72,66,74,68,70,66,72,68,74,70,66,72,68,70,74,70,68,72,66,70,65,71,73,67,75,69,71,73,67,69,75,71,67,73,69,71,75,71,69,73,67,71,66,72,68,70,66];
+      document.querySelectorAll('.engine-waveform').forEach(waveform => {
+        const isRaw = waveform.classList.contains('engine-waveform--raw');
+        const heights = isRaw ? rawHeights : refinedHeights;
+        heights.forEach((h, i) => {
+          const bar = document.createElement('span');
+          bar.className = 'ew-bar';
+          bar.style.height = `${h}%`;
+          bar.style.animationDelay = `${(i * 0.06).toFixed(2)}s`;
+          bar.style.animationDuration = `${(isRaw ? 0.9 : 1.6) + (i % 4) * 0.12}s`;
+          waveform.appendChild(bar);
+        });
+      });
     </script>
     <script src="script.js"></script>
   </body>
