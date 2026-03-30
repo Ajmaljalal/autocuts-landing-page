@@ -277,10 +277,10 @@
                   <!-- ── STATE 3: DONE ── -->
                   <div class="hero-state hero-state--done">
                     <div class="hero-console__toprow">
-                      <span class="panel-badge">Processing complete</span>
+                      <span class="panel-badge">Complete</span>
                       <button class="hero-console__publish-btn" aria-label="Publish video">
                         <i data-lucide="check" style="width:0.85rem;height:0.85rem;margin-right:0.3rem;"></i>
-                        Ready to publish
+                        Publish
                       </button>
                     </div>
 
@@ -295,7 +295,12 @@
                       <div class="hero-console__workspace">
                         <article class="hero-console__clip">
                           <div class="hero-console__thumb hero-console__thumb--highlight" aria-hidden="true">
-                            <div class="waveform" data-color="teal"></div>
+                            <video class="clip-thumb-video" autoplay muted loop playsinline>
+                              <source src="img/hero_video.mp4" type="video/mp4">
+                            </video>
+                            <span class="clip-thumb-badge clip-thumb-badge--keep">
+                              <i data-lucide="sparkles" style="width:0.55rem;height:0.55rem;"></i>
+                            </span>
                           </div>
                           <div class="hero-console__meta">
                             <span class="hero-console__clip-title">Product Demo Introduction</span>
@@ -309,7 +314,12 @@
 
                         <article class="hero-console__clip">
                           <div class="hero-console__thumb hero-console__thumb--optimize" aria-hidden="true">
-                            <div class="waveform" data-color="amber"></div>
+                            <video class="clip-thumb-video clip-thumb-video--mid" autoplay muted loop playsinline>
+                              <source src="img/hero_video.mp4" type="video/mp4">
+                            </video>
+                            <span class="clip-thumb-badge clip-thumb-badge--clean">
+                              <i data-lucide="mic" style="width:0.55rem;height:0.55rem;"></i>
+                            </span>
                           </div>
                           <div class="hero-console__meta">
                             <span class="hero-console__clip-title">Feature Walkthrough: Integrations</span>
@@ -323,7 +333,12 @@
 
                         <article class="hero-console__clip">
                           <div class="hero-console__thumb hero-console__thumb--trim" aria-hidden="true">
-                            <div class="waveform" data-color="pink"></div>
+                            <video class="clip-thumb-video clip-thumb-video--end" autoplay muted loop playsinline>
+                              <source src="img/hero_video.mp4" type="video/mp4">
+                            </video>
+                            <span class="clip-thumb-badge clip-thumb-badge--cut">
+                              <i data-lucide="scissors" style="width:0.55rem;height:0.55rem;"></i>
+                            </span>
                           </div>
                           <div class="hero-console__meta">
                             <span class="hero-console__clip-title">Restart &amp; filler words</span>
@@ -823,6 +838,14 @@
           bar.style.animationDelay = `${(i * 0.06).toFixed(2)}s`;
           bar.style.animationDuration = `${(isRaw ? 0.9 : 1.6) + (i % 4) * 0.12}s`;
           waveform.appendChild(bar);
+        });
+      });
+    </script>
+    <script>
+      // Offset clip thumbnail videos so each shows a different moment
+      document.querySelectorAll('.clip-thumb-video').forEach((video, i) => {
+        video.addEventListener('loadedmetadata', () => {
+          video.currentTime = (i + 1) * (video.duration / 4);
         });
       });
     </script>
