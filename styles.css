@@ -406,18 +406,21 @@ body.story-ready .scene-visual {
 .story-scene--hero .scene-title {
     font-size: clamp(2rem, 5vw, 4.2rem);
     max-width: 20ch;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    font-weight: 700;
 }
 
 /* Hero title stagger animation */
 
 .hero-title-stagger {
     display: flex;
-    gap: 0.25em;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.12em;
 }
 
 .hero-word {
-    display: inline-flex;
+    display: block;
 }
 
 .hero-word .ch {
