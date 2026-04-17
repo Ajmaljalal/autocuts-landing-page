@@ -404,7 +404,8 @@ body.story-ready .scene-visual {
 }
 
 .story-scene--hero .scene-title {
-    font-size: clamp(2.55rem, 6.4vw, 5.8rem);
+    font-size: clamp(2rem, 5vw, 4.2rem);
+    max-width: 20ch;
 }
 
 /* Hero title stagger animation */
