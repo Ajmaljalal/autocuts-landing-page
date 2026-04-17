@@ -182,12 +182,13 @@
     </nav>
 
     <main id="top" class="site-main">
-      <section class="story-scroll" data-story-scroll style="--scene-count: 5;">
+      <section class="story-scroll" data-story-scroll style="--scene-count: 6;">
         <div id="story" class="story-anchor" style="--scene-index: 0;" aria-hidden="true"></div>
         <div id="pain" class="story-anchor" style="--scene-index: 1;" aria-hidden="true"></div>
-        <div id="autocuts" class="story-anchor" style="--scene-index: 2;" aria-hidden="true"></div>
+        <div id="outputs" class="story-anchor" style="--scene-index: 2;" aria-hidden="true"></div>
         <div id="workflow" class="story-anchor" style="--scene-index: 3;" aria-hidden="true"></div>
-        <div id="start" class="story-anchor" style="--scene-index: 4;" aria-hidden="true"></div>
+        <div id="audience" class="story-anchor" style="--scene-index: 4;" aria-hidden="true"></div>
+        <div id="start" class="story-anchor" style="--scene-index: 5;" aria-hidden="true"></div>
 
         <div class="story-viewport">
           <div class="story-atmosphere" aria-hidden="true">
@@ -201,7 +202,7 @@
           <article class="story-scene story-scene--hero" data-scene-index="0">
             <div class="scene-shell">
               <div class="scene-copy">
-                <p class="scene-eyebrow">No editor. No timeline. No skills.</p>
+                <p class="scene-eyebrow">No editor. No skills. No friction.</p>
                 <h1 class="scene-title font-display hero-title-stagger">
                   <span class="hero-word hero-word--1">The AI video editor</span>
                   <span class="hero-word hero-word--2">for creators</span>
@@ -444,247 +445,152 @@
           <article class="story-scene story-scene--pain" data-scene-index="1">
             <div class="scene-shell scene-shell--full">
               <div class="pain-scene__title">
-                <p class="scene-eyebrow">The real cost of manual editing</p>
-                <h2 class="scene-title font-display">Every upload costs you<br>another evening.</h2>
-                <p class="scene-subtitle">The same cleanup, every upload. That's where your time goes.</p>
+                <p class="scene-eyebrow">The grind</p>
+                <h2 class="scene-title font-display">You have the ideas.<br>Editing eats the time.</h2>
+                <p class="scene-subtitle">Cleanup, cuts, noise, shorts. Every upload is the same manual work. That's where your weekends go.</p>
               </div>
               <div class="scene-visual scene-visual--full">
-                <div class="compare-panel panel">
-                  <!-- Left: manual pain -->
-                  <div class="compare-panel__half compare-panel__half--before">
-                    <span class="compare-badge compare-badge--before">Manual editing</span>
-                    <div class="compare-panel__head">
-                      <div>
-                        <p class="panel-label">The same grind, every single upload</p>
-                        <h3 class="compare-panel__headline">One raw take.<br>Hours of busywork.</h3>
-                      </div>
-                      <div class="compare-clock compare-clock--before">
-                        <span>~2h</span>
-                        <small>wasted</small>
-                      </div>
+                <div class="pain-clock panel">
+                  <div class="pain-clock__row pain-clock__row--before">
+                    <div class="pain-clock__label">
+                      <span class="pain-clock__tag">Manual editing</span>
+                      <strong>Scrub, denoise, cut, caption, repeat.</strong>
                     </div>
-
-                    <div class="compare-tasks">
-                      <article class="compare-task">
-                        <i data-lucide="search"></i>
-                        <div>
-                          <strong>Scrub the entire timeline</strong>
-                          <span>Hunting for every dead gap by hand.</span>
-                        </div>
-                        <b>24 min</b>
-                      </article>
-                      <article class="compare-task">
-                        <i data-lucide="volume-x"></i>
-                        <div>
-                          <strong>Fight the background noise</strong>
-                          <span>AC hum, keyboard clicks, random hiss.</span>
-                        </div>
-                        <b>18 min</b>
-                      </article>
-                      <article class="compare-task">
-                        <i data-lucide="scissors"></i>
-                        <div>
-                          <strong>Cut every bad take</strong>
-                          <span>False starts, filler words, restarts.</span>
-                        </div>
-                        <b>31 min</b>
-                      </article>
+                    <div class="pain-clock__bar pain-clock__bar--before" aria-hidden="true">
+                      <span class="pain-clock__fill pain-clock__fill--before"></span>
                     </div>
-
-                    <div class="compare-footer">
-                      <span>Then the next upload demands the exact same work.</span>
-                      <div class="compare-meter compare-meter--before"><span></span></div>
+                    <div class="pain-clock__value">
+                      <strong>~2h</strong>
+                      <small>per video</small>
                     </div>
                   </div>
 
-                  <!-- Divider -->
-                  <div class="compare-panel__divider" aria-hidden="true"></div>
-
-                  <!-- Right: AutoCuts -->
-                  <div class="compare-panel__half compare-panel__half--after">
-                    <span class="compare-badge compare-badge--after">With AutoCuts</span>
-                    <div class="compare-panel__head">
-                      <div>
-                        <p class="panel-label">Upload once, review once, publish</p>
-                        <h3 class="compare-panel__headline">Same raw take.<br>Done in minutes.</h3>
-                      </div>
-                      <div class="compare-clock compare-clock--after">
-                        <small>Total</small>
-                        <span>~8m</span>
-                        <small>to review</small>
-                      </div>
+                  <div class="pain-clock__row pain-clock__row--after">
+                    <div class="pain-clock__label">
+                      <span class="pain-clock__tag pain-clock__tag--after">With AutoCuts</span>
+                      <strong>Upload, review, publish.</strong>
                     </div>
-
-                    <div class="compare-tiles">
-                      <article class="compare-tile">
-                        <div class="compare-tile__top">
-                          <i data-lucide="zap"></i>
-                          <b>Instant</b>
-                        </div>
-                        <strong>Dead air detected</strong>
-                        <span>Every gap, pause, and silence found automatically.</span>
-                      </article>
-                      <article class="compare-tile">
-                        <div class="compare-tile__top">
-                          <i data-lucide="mic"></i>
-                          <b>Instant</b>
-                        </div>
-                        <strong>Noise cleaned</strong>
-                        <span>Room tone removed, your voice stays crystal clear.</span>
-                      </article>
-                      <article class="compare-tile">
-                        <div class="compare-tile__top">
-                          <i data-lucide="scissors"></i>
-                          <b>Instant</b>
-                        </div>
-                        <strong>Bad takes flagged</strong>
-                        <span>Restarts and filler words surfaced for one-click removal.</span>
-                      </article>
-                      <article class="compare-tile">
-                        <div class="compare-tile__top">
-                          <i data-lucide="sparkles"></i>
-                          <b>~5 min</b>
-                        </div>
-                        <strong>Motion suggested</strong>
-                        <span>Zooms and emphasis placed where they actually matter.</span>
-                      </article>
-                      <article class="compare-tile">
-                        <div class="compare-tile__top">
-                          <i data-lucide="smartphone"></i>
-                          <b>Auto</b>
-                        </div>
-                        <strong>Shorts generated</strong>
-                        <span>Best moments cut into captioned vertical clips, ready to post.</span>
-                      </article>
+                    <div class="pain-clock__bar pain-clock__bar--after" aria-hidden="true">
+                      <span class="pain-clock__fill pain-clock__fill--after"></span>
                     </div>
-
-                    <div class="compare-footer">
-                      <span>Every upload gets faster. You just review and publish.</span>
-                      <div class="compare-meter compare-meter--after"><span></span></div>
+                    <div class="pain-clock__value">
+                      <strong>~8m</strong>
+                      <small>to review</small>
                     </div>
+                  </div>
+
+                  <div class="pain-clock__chips">
+                    <span class="pain-clock__chip"><i data-lucide="tool" style="width:0.85rem;height:0.85rem;"></i>Stop juggling multiple tools</span>
+                    <span class="pain-clock__chip"><i data-lucide="wallet" style="width:0.85rem;height:0.85rem;"></i>Stop paying a freelance editor</span>
+                    <span class="pain-clock__chip"><i data-lucide="clock" style="width:0.85rem;height:0.85rem;"></i>Stop losing the whole weekend</span>
                   </div>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- ═══════ SCENE 2 :: THE ENGINE ═══════ -->
+          <!-- ═══════ SCENE 2 :: THREE OUTPUTS ═══════ -->
           <article class="story-scene story-scene--engine" data-scene-index="2">
             <div class="scene-shell scene-shell--full">
 
               <div class="pain-scene__title">
-                <p class="scene-eyebrow">What happens under the hood</p>
-                <h2 class="scene-title font-display">Your first edit is done<br>before you touch anything.</h2>
-                <p class="scene-subtitle">AutoCuts analyzes your entire recording, from transcript to audio quality to pacing, and delivers a clean, structured edit you just review.</p>
+                <h2 class="scene-title font-display">One upload.<br>Three finished assets.</h2>
+                <p class="scene-subtitle">A cleaned long video. An animated version. Captioned shorts. All reviewed by you.</p>
               </div>
 
               <div class="scene-visual scene-visual--full">
-                <div class="engine-board panel">
+                <div class="outputs-board">
 
-                  <!-- Flow: Raw → AI → Refined -->
-                  <div class="engine-flow" aria-label="Processing pipeline">
-
-                    <!-- Single pipeline row -->
-                    <div class="engine-flow__pipeline">
-                      <div class="engine-waveform engine-waveform--raw" id="ewRaw"></div>
-                      <div class="engine-flow__connector engine-flow__connector--in" aria-hidden="true">
-                        <span class="engine-flow__pulse"></span>
+                  <div class="outputs-grid">
+                    <article class="output-card output-card--long">
+                      <div class="output-card__thumb">
+                        <video class="output-card__video" autoplay muted loop playsinline>
+                          <source src="img/hero_video.mp4" type="video/mp4">
+                        </video>
+                        <span class="output-card__badge output-card__badge--keep">
+                          <i data-lucide="check" style="width:0.7rem;height:0.7rem;"></i> Cleaned
+                        </span>
                       </div>
-                      <div class="engine-ai-node">
-                        <img src="img/icon.png" alt="AutoCuts AI" class="engine-ai-logo">
-                      </div>
-                      <div class="engine-flow__connector engine-flow__connector--out" aria-hidden="true">
-                        <span class="engine-flow__pulse engine-flow__pulse--out"></span>
-                      </div>
-                      <div class="engine-waveform engine-waveform--refined" id="ewRefined"></div>
-                    </div>
-
-                    <!-- Labels + tags below -->
-                    <div class="engine-flow__meta">
-                      <div class="engine-flow__meta-col">
-                        <p class="engine-flow__label">Raw input</p>
-                        <div class="engine-tags engine-tags--raw">
-                          <span>um</span><span>ah</span><span>...</span><span>um</span><span>[noise]</span>
+                      <div class="output-card__body">
+                        <h3 class="output-card__title">Cleaned long video</h3>
+                        <p class="output-card__desc">Dead air, filler words, and noise removed. Your voice clean, your pacing tight.</p>
+                        <div class="output-card__chips">
+                          <span><i data-lucide="scissors" style="width:0.7rem;height:0.7rem;"></i>Cuts</span>
+                          <span><i data-lucide="mic" style="width:0.7rem;height:0.7rem;"></i>Audio</span>
                         </div>
                       </div>
-                      <div class="engine-flow__meta-spacer"></div>
-                      <div class="engine-flow__meta-col engine-flow__meta-col--right">
-                        <p class="engine-flow__label">Clean output</p>
-                        <div class="engine-tags engine-tags--refined">
-                          <span class="engine-tag--gap">Gaps removed</span>
-                          <span class="engine-tag--zoom">Motion added</span>
-                          <span class="engine-tag--noise">Audio clean</span>
+                    </article>
+
+                    <article class="output-card output-card--animated">
+                      <div class="output-card__thumb">
+                        <video class="output-card__video" autoplay muted loop playsinline>
+                          <source src="img/hero_video.mp4" type="video/mp4">
+                        </video>
+                        <div class="output-card__motion-layer" aria-hidden="true">
+                          <span class="output-card__motion-ring output-card__motion-ring--1"></span>
+                          <span class="output-card__motion-ring output-card__motion-ring--2"></span>
+                        </div>
+                        <span class="output-card__badge output-card__badge--anim">
+                          <i data-lucide="sparkles" style="width:0.7rem;height:0.7rem;"></i> Motion added
+                        </span>
+                      </div>
+                      <div class="output-card__body">
+                        <h3 class="output-card__title">Animated version</h3>
+                        <p class="output-card__desc">Zooms, transitions, and visual overlays placed where the content hits hardest.</p>
+                        <div class="output-card__chips">
+                          <span><i data-lucide="move-3d" style="width:0.7rem;height:0.7rem;"></i>Motion</span>
+                          <span><i data-lucide="wand-2" style="width:0.7rem;height:0.7rem;"></i>Overlays</span>
                         </div>
                       </div>
-                    </div>
+                    </article>
 
-                  </div>
-
-                  <!-- Feature cards -->
-                  <div class="engine-features">
-                    <article class="engine-feature">
-                      <div class="engine-feature__icon engine-feature__icon--cut">
-                        <i data-lucide="scissors"></i>
+                    <article class="output-card output-card--shorts">
+                      <div class="output-card__thumb output-card__thumb--shorts">
+                        <div class="shorts-stack" aria-hidden="true">
+                          <div class="shorts-stack__tile shorts-stack__tile--3">
+                            <video class="shorts-stack__video" autoplay muted loop playsinline>
+                              <source src="img/hero_video.mp4" type="video/mp4">
+                            </video>
+                          </div>
+                          <div class="shorts-stack__tile shorts-stack__tile--2">
+                            <video class="shorts-stack__video" autoplay muted loop playsinline>
+                              <source src="img/hero_video.mp4" type="video/mp4">
+                            </video>
+                          </div>
+                          <div class="shorts-stack__tile shorts-stack__tile--1">
+                            <video class="shorts-stack__video" autoplay muted loop playsinline>
+                              <source src="img/hero_video.mp4" type="video/mp4">
+                            </video>
+                            <span class="shorts-stack__caption">Here's the moment that flips everything</span>
+                          </div>
+                        </div>
+                        <span class="output-card__badge output-card__badge--shorts">
+                          <i data-lucide="smartphone" style="width:0.7rem;height:0.7rem;"></i> Shorts
+                        </span>
                       </div>
-                      <div>
-                        <strong>Dead air removal</strong>
-                        <span>Pauses, gaps, filler words, and false starts removed before you even look.</span>
-                      </div>
-                    </article>
-                    <article class="engine-feature">
-                      <div class="engine-feature__icon engine-feature__icon--noise">
-                        <i data-lucide="mic"></i>
-                      </div>
-                      <div>
-                        <strong>Spectral denoising</strong>
-                        <span>AC hum, keyboard taps, room noise cleaned so your voice leads every frame.</span>
-                      </div>
-                    </article>
-                    <article class="engine-feature">
-                      <div class="engine-feature__icon engine-feature__icon--motion">
-                        <i data-lucide="move-3d"></i>
-                      </div>
-                      <div>
-                        <strong>Smart motion</strong>
-                        <span>Zooms, pans, and emphasis placed exactly where they make the content hit harder.</span>
-                      </div>
-                    </article>
-                    <article class="engine-feature">
-                      <div class="engine-feature__icon engine-feature__icon--anim">
-                        <i data-lucide="wand-2"></i>
-                      </div>
-                      <div>
-                        <strong>Animation overlays</strong>
-                        <span>Transitions and visual accents that keep viewers watching through the entire video.</span>
-                      </div>
-                    </article>
-                    <article class="engine-feature">
-                      <div class="engine-feature__icon engine-feature__icon--motion">
-                        <i data-lucide="smartphone"></i>
-                      </div>
-                      <div>
-                        <strong>Shorts with captions</strong>
-                        <span>The best moments turned into vertical clips with captions and motion, ready to post.</span>
+                      <div class="output-card__body">
+                        <h3 class="output-card__title">Captioned shorts</h3>
+                        <p class="output-card__desc">The strongest moments cut into vertical clips with captions. Post to TikTok, Instagram Reels, and YouTube Shorts.</p>
+                        <div class="output-card__chips">
+                          <span><i data-lucide="type" style="width:0.7rem;height:0.7rem;"></i>Captions</span>
+                          <span><i data-lucide="layers" style="width:0.7rem;height:0.7rem;"></i>Multi-clip</span>
+                        </div>
                       </div>
                     </article>
                   </div>
 
-                  <!-- Stat cards -->
-                  <div class="engine-stats">
-                    <article class="engine-stat">
-                      <p class="engine-stat__label">Reduction</p>
-                      <strong class="engine-stat__number">92%</strong>
-                      <p class="engine-stat__desc">fewer manual cuts needed</p>
+                  <div class="outputs-stats">
+                    <article class="outputs-stat">
+                      <strong class="outputs-stat__number">3x</strong>
+                      <p class="outputs-stat__desc">faster from raw to publish</p>
                     </article>
-                    <article class="engine-stat">
-                      <p class="engine-stat__label">Speed</p>
-                      <strong class="engine-stat__number">3x</strong>
-                      <p class="engine-stat__desc">faster from raw to publish</p>
+                    <article class="outputs-stat">
+                      <strong class="outputs-stat__number">92%</strong>
+                      <p class="outputs-stat__desc">fewer manual cuts</p>
                     </article>
-                    <article class="engine-stat">
-                      <p class="engine-stat__label">Control</p>
-                      <strong class="engine-stat__number">100%</strong>
-                      <p class="engine-stat__desc">you approve every decision</p>
+                    <article class="outputs-stat">
+                      <strong class="outputs-stat__number">100%</strong>
+                      <p class="outputs-stat__desc">you approve every decision</p>
                     </article>
                   </div>
 
@@ -776,50 +682,79 @@
           </article>
 
 
-          <!-- ═══════ SCENE 4 :: FINAL CTA ═══════ -->
-          <article class="story-scene story-scene--cta" data-scene-index="4">
+          <!-- ═══════ SCENE 4 :: WHO IT'S FOR ═══════ -->
+          <article class="story-scene story-scene--audience" data-scene-index="4">
             <div class="scene-shell scene-shell--full">
 
-              <div class="cta-scene__title">
-                <p class="scene-eyebrow">Stop losing momentum</p>
-                <h2 class="scene-title font-display">Your next video is ready<br>before the coffee gets cold.</h2>
+              <div class="pain-scene__title">
+                <p class="scene-eyebrow">Built for</p>
+                <h2 class="scene-title font-display">If you talk to camera,<br>this is for you.</h2>
+                <p class="scene-subtitle">No editor. No editing skills. Just the content you already make.</p>
               </div>
 
               <div class="scene-visual scene-visual--full">
-                <div class="cta-clean">
-
-                  <div class="cta-clean__pillars">
-                    <div class="cta-clean__pillar">
-                      <div class="cta-clean__icon cta-clean__icon--green">
-                        <i data-lucide="timer" style="width:1.2rem;height:1.2rem;"></i>
-                      </div>
-                      <strong>Under 10 min</strong>
-                      <span>from raw take to reviewable edit</span>
+                <div class="audience-grid">
+                  <article class="audience-card">
+                    <div class="audience-card__icon audience-card__icon--youtube">
+                      <i data-lucide="youtube"></i>
                     </div>
-                    <div class="cta-clean__pillar">
-                      <div class="cta-clean__icon cta-clean__icon--purple">
-                        <i data-lucide="mouse-pointer-click" style="width:1.2rem;height:1.2rem;"></i>
-                      </div>
-                      <strong>Zero learning curve</strong>
-                      <span>no timeline, no editing skills</span>
-                    </div>
-                    <div class="cta-clean__pillar">
-                      <div class="cta-clean__icon cta-clean__icon--white">
-                        <i data-lucide="shield-check" style="width:1.2rem;height:1.2rem;"></i>
-                      </div>
-                      <strong>Full control</strong>
-                      <span>approve every keep, cut, and animation</span>
-                    </div>
-                  </div>
+                    <h3 class="audience-card__title">YouTube creators</h3>
+                    <p class="audience-card__desc">From tutorials to vlogs. Publish polished videos without living in a timeline.</p>
+                  </article>
 
-                  <div class="cta-clean__action">
-                    <a href="https://studio.autocuts.ai/" target="_blank" rel="noopener" class="cta-board__btn">
-                      Start editing free
-                      <i data-lucide="arrow-right" style="width:1.2rem;height:1.2rem;margin-left:0.5rem;"></i>
-                    </a>
-                    <p class="cta-board__note">No credit card required. Upload your first video in 30 seconds.</p>
-                  </div>
+                  <article class="audience-card">
+                    <div class="audience-card__icon audience-card__icon--shorts">
+                      <i data-lucide="smartphone"></i>
+                    </div>
+                    <h3 class="audience-card__title">TikTok and Instagram creators</h3>
+                    <p class="audience-card__desc">Shorts, Reels, and vertical clips with captions. One upload, every format.</p>
+                  </article>
 
+                  <article class="audience-card">
+                    <div class="audience-card__icon audience-card__icon--course">
+                      <i data-lucide="graduation-cap"></i>
+                    </div>
+                    <h3 class="audience-card__title">Course creators and educators</h3>
+                    <p class="audience-card__desc">Keep every lesson sharp. No more re-editing the same mistakes across modules.</p>
+                  </article>
+
+                  <article class="audience-card">
+                    <div class="audience-card__icon audience-card__icon--podcast">
+                      <i data-lucide="mic"></i>
+                    </div>
+                    <h3 class="audience-card__title">Podcasters</h3>
+                    <p class="audience-card__desc">Turn video episodes into clips automatically. Ship shorts while the full episode renders.</p>
+                  </article>
+
+                  <article class="audience-card">
+                    <div class="audience-card__icon audience-card__icon--founder">
+                      <i data-lucide="rocket"></i>
+                    </div>
+                    <h3 class="audience-card__title">Solo founders</h3>
+                    <p class="audience-card__desc">Ship weekly updates, demos, and product walkthroughs without hiring an editor.</p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══════ SCENE 5 :: FINAL CTA ═══════ -->
+          <article class="story-scene story-scene--cta" data-scene-index="5">
+            <div class="scene-shell scene-shell--full">
+
+              <div class="cta-scene__title">
+                <p class="scene-eyebrow">Ready in minutes</p>
+                <h2 class="scene-title font-display">Upload your next video.<br>Post it before lunch.</h2>
+                <p class="scene-subtitle">10 free credits to start. No credit card, no subscription.</p>
+              </div>
+
+              <div class="scene-visual scene-visual--full">
+                <div class="cta-final">
+                  <a href="https://studio.autocuts.ai/" target="_blank" rel="noopener" class="cta-final__btn">
+                    Start editing free
+                    <i data-lucide="arrow-right" style="width:1.2rem;height:1.2rem;margin-left:0.5rem;"></i>
+                  </a>
+                  <p class="cta-final__note">Upload your first video in 30 seconds.</p>
                 </div>
               </div>
             </div>
