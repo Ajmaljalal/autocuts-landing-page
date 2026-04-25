@@ -11,7 +11,7 @@
       content="AI video editor, talking-head video editor, automatic video editing, creator workflow, spoken video editing, video editing AI">
     <link rel="canonical" href="https://autocuts.ai/">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#0f0e0c">
     <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="apple-touch-icon" href="img/icon.png">
 
@@ -125,21 +125,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=JetBrains+Mono:wght@300;400;500&display=swap"
       rel="stylesheet">
     <style>
       :root {
-        --ink: #0A0A0A;
-        --paper: #F2EFEA;
-        --paper-2: #E8E4DC;
-        --rule: #1a1a1a;
-        --rule-paper: #1d1d1d22;
-        --green: oklch(0.86 0.22 142);
-        --green-ink: oklch(0.52 0.19 142);
-        --dim: rgba(242, 239, 234, 0.55);
-        --dimmer: rgba(242, 239, 234, 0.32);
-        --ink-dim: rgba(10, 10, 10, 0.58);
-        --ink-dimmer: rgba(10, 10, 10, 0.32);
+        --ink: #0f0e0c;
+        --paper: #f3efe5;
+        --paper-2: #d8d3c4;
+        --rule: #2a2722;
+        --rule-paper: #16151322;
+        --green: oklch(0.64 0.16 145);
+        --green-ink: oklch(0.64 0.16 145);
+        --dim: rgba(243, 239, 229, 0.55);
+        --dimmer: rgba(243, 239, 229, 0.32);
+        --ink-dim: rgba(15, 14, 12, 0.58);
+        --ink-dimmer: rgba(15, 14, 12, 0.32);
         --serif: "Instrument Serif", "Times New Roman", serif;
         --sans: "Inter Tight", system-ui, -apple-system, sans-serif;
         --mono: "JetBrains Mono", ui-monospace, monospace;
@@ -229,10 +229,10 @@
         left: 0;
         right: 0;
         z-index: 80;
-        background: rgba(10, 10, 10, 0.78);
+        background: rgba(15, 14, 12, 0.78);
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
-        border-bottom: 1px solid rgba(242, 239, 234, 0.08);
+        border-bottom: 1px solid rgba(243, 239, 229, 0.08);
         font-family: var(--mono);
         font-size: 11px;
         letter-spacing: 0.14em;
@@ -259,16 +259,16 @@
       }
 
       .rail__brand img {
-        width: 26px;
-        height: 26px;
+        width: 48px;
+        height: 48px;
         object-fit: contain;
         filter: brightness(1.1)
       }
 
       .rail__brand b {
-        font-family: var(--sans);
-        font-weight: 700;
-        font-size: 18px;
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: 34px;
         letter-spacing: -0.015em;
         text-transform: none
       }
@@ -304,8 +304,8 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        padding: 9px 16px;
-        border-radius: 2px;
+        padding: 9px 18px;
+        border-radius: 999px;
         background: var(--paper);
         color: var(--ink);
         font-family: var(--sans);
@@ -345,7 +345,7 @@
 
       /* ───── page frame ───── */
       main {
-        padding-top: 49px
+        padding-top: 76px
       }
 
       section {
@@ -360,12 +360,12 @@
 
       .rule {
         height: 1px;
-        background: rgba(242, 239, 234, 0.1);
+        background: rgba(243, 239, 229, 0.1);
         width: 100%
       }
 
       .rule--paper {
-        background: rgba(10, 10, 10, 0.14)
+        background: rgba(15, 14, 12, 0.14)
       }
 
       /* ─────────────────────────────────────────── HERO ───── */
@@ -384,15 +384,16 @@
 
       .hero__grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-        gap: clamp(40px, 5vw, 80px);
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.78fr);
+        gap: clamp(20px, 2.5vw, 44px);
         align-items: center;
       }
 
       .hero__right {
         display: flex;
         justify-content: flex-end;
-        align-items: center
+        align-items: center;
+        perspective: 1400px;
       }
 
       .hero__meta {
@@ -400,7 +401,7 @@
         justify-content: space-between;
         align-items: center;
         padding-bottom: 28px;
-        border-bottom: 1px solid rgba(242, 239, 234, 0.1);
+        border-bottom: 1px solid rgba(243, 239, 229, 0.1);
         margin-bottom: 56px;
       }
 
@@ -423,7 +424,7 @@
         align-items: center;
         gap: 8px;
         padding: 4px 10px;
-        border: 1px solid rgba(242, 239, 234, 0.18);
+        border: 1px solid rgba(243, 239, 229, 0.18);
         border-radius: 999px;
         font-family: var(--mono);
         font-size: 10px;
@@ -442,7 +443,7 @@
 
       .hero__title {
         font-family: var(--sans);
-        font-size: clamp(42px, 5vw, 72px);
+        font-size: clamp(60px, 6.8vw, 100px);
         line-height: 1.05;
         letter-spacing: -0.03em;
         color: var(--paper);
@@ -467,7 +468,9 @@
 
       .hero__title .green {
         color: var(--green);
+        font-family: var(--sans);
         font-style: italic;
+        font-weight: 700;
         position: relative
       }
 
@@ -511,8 +514,8 @@
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        padding: 15px 22px;
-        border-radius: 2px;
+        padding: 13px 22px;
+        border-radius: 999px;
         font-size: 14px;
         font-weight: 600;
         letter-spacing: -0.01em;
@@ -536,7 +539,7 @@
 
       .btn--ghost {
         color: var(--paper);
-        border: 1px solid rgba(242, 239, 234, 0.22);
+        border: 1px solid rgba(243, 239, 229, 0.22);
         background: transparent;
       }
 
@@ -575,12 +578,23 @@
       /* right column: monitor */
       .monitor {
         position: relative;
-        border: 1px solid rgba(242, 239, 234, 0.14);
+        border: 1px solid rgba(243, 239, 229, 0.14);
         background: #050505;
         padding: 14px;
         border-radius: 3px;
         width: 100%;
-        max-width: 680px;
+        max-width: 400px;
+        margin-right: auto;
+        transform: rotateY(-14deg) rotateX(7deg) rotateZ(-2deg);
+        transform-origin: center center;
+        box-shadow:
+          0 36px 70px -20px rgba(0, 0, 0, 0.65),
+          0 20px 34px -12px rgba(0, 0, 0, 0.5);
+        transition: transform .4s ease;
+      }
+
+      .monitor:hover {
+        transform: rotateY(-7deg) rotateX(3deg) rotateZ(-1deg);
       }
 
       .monitor__bar {
@@ -620,10 +634,10 @@
 
       .monitor__screen {
         position: relative;
-        aspect-ratio: 4/3;
+        aspect-ratio: 9/16;
         background: #000;
         overflow: hidden;
-        border: 1px solid rgba(242, 239, 234, 0.06);
+        border: 1px solid rgba(243, 239, 229, 0.06);
       }
 
       .monitor__screen video {
@@ -691,7 +705,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.72) 40%, rgba(10, 10, 10, 0.9) 100%);
+        background: linear-gradient(180deg, rgba(15, 14, 12, 0) 0%, rgba(15, 14, 12, 0.72) 40%, rgba(15, 14, 12, 0.9) 100%);
         border-top: 1px solid rgba(134, 239, 172, 0.22);
         padding: 18px 18px 14px;
         opacity: 0;
@@ -885,7 +899,7 @@
         font-weight: 600;
         letter-spacing: 0.12em;
         color: var(--green);
-        background: rgba(10, 10, 10, 0.55);
+        background: rgba(15, 14, 12, 0.55);
       }
 
       .mg-short__lbl {
@@ -921,7 +935,7 @@
       .scope {
         aspect-ratio: 3/2;
         background: #070707;
-        border: 1px solid rgba(242, 239, 234, 0.06);
+        border: 1px solid rgba(243, 239, 229, 0.06);
         position: relative;
         overflow: hidden;
       }
@@ -956,7 +970,7 @@
         width: 70%;
         aspect-ratio: 1;
         border-radius: 50%;
-        border: 1px dashed rgba(242, 239, 234, 0.18);
+        border: 1px dashed rgba(243, 239, 229, 0.18);
         position: relative
       }
 
@@ -1002,8 +1016,8 @@
 
       /* ─── scroll marquee ─── */
       .marquee {
-        border-top: 1px solid rgba(242, 239, 234, 0.1);
-        border-bottom: 1px solid rgba(242, 239, 234, 0.1);
+        border-top: 1px solid rgba(243, 239, 229, 0.1);
+        border-bottom: 1px solid rgba(243, 239, 229, 0.1);
         overflow: hidden;
         background: var(--ink);
       }
@@ -1059,8 +1073,6 @@
         grid-template-columns: 1fr auto;
         gap: 40px;
         align-items: end;
-        padding-bottom: 28px;
-        border-bottom: 1px solid rgba(10, 10, 10, 0.18);
         margin-bottom: 80px;
       }
 
@@ -1089,7 +1101,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0;
-        border: 1px solid rgba(10, 10, 10, 0.18);
+        border: 1px solid rgba(15, 14, 12, 0.18);
         background: var(--paper);
       }
 
@@ -1104,7 +1116,7 @@
 
       .cell--before {
         background: var(--paper-2);
-        border-right: 1px solid rgba(10, 10, 10, 0.18)
+        border-right: 1px solid rgba(15, 14, 12, 0.18)
       }
 
       .cell--after {
@@ -1187,7 +1199,7 @@
 
       .strip span {
         flex: 1;
-        background: rgba(10, 10, 10, 0.15)
+        background: rgba(15, 14, 12, 0.15)
       }
 
       .strip span.bad {
@@ -1201,7 +1213,7 @@
       }
 
       .cell--after .strip span {
-        background: rgba(242, 239, 234, 0.18)
+        background: rgba(243, 239, 229, 0.18)
       }
 
       .cell--after .strip span.good {
@@ -1216,7 +1228,7 @@
         bottom: 0;
         left: 50%;
         width: 1px;
-        background: linear-gradient(180deg, transparent, rgba(10, 10, 10, 0.2) 10%, rgba(10, 10, 10, 0.2) 90%, transparent);
+        background: linear-gradient(180deg, transparent, rgba(15, 14, 12, 0.2) 10%, rgba(15, 14, 12, 0.2) 90%, transparent);
         pointer-events: none;
       }
 
@@ -1258,8 +1270,6 @@
         grid-template-columns: 1fr auto;
         gap: 40px;
         align-items: end;
-        padding-bottom: 28px;
-        border-bottom: 1px solid rgba(242, 239, 234, 0.12);
         margin-bottom: 72px;
       }
 
@@ -1269,7 +1279,7 @@
         font-size: clamp(48px, 7vw, 120px);
         line-height: 0.92;
         letter-spacing: -0.035em;
-        max-width: 14ch;
+        max-width: 24ch;
         color: var(--paper);
       }
 
@@ -1293,7 +1303,7 @@
 
       .out {
         position: relative;
-        border: 1px solid rgba(242, 239, 234, 0.1);
+        border: 1px solid rgba(243, 239, 229, 0.1);
         background: #050505;
         padding: 18px 18px 22px;
         display: flex;
@@ -1344,7 +1354,7 @@
         min-height: 220px;
         overflow: hidden;
         background: #000;
-        border: 1px solid rgba(242, 239, 234, 0.06);
+        border: 1px solid rgba(243, 239, 229, 0.06);
       }
 
       .out__media video {
@@ -1372,7 +1382,7 @@
         letter-spacing: 0.16em;
         text-transform: uppercase;
         padding: 4px 8px;
-        border: 1px solid rgba(242, 239, 234, 0.14);
+        border: 1px solid rgba(243, 239, 229, 0.14);
         color: var(--paper);
       }
 
@@ -1384,7 +1394,7 @@
         bottom: 0;
         height: 36%;
         pointer-events: none;
-        background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.78) 45%, rgba(10, 10, 10, 0.92) 100%);
+        background: linear-gradient(180deg, rgba(15, 14, 12, 0) 0%, rgba(15, 14, 12, 0.78) 45%, rgba(15, 14, 12, 0.92) 100%);
         border-top: 1px solid rgba(134, 239, 172, 0.22);
         overflow: hidden;
       }
@@ -1697,7 +1707,7 @@
         position: absolute;
         inset: 0;
         background: #000;
-        border: 1px solid rgba(242, 239, 234, 0.1);
+        border: 1px solid rgba(243, 239, 229, 0.1);
         overflow: hidden;
       }
 
@@ -1762,8 +1772,6 @@
         grid-template-columns: 1fr auto;
         gap: 40px;
         align-items: end;
-        padding-bottom: 28px;
-        border-bottom: 1px solid rgba(10, 10, 10, 0.18);
         margin-bottom: 72px;
       }
 
@@ -1793,8 +1801,8 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 0;
-        border-top: 1px solid rgba(10, 10, 10, 0.2);
-        border-bottom: 1px solid rgba(10, 10, 10, 0.2);
+        border-top: 1px solid rgba(15, 14, 12, 0.2);
+        border-bottom: 1px solid rgba(15, 14, 12, 0.2);
       }
 
       /* timecode bar above */
@@ -1808,12 +1816,12 @@
         text-transform: uppercase;
         color: var(--ink-dim);
         padding: 14px 0 10px;
-        border-bottom: 1px dashed rgba(10, 10, 10, 0.18);
+        border-bottom: 1px dashed rgba(15, 14, 12, 0.18);
       }
 
       .tl__ruler span {
         padding: 0 18px;
-        border-left: 1px solid rgba(10, 10, 10, 0.14)
+        border-left: 1px solid rgba(15, 14, 12, 0.14)
       }
 
       .tl__ruler span:first-child {
@@ -1822,7 +1830,7 @@
 
       .tl__step {
         padding: 30px 22px 36px;
-        border-left: 1px solid rgba(10, 10, 10, 0.14);
+        border-left: 1px solid rgba(15, 14, 12, 0.14);
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -1890,7 +1898,7 @@
 
       .tl__wave span {
         flex: 1;
-        background: rgba(10, 10, 10, 0.35);
+        background: rgba(15, 14, 12, 0.35);
         height: var(--h, 40%);
         align-self: center;
         min-width: 2px;
@@ -1914,8 +1922,6 @@
       }
 
       .sec-who__head {
-        padding-bottom: 28px;
-        border-bottom: 1px solid rgba(242, 239, 234, 0.12);
         margin-bottom: 72px;
         display: grid;
         grid-template-columns: 1fr auto;
@@ -1948,12 +1954,12 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 0;
-        border-top: 1px solid rgba(242, 239, 234, 0.12);
+        border-top: 1px solid rgba(243, 239, 229, 0.12);
       }
 
       .who__cell {
         padding: 40px 24px 44px;
-        border-right: 1px solid rgba(242, 239, 234, 0.12);
+        border-right: 1px solid rgba(243, 239, 229, 0.12);
         display: flex;
         flex-direction: column;
         gap: 18px;
@@ -2026,14 +2032,14 @@
       .cta h2 {
         font-family: var(--sans);
         font-weight: 600;
-        font-size: clamp(72px, 12vw, 200px);
-        line-height: 0.88;
-        letter-spacing: -0.04em;
-        max-width: 14ch;
+        font-size: clamp(48px, 7vw, 120px);
+        line-height: 0.92;
+        letter-spacing: -0.035em;
+        max-width: 24ch;
       }
 
       .cta h2 em {
-        font-style: italic;
+        font-style: normal;
         color: var(--green-ink)
       }
 
@@ -2048,14 +2054,14 @@
         display: inline-flex;
         align-items: center;
         gap: 14px;
-        padding: 22px 32px;
+        padding: 18px 32px;
         background: var(--ink);
         color: var(--paper);
         font-family: var(--sans);
         font-weight: 600;
         font-size: 16px;
         letter-spacing: -0.01em;
-        border-radius: 2px;
+        border-radius: 999px;
         transition: background .2s ease, color .2s ease;
       }
 
@@ -2100,7 +2106,7 @@
         bottom: 40px;
         pointer-events: none;
         background-image:
-          radial-gradient(circle, rgba(10, 10, 10, 0.14) 0 6px, transparent 7px);
+          radial-gradient(circle, rgba(15, 14, 12, 0.14) 0 6px, transparent 7px);
         background-size: 42px 42px;
         background-position: center;
         mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent), linear-gradient(180deg, black, transparent 10%, transparent 90%, black);
@@ -2121,7 +2127,7 @@
         grid-template-columns: 0.8fr 1.2fr;
         gap: 80px;
         padding-top: 28px;
-        border-top: 1px solid rgba(242, 239, 234, 0.12);
+        border-top: 1px solid rgba(243, 239, 229, 0.12);
       }
 
       .faq__title {
@@ -2144,7 +2150,7 @@
       }
 
       .faq__item {
-        border-bottom: 1px solid rgba(242, 239, 234, 0.12);
+        border-bottom: 1px solid rgba(243, 239, 229, 0.12);
         padding: 22px 0;
       }
 
@@ -2191,7 +2197,7 @@
       footer {
         background: var(--ink);
         color: var(--paper);
-        border-top: 1px solid rgba(242, 239, 234, 0.12);
+        border-top: 1px solid rgba(243, 239, 229, 0.12);
         padding: 96px 0 28px;
         position: relative;
         overflow: hidden;
@@ -2204,7 +2210,7 @@
         gap: clamp(40px, 6vw, 96px);
         align-items: end;
         padding-bottom: 72px;
-        border-bottom: 1px solid rgba(242, 239, 234, 0.1);
+        border-bottom: 1px solid rgba(243, 239, 229, 0.1);
       }
 
       .foot-state__kicker {
@@ -2251,12 +2257,13 @@
         font-family: var(--sans);
         font-weight: 600;
         font-size: 15px;
-        padding: 16px 22px;
+        padding: 14px 22px;
         background: var(--green);
         color: var(--ink);
         display: inline-flex;
         align-items: center;
         gap: 10px;
+        border-radius: 999px;
         transition: transform 0.2s ease;
       }
 
@@ -2282,7 +2289,7 @@
         grid-template-columns: 1.4fr repeat(3, 1fr);
         gap: 48px;
         padding: 64px 0 56px;
-        border-bottom: 1px solid rgba(242, 239, 234, 0.1);
+        border-bottom: 1px solid rgba(243, 239, 229, 0.1);
       }
 
       .foot-brand {
@@ -2332,7 +2339,7 @@
         color: var(--dim);
         margin-bottom: 20px;
         padding-bottom: 10px;
-        border-bottom: 1px solid rgba(242, 239, 234, 0.08);
+        border-bottom: 1px solid rgba(243, 239, 229, 0.08);
       }
 
       .foot-col ul {
@@ -2364,7 +2371,7 @@
         width: 4px;
         height: 4px;
         border-radius: 50%;
-        background: rgba(242, 239, 234, 0.25);
+        background: rgba(243, 239, 229, 0.25);
         transition: background 0.15s ease;
       }
 
@@ -2376,7 +2383,7 @@
       .foot-word {
         position: relative;
         padding: 48px 0 24px;
-        border-bottom: 1px solid rgba(242, 239, 234, 0.1);
+        border-bottom: 1px solid rgba(243, 239, 229, 0.1);
         overflow: hidden;
       }
 
@@ -2469,7 +2476,7 @@
 
         .cell--before {
           border-right: none;
-          border-bottom: 1px solid rgba(10, 10, 10, 0.18)
+          border-bottom: 1px solid rgba(15, 14, 12, 0.18)
         }
 
         .razor {
@@ -2553,7 +2560,7 @@
         }
 
         .hero__title {
-          font-size: clamp(38px, 9vw, 58px)
+          font-size: clamp(54px, 12vw, 86px)
         }
       }
     </style>
@@ -2585,8 +2592,9 @@
           <div class="hero__grid">
             <div>
               <h1 class="hero__title">
-                <span class="line">Turn raw footage into</span>
-                <span class="line">something <span class="it green">worth</span> watching.</span>
+                <span class="line">Turn raw footage</span>
+                <span class="line">into something</span>
+                <span class="line"><span class="it green">worth</span> watching.</span>
               </h1>
 
               <p class="hero__sub">
@@ -2682,8 +2690,6 @@
               <div class="micro">Chapter 01 · The grind</div>
               <h2 style="margin-top:22px">You have the ideas.<br><em>Editing eats the time.</em></h2>
             </div>
-            <p class="aside">Voice cleanup, dead air, captions, shorts. Every upload, the same grind, so you don't post.
-              We built AutoCuts to delete that loop.</p>
           </div>
 
           <div class="compare">
@@ -2732,8 +2738,6 @@
               <div class="micro">Chapter 02 · The deliverables</div>
               <h2 style="margin-top:22px">One upload.<br>Three <em>finished</em> assets.</h2>
             </div>
-            <p class="aside">A cleaned long video. An animated cut. Captioned shorts. Every frame reviewed and approved
-              by you before anything ships.</p>
           </div>
 
           <div class="outputs">
@@ -2829,8 +2833,6 @@
               <div class="micro">Chapter 03 · The workflow</div>
               <h2 style="margin-top:22px">Five steps.<br><em>Under ten</em> minutes.</h2>
             </div>
-            <p class="aside">Upload to publish in one session. No timeline wrangling, no keyframes, no skills required.
-            </p>
           </div>
 
           <div class="tl__ruler" aria-hidden="true">
@@ -2877,7 +2879,6 @@
               <div class="micro" style="color:var(--dim)">Chapter 04 · Cast</div>
               <h2 style="margin-top:22px">If you talk to camera,<br>this is <em>for you.</em></h2>
             </div>
-            <p class="aside">No editor. No editing skills. Just the content you already make, shipped sooner.</p>
           </div>
 
           <div class="who">
