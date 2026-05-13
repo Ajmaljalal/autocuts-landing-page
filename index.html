@@ -2781,15 +2781,29 @@
 
       .foot-bar__right {
         display: flex;
-        gap: 18px
+        gap: 10px;
+        align-items: center;
       }
 
       .foot-bar__right a {
-        color: var(--dim)
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--paper);
+        transition: color .2s ease, transform .2s ease;
+        font-size: 0;
+      }
+
+      .foot-bar__right a svg {
+        width: 22px;
+        height: 22px;
+        fill: currentColor;
+        display: block;
       }
 
       .foot-bar__right a:hover {
-        color: var(--paper)
+        color: var(--green);
+        transform: translateY(-1px);
       }
 
       /* ─── responsive ─── */
@@ -3677,13 +3691,21 @@
           <span>© 2026 AutoCuts</span>
           <div class="foot-bar__tc">
             <span><i class="dot"></i>System online</span>
-            <span>v 2.4.0</span>
-            <span>Built in Brooklyn</span>
+            <span>Built in California</span>
           </div>
           <div class="foot-bar__right">
-            <a href="#">X</a>
-            <a href="#">YouTube</a>
-            <a href="#">Instagram</a>
+            <a href="https://x.com/autocutsai" target="_blank" rel="noopener" aria-label="X">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2H21.5l-7.5 8.57L23 22h-6.86l-5.37-7.02L4.6 22H1.34l8.03-9.17L1 2h7.04l4.86 6.43L18.244 2zm-1.2 18h1.86L7.04 4H5.1l11.944 16z"/></svg>
+              <span>X</span>
+            </a>
+            <a href="https://www.youtube.com/@autocutsai" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.12-2.13C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.57A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.12 2.13C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.57a3 3 0 0 0 2.12-2.13A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.24 3.6-6.24 3.6z"/></svg>
+              <span>YouTube</span>
+            </a>
+            <a href="https://www.linkedin.com/company/autocuts-ai/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.99 0 1.78-.77 1.78-1.72V1.72C24 .77 23.21 0 22.22 0z"/></svg>
+              <span>LinkedIn</span>
+            </a>
           </div>
         </div>
 
