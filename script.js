@@ -81,8 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 scene.setAttribute('aria-hidden', isActive ? 'false' : 'true');
             });
 
-            if (typeof window.posthog !== 'undefined') {
-                posthog.capture('story_scene_advanced', {
+            if (typeof window.trackLandingEvent === 'function') {
+                window.trackLandingEvent('landing.story_scene_advanced', {
+                    scene_index: activeSceneIndex,
+                    total_scenes: storyScenes.length
+                });
+            } else if (typeof window.posthog !== 'undefined') {
+                window.posthog.capture('landing.story_scene_advanced', {
                     scene_index: activeSceneIndex,
                     total_scenes: storyScenes.length
                 });
