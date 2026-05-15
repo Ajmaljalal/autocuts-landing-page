@@ -22,7 +22,7 @@
   function baseProperties(properties) {
     return Object.assign(
       {
-        app: 'video_editor',
+        app: 'autocuts',
         surface: 'landing',
         device: getDevice(),
         path: window.location.pathname
