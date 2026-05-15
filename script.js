@@ -80,6 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 scene.classList.toggle('is-active', isActive);
                 scene.setAttribute('aria-hidden', isActive ? 'false' : 'true');
             });
+
+            if (typeof window.posthog !== 'undefined') {
+                posthog.capture('story_scene_advanced', {
+                    scene_index: activeSceneIndex,
+                    total_scenes: storyScenes.length
+                });
+            }
         }
 
         if (storyPrompt instanceof HTMLElement) {
