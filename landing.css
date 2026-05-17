@@ -1370,6 +1370,11 @@ section {
   border-right: 1px solid rgba(15, 14, 12, 0.18)
 }
 
+.cell--before .cell__lbl,
+.cell--before .cell__metric small {
+  color: rgba(15, 14, 12, 0.72);
+}
+
 .cell--after {
   background: var(--ink);
   color: var(--paper)
@@ -2276,7 +2281,8 @@ footer {
   overflow: hidden;
 }
 
-.foot-word b {
+.foot-word__mark::before {
+  content: "AutoCuts";
   display: block;
   font-family: var(--serif);
   font-style: italic;
