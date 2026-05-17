@@ -454,6 +454,7 @@ section {
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
+  contain: layout paint;
 }
 
 .viewfinder-tilted {
@@ -486,10 +487,26 @@ section {
 
 .viewfinder__screen video,
 .viewfinder__screen img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: saturate(1.05) contrast(1.04);
+}
+
+.viewfinder__poster {
+  z-index: 1;
+}
+
+.viewfinder__video {
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.viewfinder__video.is-loaded {
+  opacity: 1;
 }
 
 /* REC indicator (top-left, beside corner bracket) */
@@ -767,8 +784,12 @@ section {
 /* orbits, 3D rings going around the viewfinder */
 .orbits {
   position: absolute;
-  inset: -8% -16% -10% -16%;
+  top: -8%;
+  left: -16%;
+  width: 132%;
+  height: 118%;
   pointer-events: none;
+  contain: layout paint size;
 }
 
 .orbits--back { z-index: 1; }
@@ -826,6 +847,12 @@ section {
 @keyframes sparkleFloat {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-10px) rotate(8deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewfinder__video {
+    transition: none;
+  }
 }
 
 /* crosshair, removed, monitor screen is clean */

@@ -176,17 +176,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style"
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional"
       onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional"
         rel="stylesheet">
     </noscript>
-    <link rel="preload" href="landing.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link rel="stylesheet" href="landing.min.css">
-    </noscript>
+    <link rel="preload" href="img/hero-frame.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="landing.min.css" as="style">
+    <link rel="stylesheet" href="landing.min.css">
 
     <script src="posthog.js" defer></script>
     <script src="landing.js" defer></script>
@@ -279,7 +278,8 @@
                 <div class="viewfinder-tilted">
                   <div class="viewfinder">
                     <div class="viewfinder__screen">
-                      <video src="img/hero_video.mp4" poster="img/hero-frame.webp" autoplay muted loop playsinline preload="metadata" width="960" height="540"></video>
+                      <img class="viewfinder__poster" src="img/hero-frame.webp" alt="" width="960" height="540" decoding="sync" fetchpriority="high">
+                      <video class="viewfinder__video lazy-hero-video" data-src="img/hero_video.mp4" data-poster="img/hero-frame.webp" muted loop playsinline preload="none" width="960" height="540" aria-hidden="true"></video>
                       <span class="viewfinder__rec">REC</span>
                       <div class="viewfinder__corners"><i></i><i></i><i></i><i></i></div>
                       <div class="viewfinder__ticks"><i></i><i></i><i></i><i></i></div>
@@ -430,7 +430,7 @@
                 <h3 class="out__title"><em>Polished</em> episode</h3>
               </div>
               <div class="out__media">
-                <video class="lazy-video" data-src="img/hero_video.mp4" poster="img/hero-frame.webp" muted loop playsinline preload="none" width="960" height="540"></video>
+                <video class="lazy-video" data-src="img/hero_video.mp4" data-poster="img/hero-frame.webp" muted loop playsinline preload="none" width="960" height="540"></video>
               </div>
               <p class="out__desc">Clean pacing and sound keep people watching without you scrubbing a timeline.</p>
               <div class="out__tags"><span>Ready to post</span><span>Clean voice</span><span>Tighter pacing</span></div>
@@ -443,7 +443,7 @@
                 <h3 class="out__title"><em>Ideas</em> that land</h3>
               </div>
               <div class="out__media">
-                <video class="lazy-video" data-src="img/hero_video.mp4" poster="img/hero-frame.webp" muted loop playsinline preload="none" width="960" height="540"></video>
+                <video class="lazy-video" data-src="img/hero_video.mp4" data-poster="img/hero-frame.webp" muted loop playsinline preload="none" width="960" height="540"></video>
                 <div class="mg-lower">
                   <span class="mg-lower__label">Motion · Live</span>
 
@@ -486,10 +486,10 @@
               </div>
               <div class="out__media out__media--shorts">
                 <div class="shorts">
-                  <div class="shorts__card shorts__card--3"><video class="lazy-video" data-src="img/hero_video.mp4" poster="img/hero-short.webp" muted loop playsinline preload="none" width="236" height="420"></video></div>
-                  <div class="shorts__card shorts__card--2"><video class="lazy-video" data-src="img/hero_video.mp4" poster="img/hero-short.webp" muted loop playsinline preload="none" width="236" height="420"></video></div>
+                  <div class="shorts__card shorts__card--3"><video class="lazy-video" data-src="img/hero_video.mp4" data-poster="img/hero-short.webp" muted loop playsinline preload="none" width="236" height="420"></video></div>
+                  <div class="shorts__card shorts__card--2"><video class="lazy-video" data-src="img/hero_video.mp4" data-poster="img/hero-short.webp" muted loop playsinline preload="none" width="236" height="420"></video></div>
                   <div class="shorts__card shorts__card--1">
-                    <video class="lazy-video" data-src="img/hero_video.mp4" poster="img/hero-short.webp" muted loop playsinline preload="none" width="236" height="420"></video>
+                    <video class="lazy-video" data-src="img/hero_video.mp4" data-poster="img/hero-short.webp" muted loop playsinline preload="none" width="236" height="420"></video>
                     <div class="shorts__cap">the moment that <u>flips</u> everything</div>
                   </div>
                 </div>
