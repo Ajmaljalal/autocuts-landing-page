@@ -133,8 +133,8 @@ button {
 }
 
 .rail__brand img {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
   filter: brightness(1.1)
 }
@@ -154,30 +154,27 @@ button {
 }
 
 .rail__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 26px;
-  border-radius: 999px;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
-  font-weight: 600;
-  font-size: 14.5px;
-  letter-spacing: -0.01em;
   text-transform: none;
   white-space: nowrap;
-  transition: transform .2s ease, background .2s ease;
+  flex-shrink: 0;
+}
+
+.rail__cta.btn {
+  padding: 13px 22px;
+  font-size: 14px;
+  gap: 9px;
+}
+
+.rail__cta .btn__icon svg {
+  width: 16px;
+  height: 16px;
 }
 
 .rail__cta:hover {
   transform: translateY(-1px)
-}
-
-.rail__cta svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 2;
 }
 
 /* thin progress razor */
@@ -199,7 +196,7 @@ button {
 
 /* ───── page frame ───── */
 main {
-  padding-top: 76px
+  padding-top: 80px
 }
 
 section {
@@ -1326,12 +1323,12 @@ section {
 }
 
 .cell {
-  padding: 40px 36px 36px;
+  padding: 40px 36px 34px;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  min-height: 420px;
+  gap: 26px;
+  min-height: 380px;
 }
 
 .cell--before {
@@ -1400,17 +1397,6 @@ section {
 
 .cell--after .cell__line {
   color: var(--paper)
-}
-
-.cell__note {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--ink-dim);
-  max-width: 30ch
-}
-
-.cell--after .cell__note {
-  color: var(--dim)
 }
 
 /* timeline strip decoration at bottom of before cell */
@@ -2563,20 +2549,8 @@ footer {
   }
 
   .rail__brand img {
-    width: 38px;
-    height: 38px;
-  }
-
-  .rail__cta {
-    padding: 15px 26px;
-    font-size: 14.5px;
-    gap: 10px;
-    flex-shrink: 0;
-  }
-
-  .rail__cta svg {
-    width: 20px;
-    height: 20px;
+    width: 42px;
+    height: 42px;
   }
 
   .trusted {
@@ -2585,6 +2559,10 @@ footer {
 }
 
 @media (max-width: 620px) {
+  main {
+    padding-top: 80px;
+  }
+
   .frame {
     padding: 0 22px
   }
@@ -2625,6 +2603,8 @@ footer {
   .hero__actions {
     margin-top: 24px;
     width: 100%;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: center;
   }
 
@@ -2658,11 +2638,13 @@ footer {
   }
 
   .foot-state__cta {
-    align-items: center;
+    width: 100%;
+    align-items: stretch;
   }
 
   .hero__actions .btn {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
+    width: 100%;
     justify-content: center;
   }
 
@@ -2675,6 +2657,17 @@ footer {
   .btn {
     padding: 13px 22px;
     font-size: 14px;
+  }
+
+  .cta,
+  .foot-state__cta {
+    width: 100%;
+  }
+
+  .cta__btn,
+  .foot-state__cta a {
+    width: 100%;
+    justify-content: center;
   }
 
   .sparkle {
@@ -2692,32 +2685,38 @@ footer {
   }
 
   .rail__inner {
+    grid-template-columns: minmax(0, 1fr) auto;
     padding: 8px 16px;
     gap: 10px;
   }
 
   .rail__brand {
     gap: 8px;
-  }
-
-  .rail__brand b {
-    font-size: 18px;
-  }
-
-  .rail__brand img {
-    width: 30px;
-    height: 30px;
+    min-width: 0;
   }
 
   .rail__cta {
-    padding: 13px 22px;
-    font-size: 14px;
-    gap: 10px;
+    justify-content: center;
   }
 
-  .rail__cta svg {
-    width: 20px;
-    height: 20px;
+  .rail__cta.btn {
+    padding: 10px 16px;
+    font-size: 13px;
+    gap: 7px;
+  }
+
+  .rail__cta .btn__icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .rail__brand b {
+    font-size: 22px;
+  }
+
+  .rail__brand img {
+    width: 40px;
+    height: 40px;
   }
 
   .trusted {
