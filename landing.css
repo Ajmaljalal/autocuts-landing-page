@@ -454,7 +454,6 @@ section {
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
-  contain: layout paint;
 }
 
 .viewfinder-tilted {
@@ -784,12 +783,8 @@ section {
 /* orbits, 3D rings going around the viewfinder */
 .orbits {
   position: absolute;
-  top: -8%;
-  left: -16%;
-  width: 132%;
-  height: 118%;
+  inset: -8% -16% -10% -16%;
   pointer-events: none;
-  contain: layout paint size;
 }
 
 .orbits--back { z-index: 1; }
@@ -2516,7 +2511,7 @@ footer {
 
   .hero {
     min-height: 0;
-    padding: 28px 0 0;
+    padding: 28px 0 72px;
   }
 
   .hero__grid {
@@ -2615,7 +2610,7 @@ footer {
   }
 
   .viewfinder-wrap {
-    max-width: 340px;
+    max-width: min(300px, 78vw);
   }
 
   .filmstrip {
