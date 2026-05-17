@@ -1,6 +1,6 @@
 # AutoCuts
 
-> AutoCuts is an AI video editor built for talking-head creators. Upload one raw recording and get a polished long-form episode, captioned 9:16 shorts for TikTok / Instagram Reels / YouTube Shorts, and motion graphics — without scrubbing a timeline.
+> AutoCuts is an AI video editor built for talking-head creators. Upload one raw recording and get a polished long-form episode, captioned 9:16 shorts for TikTok / Instagram Reels / YouTube Shorts, and motion graphics, without scrubbing a timeline.
 
 AutoCuts is most useful for YouTubers, podcasters, founders recording video newsletters, and anyone whose content is primarily one or two people talking to camera. It is not built for B-roll-heavy montages, music videos, or complex multi-camera narratives.
 

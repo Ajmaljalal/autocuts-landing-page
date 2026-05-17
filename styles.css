@@ -3636,7 +3636,7 @@ body.story-ready .story-prompt {
     line-height: 1.4;
 }
 
-/* "vs" divider — absolutely positioned over the card boundary */
+/* "vs" divider, absolutely positioned over the card boundary */
 .pain-compare__divider {
     position: absolute;
     top: 50%;

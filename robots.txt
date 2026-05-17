@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Major search & AI crawlers — explicitly welcomed
+# Major search & AI crawlers, explicitly welcomed
 User-agent: Googlebot
 Allow: /
 
