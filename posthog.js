@@ -2,6 +2,8 @@
 (function () {
   var STUDIO_URL = 'https://studio.autocuts.ai/';
   var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  var pendingEvents = [];
+  var posthogLoading = false;
 
   function getDevice() {
     if (typeof window.matchMedia !== 'function') return 'desktop';
@@ -33,8 +35,41 @@
   }
 
   function captureLandingEvent(eventName, properties) {
-    if (typeof window.posthog === 'undefined') return;
-    window.posthog.capture(eventName, baseProperties(properties));
+    var eventProperties = baseProperties(properties);
+    if (typeof window.posthog === 'undefined' || typeof window.posthog.capture !== 'function') {
+      pendingEvents.push([eventName, eventProperties]);
+      return;
+    }
+    window.posthog.capture(eventName, eventProperties);
+  }
+
+  function flushPostHogQueue() {
+    if (typeof window.posthog === 'undefined' || typeof window.posthog.capture !== 'function') return;
+    window.posthog.register(baseProperties());
+    pendingEvents.forEach(function (event) {
+      window.posthog.capture(event[0], event[1]);
+    });
+    pendingEvents = [];
+  }
+
+  function loadPostHog() {
+    if (posthogLoading || typeof window.posthog !== 'undefined') return;
+    posthogLoading = true;
+    var script = document.createElement('script');
+    script.src = 'posthog-init.js';
+    script.async = true;
+    script.onload = flushPostHogQueue;
+    document.head.appendChild(script);
+  }
+
+  function schedulePostHogLoad() {
+    ['pointerdown', 'keydown', 'touchstart'].forEach(function (eventName) {
+      window.addEventListener(eventName, loadPostHog, { once: true, passive: true });
+    });
+
+    window.addEventListener('load', function () {
+      window.setTimeout(loadPostHog, 8000);
+    }, { once: true });
   }
 
   function setStudioUtm(link, location) {
@@ -63,11 +98,8 @@
   window.trackLandingEvent = captureLandingEvent;
 
   document.addEventListener('DOMContentLoaded', function () {
-    if (typeof window.posthog !== 'undefined') {
-      window.posthog.register(baseProperties());
-    }
-
     captureLandingEvent('landing.page_viewed');
+    schedulePostHogLoad();
 
     [
       ['nav', document.querySelector('.rail__cta')],

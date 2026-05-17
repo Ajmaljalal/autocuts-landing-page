@@ -12,8 +12,8 @@
     <link rel="canonical" href="https://autocuts.ai/">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0f0e0c">
-    <link rel="icon" type="image/png" href="img/icon.png">
-    <link rel="apple-touch-icon" href="img/icon.png">
+    <link rel="icon" type="image/png" href="img/favicon-32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
     <meta property="og:title" content="AutoCuts | AI Video Editor for Talking Videos">
     <meta property="og:description"
@@ -175,12 +175,19 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=JetBrains+Mono:wght@300;400;500&display=swap"
-      rel="stylesheet">
-    <link rel="stylesheet" href="landing.css">
+    <link rel="preload" as="style"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    </noscript>
+    <link rel="preload" href="landing.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="landing.min.css">
+    </noscript>
 
-    <script src="posthog-init.js" defer></script>
     <script src="posthog.js" defer></script>
     <script src="landing.js" defer></script>
   </head>
@@ -190,7 +197,7 @@
     <!-- ──────────────────── TOP RAIL ──────────────────── -->
     <header class="rail" aria-label="Top bar">
       <div class="rail__inner">
-        <a href="#" class="rail__brand"><img src="img/icon.png" alt=""><b>AutoCuts</b></a>
+        <a href="#" class="rail__brand"><img src="img/icon-80.webp" srcset="img/icon-80.webp 80w, img/icon-160.webp 160w" sizes="52px" width="52" height="52" alt="" decoding="async"><b>AutoCuts</b></a>
         <div class="rail__meta">NO CARD REQUIRED</div>
         <a class="rail__cta btn" href="https://studio.autocuts.ai/" target="_blank" rel="noopener">
           <span class="btn__icon">
@@ -272,7 +279,7 @@
                 <div class="viewfinder-tilted">
                   <div class="viewfinder">
                     <div class="viewfinder__screen">
-                      <video src="img/hero_video.mp4" autoplay muted loop playsinline></video>
+                      <video src="img/hero_video.mp4" poster="img/hero-frame.webp" autoplay muted loop playsinline preload="metadata" width="960" height="540"></video>
                       <span class="viewfinder__rec">REC</span>
                       <div class="viewfinder__corners"><i></i><i></i><i></i><i></i></div>
                       <div class="viewfinder__ticks"><i></i><i></i><i></i><i></i></div>
@@ -282,10 +289,10 @@
                   <div class="filmstrip" aria-hidden="true">
                     <div class="filmstrip__corners"><i></i><i></i><i></i><i></i></div>
                     <div class="filmstrip__cells">
-                      <span class="fs-thumb"><video src="img/hero_video.mp4" autoplay muted loop playsinline></video></span>
-                      <span class="fs-thumb"><video src="img/hero_video.mp4" autoplay muted loop playsinline></video></span>
-                      <span class="fs-thumb"><video src="img/hero_video.mp4" autoplay muted loop playsinline></video></span>
-                      <span class="fs-thumb"><video src="img/hero_video.mp4" autoplay muted loop playsinline></video></span>
+                      <span class="fs-thumb"><img src="img/hero-thumb.webp" alt="" width="360" height="203" decoding="async" fetchpriority="low"></span>
+                      <span class="fs-thumb"><img src="img/hero-thumb.webp" alt="" width="360" height="203" decoding="async" fetchpriority="low"></span>
+                      <span class="fs-thumb"><img src="img/hero-thumb.webp" alt="" width="360" height="203" decoding="async" fetchpriority="low"></span>
+                      <span class="fs-thumb"><img src="img/hero-thumb.webp" alt="" width="360" height="203" decoding="async" fetchpriority="low"></span>
                     </div>
                     <div class="filmstrip__wave">
                       <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
@@ -423,7 +430,7 @@
                 <h3 class="out__title"><em>Polished</em> episode</h3>
               </div>
               <div class="out__media">
-                <video src="img/hero_video.mp4" autoplay muted loop playsinline></video>
+                <img src="img/hero-frame.webp" alt="" width="960" height="540" loading="lazy" decoding="async">
               </div>
               <p class="out__desc">Clean pacing and sound keep people watching without you scrubbing a timeline.</p>
               <div class="out__tags"><span>Ready to post</span><span>Clean voice</span><span>Tighter pacing</span></div>
@@ -436,7 +443,7 @@
                 <h3 class="out__title"><em>Ideas</em> that land</h3>
               </div>
               <div class="out__media">
-                <video src="img/hero_video.mp4" autoplay muted loop playsinline></video>
+                <img src="img/hero-frame.webp" alt="" width="960" height="540" loading="lazy" decoding="async">
                 <div class="mg-lower">
                   <span class="mg-lower__label">Motion · Live</span>
 
@@ -479,12 +486,10 @@
               </div>
               <div class="out__media out__media--shorts">
                 <div class="shorts">
-                  <div class="shorts__card shorts__card--3"><video src="img/hero_video.mp4" autoplay muted loop
-                      playsinline></video></div>
-                  <div class="shorts__card shorts__card--2"><video src="img/hero_video.mp4" autoplay muted loop
-                      playsinline></video></div>
+                  <div class="shorts__card shorts__card--3"><img src="img/hero-short.webp" alt="" width="236" height="420" loading="lazy" decoding="async"></div>
+                  <div class="shorts__card shorts__card--2"><img src="img/hero-short.webp" alt="" width="236" height="420" loading="lazy" decoding="async"></div>
                   <div class="shorts__card shorts__card--1">
-                    <video src="img/hero_video.mp4" autoplay muted loop playsinline></video>
+                    <img src="img/hero-short.webp" alt="" width="236" height="420" loading="lazy" decoding="async">
                     <div class="shorts__cap">the moment that <u>flips</u> everything</div>
                   </div>
                 </div>

@@ -3,5 +3,12 @@ posthog.init('phc_pTauLbEujsnfL62takAJKgX4VNrDcti9yKwCZBxRWRoD', {
   api_host: 'https://us.i.posthog.com',
   defaults: '2026-01-30',
   cross_subdomain_cookie: true,
-  capture_pageview: true
+  capture_pageview: false,
+  capture_pageleave: false,
+  autocapture: false,
+  capture_dead_clicks: false,
+  rageclick: false,
+  disable_surveys: true,
+  disable_session_recording: true,
+  advanced_disable_flags: true
 });

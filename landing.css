@@ -679,7 +679,8 @@ section {
   min-height: 0;
 }
 
-.filmstrip__cells .fs-thumb video {
+.filmstrip__cells .fs-thumb video,
+.filmstrip__cells .fs-thumb img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1574,7 +1575,8 @@ section {
   background: #050505;
 }
 
-.out__media video {
+.out__media video,
+.out__media img {
   width: 100%;
   height: 100%;
   object-fit: cover
@@ -1928,7 +1930,8 @@ section {
   overflow: hidden;
 }
 
-.shorts__card video {
+.shorts__card video,
+.shorts__card img {
   width: 100%;
   height: 100%;
   object-fit: cover
@@ -2151,7 +2154,7 @@ section {
 .faq__q::after {
   content: "+";
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 28px;
   color: var(--dim);
   transition: transform .3s ease;

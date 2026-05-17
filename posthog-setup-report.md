@@ -7,7 +7,7 @@ The wizard has completed a deep integration of PostHog analytics into the AutoCu
 | File | Change |
 |---|---|
 | `index.html` | Added PostHog CDN snippet + `posthog.init()` before `</head>`; added `<script src="posthog.js">` before `</body>` |
-| `posthog.js` | New file — all PostHog event listener registrations |
+| `posthog.js` | New file, all PostHog event listener registrations |
 | `script.js` | Added `story_scene_advanced` capture inside the scene-change block |
 | `.env` | Created with `POSTHOG_PROJECT_TOKEN` and `POSTHOG_API_HOST` |
 
@@ -30,11 +30,11 @@ The wizard has completed a deep integration of PostHog analytics into the AutoCu
 We've built a dashboard and insights to keep an eye on user behavior:
 
 - [Analytics basics dashboard](/dashboard/1586952)
-- [CTA Clicks Over Time](/insights/9ueuntmw) — daily trend of all three CTA buttons
-- [CTA Unique Users](/insights/U6Xu3dQD) — unique daily users clicking each CTA
-- [Exploration to Conversion Funnel](/insights/Bf5fzaBJ) — users who explore "See how it works" vs. those who convert to a studio CTA
-- [FAQ Question Popularity](/insights/TLB0zyMG) — which FAQ questions users open most (top objections)
-- [Social Link Clicks by Platform](/insights/uSoIYDY4) — X vs. YouTube vs. LinkedIn click distribution
+- [CTA Clicks Over Time](/insights/9ueuntmw), daily trend of all three CTA buttons
+- [CTA Unique Users](/insights/U6Xu3dQD), unique daily users clicking each CTA
+- [Exploration to Conversion Funnel](/insights/Bf5fzaBJ), users who explore "See how it works" vs. those who convert to a studio CTA
+- [FAQ Question Popularity](/insights/TLB0zyMG), which FAQ questions users open most (top objections)
+- [Social Link Clicks by Platform](/insights/uSoIYDY4), X vs. YouTube vs. LinkedIn click distribution
 
 ### Agent skill
 
