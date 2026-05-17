@@ -561,6 +561,73 @@ main { padding-top: 80px; }
   .posts { grid-template-columns: 1fr; }
 }
 
+/* ───── Q&A (AEO snippet-extractable) ───── */
+.qa {
+  margin-top: 4em;
+  padding-top: 32px;
+  border-top: 1px solid rgba(243, 239, 229, 0.12);
+}
+.qa__h {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.9em;
+}
+.qa__h em { color: var(--green); font-style: italic; }
+.qa__item {
+  border-bottom: 1px solid rgba(243, 239, 229, 0.1);
+  padding: 18px 0;
+}
+.qa__item:last-child { border-bottom: 0; }
+.qa__q {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--paper);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.qa__q::-webkit-details-marker { display: none; }
+.qa__q::after {
+  content: "+";
+  font-family: var(--mono);
+  font-size: 22px;
+  color: var(--green);
+  line-height: 1;
+}
+.qa__item[open] .qa__q::after { content: "−"; }
+.qa__a {
+  color: var(--dim);
+  font-size: 16px;
+  line-height: 1.55;
+  padding-top: 10px;
+}
+
+/* ───── byline ───── */
+.byline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(243, 239, 229, 0.08);
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dimmer);
+  flex-wrap: wrap;
+}
+.byline a { color: var(--dim); text-decoration: underline; text-underline-offset: 3px; }
+.byline a:hover { color: var(--paper); }
+.byline b { color: var(--paper); font-weight: 500; }
+
 /* ───── related links ───── */
 .related {
   margin-top: 4em;

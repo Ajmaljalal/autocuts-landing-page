@@ -1,0 +1,39 @@
+# AutoCuts
+
+> AutoCuts is an AI video editor built for talking-head creators. Upload one raw recording and get a polished long-form episode, captioned 9:16 shorts for TikTok / Instagram Reels / YouTube Shorts, and motion graphics — without scrubbing a timeline.
+
+AutoCuts is most useful for YouTubers, podcasters, founders recording video newsletters, and anyone whose content is primarily one or two people talking to camera. It is not built for B-roll-heavy montages, music videos, or complex multi-camera narratives.
+
+The product is free to try with 10 credits, no credit card required.
+
+## Core pages
+
+- [Home](https://autocuts.ai/): Product overview, what you get from one upload, FAQ
+- [About](https://autocuts.ai/about/): Who AutoCuts is for, why we built it, how we work
+- [Pricing](https://autocuts.ai/#pricing): Free with 10 credits, pay-as-you-go after
+
+## Features
+
+- [AI video editor for YouTubers](https://autocuts.ai/features/ai-video-editor-for-youtubers/): The core feature page for talking-head creators
+- [AI video cleanup](https://autocuts.ai/features/ai-video-cleanup/): Automatic removal of filler words, dead air, and false starts
+- [Turn long videos into shorts](https://autocuts.ai/features/turn-long-videos-into-shorts/): Generate captioned 9:16 vertical clips from a long recording
+- [Add motion graphics to videos](https://autocuts.ai/features/add-motion-graphics-to-videos/): Automatic lower-thirds, number callouts, and charts
+
+## Comparisons
+
+- [AutoCuts vs CapCut](https://autocuts.ai/compare/autocuts-vs-capcut/): When each tool wins for YouTubers
+- [AutoCuts vs OpusClip](https://autocuts.ai/compare/autocuts-vs-opusclip/): Full pipeline vs shorts-only clipping
+- [AutoCuts vs Descript](https://autocuts.ai/compare/autocuts-vs-descript/): Cut-first AI vs transcript-first manual editing
+
+## Library (long-form guides)
+
+- [Best AI video editor for YouTubers in 2026](https://autocuts.ai/blog/best-ai-video-editor-for-youtubers/): Honest ranking of AutoCuts, Descript, OpusClip, CapCut, Vizard, Munch
+- [How to turn a long video into shorts](https://autocuts.ai/blog/how-to-turn-long-videos-into-shorts/): Manual and AI workflows
+- [How to add motion graphics without editing skills](https://autocuts.ai/blog/add-motion-graphics-without-editing-skills/): Which graphics earn their place
+- [How to clean up YouTube videos faster](https://autocuts.ai/blog/clean-up-youtube-videos-faster/): Manual editing, Descript, and AI cleanup compared
+- [Best CapCut alternative for talking videos](https://autocuts.ai/blog/best-capcut-alternative-for-talking-videos/): Honest breakdown for talking-head creators
+
+## Legal
+
+- [Privacy](https://autocuts.ai/privacy.html)
+- [Terms](https://autocuts.ai/terms.html)

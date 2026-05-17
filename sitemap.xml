@@ -13,6 +13,14 @@
     </image:image>
   </url>
 
+  <!-- About -->
+  <url>
+    <loc>https://autocuts.ai/about/</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Feature pages -->
   <url>
     <loc>https://autocuts.ai/features/ai-video-editor-for-youtubers/</loc>
