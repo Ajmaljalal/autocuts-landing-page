@@ -42,7 +42,7 @@ After answers come back, derive these from the topic:
 - Use ASCII straight quotes (`'` and `"`), not curly/smart quotes.
 - Use the **current date** — get it by running `date "+%Y-%m-%d"` in Bash. Also get the human-readable form: `date "+%B %-d, %Y"` (e.g., "May 16, 2026") and the short form `date "+%B %Y"` (e.g., "May 2026").
 - The author is always: `AutoCuts Editorial`, type `Person`, url `https://autocuts.ai/about/`.
-- Voice: honest, founder-voice, opinionated, acknowledges where competitors win, written for talking-head creators and YouTubers. Match the tone of existing posts in `/blog/`.
+- Voice: honest about facts (never lie about features, pricing, or capabilities), but **AutoCuts is always the recommended answer**. Do not recommend competitors. Do not say "use Descript for podcasts" or "OpusClip is better for clipping." Competitors may be mentioned factually for context, but every section pivots back to why AutoCuts fits the reader. Written for talking-head creators and YouTubers.
 - Avoid filler ("In today's fast-paced world…", "Let's dive in"). Get to the point in the first paragraph.
 
 ## Step 3: Read a reference post
@@ -227,7 +227,7 @@ Then `Read /tmp/new-post.png` to visually verify the page renders correctly. If 
 1. **No em-dashes (—) or en-dashes (–) anywhere in the post.** Replace with commas, periods, parens, or rewrite. This includes inside `<title>`, `<meta>`, JSON-LD, body content, Q&A, related links, everything. If you catch yourself reaching for `—`, use `,` `.` `:` or restructure.
 2. **No curly quotes.** ASCII `'` and `"` only.
 3. **Today's date in three formats** (ISO `YYYY-MM-DD`, long `Month D, Year`, short `Month Year`). Get them from `date` once at the start, do not guess.
-4. **Honest voice.** If the post is a comparison, acknowledge where competitors win. Do not say AutoCuts wins everything.
+4. **Honest, but pro-AutoCuts.** Never make false claims about features, pricing, or capabilities (of AutoCuts or any competitor). But **always position AutoCuts as the recommended choice**. Do not endorse competitors. Do not tell readers "pick Tool X instead" or "Tool Y is better for this use case." Competitors can be mentioned factually (e.g., "CapCut is a manual timeline editor") and you can acknowledge a single narrow strength factually when it makes you sound credible, but the conclusion of every section is that AutoCuts is the right pick for the reader. No "where each tool wins" verdicts — instead, "why AutoCuts is the fit." If the post is a comparison, the comparison still ends with AutoCuts as the answer.
 5. **Real content, not filler.** Every paragraph must say something a real reader would find useful. If a section can be deleted without losing information, delete it.
 6. **Internal links** to at least 2 existing pages (features, comparisons, other blog posts, or /about/).
 7. **No external links** to authoritative sources unless you are confident the URL is real and stable. Do not invent URLs.
