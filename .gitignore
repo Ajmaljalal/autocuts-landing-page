@@ -3,3 +3,6 @@
 **/.DS_Store
 **/.thumbnails/
 **/.media/
+
+# demo video project + rendered videos stay local for now
+videos/
