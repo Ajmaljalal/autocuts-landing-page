@@ -137,6 +137,39 @@ for (const file of scanTargets) {
   }
 }
 
+const homepage = readFileSync(join(root, "index.html"), "utf8");
+const homepageTitle = match(homepage, /<title>([\s\S]*?)<\/title>/i) ?? "";
+const homepageDescription = match(homepage, /<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i) ?? "";
+const homepageBody = match(homepage, /<body\b[^>]*>([\s\S]*?)<\/body>/i) ?? "";
+const stripMarkup = (value) => value
+  .replace(/<script\b[\s\S]*?<\/script>/gi, " ")
+  .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
+  .replace(/<[^>]+>/g, " ")
+  .replace(/\s+/g, " ")
+  .trim();
+const homepageBodyText = stripMarkup(homepageBody);
+const homepageHeadingText = [...homepageBody.matchAll(/<h[1-3]\b[^>]*>([\s\S]*?)<\/h[1-3]>/gi)]
+  .map((heading) => stripMarkup(heading[1]))
+  .join(" ");
+const homepageKeywordRequirements = [
+  [homepageTitle, /Mac Screen Recorder With Automatic Zoom/i, "primary keyword in the title"],
+  [homepageDescription, /Mac screen recorder with automatic zoom/i, "primary keyword in the meta description"],
+  [homepageBodyText, /Mac screen recorder with automatic zoom/i, "primary keyword in visible copy"],
+  [homepageHeadingText, /screen recorder for product demos/i, "product-demo keyword in a heading"],
+  [homepageBodyText, /screen and camera recorder for Mac/i, "screen-and-camera keyword in visible copy"],
+  [homepageHeadingText, /Record your Mac screen with system audio/i, "system-audio topic in a heading"],
+  [homepageHeadingText, /screen recorder with a built-in teleprompter/i, "teleprompter keyword in a heading"],
+  [homepageHeadingText, /local screen recorder/i, "local-recorder keyword in a heading"],
+  [homepageHeadingText, /Pay once.*Mac screen recorder.*No subscription/i, "no-subscription topic in a heading"],
+];
+
+for (const [source, pattern, label] of homepageKeywordRequirements) {
+  if (!pattern.test(source)) add("index.html", `missing ${label}`);
+}
+if (/<meta\s+name=["']keywords["']/i.test(homepage)) {
+  add("index.html", "must not use the obsolete meta keywords tag");
+}
+
 const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>(https:\/\/autocuts\.ai[^<]+)<\/loc>/g)].map((match) => match[1]);
 const sitemapSet = new Set(sitemapUrls);
