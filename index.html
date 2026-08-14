@@ -1,600 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoCuts AI Video Editor: Talking-Head Videos, Shorts, Captions</title>
-    <meta name="description"
-      content="AutoCuts helps creators auto cut talking-head videos into polished edits, captioned Shorts, and motion graphics from one upload. Start with 10 free credits, no card.">
-    <meta name="keywords"
-      content="AI clip maker, AI video clipper, turn long videos into shorts, video repurposing tool, AI shorts generator, AI video editor, video editor AI, video AI editor, AI editor video, free AI video editor trial, free video editor trial, talking-head video editor, automatic video editing, captioned shorts, add captions to video, auto caption generator, AI captions, word-by-word captions, animated captions, subtitle generator, auto subtitles, burn captions into video, add motion graphics to video, animated text, kinetic typography, auto b-roll, lower thirds, auto reframe to vertical, 9:16 reframe, horizontal and vertical captions, podcast to shorts, repurpose long video, TikTok captions, Instagram Reels captions, YouTube Shorts captions, OpusClip alternative, Submagic alternative, Captions.ai alternative, CapCut auto captions, edit video with AI, remove silences">
-    <link rel="canonical" href="https://autocuts.ai/">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#0f0e0c">
-    <link rel="icon" type="image/png" href="img/favicon-32.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autocuts: Mac Screen Recorder With a Built-In Motion Studio</title>
+  <meta name="description"
+    content="Autocuts is a screen recorder for Mac that makes your recording look edited: smart zooms on every click, a smooth cursor, camera layouts, backgrounds, and on-device captions. Pay once, keep it forever.">
+  <link rel="canonical" href="https://autocuts.ai/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0e1114">
+  <link rel="icon" type="image/png" href="img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-    <meta property="og:title" content="AutoCuts AI Video Editor: Talking-Head Videos, Shorts, Captions">
-    <meta property="og:description"
-      content="Auto cut one talking-head recording into a polished video, captioned Shorts, and motion graphics. Start with 10 free credits, no card.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://autocuts.ai/">
-    <meta property="og:image" content="https://autocuts.ai/img/og-image.png">
+  <meta property="og:title" content="Autocuts: Mac Screen Recorder With a Built-In Motion Studio">
+  <meta property="og:description"
+    content="Record your screen once and get a video that looks edited. Smart zooms, smooth cursor, camera layouts, backgrounds, captions. One-time purchase, local files only.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://autocuts.ai/">
+  <meta property="og:image" content="https://autocuts.ai/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Autocuts: Mac Screen Recorder With a Built-In Motion Studio">
+  <meta name="twitter:description"
+    content="Record your screen once and get a video that looks edited. Smart zooms, smooth cursor, camera layouts, backgrounds, captions. One-time purchase, local files only.">
+  <meta name="twitter:image" content="https://autocuts.ai/img/og-image.png">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AutoCuts AI Video Editor: Talking-Head Videos, Shorts, Captions">
-    <meta name="twitter:description"
-      content="Auto cut one talking-head recording into a polished video, captioned Shorts, and motion graphics. Start with 10 free credits.">
-    <meta name="twitter:image" content="https://autocuts.ai/img/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Autocuts",
+    "applicationCategory": "MultimediaApplication",
+    "applicationSubCategory": "Screen Recorder",
+    "operatingSystem": "macOS",
+    "url": "https://autocuts.ai/",
+    "image": "https://autocuts.ai/img/og-image.png",
+    "description": "Screen recorder for Mac with a built-in motion studio: smart click zooms, a smooth reconstructed cursor, camera layouts, gradient backgrounds, on-device captions, and 4K export. One-time purchase.",
+    "offers": {
+      "@type": "Offer",
+      "price": "49",
+      "priceCurrency": "USD",
+      "description": "One-time purchase. No subscription."
+    },
+    "featureList": [
+      "Record a display, a window, or a selected area",
+      "Camera, microphone, and system audio",
+      "Smart zooms generated from your clicks",
+      "Smooth reconstructed cursor with click ripples",
+      "Ten camera layout presets",
+      "Gradient, color, and image backgrounds",
+      "Voice-paced teleprompter",
+      "On-device transcription and captions",
+      "Clip timeline with split, speed, and cut",
+      "MP4 or WebM export up to 4K at 60 fps"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which Macs does Autocuts support?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Autocuts is built for Apple Silicon Macs. macOS Sonoma 14.0 or later is recommended." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do my recordings leave my Mac?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Recordings are written to the Videos folder on your Mac as normal files. Transcription runs on your device, so nothing is uploaded." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Autocuts record system audio?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Autocuts can capture system audio together with your microphone and camera on supported macOS versions." }
+      },
+      {
+        "@type": "Question",
+        "name": "What can Autocuts export?",
+        "acceptedAnswer": { "@type": "Answer", "text": "MP4 (H.264) or WebM (VP9), up to 4K at 60 fps, with optional burned-in captions plus SRT and VTT sidecar files." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Autocuts a subscription?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Autocuts is a one-time purchase with no renewals." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I change the video after I stop recording?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The studio lets you edit zooms, the cursor, camera layouts, backgrounds, clips, speed, and captions after the take." }
+      }
+    ]
+  }
+  </script>
 
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "AutoCuts",
-            "alternateName": "AutoCuts AI",
-            "url": "https://autocuts.ai/",
-            "logo": "https://autocuts.ai/img/icon.png",
-            "description": "AutoCuts is an AI video editor for solo content creators making talking-head videos for TikTok, YouTube, and Instagram. Upload one raw recording, pick one outcome, and get vertical clips, word-by-word captions, or motion graphics, without scrubbing a timeline.",
-            "foundingLocation": "California, USA",
-            "sameAs": [
-                "https://x.com/autocutsai",
-                "https://www.youtube.com/@autocutsai",
-                "https://www.linkedin.com/company/autocuts-ai/"
-            ]
-        }
-    </script>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "AutoCuts",
-            "url": "https://autocuts.ai/",
-            "publisher": { "@type": "Organization", "name": "AutoCuts" },
-            "inLanguage": "en"
-        }
-    </script>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "name": "AutoCuts features",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "url": "https://autocuts.ai/features/ai-video-editor-for-youtubers/",
-                    "name": "AI video editor for YouTubers"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "url": "https://autocuts.ai/features/ai-video-cleanup/",
-                    "name": "AI video cleanup"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "url": "https://autocuts.ai/features/turn-long-videos-into-shorts/",
-                    "name": "Turn long videos into shorts"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 4,
-                    "url": "https://autocuts.ai/features/add-motion-graphics-to-videos/",
-                    "name": "Add motion graphics to videos"
-                }
-            ]
-        }
-    </script>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "AutoCuts",
-            "applicationCategory": "MultimediaApplication",
-            "applicationSubCategory": "Video Editor",
-            "operatingSystem": "Web",
-            "url": "https://autocuts.ai/",
-            "image": "https://autocuts.ai/img/og-image.png",
-            "description": "AI video editor built for solo content creators making talking-head videos for TikTok, YouTube, and Instagram. Upload one raw recording, pick one outcome, and get vertical clips, word-by-word captions, or motion graphics, without scrubbing a timeline.",
-            "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "description": "Start free with 10 credits. No credit card required. Pay-as-you-go after that."
-            },
-            "featureList": [
-                "Extract vertical clips from the strongest moments",
-                "Add word-by-word captions to vertical or horizontal videos",
-                "Add motion graphics, charts, icons, and animations as you talk",
-                "Fast upload, style, and confirm workflow",
-                "Mobile uploads"
-            ]
-        }
-    </script>
+  <link rel="preload" href="img/demos/hero.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+</head>
 
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "What do I get from one upload?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Pick one upload outcome: extract vertical clips, add captions to a vertical or horizontal video, or add motion graphics as you talk."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Do I need video editing skills to use AutoCuts?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "No. Upload the raw recording, review the edit, and approve the final version. You do not need to scrub a timeline."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How long does it take to get a finished video?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Most recordings become a reviewable edit in under 10 minutes. After your approval, the final render is ready to publish."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Do I lose control over my edits?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "No. AutoCuts prepares the edit, but you approve the final cut. Nothing ships without your call."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What happens to my uploaded videos?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Your videos are processed on secure cloud infrastructure. Raw and processed media are removed within 30 days of project deletion. We never use private videos for AI training without consent."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Is AutoCuts a free AI video editor?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "AutoCuts is free to try with 10 credits and no credit card required. It is not an unlimited free video editor, serious publishing volume is pay as you go."
-                    }
-                }
-            ]
-        }
-    </script>
+<body>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style"
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional"
-      onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional"
-        rel="stylesheet">
-    </noscript>
-    <link rel="preload" href="clips/captions-horizontal.webp" as="image" type="image/webp" fetchpriority="high">
-    <link rel="preload" href="landing.min.css" as="style">
-    <link rel="stylesheet" href="landing.min.css">
+  <header class="rail" id="top">
+    <div class="rail__inner">
+      <a href="#top" class="rail__brand">
+        <img src="img/icon-80.webp" width="34" height="34" alt="" decoding="async">
+        <b>Autocuts</b>
+      </a>
+      <nav class="rail__nav" aria-label="Main">
+        <a href="#features">Features</a>
+        <a href="#editor">Editor</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn--primary btn--sm" href="#download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        Download
+      </a>
+    </div>
+  </header>
 
-    <script src="landing.js" defer></script>
-  </head>
+  <main>
 
-  <body>
-
-    <!-- ──────────────────── TOP RAIL ──────────────────── -->
-    <header class="rail" aria-label="Top bar">
-      <div class="rail__inner">
-        <a href="#" class="rail__brand"><img src="img/icon-80.webp" srcset="img/icon-80.webp 80w, img/icon-160.webp 160w" sizes="52px" width="52" height="52" alt="" decoding="async"><b>AutoCuts</b></a>
-        <div class="rail__meta">10 FREE CREDITS</div>
-        <a class="rail__cta btn" href="https://studio.autocuts.ai/" target="_blank" rel="noopener">
-          <span class="btn__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 15V3" />
-              <polyline points="7 8 12 3 17 8" />
-              <path d="M4 14v4a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" />
-            </svg>
-          </span>
-          Start free
-        </a>
-      </div>
-      <div class="rail__razor" id="progressbar"></div>
-    </header>
-
-    <main>
-
-      <!-- ──────────────────── HERO ──────────────────── -->
-      <section class="hero">
-        <div class="frame">
-
-          <div class="hero__grid">
-            <h1 class="hero__title hero__rota">
-              <span class="rota__item is-active">Auto cut one recording into <span class="green">every video</span></span>
-              <span class="rota__item">Turn long videos into <span class="green">Shorts</span></span>
-              <span class="rota__item">Add captions and <span class="green">motion graphics</span></span>
-            </h1>
-
-            <div class="hero__left">
-              <p class="hero__sub">
-                For solo talking-head creators on YouTube, TikTok, and Instagram: AutoCuts turns one raw recording into a cleaned video, captioned Shorts, and motion graphics in about 10 minutes, without scrubbing a timeline.
-              </p>
-
-              <div class="hero__actions">
-                <a class="btn btn--primary" href="https://studio.autocuts.ai/" target="_blank" rel="noopener">
-                  <span class="btn__icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" aria-hidden="true">
-                      <path d="M12 15V3" />
-                      <polyline points="7 8 12 3 17 8" />
-                      <path d="M4 14v4a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" />
-                    </svg>
-                  </span>
-                  Start with 10 free credits
-                </a>
-              </div>
-
-              <div class="hero__proof" aria-label="AutoCuts trial details">
-                <span>10 free credits</span>
-                <span>No credit card</span>
-                <span>Review in about 10 minutes</span>
-              </div>
-
-            </div>
-
-            <div class="hero__right">
-              <div class="vf" aria-roledescription="carousel" aria-label="What AutoCuts makes from one recording">
-                <div class="viewfinder-wrap">
-                  <div class="viewfinder-tilted">
-                    <div class="viewfinder">
-                      <div class="viewfinder__screen vf-screen">
-                        <div class="vf-slides">
-                          <div class="vf-slide is-active" data-orient="h" data-kicker="Main video · 16:9" data-title="Add captions to any video" data-desc="Word-by-word captions, perfectly synced to your voice.">
-                            <video class="vf-vid" data-src="clips/captions-horizontal.mp4" poster="clips/captions-horizontal.webp" muted playsinline preload="none" width="960" height="540" aria-label="Horizontal 16:9 talking-head video with auto-generated word-by-word captions"></video>
-                          </div>
-                          <div class="vf-slide" data-orient="h" data-kicker="Auto-reframe · 9:16 clips" data-title="Turn one video into shorts" data-desc="One horizontal recording, auto-reframed into a captioned clip and a motion-graphics clip.">
-                            <video class="vf-vid" data-src="clips/split-reframe.mp4" poster="clips/split-reframe.webp" muted playsinline preload="none" width="960" height="540" aria-label="One horizontal recording auto-reframed into two vertical 9:16 clips side by side, one with word-by-word captions and one with animated motion-graphics callouts"></video>
-                          </div>
-                          <div class="vf-slide" data-orient="h" data-kicker="Key moments · motion graphics" data-title="Add animated motion graphics" data-desc="Charts, callouts, and lower-thirds animate as you talk.">
-                            <video class="vf-vid" data-src="clips/motion-horizontal.mp4" poster="clips/motion-horizontal.webp" muted playsinline preload="none" width="960" height="540" aria-label="Horizontal video with animated motion graphics, stat callouts and lower-thirds"></video>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <span class="sparkle" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                      <path
-                        d="M12 1.5 L13.6 9.4 L21.5 11 L13.6 12.6 L12 20.5 L10.4 12.6 L2.5 11 L10.4 9.4 Z" />
-                    </svg>
-                  </span>
-                </div>
-
-                <div class="vf-cap" aria-live="polite">
-                  <span class="vf-cap__kicker"></span>
-                  <span class="vf-cap__desc"></span>
-                </div>
-
-                <div class="vf-dots" role="tablist" aria-label="Choose an output to preview">
-                  <button class="vf-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Add captions to any video"></button>
-                  <button class="vf-dot" type="button" role="tab" aria-selected="false" aria-label="Turn one video into shorts"></button>
-                  <button class="vf-dot" type="button" role="tab" aria-selected="false" aria-label="Add animated motion graphics"></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ──────────────────── TRUSTED BY ──────────────────── -->
-      <section class="trusted" aria-label="Publishing channels">
-        <div class="frame">
-          <div class="trusted__label">Repurpose one recording across</div>
-          <div class="trusted__logos">
-            <span class="trusted__logo trusted__logo--youtube">
-              <span class="yt-play">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <polygon points="8 5 19 12 8 19" />
-                </svg>
-              </span>
-              <span>YouTube</span>
-            </span>
-            <span class="trusted__logo trusted__logo--tiktok">
-              <span class="tt-mark">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M14 3 V14.5 a3.5 3.5 0 1 1 -3.5 -3.5 v2.5 a1 1 0 1 0 1 1 V3 h2.5 a4.5 4.5 0 0 0 4.5 4.5 V10 a6.5 6.5 0 0 1 -4.5 -1.8 Z" />
-                </svg>
-              </span>
-              <span>TikTok</span>
-            </span>
-            <span class="trusted__logo trusted__logo--instagram">
-              <span class="ig-mark">
-                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="3" y="3" width="18" height="18" rx="5" />
-                  <circle cx="12" cy="12" r="4" />
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-                </svg>
-              </span>
-              <span>Instagram</span>
-            </span>
-            <span class="trusted__logo trusted__logo--linkedin">
-              <span class="li-mark">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5.3 8.6h3.3v10.1H5.3V8.6Zm1.7-4.7a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8Zm3.7 4.7h3.1v1.4c.5-.9 1.6-1.7 3.2-1.7 3.4 0 4 2.2 4 5.1v5.3h-3.3V14c0-1.1 0-2.6-1.6-2.6s-1.9 1.2-1.9 2.5v4.8h-3.3V8.6Z" />
-                </svg>
-              </span>
-              <span>LinkedIn</span>
-            </span>
-            <span class="trusted__logo trusted__logo--x">
-              <span class="x-mark">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M13.8 10.5 21 2h-1.7l-6.2 7.3L8.1 2H2.4l7.5 10.9L2.4 22h1.7l6.6-7.8 5.2 7.8h5.7l-7.8-11.5Zm-2.3 2.7-.8-1.1-6-8.8h2.6l4.9 7.2.8 1.1 6.3 9.2h-2.6l-5.2-7.6Z" />
-                </svg>
-              </span>
-              <span>x.com</span>
-            </span>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ──────────────────── PAIN ──────────────────── -->
-      <section class="sec-pain">
-        <div class="frame">
-          <div class="sec-pain__head">
-            <div>
-              <div class="micro">The value</div>
-              <h2>Post across every channel without losing hours in the edit</h2>
-            </div>
-          </div>
-
-          <div class="compare">
-            <div class="cell cell--before">
-              <div class="cell__lbl"><span>Problem</span></div>
-              <div class="cell__metric">5<span class="metric-unit">hrs</span><small>lost on every upload</small>
-              </div>
-              <div class="cell__line">Every talking-head recording becomes cuts, captions, and exports before you can post.</div>
-              <div class="strip strip--bottom">
-                <span></span><span class="bad"></span><span></span><span class="uh"></span><span></span><span
-                  class="bad"></span><span></span><span></span><span class="uh"></span><span></span><span
-                  class="bad"></span><span></span><span class="uh"></span><span></span><span></span><span
-                  class="bad"></span><span></span><span></span>
-              </div>
-            </div>
-
-            <div class="cell cell--after">
-              <div class="cell__lbl"><span>Solution</span></div>
-              <div class="cell__metric"><em>10</em><span class="metric-unit">min</span><small>to review</small></div>
-              <div class="cell__line">Upload once. Get the main video and clips ready to <span class="serif-i serif-i--green">post.</span>
-              </div>
-              <div class="strip strip--bottom">
-                <span class="good"></span><span class="good"></span><span class="good"></span><span
-                  class="good"></span><span class="good"></span><span class="good"></span><span
-                  class="good"></span><span class="good"></span><span class="good"></span><span
-                  class="good"></span><span class="good"></span><span class="good"></span><span
-                  class="good"></span><span class="good"></span><span class="good"></span><span
-                  class="good"></span><span class="good"></span><span class="good"></span>
-              </div>
-            </div>
-
-            <div class="razor" aria-hidden="true"></div>
-          </div>
-
-          <div class="section-action section-action--paper">
-            <a class="btn btn--primary" href="https://studio.autocuts.ai/" target="_blank" rel="noopener">
-              <span class="btn__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 15V3" />
-                  <polyline points="7 8 12 3 17 8" />
-                  <path d="M4 14v4a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" />
-                </svg>
-              </span>
-              Start free
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ──────────────────── OUTPUTS ──────────────────── -->
-      <section class="sec-outputs" id="outputs">
-        <div class="frame">
-          <div class="sec-outputs__head">
-            <div>
-              <div class="micro">What you get</div>
-              <h2>Auto cut one recording into every video you need</h2>
-            </div>
-          </div>
-
-          <div class="outcomes" aria-label="AutoCuts upload outcomes">
-            <div class="outcome-grid">
-              <article class="outcome-card">
-                <span class="outcome-card__step">01</span>
-                <h3>Turn long videos into Shorts</h3>
-                <p>An AI clip maker finds your strongest moments, auto-reframes them to 9:16, and exports captioned Shorts for TikTok, Reels, and YouTube Shorts.</p>
-              </article>
-
-              <article class="outcome-card">
-                <span class="outcome-card__step">02</span>
-                <h3>Clean up and caption videos</h3>
-                <p>Remove filler words and dead air, then auto-generate word-by-word captions and subtitles synced to your voice on vertical or horizontal videos.</p>
-              </article>
-
-              <article class="outcome-card">
-                <span class="outcome-card__step">03</span>
-                <h3>Add motion graphics</h3>
-                <p>Animated motion graphics, charts, icons, lower-thirds, and callouts appear on screen as you talk, no After Effects needed.</p>
-              </article>
-            </div>
-          </div>
-
-          <div class="section-action">
-            <a class="btn btn--primary" href="https://studio.autocuts.ai/" target="_blank" rel="noopener">
-              <span class="btn__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 15V3" />
-                  <polyline points="7 8 12 3 17 8" />
-                  <path d="M4 14v4a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" />
-                </svg>
-              </span>
-              Start free
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ──────────────────── CTA ──────────────────── -->
-      <section class="sec-cta" id="pricing">
-        <div class="sprockets" aria-hidden="true"></div>
-        <div class="frame">
-          <div class="cta">
-            <span class="cta__eye">10 free credits · no card required</span>
-            <h2>Record once.<br><em>Create every video</em><br>you need to post</h2>
-            <p class="cta__sub">Upload a talking-head video and review the edit in about 10 minutes. You approve the final cut.</p>
-            <a class="cta__btn" href="https://studio.autocuts.ai/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 15V3" />
-                <polyline points="7 8 12 3 17 8" />
-                <path d="M4 14v4a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" />
-              </svg>
-              Start free
-            </a>
-            <div class="cta__perks">
-              <span>Main video</span>
-              <span>Captioned clips</span>
-              <span>No timeline</span>
-              <span>You approve every edit</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ──────────────────── FAQ ──────────────────── -->
-      <section class="sec-faq" id="faq">
-        <div class="frame">
-          <div class="micro">Questions</div>
-          <div class="faq">
-            <h2 class="faq__title">The short<br><em>version.</em></h2>
-            <div class="faq__list">
-              <details class="faq__item" open>
-                <summary class="faq__q">What do I get from one upload?</summary>
-                <p class="faq__a">Pick exactly one outcome: vertical clips, captions for a vertical or horizontal video, or motion graphics.</p>
-              </details>
-              <details class="faq__item">
-                <summary class="faq__q">Do I need video editing skills?</summary>
-                <p class="faq__a">No. Upload the raw recording, review the edit, and approve the final version.</p>
-              </details>
-              <details class="faq__item">
-                <summary class="faq__q">How long from upload to finished video?</summary>
-                <p class="faq__a">Most recordings become a reviewable edit in under 10 minutes.</p>
-              </details>
-              <details class="faq__item">
-                <summary class="faq__q">Do I lose control over my edits?</summary>
-                <p class="faq__a">No. AutoCuts prepares the edit, but nothing ships without your approval.</p>
-              </details>
-              <details class="faq__item">
-                <summary class="faq__q">What happens to my uploaded videos?</summary>
-                <p class="faq__a">Processed on secure cloud infrastructure. Raw and processed media are removed within
-                  30 days of project deletion. We never use private videos for AI training without consent.</p>
-              </details>
-              <details class="faq__item">
-                <summary class="faq__q">Is AutoCuts a free AI video editor?</summary>
-                <p class="faq__a">AutoCuts is free to try with 10 credits and no credit card required. It is not an unlimited free video editor, serious volume is pay as you go.</p>
-              </details>
-            </div>
-          </div>
-
-          <div class="section-action">
-            <a class="btn btn--primary" href="https://studio.autocuts.ai/" target="_blank" rel="noopener">
-              <span class="btn__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 15V3" />
-                  <polyline points="7 8 12 3 17 8" />
-                  <path d="M4 14v4a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4" />
-                </svg>
-              </span>
-              Start free
-            </a>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- ──────────────────── FOOTER ──────────────────── -->
-    <footer>
+    <!-- HERO -->
+    <section class="hero">
       <div class="frame">
-
-        <!-- Link grid -->
-        <div class="foot-grid">
-          <div class="foot-col">
-            <div class="foot-col__h">Product</div>
-            <ul>
-              <li><a href="#outputs">What you get</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="https://studio.autocuts.ai/" target="_blank" rel="noopener">Start free</a></li>
-            </ul>
+        <div class="hero__copy" data-reveal>
+          <div class="micro">Screen recorder for macOS</div>
+          <h1>Record your screen and camera with <span class="grad">cinematic auto-edits</span>.</h1>
+          <p class="hero__sub">
+            Autocuts captures your display, camera, and microphone, then adds the polish for you:
+            smart zooms on every click, a smooth reconstructed cursor, beautiful backgrounds, and captions.
+            Everything stays on your Mac.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#download">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              Download for Mac
+            </a>
+            <a class="btn btn--ghost" href="#features">See it in action</a>
           </div>
-
-          <div class="foot-col">
-            <div class="foot-col__h">Resources</div>
-            <ul>
-              <li><a href="features/ai-video-editor-for-youtubers/">For video creators</a></li>
-              <li><a href="blog/">Blog</a></li>
-              <li><a href="about/">About</a></li>
-            </ul>
-          </div>
-
-          <div class="foot-col">
-            <div class="foot-col__h">Legal</div>
-            <ul>
-              <li><a href="privacy.html">Privacy</a></li>
-              <li><a href="terms.html">Terms</a></li>
-            </ul>
+          <div class="hero__proof">
+            <span>One-time purchase</span>
+            <span>Local files only</span>
+            <span>Apple Silicon ready</span>
           </div>
         </div>
 
-        <!-- Giant wordmark -->
-        <div class="foot-word" aria-hidden="true"><span class="foot-word__mark"></span></div>
-
-        <!-- Bottom bar -->
-        <div class="foot-bar">
-          <span>© 2026 AutoCuts</span>
-          <div class="foot-bar__tc">
-            <span><i class="dot"></i>System online</span>
-            <span>Built in California</span>
-          </div>
-          <div class="foot-bar__right">
-            <a href="https://x.com/autocutsai" target="_blank" rel="noopener" aria-label="x.com">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2H21.5l-7.5 8.57L23 22h-6.86l-5.37-7.02L4.6 22H1.34l8.03-9.17L1 2h7.04l4.86 6.43L18.244 2zm-1.2 18h1.86L7.04 4H5.1l11.944 16z"/></svg>
-              <span>x.com</span>
-            </a>
-            <a href="https://www.youtube.com/@autocutsai" target="_blank" rel="noopener" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.12-2.13C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.57A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.12 2.13C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.57a3 3 0 0 0 2.12-2.13A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.24 3.6-6.24 3.6z"/></svg>
-              <span>YouTube</span>
-            </a>
-            <a href="https://www.linkedin.com/company/autocuts-ai/" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.99 0 1.78-.77 1.78-1.72V1.72C24 .77 23.21 0 22.22 0z"/></svg>
-              <span>LinkedIn</span>
-            </a>
+        <div class="hero__stage" data-reveal data-reveal-delay="1">
+          <div class="vid vid--hero">
+            <video data-src="videos/autocuts-desktop-demos/renders/hero.mp4" poster="img/demos/hero.webp"
+              muted playsinline loop preload="none" width="1080" height="1080"
+              aria-label="A full Autocuts workflow: a dashboard recording composed on a gradient background with a camera bubble, smart zooms riding each click"></video>
           </div>
         </div>
-
       </div>
-    </footer>
+    </section>
 
-  </body>
+    <!-- WHO -->
+    <section class="who">
+      <div class="frame">
+        <div class="who__grid">
+          <article class="who__card" data-reveal>
+            <h3>Developers</h3>
+            <p>Show the feature, not just the pull request. Ship a demo with every release.</p>
+          </article>
+          <article class="who__card" data-reveal data-reveal-delay="1">
+            <h3>Course creators</h3>
+            <p>Clear lessons with zooms and captions, without an editing pass after every take.</p>
+          </article>
+          <article class="who__card" data-reveal data-reveal-delay="2">
+            <h3>Founders</h3>
+            <p>Launch videos and product tours in an afternoon, ready for your landing page.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+      <div class="frame">
+        <header class="sec-head" data-reveal>
+          <h2>Every recording gets the full treatment</h2>
+          <p>Autocuts records the raw take and the data around it: clicks, cursor, keys, and voice. The studio turns that data into motion.</p>
+        </header>
+
+        <div class="cards">
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <video data-src="videos/autocuts-desktop-demos/renders/record-anything.mp4" poster="img/demos/record-anything.webp"
+              muted playsinline loop preload="none" width="1080" height="1080"
+              aria-label="The Autocuts recorder pill on a desktop, with the cursor moving across the capture source options"></video>
+          </div>
+          <div class="card__body">
+            <div class="micro">Capture</div>
+            <h3>Record anything on your screen</h3>
+            <p>Capture a display, a window, or a selected area. Add your camera, your microphone, and system audio in one click.</p>
+            <ul class="ticks">
+              <li>Count down 1, 3, or 5 seconds before the take starts</li>
+              <li>Switch the recorded screen mid-take with a hotkey</li>
+              <li>Autocuts overlays stay out of the recording</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card" data-reveal data-reveal-delay="1">
+          <div class="card__media">
+            <video data-src="videos/autocuts-desktop-demos/renders/smart-zoom.mp4" poster="img/demos/smart-zoom.webp"
+              muted playsinline loop preload="none" width="1080" height="1080"
+              aria-label="A dashboard recording where the camera zooms in on each click and glides back out"></video>
+          </div>
+          <div class="card__body">
+            <div class="micro">Studio</div>
+            <h3>Smart zoom follows your clicks</h3>
+            <p>The camera pushes in on every click, holds, and glides back out. You get the cinematic move without keyframes.</p>
+            <ul class="ticks">
+              <li>Zooms generate automatically from your click track</li>
+              <li>Adjust level, timing, and position in the studio</li>
+              <li>Add or remove any zoom on the timeline</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <video data-src="videos/autocuts-desktop-demos/renders/smooth-cursor.mp4" poster="img/demos/smooth-cursor.webp"
+              muted playsinline loop preload="none" width="1080" height="1080"
+              aria-label="A task tracker recording with a large smooth cursor that changes color and size, with click ripples"></video>
+          </div>
+          <div class="card__body">
+            <div class="micro">Studio</div>
+            <h3>A cursor your viewers can follow</h3>
+            <p>Autocuts records the cursor as data, then redraws it: bigger, smoother, and in the color you pick.</p>
+            <ul class="ticks">
+              <li>Any size, 16 colors, arrow and pointing hand</li>
+              <li>Adjustable smoothing takes out hand jitter</li>
+              <li>Click ripples show every press</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card" data-reveal data-reveal-delay="1">
+          <div class="card__media">
+            <video data-src="videos/autocuts-desktop-demos/renders/camera-layouts.mp4" poster="img/demos/camera-layouts.webp"
+              muted playsinline loop preload="none" width="1080" height="1080"
+              aria-label="The Autocuts studio stepping through ten camera layout presets, ending on the composed result"></video>
+          </div>
+          <div class="card__body">
+            <div class="micro">Camera</div>
+            <h3>Ten camera layouts, one click</h3>
+            <p>Put your camera where the story needs it: a bubble in the corner, a split screen, a solo shot, or a portrait stack.</p>
+            <ul class="ticks">
+              <li>Presets reframe the screen and the camera together</li>
+              <li>Portrait layouts ready for Shorts and Reels</li>
+              <li>Camera zoom, size, and position stay editable</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <video data-src="videos/autocuts-desktop-demos/renders/backgrounds.mp4" poster="img/demos/backgrounds.webp"
+              muted playsinline loop preload="none" width="1080" height="1080"
+              aria-label="The Autocuts studio where clicks on background swatches repaint the canvas behind the recording"></video>
+          </div>
+          <div class="card__body">
+            <div class="micro">Canvas</div>
+            <h3>Backgrounds that sell the shot</h3>
+            <p>Wrap the recording in a gradient wall, padding, rounded corners, and a soft shadow. Pick the canvas your channel needs.</p>
+            <ul class="ticks">
+              <li>Gradient, color, and image walls built in</li>
+              <li>Padding, corner radius, and shadow controls</li>
+              <li>Canvas ratios: 16:9, 4:3, 1:1, 4:5, and 9:16</li>
+            </ul>
+          </div>
+        </article>
+        <article class="card" data-reveal data-reveal-delay="1">
+          <div class="card__media">
+            <video data-src="videos/autocuts-desktop-demos/renders/teleprompter.mp4" poster="img/demos/teleprompter.webp"
+              muted playsinline loop preload="none" width="1080" height="1080"
+              aria-label="A calendar app during recording with the teleprompter pill, the recording indicator, and a camera bubble on top"></video>
+          </div>
+          <div class="card__body">
+            <div class="micro">Capture</div>
+            <h3>Read your script, keep eye contact</h3>
+            <p>The teleprompter grows from the top of the screen and advances only while you speak. It never shows up in the recording.</p>
+            <ul class="ticks">
+              <li>Voice-paced scrolling, hands stay on the keyboard</li>
+              <li>Karaoke highlight follows your words</li>
+              <li>Invisible to the capture, like every Autocuts overlay</li>
+            </ul>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITOR -->
+    <section class="editor" id="editor">
+      <div class="frame">
+        <header class="sec-head" data-reveal>
+          <h2>One editor, full control</h2>
+          <p>Every automatic decision stays editable. Trim, retime, and restyle the whole video without leaving the app.</p>
+        </header>
+
+        <div class="editor__stage" data-reveal>
+          <div class="vid vid--wide">
+            <video data-src="videos/autocuts-desktop-demos/renders/video-editor.mp4" poster="img/demos/video-editor.webp"
+              muted playsinline loop preload="none" width="1080" height="1080"
+              aria-label="The Autocuts clip timeline: a slider drag, a zoom block edit, a speed change to 1.5x, and two cuts with a clip delete"></video>
+          </div>
+        </div>
+
+        <ul class="chips" data-reveal aria-label="Editor features">
+          <li>Trim and cut</li>
+          <li>Speed control</li>
+          <li>Zoom editor</li>
+          <li>Click ripples</li>
+          <li>Cursor size and color</li>
+          <li>On-device captions</li>
+          <li>Cut by transcript</li>
+          <li>Filler word removal</li>
+          <li>Keystroke captions</li>
+          <li>Saved presets</li>
+          <li>4K export at 60 fps</li>
+          <li>SRT and VTT sidecars</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MACOS -->
+    <section class="mac">
+      <div class="frame">
+        <header class="sec-head" data-reveal>
+          <h2>Made for your Mac.<br>Stays on your Mac.</h2>
+        </header>
+        <div class="mac__grid">
+          <article class="mac__card" data-reveal>
+            <h3>Apple Silicon ready</h3>
+            <p>Built for Apple Silicon. macOS Sonoma 14.0 or later is recommended.</p>
+          </article>
+          <article class="mac__card" data-reveal data-reveal-delay="1">
+            <h3>Normal local files</h3>
+            <p>Recordings live in the Videos folder as files you own. No account, no cloud, no upload.</p>
+          </article>
+          <article class="mac__card" data-reveal data-reveal-delay="2">
+            <h3>Captions on device</h3>
+            <p>Transcription downloads a speech model once, then runs offline on your Mac.</p>
+          </article>
+          <article class="mac__card" data-reveal data-reveal-delay="3">
+            <h3>Frame-accurate export</h3>
+            <p>MP4 (H.264) or WebM (VP9) up to 4K at 60 fps. Every frame is rendered, none are dropped.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+      <div class="frame">
+        <header class="sec-head" data-reveal>
+          <h2>Pay once. Use it forever.</h2>
+          <p>One purchase. No subscription. No renewals.</p>
+        </header>
+
+        <div class="price-card" data-reveal>
+          <div class="price-card__amount">
+            <span class="price-card__currency">$</span><span class="price-card__num">49</span>
+            <span class="price-card__note">one-time</span>
+          </div>
+          <ul class="ticks ticks--center">
+            <li>All features included</li>
+            <li>Free updates</li>
+            <li>Use on 2 Macs</li>
+            <li>14-day money-back guarantee</li>
+          </ul>
+          <!-- TODO: replace with the real checkout link -->
+          <a class="btn btn--primary btn--lg" href="#download">Get Autocuts</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="frame">
+        <header class="sec-head" data-reveal>
+          <h2>Questions about Autocuts</h2>
+        </header>
+        <div class="faq__list" data-reveal>
+          <details class="faq__item" open>
+            <summary>Which Macs does Autocuts support?</summary>
+            <p>Autocuts is built for Apple Silicon Macs. macOS Sonoma 14.0 or later is recommended.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Do my recordings leave my Mac?</summary>
+            <p>No. Recordings are written to the Videos folder on your Mac as normal files. Transcription runs on your device, so nothing is uploaded.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Can Autocuts record system audio?</summary>
+            <p>Yes. Autocuts can capture system audio together with your microphone and camera on supported macOS versions.</p>
+          </details>
+          <details class="faq__item">
+            <summary>What can Autocuts export?</summary>
+            <p>MP4 (H.264) or WebM (VP9), up to 4K at 60 fps, with optional burned-in captions plus SRT and VTT sidecar files.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Is Autocuts a subscription?</summary>
+            <p>No. Autocuts is a one-time purchase. You keep the app and your files.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Can I change the video after I stop recording?</summary>
+            <p>Yes. The studio lets you edit zooms, the cursor, camera layouts, backgrounds, clips, speed, and captions after the take.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Can I get a refund?</summary>
+            <p>Yes. If Autocuts is not for you, write within 14 days of purchase for a full refund.</p>
+          </details>
+          <details class="faq__item">
+            <summary>How do I contact support?</summary>
+            <p>Email <a href="mailto:support@autocuts.ai">support@autocuts.ai</a>. A human reads every message.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section class="download" id="download">
+      <div class="frame">
+        <div class="download__card" data-reveal>
+          <img src="img/icon-160.webp" width="72" height="72" alt="" decoding="async">
+          <h2>Download Autocuts</h2>
+          <p>Turn your next screen recording into a video people watch to the end.</p>
+          <!-- TODO: replace with the real DMG link -->
+          <a class="btn btn--primary btn--lg" href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            Download for Apple Silicon
+          </a>
+          <span class="download__req">macOS Sonoma 14.0 or later is recommended</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="frame">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a href="#top" class="rail__brand"><img src="img/icon-80.webp" width="30" height="30" alt=""><b>Autocuts</b></a>
+          <p>The Mac screen recorder with a built-in motion studio.</p>
+        </div>
+        <div class="foot-col">
+          <div class="foot-col__h">Product</div>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#editor">Editor</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#download">Download</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <div class="foot-col__h">Legal</div>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <div class="foot-col__h">Social</div>
+          <ul>
+            <li><a href="https://x.com/autocutsai" target="_blank" rel="noopener">x.com</a></li>
+            <li><a href="https://www.youtube.com/@autocutsai" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://www.linkedin.com/company/autocuts-ai/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bar">
+        <span>© 2026 Autocuts</span>
+        <span>Made for macOS</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
 
 </html>
