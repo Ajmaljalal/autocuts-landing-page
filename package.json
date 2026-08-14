@@ -1,0 +1,7 @@
+{
+  "name": "autocuts-landing-page",
+  "private": true,
+  "scripts": {
+    "test": "node scripts/validate-seo.mjs"
+  }
+}

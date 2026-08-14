@@ -1,0 +1,5 @@
+# Permanent redirects for Cloudflare Pages and other hosts that support this format.
+/features/ai-video-cleanup/ /features/transcript-video-cleanup/ 301
+/features/add-motion-graphics-to-videos/ /blog/how-to-make-screen-recordings-look-professional/ 301
+/blog/add-motion-graphics-without-editing-skills/ /blog/how-to-make-screen-recordings-look-professional/ 301
+/blog/clean-up-youtube-videos-faster/ /features/transcript-video-cleanup/ 301

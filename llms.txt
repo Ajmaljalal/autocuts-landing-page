@@ -1,37 +1,49 @@
-# AutoCuts
+# Autocuts
 
-> AutoCuts is an AI video editor built for talking-head creators. Upload one raw recording and get a polished long-form episode, captioned 9:16 shorts for TikTok / Instagram Reels / YouTube Shorts, and motion graphics, without scrubbing a timeline.
+> Autocuts is a local-first Mac screen recorder with automatic click zoom, smooth cursor motion, screen and camera layouts, a voice-paced teleprompter, on-device captions, and a built-in motion studio. It is designed for product demos, tutorials, developer walkthroughs, courses, and launch videos.
 
-AutoCuts is most useful for YouTubers, podcasters, founders recording video newsletters, and anyone whose content is primarily one or two people talking to camera. It is not built for B-roll-heavy montages, music videos, or complex multi-camera narratives.
+Autocuts records a display, app window, or selected area with optional camera, microphone, and system audio. It stores recordings in the Autocuts folder inside Videos on the user's Mac. Editing and export run in the desktop app. The first transcription can download a speech model; after the model is available, transcription runs on the Mac.
 
-The product is free to try with 10 credits, no credit card required.
+The current product is in early access for Apple Silicon Macs. macOS Sonoma 14 or later is recommended. Public checkout and a public installer link are not open. The planned launch offer is $49 once for use on two Macs, with no subscription. Availability requests go to support@autocuts.ai.
 
 ## Core pages
 
-- [Home](https://autocuts.ai/): Product overview, what you get from one upload, FAQ
-- [About](https://autocuts.ai/about/): Who AutoCuts is for, why we built it, how we work
-- [Pricing](https://autocuts.ai/#pricing): Free with 10 credits, pay-as-you-go after
+- [Home](https://autocuts.ai/): Product overview, demos, current compatibility, planned launch price, and early-access contact
+- [About](https://autocuts.ai/about/): Product purpose, audience, local workflow, and current release stage
+- [Features](https://autocuts.ai/features/): Complete feature directory
+- [Use cases](https://autocuts.ai/use-cases/): Product demos, developer walkthroughs, lessons, and updates
+- [Comparisons](https://autocuts.ai/compare/): Factual Mac screen recorder comparisons
+- [Guides](https://autocuts.ai/blog/): Practical Mac screen recording and editing guides
 
-## Features
+## Product features
 
-- [AI video editor for YouTubers](https://autocuts.ai/features/ai-video-editor-for-youtubers/): The core feature page for talking-head creators
-- [AI video cleanup](https://autocuts.ai/features/ai-video-cleanup/): Automatic removal of filler words, dead air, and false starts
-- [Turn long videos into shorts](https://autocuts.ai/features/turn-long-videos-into-shorts/): Generate captioned 9:16 vertical clips from a long recording
-- [Add motion graphics to videos](https://autocuts.ai/features/add-motion-graphics-to-videos/): Automatic lower-thirds, number callouts, and charts
+- [Automatic zoom](https://autocuts.ai/features/mac-screen-recorder-with-auto-zoom/): Generate editable zooms from recorded clicks
+- [Screen and camera recording](https://autocuts.ai/features/screen-and-camera-recorder-for-mac/): Capture a display, window, or area with webcam, microphone, and system audio
+- [Built-in teleprompter](https://autocuts.ai/features/screen-recorder-with-teleprompter/): Voice-paced script with word highlighting that stays outside the recording
+- [Local recording](https://autocuts.ai/features/local-screen-recorder-for-mac/): Local files, editing, transcription, and export details
+- [Transcript cleanup](https://autocuts.ai/features/transcript-video-cleanup/): On-device transcript navigation, filler-word cleanup, captions, SRT, and VTT
+- [No-subscription recorder](https://autocuts.ai/mac-screen-recorder-no-subscription/): Planned one-time launch offer and current availability
 
-## Comparisons
+## Use cases
 
-- [AutoCuts vs CapCut](https://autocuts.ai/compare/autocuts-vs-capcut/): When each tool wins for YouTubers
-- [AutoCuts vs OpusClip](https://autocuts.ai/compare/autocuts-vs-opusclip/): Full pipeline vs shorts-only clipping
-- [AutoCuts vs Descript](https://autocuts.ai/compare/autocuts-vs-descript/): Cut-first AI vs transcript-first manual editing
+- [Product demo recorder](https://autocuts.ai/use-cases/product-demo-recorder/): Product walkthroughs with click zooms, cursor motion, framing, and captions
+- [Screen recorder for developers](https://autocuts.ai/use-cases/screen-recorder-for-developers/): Pull request tours, bug reports, release demos, tutorials, and async handoffs
 
-## Library (long-form guides)
+## Guides and comparisons
 
-- [Best AI video editor for YouTubers in 2026](https://autocuts.ai/blog/best-ai-video-editor-for-youtubers/): Honest ranking of AutoCuts, Descript, OpusClip, CapCut, Vizard, Munch
-- [How to turn a long video into shorts](https://autocuts.ai/blog/how-to-turn-long-videos-into-shorts/): Manual and AI workflows
-- [How to add motion graphics without editing skills](https://autocuts.ai/blog/add-motion-graphics-without-editing-skills/): Which graphics earn their place
-- [How to clean up YouTube videos faster](https://autocuts.ai/blog/clean-up-youtube-videos-faster/): Manual editing, Descript, and AI cleanup compared
-- [Best CapCut alternative for talking videos](https://autocuts.ai/blog/best-capcut-alternative-for-talking-videos/): Honest breakdown for talking-head creators
+- [How to record screen and camera on Mac](https://autocuts.ai/blog/how-to-record-screen-and-camera-on-mac/): Permissions, sources, audio, recording, camera layouts, editing, and export
+- [How to make screen recordings look professional](https://autocuts.ai/blog/how-to-make-screen-recordings-look-professional/): Focus, cursor, zoom, framing, audio, pace, captions, and export
+
+## Current technical facts
+
+- Platform: macOS desktop app built for Apple Silicon
+- Recommended system: macOS Sonoma 14 or later
+- Capture: display, window, or selected area; camera; microphone; system audio
+- Editing: trim, split, speed, zooms, cursor, layouts, backgrounds, transcript, and captions
+- Export: MP4 H.264 or WebM VP9, up to 4K at 60 fps; optional SRT and VTT files
+- Storage: local Autocuts folder inside the Mac Videos directory
+- Account: no app account in the current build
+- Analytics: no third-party desktop-app analytics in the current build
 
 ## Legal
 

@@ -1,0 +1,7 @@
+exclude:
+  - .claude
+  - docs
+  - package.json
+  - package-lock.json
+  - scripts
+  - videos/autocuts-desktop-demos
