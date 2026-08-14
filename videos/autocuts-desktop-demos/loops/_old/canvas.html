@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/CustomEase.min.js"></script>
+    <link rel="stylesheet" href="../assets/ui.css">
+    <link rel="stylesheet" href="../assets/studio.css">
+    <link rel="stylesheet" href="../assets/screens.css">
+    <link rel="stylesheet" href="../assets/stage.css">
+    <script src="../assets/icons.js"></script>
+    <script src="../assets/ac-motion.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #14101c; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+      #cv-zoom { position: absolute; inset: 0; }
+      #cv-stage-sunset {
+        position: absolute; inset: 0; z-index: 0; opacity: 0;
+        background: linear-gradient(135deg, #4f294f, #d66d69, #f7c783);
+      }
+      #cv-shot { position: relative; z-index: 1; }
+      /* The recording inside the shot: a fixed 1888x1062 screen, Fill-cropped into the
+         frame exactly like the app's Fill mode (cover scale, centre crop). */
+      #cv-fit {
+        position: absolute; left: 50%; top: 50%; width: 1888px; height: 1062px;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="canvas" data-start="0" data-duration="8" data-width="1920" data-height="1080">
+      <div id="cv-zoom">
+      <div class="wall aurora"></div>
+      <div class="ac win big ac-window">
+        <div class="ac-titlebar"><i class="ac-light r"></i><i class="ac-light y"></i><i class="ac-light g"></i><b>Autocuts</b></div>
+        <div class="ed-work">
+          <nav class="ac-rail"><div class="ac-rail-btn active"><svg class="ic"><use href="#i-sliders-horizontal" /></svg><span>General</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-mouse-pointer-2" /></svg><span>Cursor</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-zoom-in" /></svg><span>Zoom</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-captions" /></svg><span>Captions</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-keyboard" /></svg><span>Keys</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-palette" /></svg><span>Looks</span></div><span class="ac-rail-gap"></span><div class="ac-rail-btn"><svg class="ic"><use href="#i-film" /></svg><span>Records</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-settings-2" /></svg><span>Settings</span></div></nav>
+          <aside class="ac-inspector">
+            <div class="ac-section">
+              <div class="ac-insp-title"><svg class="ic"><use href="#i-palette" /></svg>
+                <span><b>Canvas</b><small>1920 × 1080 output</small></span></div>
+
+              <div class="ac-ctl-label"><span>Aspect ratio</span><span class="ac-reset">Reset</span></div>
+              <div class="aspect-chip-grid"><span class="ac-chip"><span class="ac-chip-box"><span class="ac-chip-shape" style="width:28px;height:18px"></span></span><span class="ac-chip-label">Auto</span></span><span class="ac-chip selected" id="cv-chip-169"><span class="ac-chip-box"><span class="ac-chip-shape" style="width:28px;height:16px"></span></span><span class="ac-chip-label">16:9</span></span><span class="ac-chip"><span class="ac-chip-box"><span class="ac-chip-shape" style="width:26px;height:20px"></span></span><span class="ac-chip-label">4:3</span></span><span class="ac-chip"><span class="ac-chip-box"><span class="ac-chip-shape" style="width:22px;height:22px"></span></span><span class="ac-chip-label">1:1</span></span><span class="ac-chip"><span class="ac-chip-box"><span class="ac-chip-shape" style="width:20px;height:25px"></span></span><span class="ac-chip-label">4:5</span></span><span class="ac-chip" id="cv-chip-916"><span class="ac-chip-box"><span class="ac-chip-shape" style="width:14px;height:25px"></span></span><span class="ac-chip-label">9:16</span></span></div>
+              <small class="ac-setting-help">YouTube, presentations</small>
+
+              <div class="ac-ctl-label"><span>Background</span><span class="ac-reset">Reset</span></div>
+              <div class="ac-bg-tabs">
+                <span class="ac-bg-tab">Colors</span>
+                <span class="ac-bg-tab">Images</span>
+                <span class="ac-bg-tab selected">Gradients</span>
+              </div>
+              <div class="ac-bg-grid"><span class="selected" style="background:linear-gradient(135deg, #092f37, #1d7f79, #edb56f)" id="cv-sw-aurora">Aurora</span><span style="background:linear-gradient(135deg, #4f294f, #d66d69, #f7c783)" id="cv-sw-sunset">Sunset</span><span style="background:linear-gradient(135deg, #092a49, #146f87, #8fd4c7)">Ocean</span><span style="background:linear-gradient(135deg, #0f161d, #233643, #58707c)">Midnight</span><span class="light" style="background:linear-gradient(135deg, #e9dfcf, #f7f2e8, #c5d7d3)">Paper</span><span style="background:linear-gradient(135deg, #0f1b33, #2f4f86, #8aa8d8)">Twilight</span><span style="background:linear-gradient(135deg, #26100e, #8a2f22, #f0a35e)">Ember</span><span style="background:linear-gradient(135deg, #2a1233, #8a3a78, #e88fb8)">Orchid</span><span style="background:linear-gradient(135deg, #0f2b1a, #2f7a44, #a8d878)">Meadow</span><span style="background:linear-gradient(135deg, #131539, #3f47b0, #93a8ff)">Royal</span><span class="light" style="background:linear-gradient(135deg, #dfe9f3, #a8c4de, #5b86b8)">Glacier</span></div>
+
+              <div class="ac-select-field"><span>Framing</span>
+                <span class="ac-select">Fill<svg class="ic-s"><use href="#i-chevron-right" /></svg></span>
+              </div>
+              <small class="ac-setting-help">Crop the recording so it fills the frame</small>
+
+              <label class="ac-slider"><span><b>Outer space</b><em>10%</em></span><span class="ac-range"><i style="width:42%"></i><u style="left:42%"></u></span></label>
+              <label class="ac-slider"><span><b>Background blur</b><em>Off</em></span><span class="ac-range"><i style="width:0%"></i><u style="left:0%"></u></span></label>
+              <label class="ac-slider"><span><b>Corners</b><em>24px</em></span><span class="ac-range"><i style="width:30%"></i><u style="left:30%"></u></span></label>
+              <label class="ac-slider"><span><b>Shadow</b><em>0.50×</em></span><span class="ac-range"><i style="width:25%"></i><u style="left:25%"></u></span></label>
+            </div>
+          </aside>
+          <div class="ed-main"><div class="ed-stage" id="cv-stage"><div id="cv-stage-sunset"></div>
+            <div class="shot" id="cv-shot"><div id="cv-fit"><div class="scr scr-dash">
+              <div class="nav"><span class="logo"><i></i>Pulse</span><a class="on">Overview</a><a>Reports</a><a>Customers</a><a>Settings</a><span class="av">AJ</span></div>
+              <div class="page">
+                <h3>Overview</h3><div class="meta">Last 30 days · Updated just now</div>
+                <div class="tiles">
+                  <div class="tile"><span>Revenue</span><strong>$48,210</strong><em class="up">+12.4%</em></div>
+                  <div class="tile"><span>Active users</span><strong>8,442</strong><em class="up">+4.1%</em></div>
+                  <div class="tile"><span>Conversion</span><strong>3.2%</strong><em class="dn">−0.4%</em></div>
+                </div>
+                <div class="card"><div class="cap">Revenue<span>weekly</span></div>
+                  <div class="chart"><i style="height:34%"></i><i style="height:46%"></i><i style="height:40%"></i><i style="height:58%"></i><i class="hi" style="height:66%"></i><i style="height:52%"></i><i style="height:61%"></i><i style="height:72%"></i><i class="hi" style="height:84%"></i><i style="height:69%"></i><i style="height:78%"></i><i class="hi" style="height:92%"></i></div>
+                </div>
+              </div>
+            </div></div></div>
+          </div></div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      const mo = ACMotion({
+        frameEl: document.getElementById("root"),
+        zoomEl: document.getElementById("cv-zoom"),
+        frameW: 1920, frameH: 1080, canvasW: 1920,
+        restX: 1150, restY: 700
+      });
+
+      /* Fixed layout, coordinates measured from the rendered frame. */
+      const CHIP = { "16:9": { x: 293, y: 222 }, "9:16": { x: 480, y: 222 } };
+      const SWATCH = { aurora: { x: 257, y: 367 }, sunset: { x: 327, y: 367 } };
+      const SHOT = { "16:9": { width: 944, height: 531 }, "9:16": { width: 429, height: 763 } };
+
+      /* The app's Fill mode: the recording covers the shot, centre-cropped. */
+      const SCREEN_W = 1888, SCREEN_H = 1062;
+      const cover = (s) => Math.max(s.width / SCREEN_W, s.height / SCREEN_H);
+      const fit = { s: cover(SHOT["16:9"]) };
+      const fitEl = document.getElementById("cv-fit");
+      const paintFit = () => { fitEl.style.transform = `translate(-50%, -50%) scale(${fit.s})`; };
+
+      const shot = document.getElementById("cv-shot");
+      gsap.set(shot, { width: SHOT["16:9"].width, height: SHOT["16:9"].height, aspectRatio: "auto" });
+      paintFit();
+
+      const reshape = (shape, at) => {
+        tl.to(shot, { width: SHOT[shape].width, height: SHOT[shape].height, duration: 0.55, ease: "power3.inOut" }, at);
+        tl.to(fit, { s: cover(SHOT[shape]), duration: 0.55, ease: "power3.inOut", onUpdate: paintFit }, at);
+      };
+
+      /* Reshape to 9:16 — the click carries the app's automatic zoom. */
+      mo.travel(tl, 0.35, 0.7, CHIP["9:16"].x, CHIP["9:16"].y);
+      mo.zoom(tl, 1.3, 1.3, CHIP["9:16"].x, CHIP["9:16"].y, 1.5);
+      mo.click(tl, 1.3, CHIP["9:16"].x, CHIP["9:16"].y);
+      tl.set("#cv-chip-169", { className: "ac-chip" }, 1.35);
+      tl.set("#cv-chip-916", { className: "ac-chip selected" }, 1.35);
+      reshape("9:16", 1.35);
+
+      /* Background swap to Sunset, again with the click zoom. */
+      mo.travel(tl, 3.7, 0.55, SWATCH.sunset.x, SWATCH.sunset.y);
+      mo.zoom(tl, 4.45, 1.3, SWATCH.sunset.x, SWATCH.sunset.y, 1.35);
+      mo.click(tl, 4.45, SWATCH.sunset.x, SWATCH.sunset.y);
+      tl.set("#cv-sw-aurora", { className: "" }, 4.5);
+      tl.set("#cv-sw-sunset", { className: "selected" }, 4.5);
+      tl.to("#cv-stage-sunset", { opacity: 1, duration: 0.45 }, 4.5);
+
+      /* Return glide; the state resets on the way so the loop closes clean. */
+      mo.travel(tl, 6.7, 0.7, 1150, 700);
+      tl.set("#cv-chip-916", { className: "ac-chip" }, 7.0);
+      tl.set("#cv-chip-169", { className: "ac-chip selected" }, 7.0);
+      reshape("16:9", 7.0);
+      tl.set("#cv-sw-sunset", { className: "" }, 7.15);
+      tl.set("#cv-sw-aurora", { className: "selected" }, 7.15);
+      tl.to("#cv-stage-sunset", { opacity: 0, duration: 0.4 }, 7.15);
+
+      window.__timelines["canvas"] = tl;
+    </script>
+  </body>
+</html>

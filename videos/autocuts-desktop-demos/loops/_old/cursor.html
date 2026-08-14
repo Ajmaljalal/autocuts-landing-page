@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/CustomEase.min.js"></script>
+    <link rel="stylesheet" href="../assets/ui.css" />
+    <link rel="stylesheet" href="../assets/studio.css" />
+    <link rel="stylesheet" href="../assets/screens.css" />
+    <link rel="stylesheet" href="../assets/stage.css" />
+    <script src="../assets/icons.js"></script>
+    <script src="../assets/ac-motion.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #14101c; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+      .out.snug { padding: 4%; }
+      #cu-zoom { position: absolute; inset: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="cursor" data-start="0" data-duration="8"
+         data-width="1920" data-height="1080">
+      <div class="wall midnight"></div>
+      <div class="ac out snug">
+        <div class="out-frame" id="cu-frame">
+          <div id="cu-zoom">
+          <div class="scr scr-task">
+            <div class="chrome"><i class="dot r"></i><i class="dot y"></i><i class="dot g"></i>
+              <span class="url">Relay — Sprint 24</span></div>
+            <div class="app">
+              <div class="side">
+                <div class="logo"><i>R</i><b>Relay</b></div>
+                <a>Inbox<span class="n">2</span></a>
+                <a>My issues<span class="n">5</span></a>
+                <b>Projects</b>
+                <a class="on"><span class="pd" style="background:#5063f0"></span>Website refresh</a>
+                <a><span class="pd" style="background:#a855f7"></span>Mobile app</a>
+                <a><span class="pd" style="background:#f59e0b"></span>Marketing site</a>
+                <b>Teams</b>
+                <a>Design</a>
+                <a>Engineering</a>
+              </div>
+              <div class="main">
+                <div class="head"><h3>Sprint 24</h3><span class="sub">Website refresh</span><span class="grow"></span>
+                  <span class="avs"><span class="av" style="background:#f59e0b">MK</span><span class="av" style="background:#10b981">JL</span><span class="av" style="background:#6366f1">SD</span></span>
+                  <span class="btn">New issue</span></div>
+                <div class="row"><span class="cb"><svg viewBox="0 0 24 24"><path d="M4.5 12.8l4.6 4.6L19.5 7" /></svg></span><span class="t">Refresh the pricing page hero</span><span class="grow"></span><span class="chip" style="background:#eef2ff;color:#4f46e5">Design</span><span class="av2" style="background:#6366f1">SD</span><span class="due">Aug 14</span></div>
+                <div class="row" id="cu-row2"><span class="cb"><svg viewBox="0 0 24 24"><path d="M4.5 12.8l4.6 4.6L19.5 7" /></svg></span><span class="t">Fix the Safari flicker on hover</span><span class="grow"></span><span class="chip" style="background:#fef2f2;color:#dc2626">Bug</span><span class="av2" style="background:#f59e0b">MK</span><span class="due">Aug 14</span></div>
+                <div class="row"><span class="cb"><svg viewBox="0 0 24 24"><path d="M4.5 12.8l4.6 4.6L19.5 7" /></svg></span><span class="t">Move the image pipeline to AVIF</span><span class="grow"></span><span class="chip" style="background:#ecfdf5;color:#059669">Perf</span><span class="av2" style="background:#10b981">JL</span><span class="due">Aug 15</span></div>
+                <div class="row"><span class="cb"><svg viewBox="0 0 24 24"><path d="M4.5 12.8l4.6 4.6L19.5 7" /></svg></span><span class="t">New onboarding checklist</span><span class="grow"></span><span class="chip" style="background:#fffbeb;color:#b45309">Growth</span><span class="av2" style="background:#f59e0b">MK</span><span class="due">Aug 15</span></div>
+                <div class="row" id="cu-row5"><span class="cb"><svg viewBox="0 0 24 24"><path d="M4.5 12.8l4.6 4.6L19.5 7" /></svg></span><span class="t">Dark mode palette pass</span><span class="grow"></span><span class="chip" style="background:#eef2ff;color:#4f46e5">Design</span><span class="av2" style="background:#6366f1">SD</span><span class="due">Aug 18</span></div>
+                <div class="row"><span class="cb"><svg viewBox="0 0 24 24"><path d="M4.5 12.8l4.6 4.6L19.5 7" /></svg></span><span class="t">Write the 2.1 changelog</span><span class="grow"></span><span class="chip" style="background:#f0f9ff;color:#0369a1">Docs</span><span class="av2" style="background:#10b981">JL</span><span class="due">Aug 19</span></div>
+                <div class="row"><span class="cb"><svg viewBox="0 0 24 24"><path d="M4.5 12.8l4.6 4.6L19.5 7" /></svg></span><span class="t">QA the checkout flow</span><span class="grow"></span><span class="chip" style="background:#f5f3ff;color:#7c3aed">QA</span><span class="av2" style="background:#f59e0b">MK</span><span class="due">Aug 20</span></div>
+                <div class="row"><span class="cb"><svg viewBox="0 0 24 24"><path d="M4.5 12.8l4.6 4.6L19.5 7" /></svg></span><span class="t">Tighten the empty states</span><span class="grow"></span><span class="chip" style="background:#eef2ff;color:#4f46e5">Design</span><span class="av2" style="background:#6366f1">SD</span><span class="due">Aug 21</span></div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      const W = 1920 - 2 * 0.04 * 1920, H = 1080 - 2 * 0.04 * 1920;
+      const mo = ACMotion({
+        frameEl: document.getElementById("cu-frame"),
+        zoomEl: document.getElementById("cu-zoom"),
+        frameW: W, frameH: H, canvasW: 1920,
+        restX: W * 0.62, restY: H * 0.7
+      });
+
+      /* A blue-bodied variant of the same cursor asset, exactly what recolorCursorSvg
+         produces for cursorColor #4c8dff: the dark body paints blue, the halo stays. */
+      const blue = mo.cursorEl.firstChild.cloneNode(true);
+      blue.style.cssText = "position:absolute;inset:0;width:100%;height:100%;opacity:0";
+      blue.querySelectorAll('[fill="#000"]').forEach((n) => n.setAttribute("fill", "#4c8dff"));
+      mo.cursorEl.style.position = "absolute";
+      mo.cursorEl.appendChild(blue);
+
+      /* Checkbox centres in frame space: sidebar 300 + row padding 44 + half box 11;
+         row i centre y = 38 chrome + 92 head + 76*i + 38. */
+      const CB_X = 300 + 44 + 11;
+      const rowY = (i) => 38 + 92 + 76 * i + 38;
+      const C1 = { x: CB_X, y: rowY(1) };
+      const C2 = { x: CB_X, y: rowY(4) };
+
+      /* Every click gets the app's automatic zoom: in over 0.8s ending at the click. */
+      mo.travel(tl, 0.4, 0.9, C1.x, C1.y);
+      mo.zoom(tl, 1.35, 1.6, C1.x, C1.y, 0.9);
+      mo.click(tl, 1.35, C1.x, C1.y);
+      tl.set("#cu-row2", { className: "row done" }, 1.42);
+      tl.fromTo("#cu-row2 .cb", { scale: 0.7 }, { scale: 1, duration: 0.3, ease: "back.out(2.4)" }, 1.42);
+
+      mo.travel(tl, 2.35, 0.7, W * 0.58, H * 0.42);
+
+      /* Cursor size 28px -> 44px, the slider's range in the Cursor panel. */
+      tl.to(mo.state, { sizeMul: 44 / 28, duration: 0.45, ease: "power2.inOut", onUpdate: mo.paint }, 3.15);
+
+      mo.travel(tl, 3.85, 0.75, C2.x, C2.y);
+      mo.zoom(tl, 4.75, 1.6, C2.x, C2.y, 0.85);
+      mo.click(tl, 4.75, C2.x, C2.y);
+      tl.set("#cu-row5", { className: "row done" }, 4.82);
+      tl.fromTo("#cu-row5 .cb", { scale: 0.7 }, { scale: 1, duration: 0.3, ease: "back.out(2.4)" }, 4.82);
+
+      /* Cursor color: the body repaints #4c8dff, mid-hold so the zoom shows it. */
+      tl.to(blue, { opacity: 1, duration: 0.3 }, 5.2);
+
+      /* Back to the defaults during the return glide so the loop closes clean. */
+      mo.travel(tl, 6.6, 0.95, W * 0.62, H * 0.7);
+      tl.to(blue, { opacity: 0, duration: 0.35 }, 6.9);
+      tl.to(mo.state, { sizeMul: 1, duration: 0.4, ease: "power2.inOut", onUpdate: mo.paint }, 6.95);
+      tl.set("#cu-row2", { className: "row" }, 7.3);
+      tl.set("#cu-row5", { className: "row" }, 7.42);
+
+      window.__timelines["cursor"] = tl;
+    </script>
+  </body>
+</html>

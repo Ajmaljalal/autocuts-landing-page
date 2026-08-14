@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/CustomEase.min.js"></script>
+    <link rel="stylesheet" href="../assets/ui.css" />
+    <link rel="stylesheet" href="../assets/studio.css" />
+    <link rel="stylesheet" href="../assets/editor.css" />
+    <link rel="stylesheet" href="../assets/screens.css" />
+    <link rel="stylesheet" href="../assets/stage.css" />
+    <script src="../assets/icons.js"></script>
+    <script src="../assets/ac-motion.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1080px; overflow: hidden; background: #14101c; }
+      #root { position: relative; width: 1080px; height: 1080px; overflow: hidden; }
+      .ed-stage { background: #0c0e12; display: grid; place-items: center; border-radius: 8px; }
+      #cv { position: relative; width: 576px; height: 324px; overflow: hidden; border-radius: 6px; }
+      #cv .wall { position: absolute; inset: 0; }
+      #cv .w2 { opacity: 0; }
+      #cv .shot {
+        position: absolute; left: 10%; top: 10%; width: 80%; height: 80%;
+        border-radius: 8px; overflow: hidden; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+      }
+      #cv .shot .inner { position: absolute; left: 0; top: 0; width: 1152px; height: 648px;
+        transform: scale(0.4); transform-origin: 0 0; }
+      .grid-host { position: relative; }
+      .dalt { position: absolute; left: 0; top: 0; opacity: 0; white-space: nowrap; }
+      #grid-img { position: absolute; inset: 0; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="backgrounds" data-start="0" data-duration="8.5"
+         data-width="1080" data-height="1080">
+      <div class="wall midnight"></div>
+      <div class="ac ac-window ed-sq">
+        <div class="ac-titlebar"><i class="ac-light r"></i><i class="ac-light y"></i><i class="ac-light g"></i><b>Autocuts</b></div>
+        <div class="ed-hd"><h1>Recording 10:24 AM</h1>
+          <span class="ac-btn"><svg class="ic-s"><use href="#i-film" /></svg>New recording</span>
+          <span class="ac-btn primary"><svg class="ic-s"><use href="#i-download" /></svg>Export Edit</span></div>
+        <div class="ed-work">
+          <nav class="ac-rail"><div class="ac-rail-btn active"><svg class="ic"><use href="#i-sliders-horizontal" /></svg><span>General</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-mouse-pointer-2" /></svg><span>Cursor</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-zoom-in" /></svg><span>Zoom</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-captions" /></svg><span>Captions</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-keyboard" /></svg><span>Keys</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-palette" /></svg><span>Looks</span></div><span class="ac-rail-gap"></span><div class="ac-rail-btn"><svg class="ic"><use href="#i-film" /></svg><span>Records</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-settings-2" /></svg><span>Settings</span></div></nav>
+          <aside class="ac-inspector" id="insp">
+            <div id="insp-scroll">
+            <div class="ac-section" id="sec-cam">
+              <div class="ac-insp-title"><svg class="ic"><use href="#i-camera" /></svg>
+                <span><b>Camera layout</b><small>Compose both tracks after recording</small></span></div>
+              <div class="lay-grid">
+                <span class="lay-btn selected" id="lay-default"><span class="lay-ico default"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Floating</span></span>
+                <span class="lay-btn" id="lay-left"><span class="lay-ico camera-left"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Left</span></span>
+                <span class="lay-btn" id="lay-right"><span class="lay-ico camera-right"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Right</span></span>
+                <span class="lay-btn" id="lay-top"><span class="lay-ico camera-top"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Above</span></span>
+                <span class="lay-btn" id="lay-bottom"><span class="lay-ico camera-bottom"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Below</span></span>
+                <span class="lay-btn" id="lay-bubble"><span class="lay-ico camera-bubble"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Bubble</span></span>
+                <span class="lay-btn" id="lay-split"><span class="lay-ico camera-split"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Split</span></span>
+                <span class="lay-btn" id="lay-pill"><span class="lay-ico camera-pill"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Pill</span></span>
+                <span class="lay-btn" id="lay-overlap"><span class="lay-ico camera-overlap"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Overlap</span></span>
+                <span class="lay-btn" id="lay-solo"><span class="lay-ico camera-solo"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Solo</span></span>
+              </div>
+              <p class="lay-desc" style="position:relative"><span id="d-float">Camera floats over the screen</span><span class="dalt" id="d-right">Screen beside a portrait camera panel</span><span class="dalt" id="d-top">Presenter stacked above the screen</span><span class="dalt" id="d-split">Screen and camera share the canvas equally</span></p>
+              <label class="ac-toggle"><span>Show camera</span><span class="ac-switch on"><i></i></span></label>
+              <label class="ac-slider"><span><b>Camera picture zoom</b><em>1.35×</em></span><span class="ac-range"><i style="width:35%"></i><u style="left:35%"></u></span></label>
+              <div class="ac-select-field"><span>Position</span>
+                <span class="ac-select">Bottom right<svg class="ic-s"><use href="#i-chevron-right" /></svg></span>
+              </div>
+              <label class="ac-slider"><span><b>Camera size</b><em>15%</em></span><span class="ac-range"><i style="width:11%"></i><u style="left:11%"></u></span></label>
+              <label class="ac-toggle"><span>Shrink camera while zoomed</span><span class="ac-switch on"><i></i></span></label>
+            </div>
+            <div class="ac-section" style="margin-top:10px">
+              <div class="ac-insp-title"><svg class="ic"><use href="#i-palette" /></svg>
+                <span><b>Canvas</b><small>1080 × 1080 output</small></span></div>
+
+              <div class="ac-ctl-label"><span>Aspect ratio</span></div>
+              <div class="aspect-chip-grid"><span class="ac-chip selected"><span class="ac-chip-box"><span class="ac-chip-shape" style="width:28px;height:18px"></span></span><span class="ac-chip-label">Auto</span></span><span class="ac-chip"><span class="ac-chip-box"><span class="ac-chip-shape" style="width:28px;height:16px"></span></span><span class="ac-chip-label">16:9</span></span><span class="ac-chip"><span class="ac-chip-box"><span class="ac-chip-shape" style="width:26px;height:20px"></span></span><span class="ac-chip-label">4:3</span></span><span class="ac-chip"><span class="ac-chip-box"><span class="ac-chip-shape" style="width:22px;height:22px"></span></span><span class="ac-chip-label">1:1</span></span><span class="ac-chip"><span class="ac-chip-box"><span class="ac-chip-shape" style="width:20px;height:25px"></span></span><span class="ac-chip-label">4:5</span></span><span class="ac-chip"><span class="ac-chip-box"><span class="ac-chip-shape" style="width:14px;height:25px"></span></span><span class="ac-chip-label">9:16</span></span></div>
+              <small class="ac-setting-help">Matches your recording</small>
+
+              <div class="ac-ctl-label"><span>Background</span><span class="ac-reset">Reset</span></div>
+              <div class="ac-bg-tabs">
+                <span class="ac-bg-tab" id="tab-col">Colors</span>
+                <span class="ac-bg-tab" id="tab-img">Images</span>
+                <span class="ac-bg-tab selected" id="tab-grad">Gradients</span>
+              </div>
+              <div class="grid-host">
+                <div class="ac-bg-grid" id="grid-grad"><span class="selected" style="background:linear-gradient(135deg, #092f37, #1d7f79, #edb56f)" id="sw-aurora">Aurora</span><span style="background:linear-gradient(135deg, #4f294f, #d66d69, #f7c783)" id="sw-sunset">Sunset</span><span style="background:linear-gradient(135deg, #092a49, #146f87, #8fd4c7)">Ocean</span><span style="background:linear-gradient(135deg, #0f161d, #233643, #58707c)">Midnight</span><span class="light" style="background:linear-gradient(135deg, #e9dfcf, #f7f2e8, #c5d7d3)">Paper</span><span style="background:linear-gradient(135deg, #0f1b33, #2f4f86, #8aa8d8)">Twilight</span><span style="background:linear-gradient(135deg, #26100e, #8a2f22, #f0a35e)" id="sw-ember">Ember</span><span style="background:linear-gradient(135deg, #2a1233, #8a3a78, #e88fb8)">Orchid</span><span style="background:linear-gradient(135deg, #0f2b1a, #2f7a44, #a8d878)">Meadow</span><span style="background:linear-gradient(135deg, #131539, #3f47b0, #93a8ff)" id="sw-royal">Royal</span><span class="light" style="background:linear-gradient(135deg, #dfe9f3, #a8c4de, #5b86b8)">Glacier</span></div>
+                <div class="ac-bg-grid" id="grid-img"><span class="art-nebula" id="sw-nebula">Nebula</span><span class="art-bloom">Bloom</span><span class="art-reef">Reef</span><span class="art-haze">Haze</span><span class="art-tide" id="sw-tide">Tide</span><span class="art-dune">Dune</span></div>
+              </div>
+
+              <div class="ac-select-field"><span>Framing</span>
+                <span class="ac-select">Fit<svg class="ic-s"><use href="#i-chevron-right" /></svg></span>
+              </div>
+              <small class="ac-setting-help">Show the whole recording on the background</small>
+
+              <label class="ac-slider"><span><b>Outer space</b><em>10%</em></span><span class="ac-range"><i style="width:42%"></i><u style="left:42%"></u></span></label>
+              <label class="ac-slider"><span><b>Background blur</b><em>Off</em></span><span class="ac-range"><i style="width:0%"></i><u style="left:0%"></u></span></label>
+              <label class="ac-slider"><span><b>Corners</b><em>24px</em></span><span class="ac-range"><i style="width:30%"></i><u style="left:30%"></u></span></label>
+              <label class="ac-slider"><span><b>Shadow</b><em>0.50×</em></span><span class="ac-range"><i style="width:25%"></i><u style="left:25%"></u></span></label>
+            </div>
+            </div>
+          </aside>
+          <div class="ed-main"><div class="ed-stage">
+            <div id="cv">
+              <div class="wall aurora"></div>
+              <div class="wall w2" id="w-sunset" style="background:linear-gradient(135deg, #4f294f, #d66d69, #f7c783)"></div>
+              <div class="wall w2" id="w-ember" style="background:linear-gradient(135deg, #26100e, #8a2f22, #f0a35e)"></div>
+              <div class="wall w2" id="w-royal" style="background:linear-gradient(135deg, #131539, #3f47b0, #93a8ff)"></div>
+              <div class="wall w2 art-nebula" id="w-nebula"></div>
+              <div class="wall w2 art-tide" id="w-tide"></div>
+              <div class="shot"><div class="inner"><div class="scr scr-cal" style="width:1152px;height:648px">
+                <div class="chrome"><i class="dot r"></i><i class="dot y"></i><i class="dot g"></i>
+                  <span class="url">Calendar — Week of Aug 10</span></div>
+                <div class="bar"><h4>August 2026</h4><span class="today">Today</span><span class="arr">‹ ›</span>
+                  <span class="views"><span>Day</span><span class="on">Week</span><span>Month</span></span></div>
+                <div class="week">
+                  <span class="hl" style="top:104px"></span><span class="hl" style="top:184px"></span>
+                  <span class="hl" style="top:264px"></span><span class="hl" style="top:344px"></span>
+                  <span class="hl" style="top:424px"></span>
+                  <div class="day"><header>Mon <b>10</b></header>
+                    <span class="ev green" style="top:132px;height:60px"><b>Sprint review</b><span>11:30</span></span></div>
+                  <div class="day"><header>Tue <b>11</b></header>
+                    <span class="ev blue" style="top:66px;height:70px"><b>Design sync</b><span>9:30</span></span>
+                    <span class="ev gray" style="top:292px;height:52px"><b>Lunch</b><span>12:30</span></span></div>
+                  <div class="day today"><header>Wed <b>12</b></header>
+                    <span class="ev purple" style="top:102px;height:88px"><b>Record the demo</b><span>10:00</span></span>
+                    <span class="ev amber" style="top:346px;height:58px"><b>1:1 with Sam</b><span>13:00</span></span></div>
+                  <div class="day"><header>Thu <b>13</b></header>
+                    <span class="ev blue" style="top:206px;height:60px"><b>Roadmap review</b><span>11:00</span></span></div>
+                  <div class="day"><header>Fri <b>14</b></header>
+                    <span class="ev rose" style="top:120px;height:70px"><b>Ship 2.1</b><span>10:00</span></span></div>
+                </div>
+              </div></div></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="ac-dock">
+          <div class="dk-bar">
+            <div class="dk-zoom"><span class="dk-slider"><u style="left:0%"></u></span><em>100%</em><span class="dk-ibtn"><svg class="ic-t"><use href="#i-rotate-ccw" /></svg></span></div>
+            <div class="dk-transport"><strong>0:02</strong><span class="dk-ibtn"><svg class="ic-t"><use href="#i-skip-back" /></svg></span><span class="dk-play"><svg class="ic-t"><use href="#i-play" /></svg></span><span class="dk-ibtn"><svg class="ic-t"><use href="#i-skip-forward" /></svg></span><span>0:08</span></div>
+            <div class="dk-tools">
+              <span class="dk-speed"><svg class="ic-t"><use href="#i-gauge" /></svg><span class="dk-dd">Normal</span></span>
+              <span class="dk-count"><svg class="ic-t"><use href="#i-wand-sparkles" /></svg>2 zooms</span>
+              <span class="dk-tbtn"><svg class="ic-t"><use href="#i-plus" /></svg>Add zoom</span>
+              <span class="dk-tbtn"><svg class="ic-t"><use href="#i-trash-2" /></svg>Delete clip</span>
+              <span class="dk-tbtn"><svg class="ic-t"><use href="#i-scissors" /></svg>Cut</span>
+            </div>
+          </div>
+          <div class="dk-ruler"><span class="dk-tick" style="left:0%">0:00</span><span class="dk-tick" style="left:12.5%">0:01</span><span class="dk-tick" style="left:25%">0:02</span><span class="dk-tick" style="left:37.5%">0:03</span><span class="dk-tick" style="left:50%">0:04</span><span class="dk-tick" style="left:62.5%">0:05</span><span class="dk-tick" style="left:75%">0:06</span><span class="dk-tick" style="left:87.5%">0:07</span></div>
+          <div class="dk-lanes">
+            <div class="dk-lane clips"><span class="dk-block clip" style="left:0;width:100%"></span></div>
+            <div class="dk-lane zooms"><span class="dk-block zoom" style="left:14%;width:18%"><svg class="ic-z"><use href="#i-zoom-in" /></svg><span class="txt">1.3x zoom</span></span><span class="dk-block zoom" style="left:56%;width:18%"><svg class="ic-z"><use href="#i-zoom-in" /></svg><span class="txt">1.3x zoom</span></span></div>
+            <span class="dk-playhead" style="left:25%"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      const mo = ACMotion({
+        frameEl: document.getElementById("root"),
+        frameW: 1080, frameH: 1080, canvasW: 1080,
+        restX: 660, restY: 900
+      });
+
+      /* the app inspector is scrolled to the Canvas section */
+      const insp = document.getElementById("insp");
+      const scroll = document.getElementById("insp-scroll");
+      const off = Math.max(0, scroll.getBoundingClientRect().height + 24 - insp.getBoundingClientRect().height);
+      scroll.style.transform = `translateY(${-off}px)`;
+
+      const mid = (sel) => {
+        const r = document.querySelector(sel).getBoundingClientRect();
+        return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+      };
+
+      let lastSel = "#sw-aurora";
+      const pick = (swSel, wallSel, at) => {
+        const p = mid(swSel);
+        mo.travel(tl, at - 0.62, 0.55, p.x, p.y);
+        mo.click(tl, at, p.x, p.y);
+        const el = document.querySelector(swSel);
+        const prev = lastSel;
+        tl.set(prev, { className: document.querySelector(prev).className.replace(" selected", "").replace("selected", "") }, at + 0.06);
+        tl.set(swSel, { className: el.className + " selected" }, at + 0.06);
+        if (wallSel) tl.to(wallSel, { opacity: 1, duration: 0.35 }, at + 0.06);
+        lastSel = swSel;
+      };
+
+      /* rapid-fire background swaps, the screencharm customizable-background rhythm;
+         no zoom in this loop */
+      /* pointer for the whole swatch walk; arrow on the way in and out */
+      mo.pointer(tl, 0.81, true); mo.pointer(tl, 7.02, false);
+
+      pick("#sw-sunset", "#w-sunset", 1.0);
+      pick("#sw-ember", "#w-ember", 1.95);
+      pick("#sw-royal", "#w-royal", 2.85);
+
+      /* over to the Images presets */
+      const ti = mid("#tab-img");
+      mo.travel(tl, 3.25, 0.5, ti.x, ti.y);
+      mo.click(tl, 3.85, ti.x, ti.y);
+      tl.set("#tab-grad", { className: "ac-bg-tab" }, 3.91);
+      tl.set("#tab-img", { className: "ac-bg-tab selected" }, 3.91);
+      tl.to("#grid-grad", { opacity: 0, duration: 0.12 }, 3.91);
+      tl.to("#grid-img", { opacity: 1, duration: 0.15 }, 3.97);
+
+      pick("#sw-nebula", "#w-nebula", 4.75);
+      pick("#sw-tide", "#w-tide", 5.65);
+
+      /* return; the loop closes while the cursor glides home */
+      mo.travel(tl, 6.9, 0.9, 660, 900);
+      tl.set("#tab-img", { className: "ac-bg-tab" }, 7.3);
+      tl.set("#tab-grad", { className: "ac-bg-tab selected" }, 7.3);
+      tl.to("#grid-img", { opacity: 0, duration: 0.12 }, 7.3);
+      tl.to("#grid-grad", { opacity: 1, duration: 0.15 }, 7.36);
+      tl.set("#sw-tide", { className: "art-tide" }, 7.42);
+      tl.set("#sw-nebula", { className: "art-nebula" }, 7.42);
+      tl.set("#sw-aurora", { className: "selected" }, 7.42);
+      tl.set("#w-sunset", { opacity: 0 }, 7.44);
+      tl.set("#w-ember", { opacity: 0 }, 7.44);
+      tl.set("#w-royal", { opacity: 0 }, 7.44);
+      tl.set("#w-nebula", { opacity: 0 }, 7.44);
+      tl.to("#w-tide", { opacity: 0, duration: 0.4 }, 7.46);
+
+      window.__timelines["backgrounds"] = tl;
+    </script>
+  </body>
+</html>

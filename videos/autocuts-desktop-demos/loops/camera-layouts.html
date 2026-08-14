@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/CustomEase.min.js"></script>
+    <link rel="stylesheet" href="../assets/ui.css" />
+    <link rel="stylesheet" href="../assets/studio.css" />
+    <link rel="stylesheet" href="../assets/editor.css" />
+    <link rel="stylesheet" href="../assets/screens.css" />
+    <link rel="stylesheet" href="../assets/stage.css" />
+    <script src="../assets/icons.js"></script>
+    <script src="../assets/ac-motion.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1080px; overflow: hidden; background: #14101c; }
+      #root { position: relative; width: 1080px; height: 1080px; overflow: hidden; }
+      .ed-stage { background: #0c0e12; display: grid; place-items: center; border-radius: 8px; }
+      #cv { position: relative; width: 561px; height: 324px; overflow: hidden; border-radius: 6px; }
+      #cv .wall { position: absolute; inset: 0; }
+      .pv-box { position: absolute; overflow: hidden; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.38); }
+      .pv-box .scr.nochrome { position: absolute; left: 0; top: 0; width: 552px; height: 300px; font-size: 6.5px; }
+      .scr-mail.nochrome { display: block; }
+      .scr-mail.nochrome .app { height: 100%; }
+      .pv-box video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .dalt { position: absolute; left: 0; top: 0; opacity: 0; white-space: nowrap; }
+      .lay-desc { position: relative; }
+
+      /* full-frame results, hard-cut like the reference */
+      .res { position: absolute; inset: 0; opacity: 0; z-index: 10; }
+      .res .wall { position: absolute; inset: 0; }
+      .res .box { position: absolute; overflow: hidden; box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5); }
+      .res .box .scr { font-size: 12px; }
+      .res .fitw { position: absolute; inset: 0; }
+      .res .box video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="camera-layouts" data-start="0" data-duration="19"
+         data-width="1080" data-height="1080">
+      <div class="wall midnight"></div>
+      <div class="ac ac-window ed-sq">
+        <div class="ac-titlebar"><i class="ac-light r"></i><i class="ac-light y"></i><i class="ac-light g"></i><b>Autocuts</b></div>
+        <div class="ed-hd"><h1>Recording 10:24 AM</h1>
+          <span class="ac-btn"><svg class="ic-s"><use href="#i-film" /></svg>New recording</span>
+          <span class="ac-btn primary"><svg class="ic-s"><use href="#i-download" /></svg>Export Edit</span></div>
+        <div class="ed-work">
+          <nav class="ac-rail"><div class="ac-rail-btn active"><svg class="ic"><use href="#i-sliders-horizontal" /></svg><span>General</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-mouse-pointer-2" /></svg><span>Cursor</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-zoom-in" /></svg><span>Zoom</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-captions" /></svg><span>Captions</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-keyboard" /></svg><span>Keys</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-palette" /></svg><span>Looks</span></div><span class="ac-rail-gap"></span><div class="ac-rail-btn"><svg class="ic"><use href="#i-film" /></svg><span>Records</span></div><div class="ac-rail-btn"><svg class="ic"><use href="#i-settings-2" /></svg><span>Settings</span></div></nav>
+          <aside class="ac-inspector">
+            <div class="ac-section" id="sec-cam">
+              <div class="ac-insp-title"><svg class="ic"><use href="#i-camera" /></svg>
+                <span><b>Camera layout</b><small>Compose both tracks after recording</small></span></div>
+              <div class="lay-grid">
+                <span class="lay-btn selected" id="lay-default"><span class="lay-ico default"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Floating</span></span>
+                <span class="lay-btn" id="lay-left"><span class="lay-ico camera-left"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Left</span></span>
+                <span class="lay-btn" id="lay-right"><span class="lay-ico camera-right"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Right</span></span>
+                <span class="lay-btn" id="lay-top"><span class="lay-ico camera-top"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Above</span></span>
+                <span class="lay-btn" id="lay-bottom"><span class="lay-ico camera-bottom"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Below</span></span>
+                <span class="lay-btn" id="lay-bubble"><span class="lay-ico camera-bubble"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Bubble</span></span>
+                <span class="lay-btn" id="lay-split"><span class="lay-ico camera-split"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Split</span></span>
+                <span class="lay-btn" id="lay-pill"><span class="lay-ico camera-pill"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Pill</span></span>
+                <span class="lay-btn" id="lay-overlap"><span class="lay-ico camera-overlap"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Overlap</span></span>
+                <span class="lay-btn" id="lay-solo"><span class="lay-ico camera-solo"><i class="shp-s"><svg><use href="#i-monitor" /></svg></i><i class="shp-c"><svg><use href="#i-camera" /></svg></i></span><span>Solo</span></span>
+              </div>
+              <p class="lay-desc" style="position:relative"><span id="d-float">Camera floats over the screen</span><span class="dalt" id="d-left">Portrait camera panel beside the screen</span><span class="dalt" id="d-right">Screen beside a portrait camera panel</span><span class="dalt" id="d-top">Presenter stacked above the screen</span><span class="dalt" id="d-bottom">Screen stacked above the presenter</span><span class="dalt" id="d-bubble">Round camera floats over the screen</span><span class="dalt" id="d-split">Screen and camera share the canvas equally</span><span class="dalt" id="d-pill">A wide camera pill floats over the screen</span><span class="dalt" id="d-overlap">Camera card overlaps the screen edge</span><span class="dalt" id="d-solo">The camera fills the whole canvas</span></p>
+              <label class="ac-toggle"><span>Show camera</span><span class="ac-switch on"><i></i></span></label>
+              <label class="ac-slider"><span><b>Camera picture zoom</b><em id="cz-em">1.35×</em></span><span class="ac-range"><i id="cz-fill" style="width:35%"></i><u id="cz-knob" style="left:35%"></u></span></label>
+              <div class="ac-select-field"><span>Position</span>
+                <span class="ac-select"><span id="pos-val">Bottom right</span><svg class="ic-s"><use href="#i-chevron-right" /></svg></span>
+              </div>
+              <label class="ac-slider"><span><b>Camera size</b><em id="cs-em">15%</em></span><span class="ac-range"><i id="cs-fill" style="width:11%"></i><u id="cs-knob" style="left:11%"></u></span></label>
+              <label class="ac-toggle"><span>Shrink camera while zoomed</span><span class="ac-switch on"><i></i></span></label>
+            </div>
+
+          </aside>
+          <div class="ed-main"><div class="ed-stage">
+            <div id="cv">
+              <div class="wall aurora"></div>
+              <div class="pv-box" id="pv-scr">
+<div class="scr scr-mail nochrome">
+                
+                <div class="app">
+                  <div class="list">
+                    <h4>Inbox</h4>
+                    <div class="item"><div class="fr">Launch checklist<time>9:41</time></div><div class="su">Everything is green</div><div class="pv">Everything is green except the status page…</div></div>
+                    <div class="item on"><div class="fr">Sam Ortiz<time>9:12</time></div><div class="su">Demo video for the site</div><div class="pv">Can you record a quick walkthrough of the…</div></div>
+                    <div class="item"><div class="fr">Billing<time>8:47</time></div><div class="su">Your August invoice</div><div class="pv">Invoice #2081 is ready to view.</div></div>
+                    <div class="item"><div class="fr">Mara Lindqvist<time>Yesterday</time></div><div class="su">Re: onboarding copy</div><div class="pv">The shorter version reads much better —</div></div>
+                    <div class="item"><div class="fr">GitHub<time>Yesterday</time></div><div class="su">Release 2.1 published</div><div class="pv">autocuts/app · tag v2.1.0</div></div>
+                  </div>
+                  <div class="read">
+                    <h4>Demo video for the site</h4>
+                    <div class="who"><span class="av">SO</span><div><b>Sam Ortiz</b><span>sam@relay.app</span></div></div>
+                    <p>Can you record a quick walkthrough of the new dashboard? A couple of minutes is plenty.</p>
+                    <p>Whatever tool you used last time looked great — the zooms made it really easy to follow.</p>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="pv-box" id="pv-cam">
+                <video class="clip" src="../assets/webcam.mp4" data-start="0" data-duration="8" data-track-index="5" muted playsinline></video>
+                <video class="clip" src="../assets/webcam.mp4" data-start="8" data-duration="8" data-track-index="9" muted playsinline></video>
+                <video class="clip" src="../assets/webcam.mp4" data-start="16" data-duration="1.9" data-track-index="10" muted playsinline></video>
+              </div>
+            </div>
+          </div></div>
+        </div>
+        <div class="ac-dock">
+          <div class="dk-bar">
+            <div class="dk-zoom"><span class="dk-slider"><u style="left:0%"></u></span><em>100%</em><span class="dk-ibtn"><svg class="ic-t"><use href="#i-rotate-ccw" /></svg></span></div>
+            <div class="dk-transport"><strong>0:02</strong><span class="dk-ibtn"><svg class="ic-t"><use href="#i-skip-back" /></svg></span><span class="dk-play"><svg class="ic-t"><use href="#i-play" /></svg></span><span class="dk-ibtn"><svg class="ic-t"><use href="#i-skip-forward" /></svg></span><span>0:11</span></div>
+            <div class="dk-tools">
+              <span class="dk-speed"><svg class="ic-t"><use href="#i-gauge" /></svg><span class="dk-dd">Normal</span></span>
+              <span class="dk-count"><svg class="ic-t"><use href="#i-wand-sparkles" /></svg>2 zooms</span>
+              <span class="dk-tbtn"><svg class="ic-t"><use href="#i-plus" /></svg>Add zoom</span>
+              <span class="dk-tbtn"><svg class="ic-t"><use href="#i-trash-2" /></svg>Delete clip</span>
+              <span class="dk-tbtn"><svg class="ic-t"><use href="#i-scissors" /></svg>Cut</span>
+            </div>
+          </div>
+          <div class="dk-ruler"><span class="dk-tick" style="left:0%">0:00</span><span class="dk-tick" style="left:18.2%">0:02</span><span class="dk-tick" style="left:36.4%">0:04</span><span class="dk-tick" style="left:54.5%">0:06</span><span class="dk-tick" style="left:72.7%">0:08</span><span class="dk-tick" style="left:90.9%">0:10</span></div>
+          <div class="dk-lanes">
+            <div class="dk-lane clips"><span class="dk-block clip" style="left:0;width:100%"></span></div>
+            <div class="dk-lane zooms"><span class="dk-block zoom" style="left:18%;width:15%"><svg class="ic-z"><use href="#i-zoom-in" /></svg><span class="txt">1.3x zoom</span></span><span class="dk-block zoom" style="left:60%;width:15%"><svg class="ic-z"><use href="#i-zoom-in" /></svg><span class="txt">1.3x zoom</span></span></div>
+            <span class="dk-playhead" style="left:20%"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="res" id="res-right">
+        <div class="wall aurora"></div>
+        <div class="box" style="left:22px;top:260px;width:690px;height:560px;border-radius:18px">
+          <div class="fitw"><div class="scr scr-mail">
+                <div class="chrome"><i class="dot r"></i><i class="dot y"></i><i class="dot g"></i><span class="url">Mail — Inbox</span></div>
+                <div class="app">
+                  <div class="list">
+                    <h4>Inbox</h4>
+                    <div class="item"><div class="fr">Launch checklist<time>9:41</time></div><div class="su">Everything is green</div><div class="pv">Everything is green except the status page…</div></div>
+                    <div class="item on"><div class="fr">Sam Ortiz<time>9:12</time></div><div class="su">Demo video for the site</div><div class="pv">Can you record a quick walkthrough of the…</div></div>
+                    <div class="item"><div class="fr">Billing<time>8:47</time></div><div class="su">Your August invoice</div><div class="pv">Invoice #2081 is ready to view.</div></div>
+                    <div class="item"><div class="fr">Mara Lindqvist<time>Yesterday</time></div><div class="su">Re: onboarding copy</div><div class="pv">The shorter version reads much better —</div></div>
+                    <div class="item"><div class="fr">GitHub<time>Yesterday</time></div><div class="su">Release 2.1 published</div><div class="pv">autocuts/app · tag v2.1.0</div></div>
+                  </div>
+                  <div class="read">
+                    <h4>Demo video for the site</h4>
+                    <div class="who"><span class="av">SO</span><div><b>Sam Ortiz</b><span>sam@relay.app</span></div></div>
+                    <p>Can you record a quick walkthrough of the new dashboard? A couple of minutes is plenty.</p>
+                    <p>Whatever tool you used last time looked great — the zooms made it really easy to follow.</p>
+                  </div>
+                </div>
+              </div></div>
+        </div>
+        <div class="box" style="left:732px;top:260px;width:326px;height:560px;border-radius:18px">
+          <video class="clip" src="../assets/webcam.mp4" data-start="17.9" data-duration="1.1" data-track-index="6" muted playsinline></video>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      const mo = ACMotion({
+        frameEl: document.getElementById("root"),
+        frameW: 1080, frameH: 1080, canvasW: 1080,
+        restX: 700, restY: 900
+      });
+
+      const mid = (sel) => {
+        const r = document.querySelector(sel).getBoundingClientRect();
+        return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+      };
+
+      /* App-exact geometry per layout, scaled into the 324px-tall stage.
+         Presets from settings.ts: Floating/Bubble = auto ratio, padding 4, size 15, zoom 1.35x;
+         Left/Right/Split = 16:9, padding 2, zoom 1.1x; Pill = auto ratio, size 25, zoom 1x;
+         Overlap = 16:9, the card docks half over the screen edge; Solo = camera only, no padding.
+         Above/Below switch the canvas to 9:16 with a 1:1 stacked capture.
+         Split alone deviates on user request: both panels stretch to the full canvas height. */
+      const L = {
+        float:   { cv: { width: 561 },
+                   scr: { left: 21, top: 21, width: 520, height: 283, borderRadius: 8 },
+                   cam: { left: 463, top: 226, width: 84, height: 84, borderRadius: 22 }, s: 0.942, sx: 0, vz: 1.35 },
+        left:    { cv: { width: 576 },
+                   scr: { left: 146, top: 47, width: 422, height: 229, borderRadius: 8 },
+                   cam: { left: 8, top: 47, width: 129, height: 229, borderRadius: 8 }, s: 0.765, sx: 0, vz: 1.1 },
+        right:   { cv: { width: 576 },
+                   scr: { left: 8, top: 47, width: 422, height: 229, borderRadius: 8 },
+                   cam: { left: 439, top: 47, width: 129, height: 229, borderRadius: 8 }, s: 0.765, sx: 0, vz: 1.1 },
+        top:     { cv: { width: 182 },
+                   scr: { left: 12, top: 164, width: 157, height: 157, borderRadius: 6 },
+                   cam: { left: 12, top: 3, width: 157, height: 157, borderRadius: 6 }, s: 0.523, sx: -66, vz: 1.0 },
+        bottom:  { cv: { width: 182 },
+                   scr: { left: 12, top: 3, width: 157, height: 157, borderRadius: 6 },
+                   cam: { left: 12, top: 164, width: 157, height: 157, borderRadius: 6 }, s: 0.523, sx: -66, vz: 1.0 },
+        bubble:  { cv: { width: 561 },
+                   scr: { left: 21, top: 21, width: 520, height: 283, borderRadius: 8 },
+                   cam: { left: 463, top: 226, width: 84, height: 84, borderRadius: 42 }, s: 0.942, sx: 0, vz: 1.35 },
+        split:   { cv: { width: 576 },
+                   scr: { left: 6, top: 6, width: 279, height: 312, borderRadius: 8 },
+                   cam: { left: 291, top: 6, width: 279, height: 312, borderRadius: 8 }, s: 1.04, sx: -148, vz: 1.1 },
+        pill:    { cv: { width: 561 },
+                   scr: { left: 21, top: 21, width: 520, height: 283, borderRadius: 8 },
+                   cam: { left: 210, top: 259, width: 140, height: 58, borderRadius: 29 }, s: 0.942, sx: 0, vz: 1.0 },
+        overlap: { cv: { width: 576 },
+                   scr: { left: 10, top: 22, width: 515, height: 280, borderRadius: 8 },
+                   cam: { left: 484, top: 89, width: 82, height: 145, borderRadius: 8 }, s: 0.932, sx: 0, vz: 1.1 },
+        solo:    { cv: { width: 576 },
+                   scr: { left: 0, top: 0, width: 576, height: 324, borderRadius: 0 },
+                   cam: { left: 0, top: 0, width: 576, height: 324, borderRadius: 0 }, s: 1.08, sx: 0, vz: 1.0 }
+      };
+      gsap.set("#pv-scr", L.float.scr);
+      gsap.set("#pv-cam", L.float.cam);
+      gsap.set("#pv-scr .scr", { scale: L.float.s, x: L.float.sx, transformOrigin: "0 0" });
+      gsap.set("#pv-cam video", { scale: L.float.vz });
+
+      let curBtn = "#lay-default", curDesc = "#d-float";
+      const layTo = (key, btn, desc, at) => {
+        const p = mid(btn);
+        mo.travel(tl, at - 0.75, 0.65, p.x, p.y);
+        mo.click(tl, at, p.x, p.y);
+        tl.set(curBtn, { className: "lay-btn" }, at + 0.06);
+        tl.set(btn, { className: "lay-btn selected" }, at + 0.06);
+        tl.to("#cv", { ...L[key].cv, duration: 0.5, ease: "power3.inOut" }, at + 0.08);
+        tl.to("#pv-scr", { ...L[key].scr, duration: 0.5, ease: "power3.inOut" }, at + 0.08);
+        tl.to("#pv-cam", { ...L[key].cam, duration: 0.5, ease: "power3.inOut" }, at + 0.08);
+        tl.to("#pv-scr .scr", { scale: L[key].s, x: L[key].sx, duration: 0.5, ease: "power3.inOut" }, at + 0.08);
+        tl.to("#pv-cam video", { scale: L[key].vz, duration: 0.5, ease: "power3.inOut" }, at + 0.08);
+        tl.to(curDesc, { opacity: 0, duration: 0.15 }, at + 0.06);
+        tl.to(desc, { opacity: 1, duration: 0.15 }, at + 0.14);
+        curBtn = btn; curDesc = desc;
+      };
+
+      /* the Camera picture zoom slider follows each preset (fill = (zoom - 1) * 100%) */
+      const zoomTo = (z, at) => {
+        tl.set("#cz-em", { textContent: (z === 1.35 ? "1.35" : z.toFixed(1)) + "\u00d7" }, at);
+        tl.set("#cz-fill", { width: ((z - 1) * 100) + "%" }, at);
+        tl.set("#cz-knob", { left: ((z - 1) * 100) + "%" }, at);
+      };
+
+      layTo("left", "#lay-left", "#d-left", 2.0);
+      zoomTo(1.1, 2.1);
+      layTo("right", "#lay-right", "#d-right", 3.8);
+      layTo("top", "#lay-top", "#d-top", 5.6);
+      zoomTo(1.0, 5.7);
+      layTo("bottom", "#lay-bottom", "#d-bottom", 7.4);
+      layTo("bubble", "#lay-bubble", "#d-bubble", 9.2);
+      zoomTo(1.35, 9.3);
+      layTo("split", "#lay-split", "#d-split", 11.0);
+      zoomTo(1.1, 11.1);
+      layTo("pill", "#lay-pill", "#d-pill", 12.8);
+      zoomTo(1.0, 12.9);
+      /* the pill preset widens the camera to 25% and centres it low */
+      tl.set("#cs-em", { textContent: "25%" }, 12.9);
+      tl.set("#cs-fill", { width: "46%" }, 12.9);
+      tl.set("#cs-knob", { left: "46%" }, 12.9);
+      tl.set("#pos-val", { textContent: "Bottom centre" }, 12.9);
+      layTo("overlap", "#lay-overlap", "#d-overlap", 14.6);
+      zoomTo(1.1, 14.7);
+      tl.set("#pos-val", { textContent: "Middle right" }, 14.7);
+      layTo("solo", "#lay-solo", "#d-solo", 16.4);
+      zoomTo(1.0, 16.5);
+
+      /* the cursor sits on the Layout grid for the whole walk */
+      mo.pointer(tl, 1.78, true); mo.pointer(tl, 17.32, false);
+
+      /* park the cursor, then hard-cut to the composed Right result;
+         the loop seam is the hard cut back to the editor */
+      mo.travel(tl, 17.2, 0.6, 700, 900);
+      tl.set(mo.cursorEl, { opacity: 0 }, 17.9);
+      tl.set("#res-right", { opacity: 1 }, 17.9);
+
+      window.__timelines["camera-layouts"] = tl;
+    </script>
+  </body>
+</html>

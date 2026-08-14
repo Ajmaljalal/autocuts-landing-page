@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/CustomEase.min.js"></script>
+    <link rel="stylesheet" href="../assets/ui.css">
+    <link rel="stylesheet" href="../assets/studio.css">
+    <link rel="stylesheet" href="../assets/screens.css">
+    <link rel="stylesheet" href="../assets/stage.css">
+    <script src="../assets/icons.js"></script>
+    <script src="../assets/ac-motion.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #14101c; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+      #sf-zoom { position: absolute; inset: 0; }
+      .sf-narrow { grid-template-columns: 300px minmax(0, 1fr); }
+      .sf-narrow .main { padding: 52px 226px 52px 260px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="smart-focus" data-start="0" data-duration="8" data-width="1920" data-height="1080">
+      <div class="wall aurora"></div>
+      <div class="ac out">
+        <div class="out-frame" id="sf-frame">
+          <div id="sf-zoom">
+            <div class="scr scr-set sf-narrow">
+              <div class="side">
+                <b>Settings</b>
+                <a>Account</a><a class="on">Notifications</a><a>Billing</a><a>Team</a><a>API keys</a>
+              </div>
+              <div class="main">
+                <div class="row"><div><strong>Email digest</strong><span>One summary each morning</span></div>
+                  <span class="sw on"><i></i></span></div>
+                <div class="row"><div><strong>Push notifications</strong><span>Alerts on this device</span></div>
+                  <span class="sw on"><i></i></span></div>
+                <div class="row"><div><strong>Weekly summary</strong><span>Every Monday at 9am</span></div>
+                  <span class="sw" id="sf-sw1"><i></i></span></div>
+                <div class="row"><div><strong>Product updates</strong><span>New features and releases</span></div>
+                  <span class="sw" id="sf-sw2"><i></i></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cam-bubble">
+          <video id="smart-focus-cam" class="clip" src="../assets/webcam.mp4" data-start="0" data-duration="8" data-track-index="5" muted playsinline></video>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      /* The frame is 1920x1080 minus 10% width padding on every side: 1536 x 696. */
+      const W = 1536, H = 696;
+      const REST = { x: 1060, y: 540 };
+      const HIT1 = { x: 1289, y: 239 };
+      const HIT2 = { x: 1289, y: 312 };
+      const LEVEL = 1.6;
+
+      const mo = ACMotion({
+        frameEl: document.getElementById("sf-frame"),
+        zoomEl: document.getElementById("sf-zoom"),
+        frameW: W, frameH: H, canvasW: 1920,
+        restX: REST.x, restY: REST.y
+      });
+
+      const flip = (sel, at, on) => {
+        tl.to(sel, { backgroundColor: on ? "#2563eb" : "#d5dbe4", duration: on ? 0.16 : 0.3, ease: "power1.out" }, at);
+        tl.to(sel + " i", { x: on ? 18 : 0, duration: on ? 0.22 : 0.3, ease: on ? "back.out(2)" : "power2.inOut" }, at);
+      };
+
+      /* Beat 1 — the zoom-in finishes exactly at the click, as the planner times it. */
+      mo.travel(tl, 0.45, 0.85, HIT1.x, HIT1.y);
+      mo.zoom(tl, 1.55, LEVEL, HIT1.x, HIT1.y, 1.3);
+      mo.click(tl, 1.55, HIT1.x, HIT1.y);
+      flip("#sf-sw1", 1.57, true);
+
+      /* Beat 2 — consecutive click: camera glides to the next clamped anchor mid-hold. */
+      mo.travel(tl, 4.0, 0.7, HIT2.x, HIT2.y);
+      mo.zoom(tl, 4.95, LEVEL, HIT2.x, HIT2.y, 1.1);
+      mo.click(tl, 4.95, HIT2.x, HIT2.y);
+      flip("#sf-sw2", 4.97, true);
+
+      /* Return home; settle both switches while travelling so frame 240 equals frame 0. */
+      mo.travel(tl, 7.05, 0.85, REST.x, REST.y);
+      flip("#sf-sw1", 7.25, false);
+      flip("#sf-sw2", 7.4, false);
+
+      window.__timelines["smart-focus"] = tl;
+    </script>
+  </body>
+</html>

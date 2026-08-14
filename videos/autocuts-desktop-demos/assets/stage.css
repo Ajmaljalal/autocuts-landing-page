@@ -1,0 +1,102 @@
+/* Result-only staging: the composed Autocuts output frame, filling the video with no app
+   chrome. Every value here is the app's own — backgrounds are BACKGROUNDS presets from
+   src/features/canvas-layout/model/backgrounds.ts, geometry is defaultStudioSettings. */
+
+/* Canvas backgrounds, verbatim from BACKGROUNDS. */
+.wall { position: absolute; inset: 0; }
+.wall.aurora   { background: linear-gradient(135deg, #092f37, #1d7f79, #edb56f); }
+.wall.sunset   { background: linear-gradient(135deg, #4f294f, #d66d69, #f7c783); }
+.wall.ocean    { background: linear-gradient(135deg, #092a49, #146f87, #8fd4c7); }
+.wall.midnight { background: linear-gradient(135deg, #0f161d, #233643, #58707c); }
+.wall.twilight { background: linear-gradient(135deg, #0f1b33, #2f4f86, #8aa8d8); }
+.wall.ember    { background: linear-gradient(135deg, #26100e, #8a2f22, #f0a35e); }
+.wall.orchid   { background: linear-gradient(135deg, #2a1233, #8a3a78, #e88fb8); }
+.wall.royal    { background: linear-gradient(135deg, #131539, #3f47b0, #93a8ff); }
+.wall.meadow   { background: linear-gradient(135deg, #0f2b1a, #2f7a44, #a8d878); }
+
+/* The composed frame. "Outer space" is a percentage and applies on every side, so the
+   padding really is equal all round. Corners and shadow are the app's defaults. */
+.out { position: absolute; inset: 0; padding: 10%; }
+.out-frame {
+  position: relative; width: 100%; height: 100%; overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+.out.roomy { padding: 14%; }
+.out.snug { padding: 6%; }
+
+/* Camera track. cameraPosition here is right-bottom; cameraSize is 23% of the frame. */
+.cam-bubble {
+  position: absolute; right: 3.2%; bottom: 4.4%;
+  width: 15.5%; aspect-ratio: 1; border-radius: 26%; overflow: hidden;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+  background: #2a2320;
+}
+.cam-bubble video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* The rebuilt cursor — src/assets/mouse-pointer.svg, unmodified. */
+.cursor { position: absolute; left: 0; top: 0; width: 54px; height: 54px; }
+.cursor svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 4px 9px rgba(0, 0, 0, 0.5)); }
+.ripple {
+  position: absolute; left: 0; top: 0; width: 30px; height: 30px; margin: -15px 0 0 -15px;
+  border: 3px solid rgba(255, 255, 255, 0.9); border-radius: 50%; opacity: 0;
+}
+
+/* Burned-in captions, exactly as drawCaptions paints them: dark rounded pill, words
+   #f6f8fa, spoken words #6ee7ff, weight 600 system font. fontSize default 42. */
+.burn {
+  position: absolute; left: 50%; bottom: 8%; transform: translateX(-50%);
+  padding: 12px 24px; border-radius: 13px; background: rgba(10, 13, 17, 0.66);
+  display: flex; gap: 0.32em; white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 42px; font-weight: 600;
+}
+.burn span { color: #f6f8fa; }
+.burn span.on { color: #6ee7ff; }
+
+/* ── overlays, copied from electron/overlays ──────────────────────────────── */
+.ov {
+  --surface: rgba(16, 20, 26, 0.82);
+  --surface-strong: rgba(12, 15, 20, 0.94);
+  --ov-border: rgba(255, 255, 255, 0.14);
+  --ov-text: #f4f6f8;
+  --ov-muted: rgba(244, 246, 248, 0.62);
+  --ov-accent: #ff4d4f;
+  --ov-focus: #8ab4ff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  color: var(--ov-text);
+}
+.ov-card {
+  background: var(--surface);
+  border: 1px solid var(--ov-border);
+  border-radius: 14px;
+  backdrop-filter: blur(24px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.42);
+}
+
+/* countdown.html */
+.ov-ring {
+  width: 168px; height: 168px; display: grid; place-items: center; border-radius: 50%;
+  background: var(--surface-strong); border: 1px solid var(--ov-border);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+.ov-ring span { font-size: 76px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* indicator.html */
+.ov-bar { display: flex; align-items: center; gap: 12px; padding: 9px 16px 9px 12px; border-radius: 16px; background: var(--surface-strong); }
+.ov-stop { width: 30px; height: 30px; border-radius: 50%; background: var(--ov-accent); display: flex; align-items: center; justify-content: center; flex: none; }
+.ov-stop i { width: 10px; height: 10px; border-radius: 2px; background: #fff; }
+.ov-pause { width: 26px; height: 26px; border-radius: 8px; color: var(--ov-muted); font-size: 12px; display: flex; align-items: center; justify-content: center; flex: none; }
+.ov-divider { width: 1px; height: 24px; background: var(--ov-border); flex: none; }
+.ov-time { font-variant-numeric: tabular-nums; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; font-weight: 600; letter-spacing: 0.03em; }
+
+/* teleprompter.html */
+.ov-pill { width: 100%; padding: 14px 22px; border-radius: 18px; background: var(--surface-strong); }
+.ov-lines { display: flex; flex-direction: column; gap: 6px; text-align: center; }
+.ov-line { line-height: 1.34; color: var(--ov-muted); opacity: 0.55; }
+.ov-line.current { color: var(--ov-text); opacity: 1; font-weight: 600; }
+.ov-line.done { opacity: 0.3; }
+.ov-line .spoken { color: var(--ov-focus); }
+
+/* teleprompter overlay placement: it grows from the top of the recorded screen */
+.tp-host { position: absolute; left: 0; right: 0; top: 0; padding: 26px 26px 0; }

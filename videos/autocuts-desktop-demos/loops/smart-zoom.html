@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/CustomEase.min.js"></script>
+    <link rel="stylesheet" href="../assets/ui.css" />
+    <link rel="stylesheet" href="../assets/screens.css" />
+    <link rel="stylesheet" href="../assets/stage.css" />
+    <script src="../assets/icons.js"></script>
+    <script src="../assets/ac-motion.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1080px; overflow: hidden; background: #14101c; }
+      #root { position: relative; width: 1080px; height: 1080px; overflow: hidden; }
+      #zm { position: absolute; inset: 0; }
+      .frame {
+        position: absolute; inset: 54px; border-radius: 24px; overflow: hidden;
+        box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+      }
+      .swap { position: relative; display: inline-block; }
+      .swap .b { position: absolute; left: 0; top: 0; opacity: 0; white-space: nowrap; }
+      #pg-cust { position: absolute; left: 44px; right: 52px; top: 44px; opacity: 0; }
+      .scr-dash .page { overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="smart-zoom" data-start="0" data-duration="9.6"
+         data-width="1080" data-height="1080">
+      <div id="zm">
+        <div class="wall twilight"></div>
+        <div class="frame">
+          <div class="scr scr-dash">
+            <div class="nav">
+              <span class="logo"><i></i>Pulse</span>
+              <a class="on" id="nav-ov">Overview</a><a>Reports</a><a id="nav-cust">Customers</a><a>Settings</a>
+              <span class="av">AJ</span>
+            </div>
+            <div class="page">
+              <div id="pg-over">
+                <div class="headrow">
+                  <div><h3><span class="swap"><span>Overview</span></span></h3>
+                    <div class="meta"><span class="swap"><span id="meta-a">Last 30 days · Updated just now</span><span class="b" id="meta-b">Last 90 days · Updated just now</span></span></div></div>
+                  <span class="grow"></span>
+                  <div class="rangebox">
+                    <div class="range" id="range"><span class="swap"><span id="rl-a">Last 30 days</span><span class="b" id="rl-b">Last 90 days</span></span><i>▾</i></div>
+                    <div class="menu" id="menu">
+                      <a>Last 7 days</a>
+                      <a class="on" id="mi-30">Last 30 days</a>
+                      <a id="mi-90">Last 90 days</a>
+                      <a>Year to date</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="tiles">
+                  <div class="tile"><span>Revenue</span><strong class="swap"><span id="t1-a">$48,210</span><span class="b" id="t1-b">$142,380</span></strong><em class="up">+12.4%</em></div>
+                  <div class="tile"><span>Active users</span><strong class="swap"><span id="t2-a">8,442</span><span class="b" id="t2-b">24,867</span></strong><em class="up">+4.1%</em></div>
+                  <div class="tile"><span>Conversion</span><strong class="swap"><span id="t3-a">3.2%</span><span class="b" id="t3-b">3.6%</span></strong><em class="up" id="t3-em">+0.4%</em></div>
+                </div>
+                <div class="card"><div class="cap">Revenue<span>weekly</span></div>
+                  <div class="chart" id="chart"><i style="height:34%"></i><i style="height:46%"></i><i style="height:40%"></i><i style="height:58%"></i><i class="hi" style="height:66%"></i><i style="height:52%"></i><i style="height:61%"></i><i style="height:72%"></i><i class="hi" style="height:84%"></i><i style="height:69%"></i><i style="height:78%"></i><i class="hi" style="height:92%"></i></div>
+                </div>
+              </div>
+              <div id="pg-cust">
+                <h3>Customers</h3>
+                <div class="meta">2,318 accounts · 148 new this month</div>
+                <table>
+                  <tr><th>Account</th><th>Plan</th><th>Seats</th><th>MRR</th><th>Status</th></tr>
+                  <tr><td><b>Northwind Labs</b></td><td>Business</td><td>48</td><td>$1,920</td><td><span class="pillst ok">Active</span></td></tr>
+                  <tr><td><b>Brightline Studio</b></td><td>Pro</td><td>12</td><td>$480</td><td><span class="pillst ok">Active</span></td></tr>
+                  <tr><td><b>Fielder &amp; Co</b></td><td>Business</td><td>36</td><td>$1,440</td><td><span class="pillst ok">Active</span></td></tr>
+                  <tr><td><b>Marlow Health</b></td><td>Pro</td><td>9</td><td>$360</td><td><span class="pillst tr">Trial</span></td></tr>
+                  <tr><td><b>Juniper Freight</b></td><td>Business</td><td>27</td><td>$1,080</td><td><span class="pillst ok">Active</span></td></tr>
+                  <tr><td><b>Arcade Coffee</b></td><td>Starter</td><td>4</td><td>$96</td><td><span class="pillst tr">Trial</span></td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      const mo = ACMotion({
+        frameEl: document.getElementById("root"),
+        zoomEl: document.getElementById("zm"),
+        frameW: 1080, frameH: 1080, canvasW: 1080,
+        restX: 660, restY: 800
+      });
+
+      const mid = (sel) => {
+        const r = document.querySelector(sel).getBoundingClientRect();
+        return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+      };
+      const range = mid("#range"), mi90 = mid("#mi-90"), navc = mid("#nav-cust");
+
+      /* Beat 1 — open the range menu; the zoom rides in and lands on the click. */
+      /* the hand lands with the approach, holds over the open menu, and reverts
+         the moment the menu closes under the cursor; again on the nav item */
+      mo.pointer(tl, 1.03, true); mo.pointer(tl, 3.05, false);
+      mo.pointer(tl, 5.28, true); mo.pointer(tl, 8.37, false);
+
+      mo.travel(tl, 0.4, 0.75, range.x, range.y);
+      mo.zoom(tl, 1.55, 1.5, range.x, range.y, 2.3);
+      mo.click(tl, 1.55, range.x, range.y);
+      tl.fromTo("#menu", { opacity: 0, y: -6 }, { opacity: 1, y: 0, duration: 0.22, ease: "power2.out" }, 1.62);
+
+      /* pick "Last 90 days" while held in close */
+      mo.travel(tl, 2.05, 0.5, mi90.x, mi90.y);
+      mo.click(tl, 2.75, mi90.x, mi90.y);
+      tl.set("#mi-30", { className: "" }, 2.82);
+      tl.set("#mi-90", { className: "on" }, 2.82);
+      tl.to("#menu", { opacity: 0, duration: 0.18 }, 3.0);
+      tl.to("#rl-a", { opacity: 0, duration: 0.2 }, 3.0);
+      tl.to("#rl-b", { opacity: 1, duration: 0.2 }, 3.1);
+      tl.to("#meta-a", { opacity: 0, duration: 0.2 }, 3.0);
+      tl.to("#meta-b", { opacity: 1, duration: 0.2 }, 3.1);
+      [["#t1-a", "#t1-b"], ["#t2-a", "#t2-b"], ["#t3-a", "#t3-b"]].forEach(([a, b], i) => {
+        tl.to(a, { opacity: 0, duration: 0.2 }, 3.1 + i * 0.08);
+        tl.to(b, { opacity: 1, duration: 0.2 }, 3.2 + i * 0.08);
+      });
+      const grow = [58, 66, 61, 74, 82, 70, 78, 86, 95, 83, 89, 98];
+      document.querySelectorAll("#chart i").forEach((bar, i) => {
+        tl.to(bar, { height: grow[i] + "%", duration: 0.55, ease: "power3.inOut" }, 3.15 + i * 0.03);
+      });
+
+      /* Beat 2 — jump to Customers; a second click, a second ride-in. */
+      mo.travel(tl, 4.7, 0.7, navc.x, navc.y);
+      mo.zoom(tl, 5.75, 1.45, navc.x, navc.y, 1.6);
+      mo.click(tl, 5.75, navc.x, navc.y);
+      tl.set("#nav-ov", { className: "" }, 5.85);
+      tl.set("#nav-cust", { className: "on" }, 5.85);
+      tl.to("#pg-over", { opacity: 0, duration: 0.25 }, 5.85);
+      tl.to("#pg-cust", { opacity: 1, duration: 0.25 }, 5.95);
+
+      /* return glide; everything resets while the camera settles */
+      mo.travel(tl, 8.25, 0.85, 660, 800);
+      tl.set("#nav-ov", { className: "on" }, 8.7);
+      tl.set("#nav-cust", { className: "" }, 8.7);
+      tl.to("#pg-cust", { opacity: 0, duration: 0.22 }, 8.7);
+      tl.to("#pg-over", { opacity: 1, duration: 0.22 }, 8.8);
+      tl.set("#mi-30", { className: "on" }, 9.0);
+      tl.set("#mi-90", { className: "" }, 9.0);
+      [["#rl-b", "#rl-a"], ["#meta-b", "#meta-a"], ["#t1-b", "#t1-a"], ["#t2-b", "#t2-a"], ["#t3-b", "#t3-a"]].forEach(([b, a]) => {
+        tl.set(b, { opacity: 0 }, 9.05);
+        tl.set(a, { opacity: 1 }, 9.05);
+      });
+      const back = [34, 46, 40, 58, 66, 52, 61, 72, 84, 69, 78, 92];
+      document.querySelectorAll("#chart i").forEach((bar, i) => {
+        tl.to(bar, { height: back[i] + "%", duration: 0.3 }, 9.05);
+      });
+
+      window.__timelines["smart-zoom"] = tl;
+    </script>
+  </body>
+</html>

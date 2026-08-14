@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "preferences": {
+    "destination": {
+      "value": "landing-page-embed",
+      "confirmed_in": [
+        "autocuts-desktop-demos"
+      ],
+      "updated_at": "2026-08-13T18:56:13.768Z"
+    },
+    "aspect": {
+      "value": "1920x1080",
+      "confirmed_in": [
+        "autocuts-desktop-demos"
+      ],
+      "updated_at": "2026-08-13T18:56:13.802Z"
+    },
+    "language": {
+      "value": "en",
+      "confirmed_in": [
+        "autocuts-desktop-demos"
+      ],
+      "updated_at": "2026-08-13T18:56:13.832Z"
+    },
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "autocuts-desktop-demos"
+      ],
+      "updated_at": "2026-08-13T18:56:13.863Z"
+    },
+    "storyboard": {
+      "value": "yes",
+      "confirmed_in": [
+        "autocuts-desktop-demos"
+      ],
+      "updated_at": "2026-08-13T18:56:13.892Z"
+    }
+  },
+  "sightings": {}
+}

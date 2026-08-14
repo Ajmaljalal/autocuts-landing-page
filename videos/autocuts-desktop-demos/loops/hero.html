@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/CustomEase.min.js"></script>
+    <link rel="stylesheet" href="../assets/ui.css" />
+    <link rel="stylesheet" href="../assets/screens.css" />
+    <link rel="stylesheet" href="../assets/stage.css" />
+    <script src="../assets/icons.js"></script>
+    <script src="../assets/ac-motion.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1080px; overflow: hidden; background: #14101c; }
+      #root { position: relative; width: 1080px; height: 1080px; overflow: hidden; }
+      #zm { position: absolute; inset: 0; }
+      .frame {
+        position: absolute; inset: 58px; border-radius: 24px; overflow: hidden;
+        box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+      }
+      /* cameraPosition left-bottom, the app default; the bubble rides above the zoom
+         and shrinks while zoomed (cameraZoomEffect). */
+      .cam-bubble.left { left: 3.2%; right: auto; }
+      .swap { position: relative; display: inline-block; }
+      .swap .b { position: absolute; left: 0; top: 0; opacity: 0; white-space: nowrap; }
+      #pg-rep { position: absolute; left: 44px; right: 52px; top: 44px; opacity: 0; }
+      .scr-dash .page { overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="hero" data-start="0" data-duration="15"
+         data-width="1080" data-height="1080">
+      <div id="zm">
+        <div class="wall aurora"></div>
+        <div class="frame">
+          <div class="scr scr-dash">
+            <div class="chrome"><i class="dot r"></i><i class="dot y"></i><i class="dot g"></i>
+              <span class="url">pulse.app/overview</span></div>
+            <div class="nav">
+              <span class="logo"><i></i>Pulse</span>
+              <a class="on" id="nav-ov">Overview</a><a id="nav-rep">Reports</a><a>Customers</a><a>Settings</a>
+              <span class="av">AJ</span>
+            </div>
+            <div class="page">
+              <div id="pg-over">
+                <h3>Overview</h3>
+                <div class="meta">Last 30 days · Updated just now</div>
+                <div class="tiles">
+                  <div class="tile"><span>Revenue</span><strong>$48,210</strong><em class="up">+12.4%</em></div>
+                  <div class="tile"><span>Active users</span><strong>8,442</strong><em class="up">+4.1%</em></div>
+                  <div class="tile"><span>Conversion</span><strong>3.2%</strong><em class="dn">−0.4%</em></div>
+                </div>
+                <div class="card"><div class="cap">Revenue<span>weekly</span></div>
+                  <div class="chart"><i style="height:34%"></i><i style="height:46%"></i><i style="height:40%"></i><i style="height:58%"></i><i class="hi" style="height:66%"></i><i style="height:52%"></i><i style="height:61%"></i><i style="height:72%"></i><i class="hi" style="height:84%"></i><i style="height:69%"></i><i style="height:78%"></i><i class="hi" style="height:92%"></i></div>
+                </div>
+              </div>
+              <div id="pg-rep">
+                <h3>Reports</h3>
+                <div class="meta">Shared with the whole workspace</div>
+                <div class="replist">
+                  <div class="rep"><span class="rico">Q3</span><div><b>Q3 revenue summary</b><span>Updated 2 hours ago · 14 pages</span></div><span class="grow"></span><span class="dl" id="dl-1">Download</span></div>
+                  <div class="rep"><span class="rico">RC</span><div><b>Retention cohorts</b><span>Updated yesterday · 9 pages</span></div><span class="grow"></span><span class="dl">Download</span></div>
+                  <div class="rep"><span class="rico">LW</span><div><b>Launch week traffic</b><span>Updated Aug 8 · 6 pages</span></div><span class="grow"></span><span class="dl">Download</span></div>
+                  <div class="rep"><span class="rico">PR</span><div><b>Pricing page experiment</b><span>Updated Aug 5 · 11 pages</span></div><span class="grow"></span><span class="dl">Download</span></div>
+                </div>
+              </div>
+              <div class="toast" id="toast"><i>✓</i>Report saved to Downloads</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cam-bubble left" id="cam">
+        <video class="clip" src="../assets/webcam.mp4" data-start="0" data-duration="8" data-track-index="5" muted playsinline style="position:absolute;inset:0"></video>
+        <video class="clip" src="../assets/webcam.mp4" data-start="8" data-duration="7" data-track-index="6" muted playsinline style="position:absolute;inset:0"></video>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      const mo = ACMotion({
+        frameEl: document.getElementById("root"),
+        zoomEl: document.getElementById("zm"),
+        frameW: 1080, frameH: 1080, canvasW: 1080,
+        restX: 700, restY: 620
+      });
+
+      const mid = (sel) => {
+        const r = document.querySelector(sel).getBoundingClientRect();
+        return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+      };
+      const navr = mid("#nav-rep"), navo = mid("#nav-ov"), dl1 = mid("#dl-1");
+
+      /* cameraZoomEffect: the bubble eases down to 86% whenever the zoom is in */
+      const camDip = (inAt, outAt) => {
+        tl.to("#cam", { scale: 0.86, duration: 0.8, ease: "acZoom" }, inAt);
+        tl.to("#cam", { scale: 1, duration: 0.8, ease: "acZoom" }, outAt);
+      };
+
+      /* Beat 1 — into Reports */
+      /* the hand appears on the last px of each approach and holds until the
+         cursor leaves the control (departure + 0.12s) */
+      mo.pointer(tl, 1.58, true); mo.pointer(tl, 5.42, false);
+      mo.pointer(tl, 5.98, true); mo.pointer(tl, 9.42, false);
+      mo.pointer(tl, 9.98, true); mo.pointer(tl, 13.22, false);
+
+      mo.travel(tl, 0.9, 0.8, navr.x, navr.y);
+      mo.zoom(tl, 2.15, 1.4, navr.x, navr.y, 1.5);
+      camDip(1.35, 3.65);
+      mo.click(tl, 2.15, navr.x, navr.y);
+      tl.set("#nav-ov", { className: "" }, 2.25);
+      tl.set("#nav-rep", { className: "on" }, 2.25);
+      tl.to("#pg-over", { opacity: 0, duration: 0.25 }, 2.25);
+      tl.to("#pg-rep", { opacity: 1, duration: 0.25 }, 2.35);
+
+      /* Beat 2 — grab the Q3 report */
+      mo.travel(tl, 5.3, 0.8, dl1.x, dl1.y);
+      mo.zoom(tl, 6.55, 1.5, dl1.x, dl1.y, 1.6);
+      camDip(5.75, 8.15);
+      mo.click(tl, 6.55, dl1.x, dl1.y);
+      tl.to("#dl-1", { scale: 0.94, duration: 0.12 }, 6.5);
+      tl.to("#dl-1", { scale: 1, duration: 0.2 }, 6.65);
+      tl.fromTo("#toast", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 6.9);
+
+      /* Beat 3 — back to Overview */
+      mo.travel(tl, 9.3, 0.8, navo.x, navo.y);
+      mo.zoom(tl, 10.5, 1.35, navo.x, navo.y, 1.4);
+      camDip(9.7, 11.9);
+      mo.click(tl, 10.5, navo.x, navo.y);
+      tl.set("#nav-rep", { className: "" }, 10.6);
+      tl.set("#nav-ov", { className: "on" }, 10.6);
+      tl.to("#pg-rep", { opacity: 0, duration: 0.25 }, 10.6);
+      tl.to("#pg-over", { opacity: 1, duration: 0.25 }, 10.7);
+      tl.to("#toast", { opacity: 0, y: 10, duration: 0.3 }, 10.2);
+
+      /* settle */
+      mo.travel(tl, 13.1, 1.0, 700, 620);
+
+      window.__timelines["hero"] = tl;
+    </script>
+  </body>
+</html>

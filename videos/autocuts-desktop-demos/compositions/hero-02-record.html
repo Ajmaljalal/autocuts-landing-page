@@ -1,0 +1,41 @@
+<template>
+  <div id="root" data-composition-id="hero-02-record" data-start="0" data-duration="5" data-width="1920" data-height="1080">
+    <link rel="stylesheet" href="assets/ui.css">
+    <link rel="stylesheet" href="assets/studio.css">
+    <link rel="stylesheet" href="assets/screens.css">
+    <link rel="stylesheet" href="assets/stage.css">
+    <style>
+      [data-composition-id="hero-02-record"] { position: absolute; inset: 0; overflow: hidden; }
+      [data-composition-id="hero-02-record"] .raw { position: absolute; inset: 0; }
+      [data-composition-id="hero-02-record"] .cam-bubble { right: 56px; bottom: 56px; width: 214px; }
+      [data-composition-id="hero-02-record"] .rec-host { position: absolute; left: 40px; top: 34px; }
+    </style>
+
+    <div class="ac raw">
+      <div class="scr scr-editor" style="border-radius:0">
+        <div class="chrome"><i class="dot r"></i><i class="dot y"></i><i class="dot g"></i>
+          <span class="url">recorder.ts — autocuts</span></div>
+        <div class="code" style="font-size:20px">
+          <p><span class="c">// every frame stays on this machine</span></p>
+          <p><span class="k">export async function</span> <span class="f">capture</span>(source: Source) {</p>
+          <p>  <span class="k">const</span> track = <span class="k">await</span> <span class="f">openScreen</span>(source)</p>
+          <p>  <span class="k">return</span> <span class="f">record</span>(track, { audio: <span class="s">"system"</span> })</p>
+          <p>}</p>
+        </div>
+      </div>
+      <div class="ov rec-host">
+        <div class="ov-card ov-bar">
+          <span class="ov-stop"><i></i></span>
+          <span class="ov-pause">❚❚</span>
+          <span class="ov-divider"></span>
+          <span class="ov-time">0:09</span>
+        </div>
+      </div>
+            <div class="cam-bubble"><video id="hero-02-record-cam" class="clip" src="assets/webcam.mp4" data-start="0" data-duration="5" data-track-index="5" muted playsinline></video></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["hero-02-record"] = gsap.timeline({ paused: true });
+    </script>
+  </div>
+</template>

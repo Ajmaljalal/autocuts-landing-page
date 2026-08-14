@@ -1,0 +1,75 @@
+<template>
+  <div id="root" data-composition-id="hero-04-shape" data-start="0" data-duration="4" data-width="1920" data-height="1080">
+    <link rel="stylesheet" href="assets/ui.css">
+    <link rel="stylesheet" href="assets/studio.css">
+    <div class="bg"></div>
+    <div class="ac win ac-window">
+      <div class="ac-titlebar"><i class="ac-light r"></i><i class="ac-light y"></i><i class="ac-light g"></i><b>Autocuts</b></div>
+      <header class="ed-header">
+        <div><strong>Screen Recording — 13 Aug 2026</strong><span>1080 × 1920 output</span></div>
+        <div class="ed-actions">
+          <span class="ac-btn"><svg class="ic-s"><use href="#i-film" /></svg>New recording</span>
+          <span class="ac-btn primary"><svg class="ic-s"><use href="#i-download" /></svg>Export Edit</span>
+        </div>
+      </header>
+      <div class="ed-work">
+        <nav class="ac-rail">
+          <div class="ac-rail-btn"><svg class="ic"><use href="#i-sliders-horizontal" /></svg><span>General</span></div>
+          <div class="ac-rail-btn"><svg class="ic"><use href="#i-mouse-pointer-2" /></svg><span>Cursor</span></div>
+          <div class="ac-rail-btn active"><svg class="ic"><use href="#i-zoom-in" /></svg><span>Zoom</span></div>
+          <div class="ac-rail-btn"><svg class="ic"><use href="#i-captions" /></svg><span>Captions</span></div>
+          <div class="ac-rail-btn"><svg class="ic"><use href="#i-keyboard" /></svg><span>Keys</span></div>
+          <div class="ac-rail-btn"><svg class="ic"><use href="#i-palette" /></svg><span>Looks</span></div>
+          <span class="ac-rail-gap"></span>
+          <div class="ac-rail-btn"><svg class="ic"><use href="#i-film" /></svg><span>Records</span></div>
+          <div class="ac-rail-btn"><svg class="ic"><use href="#i-settings-2" /></svg><span>Settings</span></div>
+        </nav>
+
+        <aside class="ac-inspector">
+            <div class="ac-section">
+              <div class="ac-insp-title"><svg class="ic"><use href="#i-wand-sparkles" /></svg>
+                <span><b>Smart Focus</b><small>8 zooms from clicks and drags</small></span></div>
+              <div class="ac-toggle"><span>Auto zoom</span><span class="ac-switch on"><i></i></span></div>
+              <label class="ac-slider"><span><b>Zoom strength</b><em>1.30×</em></span><span class="ac-range"><i style="width:11%"></i><u style="left:11%"></u></span></label>
+              <label class="ac-slider"><span><b>Focus hold</b><em>1.3s</em></span><span class="ac-range"><i style="width:26%"></i><u style="left:26%"></u></span></label>
+            </div>
+            <div class="ac-section">
+              <div class="ac-insp-title"><svg class="ic"><use href="#i-crosshair" /></svg>
+                <span><b>Zoom 2</b><small>00:08 → 00:11</small></span></div>
+              <label class="ac-slider"><span><b>Level</b><em>1.80×</em></span><span class="ac-range"><i style="width:27%"></i><u style="left:27%"></u></span></label>
+              <div class="ac-toggle"><span>Follow cursor</span><span class="ac-switch on"><i></i></span></div>
+              <div class="ac-toggle"><span>Manual target</span><span class="ac-switch"><i></i></span></div>
+            </div>
+          </aside>
+
+        <div class="ed-main">
+          <div class="ed-stage">
+            <div class="shot vertical"><div class="shot-inner"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ac-timeline">
+        <div class="ac-tl-toolbar"><span>Zoom 100%</span><span><strong>00:18</strong> / 00:24</span>
+          <span class="ac-btn"><svg class="ic-s"><use href="#i-scissors" /></svg>Cut</span></div>
+        <div class="ac-tl-ruler">
+          <span class="ac-tick" style="left:0">0:00</span><span class="ac-tick" style="left:33.3%">0:08</span>
+          <span class="ac-tick" style="left:66.6%">0:16</span>
+        </div>
+        <div class="ac-lanes">
+          <div class="ac-lane clips"><div class="ac-block clip" style="left:0;right:0"><span class="tag">Clip</span>Screen · 00:24</div></div>
+          <div class="ac-lane zooms">
+            <div class="ac-block zoom" style="left:11%;width:13%"><span class="tag">1.8×</span></div>
+            <div class="ac-block zoom" style="left:38%;width:11%"><span class="tag">2.0×</span></div>
+            <div class="ac-block zoom" style="left:62%;width:14%"><span class="tag">1.6×</span></div>
+          </div>
+          <div class="ac-playhead" style="left:75%"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["hero-04-shape"] = gsap.timeline({ paused: true });
+    </script>
+  </div>
+</template>
