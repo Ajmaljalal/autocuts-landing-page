@@ -153,6 +153,7 @@ const stripMarkup = (value) => value
   .replace(/\s+/g, " ")
   .trim();
 const homepageBodyText = stripMarkup(homepageBody);
+const homepageHeroSub = stripMarkup(match(homepageBody, /<p\s+class=["']hero__sub["']>([\s\S]*?)<\/p>/i) ?? "");
 const homepageHeadingText = [...homepageBody.matchAll(/<h[1-3]\b[^>]*>([\s\S]*?)<\/h[1-3]>/gi)]
   .map((heading) => stripMarkup(heading[1]))
   .join(" ");
@@ -161,7 +162,10 @@ const homepageKeywordRequirements = [
   [homepageDescription, /Mac screen recorder with automatic zoom/i, "primary keyword in the meta description"],
   [homepageBodyText, /Mac screen recorder with automatic zoom/i, "primary keyword in visible copy"],
   [homepageHeadingText, /screen recorder for product demos/i, "product-demo keyword in a heading"],
-  [homepageBodyText, /screen and camera recorder for Mac/i, "screen-and-camera keyword in visible copy"],
+  [homepageHeroSub, /\bscreen\b/i, "screen capture topic in the hero description"],
+  [homepageHeroSub, /\bcamera\b/i, "camera capture topic in the hero description"],
+  [homepageHeroSub, /\bmicrophone\b/i, "microphone capture topic in the hero description"],
+  [homepageHeroSub, /\bsystem audio\b/i, "system-audio capture topic in the hero description"],
   [homepageHeadingText, /Record your Mac screen with system audio/i, "system-audio topic in a heading"],
   [homepageHeadingText, /screen recorder with a built-in teleprompter/i, "teleprompter keyword in a heading"],
   [homepageHeadingText, /local screen recorder/i, "local-recorder keyword in a heading"],
