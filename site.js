@@ -48,6 +48,7 @@
 
   function playVideo(video) {
     loadVideo(video);
+    if (reduceMotion) { return; }
     var p = video.play();
     if (p && p.catch) { p.catch(function () {}); }
   }
