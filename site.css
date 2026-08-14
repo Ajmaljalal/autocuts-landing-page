@@ -148,6 +148,10 @@ p { text-wrap: pretty; }
   letter-spacing: -0.02em;
 }
 .rail__brand img { border-radius: 8px; }
+.rail__inner > .rail__brand img {
+  width: 40px;
+  height: 40px;
+}
 .rail__brand b { font-weight: 700; }
 
 .rail__nav {
