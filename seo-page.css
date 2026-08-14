@@ -197,6 +197,7 @@
 
 .page-video {
   overflow: hidden;
+  padding: clamp(10px, 1.4vw, 16px);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   background: var(--shell);
@@ -207,6 +208,8 @@
 .page-video img {
   display: block;
   width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 8px);
 }
 
 .prose {
