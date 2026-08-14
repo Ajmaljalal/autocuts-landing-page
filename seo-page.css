@@ -212,6 +212,17 @@
   border-radius: calc(var(--radius) - 8px);
 }
 
+.article-video {
+  margin: clamp(28px, 5vw, 42px) 0 12px;
+}
+
+.article-video figcaption {
+  margin-top: 12px;
+  color: var(--mut);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .prose {
   max-width: 760px;
   margin: 0 auto;

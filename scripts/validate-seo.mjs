@@ -85,6 +85,11 @@ for (const file of htmlFiles) {
   if (!/<meta\s+property=["']og:description["']/i.test(content)) add(path, "missing Open Graph description");
   if (h1Count !== 1) add(path, `expected one H1, found ${h1Count}`);
   if (canonical && !canonical.startsWith(`${siteOrigin}/`)) add(path, `canonical is outside ${siteOrigin}`);
+  const isGuideHub = path === "blog/index.html";
+  const isBlogArticle = /"@type"\s*:\s*"BlogPosting"/i.test(content);
+  if ((isGuideHub || isBlogArticle) && !/<video\b[^>]*(?:data-src|src)=["'][^"']+["']/i.test(content)) {
+    add(path, "indexable guide pages must include a product video");
+  }
 
   for (const [value, map, label] of [
     [canonical, canonicals, "canonical"],
