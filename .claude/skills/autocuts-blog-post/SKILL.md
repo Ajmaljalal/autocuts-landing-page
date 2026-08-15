@@ -57,7 +57,7 @@ Create the file at `/Users/ajmaljalal/Desktop/Startups/video-editor/landing-page
 2. `<link rel="canonical" href="https://autocuts.ai/blog/<slug>/">`
 3. `<meta robots>`, `<meta theme-color content="#0f0e0c">`
 4. Favicons: `<link rel="icon" type="image/png" href="../../img/icon.png">` and `<link rel="apple-touch-icon" href="../../img/icon.png">`
-5. Open Graph tags (og:title, og:description, og:type=article, og:url, og:image=https://autocuts.ai/img/og-image.png)
+5. Open Graph tags (og:title, og:description, og:type=article, og:url, og:image = the demo image that fits the post, from https://autocuts.ai/img/demos/ (the existing posts use these webp files))
 6. Twitter card tags (twitter:card=summary_large_image, twitter:title, twitter:description, twitter:image)
 7. JSON-LD `BreadcrumbList` with Home → Library → <Post title>
 8. JSON-LD `Article` with author = Person "AutoCuts Editorial" (url https://autocuts.ai/about/), publisher = AutoCuts Organization with logo, datePublished + dateModified = today's ISO date, headline, description, image, mainEntityOfPage
