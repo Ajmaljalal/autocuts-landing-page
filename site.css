@@ -175,13 +175,16 @@ p { text-wrap: pretty; }
 
 .hero {
   position: relative;
-  padding: clamp(56px, 9vw, 96px) 0 24px;
+  padding: clamp(36px, 5.5vw, 60px) 0 24px;
   text-align: center;
 }
 
 .hero .frame { position: relative; }
 
-.hero__copy { max-width: 780px; margin: 0 auto; }
+.hero__copy { max-width: 1020px; margin: 0 auto; }
+
+.hero h1 { font-size: clamp(2.5rem, 1.2rem + 5vw, 4.4rem); }
+.hero h1 .grad { display: block; }
 
 .hero__sub {
   color: var(--mut);
@@ -201,23 +204,31 @@ p { text-wrap: pretty; }
 .hero__proof {
   display: flex;
   justify-content: center;
-  gap: 12px 22px;
-  margin-top: 24px;
+  align-items: center;
+  gap: 14px 0;
+  margin-top: 44px;
   flex-wrap: wrap;
 }
 .hero__proof span {
   color: var(--mut);
-  font-size: 0.88rem;
+  font-size: 0.92rem;
+  line-height: 1.35;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  text-align: left;
+  padding: 0 26px;
+  white-space: nowrap;
 }
-.hero__proof span::before {
-  content: "";
-  width: 6px;
-  height: 6px;
+.hero__proof span + span { border-left: 1px solid var(--line); }
+.hero__proof svg {
+  width: 38px;
+  height: 38px;
+  padding: 9px;
   border-radius: 50%;
-  background: var(--acc);
+  background: rgba(91, 157, 255, 0.1);
+  color: var(--acc);
+  flex: none;
 }
 
 .hero__stage {
@@ -243,7 +254,7 @@ p { text-wrap: pretty; }
 }
 
 .vid--wide {
-  max-width: calc((100% - 24px) / 2);
+  max-width: 880px;
   margin: 0 auto;
 }
 
@@ -647,6 +658,9 @@ footer {
   body { font-size: 16px; }
   .rail__nav { display: none; }
   .hero__actions { flex-direction: column; align-items: stretch; max-width: 340px; margin-left: auto; margin-right: auto; }
+  .hero__proof { flex-direction: column; align-items: center; gap: 14px; }
+  .hero__proof span + span { border-left: 0; }
+  .hero__proof span { padding: 0; }
   .how__grid { grid-template-columns: 1fr; }
   .foot-grid { grid-template-columns: 1fr; gap: 28px; }
   .foot-bar { flex-direction: column; }
