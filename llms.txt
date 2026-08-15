@@ -24,6 +24,20 @@ Autocuts is built for Apple Silicon Macs, with macOS Sonoma 14 or later recommen
 - [Transcript cleanup](https://autocuts.ai/features/transcript-video-cleanup/): On-device transcript navigation, filler-word cleanup, captions, SRT, and VTT
 - [No-subscription recorder](https://autocuts.ai/mac-screen-recorder-no-subscription/): One-time $34.99 lifetime license, trial behavior, and refund window
 
+## Help
+- [Help hub](https://autocuts.ai/guide/): every how-to topic for the app
+- [Install Autocuts](https://autocuts.ai/guide/install-autocuts/): DMG install and macOS permissions
+- [System requirements](https://autocuts.ai/guide/system-requirements/): Apple Silicon, macOS Sonoma 14+
+- [Record your screen](https://autocuts.ai/guide/record-your-screen/): screen, window, or area capture
+- [Keyboard shortcuts](https://autocuts.ai/guide/keyboard-shortcuts/): global recording shortcuts
+- [Record system audio on a Mac](https://autocuts.ai/guide/record-system-audio-on-mac/): app sound plus microphone, no driver
+- [Camera layouts](https://autocuts.ai/guide/camera-layouts/): ten layouts including vertical video
+- [Teleprompter](https://autocuts.ai/guide/teleprompter/): voice-paced script overlay
+- [Automatic zoom](https://autocuts.ai/guide/automatic-zoom/): edit zoom blocks after recording
+- [Cursor effects](https://autocuts.ai/guide/cursor-effects/): cursor size, color, and smoothing
+- [Transcript cleanup](https://autocuts.ai/guide/transcript-cleanup/): edit video by editing text
+- [Export and captions](https://autocuts.ai/guide/export-and-captions/): MP4/WebM 4K60 with SRT/VTT
+
 ## Use cases
 
 - [Product demo recorder](https://autocuts.ai/use-cases/product-demo-recorder/): Product walkthroughs with click zooms, cursor motion, framing, and captions
