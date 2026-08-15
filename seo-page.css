@@ -95,6 +95,10 @@
   background: var(--shell);
 }
 
+.content-section--tint + .content-section {
+  padding-top: clamp(56px, 8vw, 88px);
+}
+
 .content-head {
   max-width: 680px;
   margin-bottom: 38px;
@@ -273,6 +277,15 @@
 .compare-table tr:last-child td { border-bottom: 0; }
 .compare-table .yes { color: #8fd9ad; }
 .compare-table .partial { color: var(--amber); }
+
+.compare-table tr.best td {
+  background: rgba(91, 157, 255, 0.07);
+  color: var(--ink);
+}
+
+.compare-table tr.best td:first-child { color: var(--acc); font-weight: 600; }
+
+.table-wrap + .facts-grid { margin-top: 28px; }
 
 .page-cta {
   padding: 0 0 clamp(76px, 10vw, 120px);

@@ -100,7 +100,7 @@ p { text-wrap: pretty; }
 
 .btn--primary {
   background: var(--acc-2);
-  color: #071120;
+  color: #ffffff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 .btn--primary:hover { background: var(--acc); }
