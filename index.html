@@ -41,10 +41,10 @@
     "brand": { "@id": "https://autocuts.ai/#organization" },
     "offers": {
       "@type": "Offer",
-      "price": "49",
+      "price": "34.99",
       "priceCurrency": "USD",
       "availability": "https://schema.org/PreOrder",
-      "description": "Planned one-time launch price. No subscription."
+      "description": "One-time lifetime license for up to two Macs. No subscription."
     },
     "featureList": [
       "Record a display, a window, or a selected area",
@@ -107,6 +107,94 @@
 
   <link rel="preload" href="img/demos/hero.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="site.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best Mac screen recorder with automatic zoom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Look for local capture, zooms you can edit after recording, smooth cursor motion, captions, and 4K export. Autocuts covers all five on Apple Silicon Macs with a one-time $34.99 license, which makes it a strong pick for product demos and tutorials."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Macs does Autocuts support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Autocuts runs on Apple Silicon Macs and works best on macOS Sonoma 14 or newer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do my recordings leave my Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Recordings and project data stay in Autocuts on your Mac. Nothing is uploaded for editing or export."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Autocuts capture system audio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Autocuts can capture system audio together with your microphone and camera on supported macOS versions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can Autocuts export?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MP4 (H.264) or WebM (VP9), up to 4K at 60 fps, with optional burned-in captions plus SRT and VTT sidecar files."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Autocuts a subscription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Autocuts costs $34.99 once for one person on up to two Macs, with lifetime updates included."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I try Autocuts before buying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can download Autocuts, record a video, and keep the recording without buying first. Processing, transcription, raw-file access, and final export unlock after you activate a license."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change the video after I stop recording?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The studio lets you edit zooms, the cursor, camera layouts, backgrounds, clips, speed, and captions after the take."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a refund policy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every purchase carries a 14-day full-refund window."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do I reach support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Email support@autocuts.ai. A human reads every message."
+      }
+    }
+  ]
+}
+  </script>
   <script src="site.js" defer></script>
 </head>
 
@@ -124,8 +212,8 @@
         <a href="/compare/">Compare</a>
         <a href="#pricing">Pricing</a>
       </nav>
-      <a class="btn btn--primary btn--sm" href="mailto:support@autocuts.ai?subject=Autocuts%20for%20Mac%20early%20access">
-        Request early access
+      <a class="btn btn--primary btn--sm" href="#download">
+        Download for Mac
       </a>
     </div>
   </header>
@@ -136,20 +224,19 @@
     <section class="hero">
       <div class="frame">
         <div class="hero__copy" data-reveal>
-          <h1>Record your Mac screen once. <span class="grad">The edit builds itself.</span></h1>
+          <h1>Record your screen. <span class="grad">Autocuts adds all the cinematic auto edits.</span></h1>
           <p class="hero__sub">
-            Autocuts is a Mac screen recorder with automatic zoom. It captures your screen, camera, microphone,
-            and system audio, then turns your clicks into zooms, smooth cursor motion, and captions. Product demos,
-            tutorials, and software walkthroughs come out finished, and every choice stays editable on your Mac.
+            Autocuts is a Mac screen recorder with automatic zoom. It records your screen, camera, microphone,
+            and system audio, then turns your clicks into zooms, smooth cursor motion, and captions.
           </p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="mailto:support@autocuts.ai?subject=Autocuts%20for%20Mac%20early%20access">
-              Request early access
+            <a class="btn btn--primary" href="#download">
+              Download for Mac
             </a>
             <a class="btn btn--ghost" href="#features">See it in action</a>
           </div>
           <div class="hero__proof">
-            <span>One-time price at launch</span>
+            <span>$34.99 once, lifetime updates</span>
             <span>Files never leave your Mac</span>
             <span>Native on Apple Silicon</span>
           </div>
@@ -206,7 +293,7 @@
           <article class="who__card" data-reveal data-reveal-delay="2">
             <div class="who__role">Content creators</div>
             <h3>4K videos for YouTube and Shorts</h3>
-            <p>Record in 4K at 60 fps, redraw the cursor, and switch to a portrait camera layout ready for YouTube, Shorts, and Reels.</p>
+            <p>A 4K screen recorder for Mac: capture at 60 fps, redraw the cursor, and switch to a portrait camera layout ready for YouTube, Shorts, and Reels.</p>
             <a class="card__link" href="/features/mac-screen-recorder-with-auto-zoom/">Mac screen recorder with auto zoom →</a>
           </article>
         </div>
@@ -283,7 +370,7 @@
           <div class="card__body">
             <div class="micro">Studio</div>
             <h3>A cursor your viewers can follow</h3>
-            <p>Autocuts records the cursor as data, then redraws it: bigger, smoother, and in the color you pick.</p>
+            <p>Autocuts records the cursor as data, then redraws it with editable cursor effects: bigger, smoother, and in the color you pick.</p>
             <ul class="ticks">
               <li>Any size, 16 colors, arrow and pointing hand</li>
               <li>Adjustable smoothing takes out hand jitter</li>
@@ -415,22 +502,22 @@
     <section class="pricing" id="pricing">
       <div class="frame">
         <header class="sec-head" data-reveal>
-          <h2>A Mac screen recorder you buy once. No subscription.</h2>
-          <p>Autocuts is in early access. Request an invite before public sales open.</p>
+          <h2>Pay once for a Mac screen recorder. No subscription.</h2>
+          <p>Autocuts is screen recording software for Mac with one price: record for free, then buy once when you are ready to process and export.</p>
         </header>
 
         <div class="price-card" data-reveal>
           <div class="price-card__amount">
-            <span class="price-card__currency">$</span><span class="price-card__num">49</span>
+            <span class="price-card__currency">$</span><span class="price-card__num">34.99</span>
             <span class="price-card__note">one-time</span>
           </div>
           <ul class="ticks ticks--center">
             <li>Every feature, one license</li>
-            <li>Updates included</li>
+            <li>Lifetime updates included</li>
             <li>One license covers 2 Macs</li>
             <li>Full refund within 14 days</li>
           </ul>
-          <a class="btn btn--primary btn--lg" href="mailto:support@autocuts.ai?subject=Autocuts%20for%20Mac%20early%20access">Request early access</a>
+          <a class="btn btn--primary btn--lg" href="#download">Download and try it</a>
         </div>
       </div>
     </section>
@@ -443,12 +530,16 @@
         </header>
         <div class="faq__list" data-reveal>
           <details class="faq__item" open>
+            <summary>What is the best Mac screen recorder with automatic zoom?</summary>
+            <p>Look for local capture, zooms you can edit after recording, smooth cursor motion, captions, and 4K export. Autocuts covers all five on Apple Silicon Macs with a one-time $34.99 license, which makes it a strong pick for product demos and tutorials.</p>
+          </details>
+          <details class="faq__item">
             <summary>Which Macs does Autocuts support?</summary>
             <p>Autocuts runs on Apple Silicon Macs and works best on macOS Sonoma 14 or newer.</p>
           </details>
           <details class="faq__item">
             <summary>Do my recordings leave my Mac?</summary>
-            <p>No. Recordings are written to the Videos folder on your Mac as normal files. Transcription runs on your device, so nothing is uploaded.</p>
+            <p>No. Recordings and project data stay in Autocuts on your Mac. Nothing is uploaded for editing or export.</p>
           </details>
           <details class="faq__item">
             <summary>Does Autocuts capture system audio?</summary>
@@ -460,7 +551,11 @@
           </details>
           <details class="faq__item">
             <summary>Is Autocuts a subscription?</summary>
-            <p>No. The planned launch offer is a one-time purchase. You keep the app and your files.</p>
+            <p>No. Autocuts costs $34.99 once for one person on up to two Macs, with lifetime updates included.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Can I try Autocuts before buying?</summary>
+            <p>Yes. You can download Autocuts, record a video, and keep the recording without buying first. Processing, transcription, raw-file access, and final export unlock after you activate a license.</p>
           </details>
           <details class="faq__item">
             <summary>Can I change the video after I stop recording?</summary>
@@ -468,7 +563,7 @@
           </details>
           <details class="faq__item">
             <summary>Is there a refund policy?</summary>
-            <p>Yes. When public sales open, every purchase will carry a 14-day full-refund window.</p>
+            <p>Yes. Every purchase carries a 14-day full-refund window.</p>
           </details>
           <details class="faq__item">
             <summary>Where do I reach support?</summary>
@@ -478,17 +573,17 @@
       </div>
     </section>
 
-    <!-- EARLY ACCESS -->
+    <!-- DOWNLOAD -->
     <section class="download" id="download">
       <div class="frame">
         <div class="download__card" data-reveal>
           <img src="img/icon-160.webp" width="72" height="72" alt="" decoding="async">
           <h2>Get Autocuts for Mac</h2>
-          <p>Autocuts is in early access. Ask for an invite and we will send availability and download details.</p>
-          <a class="btn btn--primary btn--lg" href="mailto:support@autocuts.ai?subject=Autocuts%20for%20Mac%20early%20access">
-            Request early access
+          <p>Download the app and record for free. Activate a $34.99 lifetime license only when you are ready to process or export.</p>
+          <a class="btn btn--primary btn--lg" href="/download/">
+            Download for Apple silicon
           </a>
-          <span class="download__req">Best on macOS Sonoma 14 or newer</span>
+          <span class="download__req">macOS Sonoma 14 or newer · license works on 2 Macs</span>
         </div>
       </div>
     </section>

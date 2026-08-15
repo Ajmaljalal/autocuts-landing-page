@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Autocuts for Mac</title>
+  <meta name="description" content="Download Autocuts for Apple silicon Macs. Record before you buy, then activate a lifetime license to process and export.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0e1114">
+  <link rel="icon" href="/img/favicon-32.png" sizes="32x32">
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/seo-page.css">
+</head>
+<body>
+  <header class="rail">
+    <div class="rail__inner">
+      <a href="/" class="rail__brand"><img src="/img/icon-80.webp" width="34" height="34" alt=""><b>Autocuts</b></a>
+      <a class="btn btn--ghost btn--sm" href="/#pricing">View pricing</a>
+    </div>
+  </header>
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="frame">
+        <div class="page-hero__inner">
+          <div class="micro">Apple silicon · macOS 14+</div>
+          <h1>Download Autocuts for Mac.</h1>
+          <p class="page-hero__lead">Record and keep a real video before paying. Processing, transcription, raw-file access, and export unlock with a $34.99 lifetime license for up to two Macs.</p>
+          <div class="page-actions">
+            <a class="btn btn--primary" id="release-download" hidden>Download the latest DMG</a>
+            <a class="btn btn--ghost" href="mailto:support@autocuts.ai?subject=Autocuts%20download">Contact support</a>
+          </div>
+          <p id="release-status" role="status">Checking the latest signed release…</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    fetch("https://api.github.com/repos/Ajmaljalal/autocuts-downloads/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
+      .then(function (response) {
+        if (!response.ok) throw new Error("release unavailable");
+        return response.json();
+      })
+      .then(function (release) {
+        var asset = release.assets.find(function (item) { return /arm64\.dmg$/i.test(item.name); });
+        if (!asset) throw new Error("installer unavailable");
+        var download = document.getElementById("release-download");
+        download.href = asset.browser_download_url;
+        download.hidden = false;
+        document.getElementById("release-status").textContent = "Latest release: " + release.tag_name;
+      })
+      .catch(function () {
+        document.getElementById("release-status").textContent = "The signed public installer is being prepared. Contact support if you would like the release notice.";
+      });
+  </script>
+</body>
+</html>
