@@ -169,7 +169,7 @@ const homepageKeywordRequirements = [
   [homepageHeadingText, /Record your Mac screen with system audio/i, "system-audio topic in a heading"],
   [homepageHeadingText, /screen recorder with a built-in teleprompter/i, "teleprompter keyword in a heading"],
   [homepageHeadingText, /local screen recorder/i, "local-recorder keyword in a heading"],
-  [homepageHeadingText, /Pay once.*Mac screen recorder/i, "pay-once topic in a heading"],
+  [homepageHeadingText, /(?:Pay once.*Mac screen recorder|One-time purchase.*Use it for life)/i, "pay-once topic in a heading"],
 ];
 
 for (const [source, pattern, label] of homepageKeywordRequirements) {

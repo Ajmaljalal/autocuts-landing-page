@@ -190,7 +190,7 @@ p { text-wrap: pretty; }
   color: var(--mut);
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.14rem);
   margin: 22px auto 0;
-  max-width: 620px;
+  max-width: 760px;
 }
 
 .hero__actions {
@@ -463,31 +463,29 @@ p { text-wrap: pretty; }
 .pricing .frame { position: relative; }
 
 .price-panel {
-  max-width: 880px;
+  max-width: 760px;
   margin: 0 auto;
   background: var(--panel);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
 .price-panel__info {
-  padding: clamp(28px, 4.5vw, 44px) clamp(24px, 5vw, 48px);
-  border-right: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: clamp(28px, 4vw, 40px) clamp(24px, 6vw, 56px);
+  border-top: 1px solid var(--line);
 }
 
-.price-panel__info h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
+.price-panel__info .ticks {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0;
+  column-gap: 24px;
 }
 
 .price-panel__buy {
-  padding: clamp(28px, 4.5vw, 44px) clamp(24px, 5vw, 48px);
+  padding: clamp(40px, 7vw, 68px) clamp(24px, 6vw, 56px) clamp(36px, 6vw, 56px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -505,35 +503,55 @@ p { text-wrap: pretty; }
 
 .price-panel__amount {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 14px;
-  margin: 12px 0 4px;
+  gap: 8px;
+  margin: 8px 0 6px;
 }
 
 .price-panel__was {
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: 650;
-  color: var(--mut);
+  color: var(--soft);
+  letter-spacing: 0.02em;
+}
+
+.price-panel__was s {
+  margin-left: 3px;
+  font-size: 1.35rem;
+  font-weight: 750;
+  color: var(--ink);
+  text-decoration-color: var(--acc);
   text-decoration-thickness: 2px;
 }
 
 .price-panel__now {
-  font-size: 4rem;
+  font-size: clamp(5rem, 12vw, 7.5rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.065em;
   line-height: 1;
+  font-variant-numeric: tabular-nums;
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.price-panel__cents {
+  margin-top: 0.1em;
+  font-size: 0.62em;
+  letter-spacing: -0.04em;
 }
 
 .price-panel__note {
-  color: var(--mut);
-  font-size: 0.92rem;
-  margin-bottom: 26px;
+  color: var(--soft);
+  font-size: 1rem;
+  font-weight: 550;
+  margin-bottom: 28px;
 }
 
 .price-panel__buy .btn {
   width: 100%;
-  max-width: 300px;
+  max-width: 340px;
 }
 
 /* ---------- faq ---------- */
@@ -679,9 +697,6 @@ footer {
 /* ---------- responsive ---------- */
 
 @media (max-width: 900px) {
-  .price-panel { grid-template-columns: 1fr; }
-  .price-panel__info { border-right: 0; border-bottom: 1px solid var(--line); }
-
   .card, .card:nth-child(even) { grid-template-columns: 1fr; }
   .card__media, .card:nth-child(even) .card__media { order: -1; max-width: 640px; }
   .hero__stage, .vid--wide { max-width: 560px; }
@@ -691,6 +706,7 @@ footer {
 }
 
 @media (max-width: 640px) {
+  .price-panel__info .ticks { grid-template-columns: 1fr; }
   .who__grid { grid-template-columns: 1fr; }
   body { font-size: 16px; }
   .rail__nav { display: none; }
