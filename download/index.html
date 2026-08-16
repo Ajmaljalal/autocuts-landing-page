@@ -27,9 +27,8 @@
           <p class="page-hero__lead">Record and keep a real video before paying. Processing, transcription, raw-file access, and export unlock with a $34.99 lifetime license for up to two Macs.</p>
           <div class="page-actions">
             <a class="btn btn--primary" id="release-download" hidden>Download the latest DMG</a>
-            <a class="btn btn--ghost" href="mailto:support@autocuts.ai?subject=Autocuts%20download">Contact support</a>
           </div>
-          <p id="release-status" role="status">Checking the latest signed release…</p>
+          <p id="release-status" role="status"></p>
         </div>
       </div>
     </section>
@@ -46,11 +45,9 @@
         var download = document.getElementById("release-download");
         download.href = asset.browser_download_url;
         download.hidden = false;
-        document.getElementById("release-status").textContent = "Latest release: " + release.tag_name;
+        document.getElementById("release-status").textContent = "Latest version: " + release.tag_name;
       })
-      .catch(function () {
-        document.getElementById("release-status").textContent = "The signed public installer is being prepared. Contact support if you would like the release notice.";
-      });
+      .catch(function () {});
   </script>
 </body>
 </html>

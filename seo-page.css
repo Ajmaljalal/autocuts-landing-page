@@ -31,6 +31,15 @@
   margin-top: 32px;
 }
 
+#release-status {
+  margin-top: 28px;
+  color: var(--mut);
+  font-size: 0.95rem;
+}
+
+.btn[hidden] { display: none; }
+#release-status:empty { display: none; }
+
 .page-proof {
   display: flex;
   justify-content: center;
