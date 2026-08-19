@@ -18,6 +18,8 @@ Autocuts is built for Apple Silicon Macs, with macOS Sonoma 14 or later recommen
 ## Product features
 
 - [Automatic zoom](https://autocuts.ai/features/mac-screen-recorder-with-auto-zoom/): Generate editable zooms from recorded clicks
+- [Screen recorder with audio](https://autocuts.ai/features/screen-recorder-with-audio/): Capture system audio and microphone together with no virtual driver
+- [Screen recorder with keyboard shortcuts](https://autocuts.ai/features/screen-recorder-with-keyboard-shortcuts/): Start, pause, stop, and switch displays with global shortcuts
 - [Screen and camera recording](https://autocuts.ai/features/screen-and-camera-recorder-for-mac/): Capture a display, window, or area with webcam, microphone, and system audio
 - [Built-in teleprompter](https://autocuts.ai/features/screen-recorder-with-teleprompter/): Voice-paced script with word highlighting that stays outside the recording
 - [Local recording](https://autocuts.ai/features/local-screen-recorder-for-mac/): Local files, editing, transcription, and export details
