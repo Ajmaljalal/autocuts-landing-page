@@ -52,8 +52,6 @@ Autocuts is built for Apple Silicon Macs, with macOS Sonoma 14 or later recommen
 
 - [How to record screen and camera on Mac](https://autocuts.ai/blog/how-to-record-screen-and-camera-on-mac/): Permissions, sources, audio, recording, camera layouts, editing, and export
 - [How to make screen recordings look professional](https://autocuts.ai/blog/how-to-make-screen-recordings-look-professional/): Focus, cursor, zoom, framing, audio, pace, captions, and export
-- [Add motion graphics without editing skills](https://autocuts.ai/blog/add-motion-graphics-without-editing-skills/): Generated zooms, cursor motion, and framing without a video editor
-- [Clean up YouTube videos faster](https://autocuts.ai/blog/clean-up-youtube-videos-faster/): Transcript-based cuts, filler-word cleanup, and caption export
 - [Autocuts vs Screen Studio](https://autocuts.ai/compare/autocuts-vs-screen-studio/): Factual comparison of two polished Mac recorders
 - [Autocuts vs Screen Charm](https://autocuts.ai/compare/autocuts-vs-screen-charm/): Two one-time-purchase Mac recorders with automatic zoom
 - [Autocuts vs Loom](https://autocuts.ai/compare/autocuts-vs-loom/): Local demo recorder versus cloud video messaging

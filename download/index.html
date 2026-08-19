@@ -16,20 +16,30 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Autocuts: Mac screen recorder with automatic zoom">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Download Autocuts for Mac">
+  <meta name="twitter:description" content="Download Autocuts for Apple silicon Macs. Record before you buy, then activate a lifetime license to process and export.">
   <meta name="twitter:image" content="https://autocuts.ai/img/og-card.png">
   <meta name="theme-color" content="#0e1114">
   <link rel="icon" href="/img/favicon-32.png" sizes="32x32">
   <link rel="stylesheet" href="/site.css">
   <link rel="stylesheet" href="/seo-page.css">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://autocuts.ai/"}, {"@type": "ListItem", "position": 2, "name": "Download", "item": "https://autocuts.ai/download/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Autocuts", "operatingSystem": "macOS 14 or newer, Apple silicon", "applicationCategory": "MultimediaApplication", "url": "https://autocuts.ai/download/", "offers": {"@type": "Offer", "price": "34.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "description": "One-time lifetime license for up to two Macs. No subscription."}}
+  </script>
 </head>
 <body>
   <header class="rail">
     <div class="rail__inner">
       <a href="/" class="rail__brand"><img src="/img/icon-80.webp" width="34" height="34" alt=""><b>Autocuts</b></a>
+      <nav class="rail__nav" aria-label="Main"><a href="/features/">Features</a><a href="/use-cases/">Use cases</a><a href="/guide/">Help</a></nav>
       <a class="btn btn--ghost btn--sm" href="/#pricing">View pricing</a>
     </div>
   </header>
   <main class="page-main">
+    <div class="frame"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span>Download</nav></div>
     <section class="page-hero">
       <div class="frame">
         <div class="page-hero__inner">
@@ -37,13 +47,20 @@
           <h1>Download Autocuts for Mac.</h1>
           <p class="page-hero__lead">Record, preview, and edit a real video before paying. Transcription, final processing, and export unlock with a $34.99 lifetime license for up to two Macs.</p>
           <div class="page-actions">
-            <a class="btn btn--primary" id="release-download" hidden>Download the latest DMG</a>
+            <a class="btn btn--primary" id="release-download" href="https://github.com/Ajmaljalal/autocuts-downloads/releases/latest">Download the latest DMG</a>
           </div>
           <p id="release-status" role="status"></p>
         </div>
       </div>
     </section>
+    <section class="content-section"><div class="frame"><div class="prose">
+      <h2>What you get before you pay</h2>
+      <p>The free download is the full recorder and editor. Record your screen, camera, microphone, and system audio, then edit zooms, the cursor, layouts, and clips in the studio. A $34.99 lifetime license unlocks transcription, final processing, and export, and share links stay free for life.</p>
+      <h2>System requirements</h2>
+      <p>Autocuts runs on Apple silicon Macs with macOS Sonoma 14 or newer. See the <a href="/guide/system-requirements/">system requirements article</a> for details, and the <a href="/guide/install-autocuts/">install guide</a> for the first-run permissions.</p>
+    </div></div></section>
   </main>
+  <footer><div class="frame"><div class="foot-grid"><div class="foot-brand"><a href="/" class="rail__brand"><img src="/img/icon-80.webp" width="30" height="30" alt=""><b>Autocuts</b></a><p>The Mac screen recorder with a built-in motion studio.</p></div><div class="foot-col"><div class="foot-col__h">Features</div><ul><li><a href="/features/mac-screen-recorder-with-auto-zoom/">Automatic zoom</a></li><li><a href="/features/screen-and-camera-recorder-for-mac/">Screen and camera</a></li><li><a href="/features/screen-recorder-with-audio/">Audio capture</a></li></ul></div><div class="foot-col"><div class="foot-col__h">Use cases</div><ul><li><a href="/use-cases/product-demo-recorder/">Product demos</a></li><li><a href="/use-cases/screen-recorder-for-tutorials/">Tutorials</a></li></ul></div><div class="foot-col"><div class="foot-col__h">Company</div><ul><li><a href="/guide/">Help</a></li><li><a href="/about/">About</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul></div></div><div class="foot-bar"><span>© 2026 Autocuts</span><span>Made for macOS</span></div></div></footer>
   <script>
     fetch("https://api.github.com/repos/Ajmaljalal/autocuts-downloads/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
       .then(function (response) {
@@ -58,7 +75,9 @@
         download.hidden = false;
         document.getElementById("release-status").textContent = "Latest version: " + release.tag_name;
       })
-      .catch(function () {});
+      .catch(function () {
+        document.getElementById("release-status").textContent = "The download button opens the latest release on GitHub.";
+      });
   </script>
 </body>
 </html>
