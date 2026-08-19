@@ -2,7 +2,7 @@
 
 > Autocuts is a local-first Mac screen recorder with automatic click zoom, smooth cursor motion, screen and camera layouts, a voice-paced teleprompter, on-device captions, and a built-in motion studio. It makes beautiful, engaging screen recordings with smooth mouse movement for product demos, tutorials, developer walkthroughs, courses, launch videos, and social media videos.
 
-Autocuts records a display, app window, or selected area with optional camera, microphone, and system audio. It keeps recordings and project data inside the app on the user's Mac. Editing and export run in the desktop app. Finished videos can be shared with free lifetime shareable links or exported as local files and hosted anywhere. The first transcription can download a speech model; after the model is available, transcription runs on the Mac.
+Autocuts records a display, app window, or selected area with optional camera, microphone, and system audio. It keeps recordings and project data inside the app on the user's Mac. Editing and export run in the desktop app. Finished videos can be shared with free lifetime share links that upload the video to the user's own Google Drive, or exported as local files and hosted anywhere. The first transcription can download a speech model; after the model is available, transcription runs on the Mac.
 
 Autocuts is built for Apple Silicon Macs, with macOS Sonoma 14 or later recommended. A user can record and retain a video before buying. Processing, transcription, raw-file access, and export require a $34.99 lifetime license for one person on up to two Macs. Lifetime updates are included and there is no subscription.
 
@@ -24,6 +24,7 @@ Autocuts is built for Apple Silicon Macs, with macOS Sonoma 14 or later recommen
 - [Built-in teleprompter](https://autocuts.ai/features/screen-recorder-with-teleprompter/): Voice-paced script with word highlighting that stays outside the recording
 - [Local recording](https://autocuts.ai/features/local-screen-recorder-for-mac/): Local files, editing, transcription, and export details
 - [Transcript cleanup](https://autocuts.ai/features/transcript-video-cleanup/): On-device transcript navigation, filler-word cleanup, captions, SRT, and VTT
+- [Free share links](https://autocuts.ai/features/share-links/): Free lifetime share links; the finished video uploads to the user's own Google Drive
 - [No-subscription recorder](https://autocuts.ai/mac-screen-recorder-no-subscription/): One-time $34.99 lifetime license, trial behavior, and refund window
 
 ## Help
@@ -39,6 +40,7 @@ Autocuts is built for Apple Silicon Macs, with macOS Sonoma 14 or later recommen
 - [Cursor effects](https://autocuts.ai/guide/cursor-effects/): cursor size, color, and smoothing
 - [Transcript cleanup](https://autocuts.ai/guide/transcript-cleanup/): edit video by editing text
 - [Export and captions](https://autocuts.ai/guide/export-and-captions/): MP4/WebM 4K60 with SRT/VTT
+- [Create a share link](https://autocuts.ai/guide/share-links/): free link that plays the video from the user's own Google Drive
 
 ## Use cases
 
