@@ -2,7 +2,7 @@
 
 > Autocuts is a local-first Mac screen recorder with automatic click zoom, smooth cursor motion, screen and camera layouts, a voice-paced teleprompter, on-device captions, and a built-in motion studio. It makes beautiful, engaging screen recordings with smooth mouse movement for product demos, tutorials, developer walkthroughs, courses, launch videos, and social media videos.
 
-Autocuts records a display, app window, or selected area with optional camera, microphone, and system audio. It keeps recordings and project data inside the app on the user's Mac. Editing and export run in the desktop app. The first transcription can download a speech model; after the model is available, transcription runs on the Mac.
+Autocuts records a display, app window, or selected area with optional camera, microphone, and system audio. It keeps recordings and project data inside the app on the user's Mac. Editing and export run in the desktop app. Finished videos can be shared with free lifetime shareable links or exported as local files and hosted anywhere. The first transcription can download a speech model; after the model is available, transcription runs on the Mac.
 
 Autocuts is built for Apple Silicon Macs, with macOS Sonoma 14 or later recommended. A user can record and retain a video before buying. Processing, transcription, raw-file access, and export require a $34.99 lifetime license for one person on up to two Macs. Lifetime updates are included and there is no subscription.
 
