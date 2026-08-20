@@ -667,29 +667,10 @@ footer {
   padding-top: 24px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 16px;
+  gap: 8px;
   flex-wrap: wrap;
   color: var(--mut);
   font-size: 0.85rem;
-}
-
-.foot-badge {
-  display: inline-flex;
-  line-height: 0;
-  opacity: 0.9;
-  transition: opacity 0.15s ease;
-}
-
-.foot-badge:hover {
-  opacity: 1;
-}
-
-.foot-badge img {
-  display: block;
-  width: 200px;
-  height: auto;
-  max-width: 100%;
 }
 
 /* ---------- reveal ---------- */
