@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <sub>$34.99 once, lifetime updates &nbsp;·&nbsp; Files never leave your Mac &nbsp;·&nbsp; Native on Apple Silicon</sub>
+  <sub>$19.99 once, lifetime updates &nbsp;·&nbsp; Files never leave your Mac &nbsp;·&nbsp; Native on Apple Silicon</sub>
 </p>
 
 <br>
@@ -50,8 +50,7 @@ Click any clip to play it.
 ## Pay once. Use it forever.
 
 <p align="center">
-  <sub><b>LAUNCH OFFER</b></sub><br>
-  <s>$75</s>&nbsp; <b>$34.99</b> one-time payment
+  <b>$19.99</b> one-time payment
 </p>
 
 <p align="center">

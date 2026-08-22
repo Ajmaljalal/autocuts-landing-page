@@ -4,7 +4,7 @@
 
 Autocuts records a display, app window, or selected area with optional camera, microphone, and system audio. It keeps recordings and project data inside the app on the user's Mac. Editing and export run in the desktop app. Finished videos can be shared with free lifetime share links that upload the video to the user's own Google Drive, or exported as local files and hosted anywhere. The first transcription can download a speech model; after the model is available, transcription runs on the Mac.
 
-Autocuts is built for Apple Silicon Macs, with macOS Sonoma 14 or later recommended. A user can record and retain a video before buying. Processing, transcription, raw-file access, and export require a $34.99 lifetime license for one person on up to two Macs. Lifetime updates are included and there is no subscription.
+Autocuts is built for Apple Silicon Macs, with macOS Sonoma 14 or later recommended. A user can record and retain a video before buying. Processing, transcription, raw-file access, and export require a $19.99 lifetime license for one person on up to two Macs. Lifetime updates are included and there is no subscription.
 
 ## Core pages
 
@@ -25,7 +25,7 @@ Autocuts is built for Apple Silicon Macs, with macOS Sonoma 14 or later recommen
 - [Local recording](https://autocuts.ai/features/local-screen-recorder-for-mac/): Local files, editing, transcription, and export details
 - [Transcript cleanup](https://autocuts.ai/features/transcript-video-cleanup/): On-device transcript navigation, filler-word cleanup, captions, SRT, and VTT
 - [Free share links](https://autocuts.ai/features/share-links/): Free lifetime share links; the finished video uploads to the user's own Google Drive
-- [No-subscription recorder](https://autocuts.ai/mac-screen-recorder-no-subscription/): One-time $34.99 lifetime license, trial behavior, and refund window
+- [No-subscription recorder](https://autocuts.ai/mac-screen-recorder-no-subscription/): One-time $19.99 lifetime license, trial behavior, and refund window
 
 ## Help
 - [Help hub](https://autocuts.ai/guide/): every how-to topic for the app

@@ -493,14 +493,6 @@ p { text-wrap: pretty; }
   text-align: center;
 }
 
-.price-panel__tag {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--acc);
-}
-
 .price-panel__amount {
   display: flex;
   flex-direction: column;
