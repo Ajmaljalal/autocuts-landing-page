@@ -526,6 +526,7 @@ p { text-wrap: pretty; }
   font-variant-numeric: tabular-nums;
   display: inline-flex;
   align-items: flex-start;
+  column-gap: 0.1em;
 }
 
 .price-panel__cents {
