@@ -1,3 +1,6 @@
+# NOTE: autocuts.ai is served by GitHub Pages, which IGNORES this file.
+# Live redirects are HTML stubs (canonical + meta refresh) at the old paths.
+# Keep this file in sync if the site ever moves to Cloudflare Pages or Netlify.
 # Permanent redirects for Cloudflare Pages and other hosts that support this format.
 /features/ai-video-cleanup/ /features/transcript-video-cleanup/ 301
 /features/add-motion-graphics-to-videos/ /blog/how-to-make-screen-recordings-look-professional/ 301

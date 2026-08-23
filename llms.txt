@@ -1,6 +1,6 @@
 # Autocuts
 
-> Autocuts is a local-first Mac screen recorder with automatic click zoom, smooth cursor motion, screen and camera layouts, a voice-paced teleprompter, on-device captions, and a built-in motion studio. It makes beautiful, engaging screen recordings with smooth mouse movement for product demos, tutorials, developer walkthroughs, courses, launch videos, and social media videos.
+> Autocuts is a local-first Mac screen recorder with automatic click zoom, smooth cursor motion, screen and camera layouts, a voice-paced teleprompter, on-device captions, and a built-in motion studio. It records internal audio without a virtual audio driver such as BlackHole, and runs natively on MacBook Air, MacBook Pro, iMac, and Mac mini. It makes beautiful, engaging screen recordings with smooth mouse movement for product demos, tutorials, developer walkthroughs, courses, launch videos, and social media videos.
 
 Autocuts records a display, app window, or selected area with optional camera, microphone, and system audio. It keeps recordings and project data inside the app on the user's Mac. Editing and export run in the desktop app. Finished videos can be shared with free lifetime share links that upload the video to the user's own Google Drive, or exported as local files and hosted anywhere. The first transcription can download a speech model; after the model is available, transcription runs on the Mac.
 
@@ -19,6 +19,7 @@ Autocuts is built for Apple Silicon Macs, with macOS Sonoma 14 or later recommen
 
 - [Automatic zoom](https://autocuts.ai/features/mac-screen-recorder-with-auto-zoom/): Generate editable zooms from recorded clicks
 - [Screen recorder with audio](https://autocuts.ai/features/screen-recorder-with-audio/): Capture system audio and microphone together with no virtual driver
+- [MacBook and Mac support](https://autocuts.ai/features/screen-recorder-for-macbook/): Screen recording on MacBook Air, MacBook Pro, iMac, and Mac mini, native on Apple Silicon at full Retina resolution
 - [Screen recorder with keyboard shortcuts](https://autocuts.ai/features/screen-recorder-with-keyboard-shortcuts/): Start, pause, stop, and switch displays with global shortcuts
 - [Screen and camera recording](https://autocuts.ai/features/screen-and-camera-recorder-for-mac/): Capture a display, window, or area with webcam, microphone, and system audio
 - [Built-in teleprompter](https://autocuts.ai/features/screen-recorder-with-teleprompter/): Voice-paced script with word highlighting that stays outside the recording
@@ -54,7 +55,10 @@ Autocuts is built for Apple Silicon Macs, with macOS Sonoma 14 or later recommen
 
 - [How to record screen and camera on Mac](https://autocuts.ai/blog/how-to-record-screen-and-camera-on-mac/): Permissions, sources, audio, recording, camera layouts, editing, and export
 - [How to make screen recordings look professional](https://autocuts.ai/blog/how-to-make-screen-recordings-look-professional/): Focus, cursor, zoom, framing, audio, pace, captions, and export
+- [Record with internal audio on a Mac](https://autocuts.ai/blog/record-screen-with-internal-audio-on-mac/): How to capture internal audio on macOS without BlackHole or a virtual audio driver
+- [Best Mac screen recorder with audio](https://autocuts.ai/blog/best-mac-screen-recorder-with-audio/): Autocuts, QuickTime, OBS, Loom, Screen Studio, and Cap compared on internal audio, microphone capture, and price
 - [Autocuts vs Screen Studio](https://autocuts.ai/compare/autocuts-vs-screen-studio/): Factual comparison of two polished Mac recorders
+- [Screen Studio alternative](https://autocuts.ai/compare/screen-studio-alternative/): Why Autocuts is the one-time-price Screen Studio alternative for Mac, and how free and open-source options compare
 - [Autocuts vs Screen Charm](https://autocuts.ai/compare/autocuts-vs-screen-charm/): Two one-time-purchase Mac recorders with automatic zoom
 - [Autocuts vs Loom](https://autocuts.ai/compare/autocuts-vs-loom/): Local demo recorder versus cloud video messaging
 - [Autocuts vs Cap](https://autocuts.ai/compare/autocuts-vs-cap/): Mac motion studio versus open-source cross-platform recorder
