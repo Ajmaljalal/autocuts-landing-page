@@ -603,6 +603,8 @@ footer {
 @media (max-width: 640px) {
   body { font-size: 16px; }
   .rail__nav { display: none; }
+  /* The hidden nav is still a sibling, so give the button back its auto margin. */
+  .rail__nav + .btn { margin-left: auto; }
   .who__grid { grid-template-columns: 1fr; }
   .how__grid { grid-template-columns: 1fr; }
   .caps { grid-template-columns: 1fr; }
