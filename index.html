@@ -111,6 +111,9 @@
   </script>
 
   <link rel="preload" href="img/demos/hero.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="site.css">
   <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the best screen recorder for Mac with automatic zoom?", "acceptedAnswer": {"@type": "Answer", "text": "The best screen recording software for a Mac gives you local capture, zooms you can edit after recording, smooth cursor motion, captions, and 4K export. Autocuts is a Mac screen recorder with automatic zoom that covers all five on Apple Silicon Macs with a one-time $19.99 license, which makes it a strong pick for product demos and tutorials."}}, {"@type": "Question", "name": "Which Macs does Autocuts support?", "acceptedAnswer": {"@type": "Answer", "text": "Autocuts runs on Apple Silicon Macs and works best on macOS Sonoma 14 or newer."}}, {"@type": "Question", "name": "Do my recordings leave my Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Recordings and project data stay in Autocuts on your Mac, and nothing uploads for editing or export. When you create a share link, only that finished video uploads to your own Google Drive."}}, {"@type": "Question", "name": "Does Autocuts capture system audio?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Autocuts can capture system audio together with your microphone and camera on supported macOS versions."}}, {"@type": "Question", "name": "What can Autocuts export?", "acceptedAnswer": {"@type": "Answer", "text": "MP4 (H.264) or WebM (VP9), up to 4K at 60 fps, with optional burned-in captions plus SRT and VTT sidecar files."}}, {"@type": "Question", "name": "Can I share a recording with a link?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Autocuts uploads the finished video to your own Google Drive and gives you a link to send. Sharing is free for life. You can also export MP4 or WebM and host the file anywhere."}}, {"@type": "Question", "name": "Is Autocuts a subscription?", "acceptedAnswer": {"@type": "Answer", "text": "No. Autocuts costs $19.99 once for one person on up to two Macs, with lifetime updates included."}}, {"@type": "Question", "name": "Can I try Autocuts before buying?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can download Autocuts, record, preview, and edit a video without buying first. Transcription, final processing, and export unlock after you activate a license."}}, {"@type": "Question", "name": "Can I change the video after I stop recording?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The studio lets you edit zooms, the cursor, camera layouts, backgrounds, clips, speed, and captions after the take."}}, {"@type": "Question", "name": "Is there a refund policy?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every purchase carries a 14-day full-refund window."}}, {"@type": "Question", "name": "How do I record my Mac screen with internal audio?", "acceptedAnswer": {"@type": "Answer", "text": "Open Autocuts, click System Audio in the recorder pill, then pick a microphone if you narrate. Autocuts uses the modern macOS capture engine, so internal audio is a switch and not a BlackHole driver install. Your own speakers keep playing while you record, and the app sound and your voice stay on separate sources."}}, {"@type": "Question", "name": "Is Autocuts a good Screen Studio alternative?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if you want the same automatic click zoom and smooth mouse movement without a subscription. Autocuts is $19.99 once for up to two Macs, while Screen Studio renews at $9 to $29 per month. Screen Studio has a longer feature list today, including iPhone capture, and Autocuts adds a built-in teleprompter and transcript cleanup."}}, {"@type": "Question", "name": "Does Autocuts work on MacBook Air, MacBook Pro, iMac, and Mac mini?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Autocuts runs natively on every Apple Silicon Mac, which covers MacBook Air M1 to M4, MacBook Pro, iMac, and Mac mini. It records the full Retina resolution of your display, and one licence covers up to two Macs."}}, {"@type": "Question", "name": "What is the best screen recorder for tutorials on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "A tutorial recorder needs internal audio, readable zooms on small interface details, and captions. Autocuts records the screen, camera, microphone, and internal audio in one take, then generates zooms from your real clicks so viewers can see what you clicked, and transcribes the voice track on your Mac for captions."}}, {"@type": "Question", "name": "Where do I reach support?", "acceptedAnswer": {"@type": "Answer", "text": "Email support@autocuts.ai. A human reads every message."}}]}
@@ -123,7 +126,7 @@
   <header class="rail" id="top">
     <div class="rail__inner">
       <a href="/" class="rail__brand">
-        <img src="img/icon-80.webp" width="34" height="34" alt="" decoding="async">
+        <img src="img/icon-80.webp" width="30" height="30" alt="" decoding="async">
         <b>Autocuts</b>
       </a>
       <nav class="rail__nav" aria-label="Main">
@@ -134,8 +137,8 @@
         <a href="/guide/">Help</a>
         <a href="#pricing">Pricing</a>
       </nav>
-      <a class="btn btn--primary btn--sm" href="/download/">
-        Download for Mac
+      <a class="btn btn--ghost btn--sm" href="/download/">
+        Download
       </a>
     </div>
   </header>
@@ -146,35 +149,20 @@
     <section class="hero">
       <div class="frame">
         <div class="hero__copy" data-reveal>
-          <h1>The Mac screen recorder that <span class="grad">makes every take cinematic.</span></h1>
+          <h1>Record your Mac screen. Get back an edited video.</h1>
+          <div class="hero__rule"></div>
           <p class="hero__sub">
-            Autocuts is a screen recorder for MacBook Air, MacBook Pro, iMac, and Mac mini. It records your screen, camera, and internal audio in one take, with no
-            BlackHole driver, then turns your clicks into zooms, smooth mouse movement, and captions.
+            Autocuts captures the screen, your camera, the microphone and the system audio in one pass, with no BlackHole driver. It then turns your click
+            track into zooms, redraws the cursor, and transcribes your voice on your Mac.
           </p>
           <div class="hero__actions">
             <a class="btn btn--primary btn--lg" href="/download/">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
               Download for Mac
             </a>
-            <a class="btn btn--ghost btn--lg" href="#features">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10.2 8.9l4.6 3.1-4.6 3.1z" fill="currentColor" stroke="none"/></svg>
-              See it in action
-            </a>
+            <a class="tlink" href="#features">See what it does</a>
           </div>
-          <div class="hero__proof">
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.83z"/><circle cx="7" cy="7" r="0.5" fill="currentColor"/></svg>
-              $19.99 once, lifetime updates
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
-              Recordings stay on your Mac
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2.5v2.5M15 2.5v2.5M9 19v2.5M15 19v2.5M2.5 9h2.5M2.5 15h2.5M19 9h2.5M19 15h2.5"/></svg>
-              Native on Apple Silicon
-            </span>
-          </div>
+          <p class="mono hero__meta">$19.99 once &nbsp;·&nbsp; Apple Silicon &nbsp;·&nbsp; macOS Sonoma 14 or newer</p>
         </div>
 
         <div class="hero__stage" data-reveal data-reveal-delay="1">
@@ -191,119 +179,118 @@
     <section class="features" id="features">
       <div class="frame">
         <header class="sec-head" data-reveal>
-          <h2>Every Mac screen recording gets the full treatment</h2>
-          <p>Autocuts records the raw take and the data around it: clicks, cursor, keys, and voice. The studio turns that data into motion.</p>
+          <h2>Autocuts records the take and the data around it</h2>
+          <p>Clicks, cursor path, keystrokes and voice are recorded next to the picture. The studio turns that data into motion you can still edit.</p>
         </header>
 
-        <div class="cards">
-        <article class="card" data-reveal>
-          <div class="card__media">
-            <video data-src="media/demos/record-anything.mp4" poster="img/demos/record-anything.webp"
-              muted playsinline loop preload="none" width="1080" height="1080"
-              aria-label="The Autocuts recorder pill at the bottom of a desktop; the cursor opens the capture frame for Screen, Window and Area, then the camera preview and the device menus"></video>
-          </div>
-          <div class="card__body">
-            <div class="micro">Capture</div>
-            <h3>Record your Mac screen with internal audio</h3>
-            <p>Point the recorder at a full display, one app window, or a region you drag out. Camera, microphone, and system audio join with one click.</p>
-            <ul class="ticks">
-              <li>Count down 1, 3, or 5 seconds before the take starts</li>
-              <li>Switch the recorded screen mid-take with a hotkey</li>
-              <li>Autocuts overlays stay out of the recording</li>
-            </ul>
-            <a class="card__link" href="/features/screen-and-camera-recorder-for-mac/">Explore screen and camera recording →</a>
-          </div>
-        </article>
-        <article class="card" data-reveal data-reveal-delay="1">
-          <div class="card__media">
-            <video data-src="media/demos/smart-zoom.mp4" poster="img/demos/smart-zoom.webp"
-              muted playsinline loop preload="none" width="1080" height="1080"
-              aria-label="A dashboard recording where the camera zooms in on each click and glides back out"></video>
-          </div>
-          <div class="card__body">
-            <div class="micro">Studio</div>
-            <h3>Automatic zoom that follows your clicks</h3>
-            <p>Autocuts reads your click track, pushes the camera in on each click, holds, then glides back out. No keyframes, no motion design.</p>
-            <ul class="ticks">
-              <li>Zooms generate automatically from your click track</li>
-              <li>Adjust level, timing, and position in the studio</li>
-              <li>Add or remove any zoom on the timeline</li>
-            </ul>
-            <a class="card__link" href="/features/mac-screen-recorder-with-auto-zoom/">Explore automatic zoom →</a>
-          </div>
-        </article>
-        <article class="card" data-reveal>
-          <div class="card__media">
-            <video data-src="media/demos/smooth-cursor.mp4" poster="img/demos/smooth-cursor.webp"
-              muted playsinline loop preload="none" width="1080" height="1080"
-              aria-label="A task tracker recording with a large smooth cursor that changes color and size, with click ripples"></video>
-          </div>
-          <div class="card__body">
-            <div class="micro">Studio</div>
-            <h3>Smooth mouse movement your viewers can follow</h3>
-            <p>Autocuts records the cursor as data, then redraws it with editable cursor effects: bigger, smoother, and in the color you pick.</p>
-            <ul class="ticks">
-              <li>Any size, 16 colors, arrow and pointing hand</li>
-              <li>Adjustable smoothing takes out hand jitter</li>
-              <li>Click ripples show every press</li>
-            </ul>
-            <a class="card__link" href="/features/mac-screen-recorder-with-auto-zoom/">See cursor and zoom motion →</a>
-          </div>
-        </article>
-        <article class="card" data-reveal data-reveal-delay="1">
-          <div class="card__media">
-            <video data-src="media/demos/camera-layouts.mp4" poster="img/demos/camera-layouts.webp"
-              muted playsinline loop preload="none" width="1080" height="1080"
-              aria-label="The Autocuts studio stepping through ten camera layout presets, ending on the composed result"></video>
-          </div>
-          <div class="card__body">
-            <div class="micro">Camera</div>
-            <h3>Ten camera layouts, one click</h3>
-            <p>Put your camera where the story needs it: a bubble in the corner, a split screen, a solo shot, or a portrait stack.</p>
-            <ul class="ticks">
-              <li>Presets reframe the screen and the camera together</li>
-              <li>Portrait layouts ready for Shorts and Reels</li>
-              <li>Camera zoom, size, and position stay editable</li>
-            </ul>
-            <a class="card__link" href="/features/screen-and-camera-recorder-for-mac/">Explore camera layouts →</a>
-          </div>
-        </article>
-        <article class="card" data-reveal>
-          <div class="card__media">
-            <video data-src="media/demos/backgrounds.mp4" poster="img/demos/backgrounds.webp"
-              muted playsinline loop preload="none" width="1080" height="1080"
-              aria-label="The Autocuts studio where clicks on background swatches repaint the canvas behind the recording"></video>
-          </div>
-          <div class="card__body">
-            <div class="micro">Canvas</div>
-            <h3>Backgrounds that sell the shot</h3>
-            <p>Set the take on a gradient, color, or image wall with padding, rounded corners, and a soft shadow. Pick the canvas your channel needs.</p>
-            <ul class="ticks">
-              <li>Gradient, color, and image walls built in</li>
-              <li>Padding, corner radius, and shadow controls</li>
-              <li>Canvas ratios: 16:9, 4:3, 1:1, 4:5, and 9:16</li>
-            </ul>
-            <a class="card__link" href="/blog/how-to-make-screen-recordings-look-professional/">Learn how to frame a recording →</a>
-          </div>
-        </article>
-        <article class="card" data-reveal data-reveal-delay="1">
-          <div class="card__media">
-            <video data-src="media/demos/teleprompter.mp4" poster="img/demos/teleprompter.webp"
-              muted playsinline loop preload="none" width="1080" height="1080"
-              aria-label="A calendar app during recording with the teleprompter pill, the recording indicator, and a camera bubble on top"></video>
-          </div>
-          <div class="card__body">
-            <div class="micro">Capture</div>
-            <h3>A screen recorder with a built-in teleprompter</h3>
-            <p>The teleprompter grows from the top of the screen and advances only while you speak. It never shows up in the recording.</p>
-            <ul class="ticks">
-              <li>Voice-paced scrolling, hands stay on the keyboard</li>
-              <li>Karaoke highlight follows your words</li>
-              <li>Invisible to the capture, like every Autocuts overlay</li>
-            </ul>
-            <a class="card__link" href="/features/screen-recorder-with-teleprompter/">Explore the teleprompter →</a>
-          </div>
-        </article>
+        <div class="frows">
+          <article class="frow" data-reveal>
+            <div class="frow__media">
+              <video data-src="media/demos/record-anything.mp4" poster="img/demos/record-anything.webp"
+                muted playsinline loop preload="none" width="1080" height="1080"
+                aria-label="The Autocuts recorder pill at the bottom of a desktop; the cursor opens the capture frame for Screen, Window and Area, then the camera preview and the device menus"></video>
+            </div>
+            <div class="frow__body">
+              <h3>Record your Mac screen with system audio</h3>
+              <p>Point the recorder at a full display, one app window, or a region you drag out. Camera, microphone and system audio join the take with one click, and every Autocuts overlay stays out of the file.</p>
+              <ul class="flist">
+                <li>A countdown of 1, 3 or 5 seconds before the take starts</li>
+                <li>Switch the recorded screen mid-take with a hotkey</li>
+                <li>System audio is a switch in the recorder pill</li>
+              </ul>
+              <a class="card__link" href="/features/screen-and-camera-recorder-for-mac/">Screen and camera recording</a>
+            </div>
+          </article>
+
+          <article class="frow frow--flip" data-reveal>
+            <div class="frow__media">
+              <video data-src="media/demos/smart-zoom.mp4" poster="img/demos/smart-zoom.webp"
+                muted playsinline loop preload="none" width="1080" height="1080"
+                aria-label="A dashboard recording where the camera zooms in on each click and glides back out"></video>
+            </div>
+            <div class="frow__body">
+              <h3>Zooms come from your clicks, not from keyframes</h3>
+              <p>Autocuts reads the recorded click track, pushes the camera in on the click, holds while you work, then glides back out. Every zoom stays on the timeline afterwards.</p>
+              <ul class="flist">
+                <li>Zooms are generated from the real click track</li>
+                <li>Level, timing and position stay editable</li>
+                <li>Add or delete any zoom by hand</li>
+              </ul>
+              <a class="card__link" href="/features/mac-screen-recorder-with-auto-zoom/">Automatic zoom</a>
+            </div>
+          </article>
+
+          <article class="frow" data-reveal>
+            <div class="frow__media">
+              <video data-src="media/demos/smooth-cursor.mp4" poster="img/demos/smooth-cursor.webp"
+                muted playsinline loop preload="none" width="1080" height="1080"
+                aria-label="A task tracker recording with a large smooth cursor that changes color and size, with click ripples"></video>
+            </div>
+            <div class="frow__body">
+              <h3>A cursor your viewers can actually follow</h3>
+              <p>The cursor is recorded as data, then redrawn after the take: larger, smoother, and in the color you pick. Smoothing takes the jitter out of your hand.</p>
+              <ul class="flist">
+                <li>Any size, 16 colors, arrow or pointing hand</li>
+                <li>Adjustable smoothing on the cursor path</li>
+                <li>A ripple marks every press</li>
+              </ul>
+              <a class="card__link" href="/features/mac-screen-recorder-with-auto-zoom/">Cursor and zoom motion</a>
+            </div>
+          </article>
+
+          <article class="frow frow--flip" data-reveal>
+            <div class="frow__media">
+              <video data-src="media/demos/camera-layouts.mp4" poster="img/demos/camera-layouts.webp"
+                muted playsinline loop preload="none" width="1080" height="1080"
+                aria-label="The Autocuts studio stepping through ten camera layout presets, ending on the composed result"></video>
+            </div>
+            <div class="frow__body">
+              <h3>Ten camera layouts, one click each</h3>
+              <p>Put the camera where the story needs it: a bubble in the corner, a split screen, a solo shot, or a portrait stack. Each preset reframes the screen and the camera together.</p>
+              <ul class="flist">
+                <li>Presets move the screen and the camera as one</li>
+                <li>Portrait layouts sized for Shorts and Reels</li>
+                <li>Camera zoom, size and position stay editable</li>
+              </ul>
+              <a class="card__link" href="/features/screen-and-camera-recorder-for-mac/">Camera layouts</a>
+            </div>
+          </article>
+
+          <article class="frow" data-reveal>
+            <div class="frow__media">
+              <video data-src="media/demos/backgrounds.mp4" poster="img/demos/backgrounds.webp"
+                muted playsinline loop preload="none" width="1080" height="1080"
+                aria-label="The Autocuts studio where clicks on background swatches repaint the canvas behind the recording"></video>
+            </div>
+            <div class="frow__body">
+              <h3>A canvas behind the take</h3>
+              <p>Set the recording on a color, a gradient, or an image wall, with padding, rounded corners and a soft shadow. Then pick the ratio the channel wants.</p>
+              <ul class="flist">
+                <li>Color, gradient and image walls are built in</li>
+                <li>Padding, corner radius and shadow controls</li>
+                <li>Ratios 16:9, 4:3, 1:1, 4:5 and 9:16</li>
+              </ul>
+              <a class="card__link" href="/blog/how-to-make-screen-recordings-look-professional/">How to frame a recording</a>
+            </div>
+          </article>
+
+          <article class="frow frow--flip" data-reveal>
+            <div class="frow__media">
+              <video data-src="media/demos/teleprompter.mp4" poster="img/demos/teleprompter.webp"
+                muted playsinline loop preload="none" width="1080" height="1080"
+                aria-label="A calendar app during recording with the teleprompter pill, the recording indicator, and a camera bubble on top"></video>
+            </div>
+            <div class="frow__body">
+              <h3>A screen recorder with a built-in teleprompter</h3>
+              <p>The teleprompter grows from the top of the screen and advances only while you speak, so your hands stay on the keyboard. It never reaches the recording.</p>
+              <ul class="flist">
+                <li>Scrolling is paced by your voice</li>
+                <li>A karaoke highlight follows your words</li>
+                <li>Invisible to the capture, like every overlay</li>
+              </ul>
+              <a class="card__link" href="/features/screen-recorder-with-teleprompter/">The teleprompter</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -312,45 +299,39 @@
     <section class="who">
       <div class="frame">
         <header class="sec-head" data-reveal>
-          <h2>Who uses Autocuts to record their screen?</h2>
-          <p>Anyone who explains software on a Mac: product demos, tutorial videos, onboarding, courses, support answers, and launch posts.</p>
+          <h2>Who records with it</h2>
+          <p>People who explain software on a Mac: release demos, tutorial videos, onboarding, courses, support answers and launch posts.</p>
         </header>
         <div class="who__grid">
-          <article class="who__card" data-reveal>
-            <div class="who__role">Developers</div>
-            <h3>A demo video with every release</h3>
-            <p>Record a feature walkthrough or a bug repro with automatic zoom on every click. A release demo takes minutes, not an evening.</p>
-            <a class="card__link" href="/use-cases/screen-recorder-for-developers/">Screen recording for developers →</a>
+          <article class="who__item" data-reveal>
+            <h3>Developers</h3>
+            <p>A feature walkthrough or a bug repro, with a zoom on every click. A release demo takes minutes, not an evening.</p>
+            <a class="card__link" href="/use-cases/screen-recorder-for-developers/">Screen recording for developers</a>
           </article>
-          <article class="who__card" data-reveal data-reveal-delay="1">
-            <div class="who__role">Course creators</div>
-            <h3>Tutorial videos that finish themselves</h3>
-            <p>Every lesson arrives with smart zooms and on-device captions already in place. Record the next tutorial instead of editing the last.</p>
-            <a class="card__link" href="/features/transcript-video-cleanup/">Captions and transcript cleanup →</a>
+          <article class="who__item" data-reveal data-reveal-delay="1">
+            <h3>Course creators</h3>
+            <p>Each lesson arrives with its zooms and its on-device captions already in place, so you record the next one instead of editing the last one.</p>
+            <a class="card__link" href="/features/transcript-video-cleanup/">Captions and transcript cleanup</a>
           </article>
-          <article class="who__card" data-reveal data-reveal-delay="2">
-            <div class="who__role">Founders</div>
-            <h3>A product demo in one sitting</h3>
-            <p>Record a product tour for your landing page, your launch post, and your changelog, sized for desktop and portrait feeds.</p>
-            <a class="card__link" href="/use-cases/product-demo-recorder/">The product demo recorder →</a>
+          <article class="who__item" data-reveal data-reveal-delay="2">
+            <h3>Founders</h3>
+            <p>One sitting gives you the product tour for the landing page, the launch post and the changelog, in desktop and portrait sizes.</p>
+            <a class="card__link" href="/use-cases/product-demo-recorder/">The product demo recorder</a>
           </article>
-          <article class="who__card" data-reveal>
-            <div class="who__role">SaaS teams</div>
-            <h3>Onboarding and feature announcements</h3>
-            <p>Record screen and camera together on a branded canvas. Saved presets keep every team video on the same look.</p>
-            <a class="card__link" href="/features/screen-and-camera-recorder-for-mac/">Screen and camera recording →</a>
+          <article class="who__item" data-reveal>
+            <h3>SaaS teams</h3>
+            <p>Screen and camera together on a canvas that matches your brand. Saved presets keep every team video on the same look.</p>
+            <a class="card__link" href="/features/screen-and-camera-recorder-for-mac/">Screen and camera recording</a>
           </article>
-          <article class="who__card" data-reveal data-reveal-delay="1">
-            <div class="who__role">Support teams</div>
-            <h3>Answers people can watch</h3>
-            <p>Reply to a ticket with a captioned screen recording instead of a wall of steps. Local MP4 files attach anywhere.</p>
-            <a class="card__link" href="/features/local-screen-recorder-for-mac/">Local screen recording on Mac →</a>
+          <article class="who__item" data-reveal data-reveal-delay="1">
+            <h3>Support teams</h3>
+            <p>Answer the ticket with a captioned screen recording instead of a wall of steps. The MP4 is a local file, so it attaches anywhere.</p>
+            <a class="card__link" href="/features/local-screen-recorder-for-mac/">Local screen recording on Mac</a>
           </article>
-          <article class="who__card" data-reveal data-reveal-delay="2">
-            <div class="who__role">Content creators</div>
-            <h3>4K videos for YouTube and Shorts</h3>
-            <p>A 4K screen recorder for Mac: capture at 60 fps, redraw the cursor, and switch to a portrait camera layout ready for YouTube, Shorts, and Reels.</p>
-            <a class="card__link" href="/features/mac-screen-recorder-with-auto-zoom/">Mac screen recorder with auto zoom →</a>
+          <article class="who__item" data-reveal data-reveal-delay="2">
+            <h3>Content creators</h3>
+            <p>A 4K screen recorder for Mac: capture at 60 fps, redraw the cursor, then switch to a portrait camera layout for YouTube, Shorts and Reels.</p>
+            <a class="card__link" href="/features/mac-screen-recorder-with-auto-zoom/">Mac screen recorder with auto zoom</a>
           </article>
         </div>
       </div>
@@ -360,14 +341,26 @@
     <section class="how" id="how-it-works">
       <div class="frame">
         <header class="sec-head">
-          <h2>A screen recorder for product demos, tutorials, and social media videos</h2>
-          <p>Autocuts keeps capture, automatic motion, review, and export in one local Mac workflow.</p>
+          <h2>A screen recorder for product demos, tutorials and social media videos</h2>
+          <p>Four steps in one window, from capture to export. Nothing leaves your Mac.</p>
         </header>
         <div class="how__grid">
-          <article class="how__step"><span>01</span><h3>Record</h3><p>Capture a display, window, or area with optional camera, microphone, and system audio.</p></article>
-          <article class="how__step"><span>02</span><h3>Generate motion</h3><p>Turn recorded clicks and cursor data into zooms, movement, layouts, and visual focus.</p></article>
-          <article class="how__step"><span>03</span><h3>Review</h3><p>Trim clips, refine every zoom, clean the transcript, and keep or remove any automatic choice.</p></article>
-          <article class="how__step"><span>04</span><h3>Export</h3><p>Render MP4 or WebM up to 4K at 60 fps, with optional burned-in or separate captions.</p></article>
+          <article class="how__step">
+            <h3>Record</h3>
+            <p>A display, a window or an area, with the camera, the microphone and the system audio you want.</p>
+          </article>
+          <article class="how__step">
+            <h3>Generate motion</h3>
+            <p>Clicks and cursor data become zooms, movement, layouts and focus, before you touch anything.</p>
+          </article>
+          <article class="how__step">
+            <h3>Review</h3>
+            <p>Trim the clips, refine each zoom, clean the transcript, and keep or drop every automatic choice.</p>
+          </article>
+          <article class="how__step">
+            <h3>Export</h3>
+            <p>MP4 or WebM up to 4K at 60 fps, with burned-in captions or SRT and VTT sidecars.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -376,63 +369,75 @@
     <section class="editor" id="editor">
       <div class="frame">
         <header class="sec-head" data-reveal>
-          <h2>The built-in editor gives you the final say</h2>
-          <p>Autocuts drafts the edit; you direct it. Trim, retime, and restyle every part of the video in the same window you recorded from.</p>
+          <h2>The editor gives you the final say</h2>
+          <p>Autocuts drafts the edit and you direct it, in the same window you recorded from.</p>
         </header>
 
-        <div class="editor__stage" data-reveal>
-          <div class="vid vid--wide">
+        <div class="editor__grid">
+          <div class="vid vid--wide" data-reveal>
             <video data-src="media/demos/video-editor.mp4" poster="img/demos/video-editor.webp"
               muted playsinline loop preload="none" width="1080" height="1080"
               aria-label="The Autocuts clip timeline: a slider drag, a zoom block edit, a speed change to 1.5x, and two cuts with a clip delete"></video>
           </div>
+          <div data-reveal>
+            <ul class="caps" aria-label="Editor features">
+              <li>Trim and cut</li>
+              <li>Cut by transcript</li>
+              <li>Speed control</li>
+              <li>Filler word removal</li>
+              <li>Zoom editor</li>
+              <li>Keystroke captions</li>
+              <li>Click ripples</li>
+              <li>On-device captions</li>
+              <li>Cursor size and color</li>
+              <li>Saved presets</li>
+              <li>4K export at 60 fps</li>
+              <li>SRT and VTT sidecars</li>
+            </ul>
+            <a class="card__link" href="/features/transcript-video-cleanup/">Explore transcript cleanup</a>
+          </div>
         </div>
-
-        <ul class="chips" data-reveal aria-label="Editor features">
-          <li>Trim and cut</li>
-          <li>Speed control</li>
-          <li>Zoom editor</li>
-          <li>Click ripples</li>
-          <li>Cursor size and color</li>
-          <li>On-device captions</li>
-          <li>Cut by transcript</li>
-          <li>Filler word removal</li>
-          <li>Keystroke captions</li>
-          <li>Saved presets</li>
-          <li>4K export at 60 fps</li>
-          <li>SRT and VTT sidecars</li>
-        </ul>
-        <div class="hero__actions"><a class="btn btn--ghost" href="/features/transcript-video-cleanup/">Explore transcript cleanup</a></div>
       </div>
     </section>
 
     <!-- MACOS -->
     <section class="mac">
       <div class="frame">
-        <header class="sec-head" data-reveal>
-          <h2>A local screen recorder for MacBook Air, MacBook Pro, iMac, and Mac mini.<br>Your recordings stay on your Mac.</h2>
-        </header>
         <div class="mac__grid">
-          <article class="mac__card" data-reveal>
-            <h3>Native on Apple Silicon</h3>
-            <p>Runs as a native app on every Apple Silicon Mac, from the M1 MacBook Air to the M4 Mac mini, and works best on macOS Sonoma 14 or newer. See the <a href="/features/screen-recorder-for-macbook/">MacBook and Mac support page</a>.</p>
-          </article>
-          <article class="mac__card" data-reveal data-reveal-delay="1">
-            <h3>Normal local files</h3>
-            <p>Recordings live in the Videos folder as files you own. Nothing uploads unless you create a share link, and then the finished video goes to your own Google Drive.</p>
-          </article>
-          <article class="mac__card" data-reveal data-reveal-delay="2">
-            <h3>Internal audio, no driver</h3>
-            <p>System Audio is a switch in the recorder pill, so you never install BlackHole or change your output device. Read <a href="/blog/record-screen-with-internal-audio-on-mac/">how to record internal audio on a Mac</a>.</p>
-          </article>
-          <article class="mac__card" data-reveal data-reveal-delay="3">
-            <h3>Captions on device</h3>
-            <p>Transcription downloads a speech model once, then runs offline on your Mac and produces burned-in captions plus SRT and VTT files.</p>
-          </article>
-          <article class="mac__card" data-reveal data-reveal-delay="4">
-            <h3>Frame-accurate export</h3>
-            <p>MP4 (H.264) or WebM (VP9) up to 4K at 60 fps. Every frame is rendered, none are dropped.</p>
-          </article>
+          <header class="sec-head" data-reveal style="margin-bottom: 0;">
+            <h2>A local screen recorder for the Mac you already own</h2>
+            <p>A local screen recorder for MacBook Air, MacBook Pro, iMac and Mac mini. Nothing uploads for editing or export, and a share link is the only time a finished video leaves the machine.</p>
+          </header>
+          <dl class="spec" data-reveal>
+            <div class="spec__row">
+              <dt>chip</dt>
+              <dd>Native on Apple Silicon, from the M1 MacBook Air to the M4 Mac mini. See the <a href="/features/screen-recorder-for-macbook/">MacBook and Mac support page</a>.</dd>
+            </div>
+            <div class="spec__row">
+              <dt>macos</dt>
+              <dd>Sonoma 14 or newer</dd>
+            </div>
+            <div class="spec__row">
+              <dt>files</dt>
+              <dd>Recordings live in your Videos folder as files you own. Nothing uploads unless you create a share link, and then the finished video goes to your own Google Drive.</dd>
+            </div>
+            <div class="spec__row">
+              <dt>audio</dt>
+              <dd>System Audio is a switch in the recorder pill, so you never install BlackHole or change your output device. Read <a href="/blog/record-screen-with-internal-audio-on-mac/">how to record internal audio on a Mac</a>.</dd>
+            </div>
+            <div class="spec__row">
+              <dt>captions</dt>
+              <dd>Transcription downloads a speech model once, then runs offline on your Mac and produces burned-in captions plus SRT and VTT files.</dd>
+            </div>
+            <div class="spec__row">
+              <dt>export</dt>
+              <dd>MP4 (H.264) or WebM (VP9) up to 4K at 60 fps. Every frame is rendered, none are dropped.</dd>
+            </div>
+            <div class="spec__row">
+              <dt>license</dt>
+              <dd>$19.99 once, two Macs, lifetime updates.</dd>
+            </div>
+          </dl>
         </div>
       </div>
     </section>
@@ -447,20 +452,19 @@
 
         <div class="price-panel" data-reveal>
           <div class="price-panel__buy">
-            <div class="price-panel__amount">
-              <span class="price-panel__now"><span>$19</span><span class="price-panel__cents">.99</span></span>
-            </div>
-            <p class="price-panel__note">Pay once. Own it for life.</p>
+            <div class="price-panel__now"><span>$19</span><span class="price-panel__cents">.99</span></div>
+            <p class="mono price-panel__note">one payment · no subscription</p>
             <a class="btn btn--primary btn--lg" href="/download/">Download and try it</a>
           </div>
           <div class="price-panel__info">
-            <ul class="ticks">
+            <ul class="flist">
               <li>Every feature, no add-ons</li>
               <li>Lifetime updates included</li>
               <li>One license covers 2 Macs</li>
               <li>Full refund within 14 days</li>
               <li>Free shareable links for life</li>
             </ul>
+            <p>Record, preview and edit before you pay. Transcription, final processing and export unlock when you activate the license.</p>
           </div>
         </div>
       </div>
@@ -469,70 +473,72 @@
     <!-- FAQ -->
     <section class="faq" id="faq">
       <div class="frame">
-        <header class="sec-head" data-reveal>
-          <h2>Answers about recording on a Mac</h2>
-        </header>
-        <div class="faq__list" data-reveal>
-          <details class="faq__item" open>
-            <summary>What is the best screen recorder for Mac with automatic zoom?</summary>
-            <p>The best screen recording software for a Mac gives you local capture, zooms you can edit after recording, smooth cursor motion, captions, and 4K export. Autocuts is a Mac screen recorder with automatic zoom that covers all five on Apple Silicon Macs with a one-time $19.99 license, which makes it a strong pick for product demos and tutorials.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Which Macs does Autocuts support?</summary>
-            <p>Autocuts runs on Apple Silicon Macs and works best on macOS Sonoma 14 or newer.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Do my recordings leave my Mac?</summary>
-            <p>Recordings and project data stay in Autocuts on your Mac, and nothing uploads for editing or export. When you create a share link, only that finished video uploads to your own Google Drive.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Does Autocuts capture system audio?</summary>
-            <p>Yes. Autocuts can capture system audio together with your microphone and camera on supported macOS versions.</p>
-          </details>
-          <details class="faq__item">
-            <summary>What can Autocuts export?</summary>
-            <p>MP4 (H.264) or WebM (VP9), up to 4K at 60 fps, with optional burned-in captions plus SRT and VTT sidecar files.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Can I share a recording with a link?</summary>
-            <p>Yes. Autocuts uploads the finished video to your own Google Drive and gives you a <a href="/features/share-links/">free share link</a> to send. Sharing is free for life. You can also export MP4 or WebM and host the file anywhere.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Is Autocuts a subscription?</summary>
-            <p>No. Autocuts costs $19.99 once for one person on up to two Macs, with lifetime updates included.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Can I try Autocuts before buying?</summary>
-            <p>Yes. You can download Autocuts, record, preview, and edit a video without buying first. Transcription, final processing, and export unlock after you activate a license.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Can I change the video after I stop recording?</summary>
-            <p>Yes. The studio lets you edit zooms, the cursor, camera layouts, backgrounds, clips, speed, and captions after the take.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Is there a refund policy?</summary>
-            <p>Yes. Every purchase carries a 14-day full-refund window.</p>
-          </details>
-          <details class="faq__item">
-            <summary>How do I record my Mac screen with internal audio?</summary>
-            <p>Open Autocuts, click System Audio in the recorder pill, then pick a microphone if you narrate. Autocuts uses the modern macOS capture engine, so internal audio is a switch and not a BlackHole driver install. Your own speakers keep playing while you record, and the app sound and your voice stay on separate sources. More detail on the <a href="/blog/record-screen-with-internal-audio-on-mac/">internal audio guide</a>.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Is Autocuts a good Screen Studio alternative?</summary>
-            <p>Yes, if you want the same automatic click zoom and smooth mouse movement without a subscription. Autocuts is $19.99 once for up to two Macs, while Screen Studio renews at $9 to $29 per month. Screen Studio has a longer feature list today, including iPhone capture, and Autocuts adds a built-in teleprompter and transcript cleanup. More detail on the <a href="/compare/screen-studio-alternative/">Screen Studio alternative page</a>.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Does Autocuts work on MacBook Air, MacBook Pro, iMac, and Mac mini?</summary>
-            <p>Yes. Autocuts runs natively on every Apple Silicon Mac, which covers MacBook Air M1 to M4, MacBook Pro, iMac, and Mac mini. It records the full Retina resolution of your display, and one licence covers up to two Macs. More detail on the <a href="/features/screen-recorder-for-macbook/">MacBook support page</a>.</p>
-          </details>
-          <details class="faq__item">
-            <summary>What is the best screen recorder for tutorials on a Mac?</summary>
-            <p>A tutorial recorder needs internal audio, readable zooms on small interface details, and captions. Autocuts records the screen, camera, microphone, and internal audio in one take, then generates zooms from your real clicks so viewers can see what you clicked, and transcribes the voice track on your Mac for captions. More detail on the <a href="/use-cases/screen-recorder-for-tutorials/">tutorial recording page</a>.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Where do I reach support?</summary>
-            <p>Email <a href="mailto:support@autocuts.ai">support@autocuts.ai</a>. A human reads every message.</p>
-          </details>
+        <div class="faq__grid">
+          <header class="sec-head" data-reveal style="margin-bottom: 0;">
+            <h2>Answers about recording on a Mac</h2>
+          </header>
+          <div class="faq__list" data-reveal>
+            <details class="faq__item" open>
+              <summary>What is the best screen recorder for Mac with automatic zoom?</summary>
+              <p>The best screen recording software for a Mac gives you local capture, zooms you can edit after recording, smooth cursor motion, captions, and 4K export. Autocuts is a Mac screen recorder with automatic zoom that covers all five on Apple Silicon Macs with a one-time $19.99 license, which makes it a strong pick for product demos and tutorials.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Which Macs does Autocuts support?</summary>
+              <p>Autocuts runs on Apple Silicon Macs and works best on macOS Sonoma 14 or newer.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Do my recordings leave my Mac?</summary>
+              <p>Recordings and project data stay in Autocuts on your Mac, and nothing uploads for editing or export. When you create a share link, only that finished video uploads to your own Google Drive.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Does Autocuts capture system audio?</summary>
+              <p>Yes. Autocuts can capture system audio together with your microphone and camera on supported macOS versions.</p>
+            </details>
+            <details class="faq__item">
+              <summary>What can Autocuts export?</summary>
+              <p>MP4 (H.264) or WebM (VP9), up to 4K at 60 fps, with optional burned-in captions plus SRT and VTT sidecar files.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Can I share a recording with a link?</summary>
+              <p>Yes. Autocuts uploads the finished video to your own Google Drive and gives you a <a href="/features/share-links/">free share link</a> to send. Sharing is free for life. You can also export MP4 or WebM and host the file anywhere.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Is Autocuts a subscription?</summary>
+              <p>No. Autocuts costs $19.99 once for one person on up to two Macs, with lifetime updates included.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Can I try Autocuts before buying?</summary>
+              <p>Yes. You can download Autocuts, record, preview, and edit a video without buying first. Transcription, final processing, and export unlock after you activate a license.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Can I change the video after I stop recording?</summary>
+              <p>Yes. The studio lets you edit zooms, the cursor, camera layouts, backgrounds, clips, speed, and captions after the take.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Is there a refund policy?</summary>
+              <p>Yes. Every purchase carries a 14-day full-refund window.</p>
+            </details>
+            <details class="faq__item">
+              <summary>How do I record my Mac screen with internal audio?</summary>
+              <p>Open Autocuts, click System Audio in the recorder pill, then pick a microphone if you narrate. Autocuts uses the modern macOS capture engine, so internal audio is a switch and not a BlackHole driver install. Your own speakers keep playing while you record, and the app sound and your voice stay on separate sources. More detail on the <a href="/blog/record-screen-with-internal-audio-on-mac/">internal audio guide</a>.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Is Autocuts a good Screen Studio alternative?</summary>
+              <p>Yes, if you want the same automatic click zoom and smooth mouse movement without a subscription. Autocuts is $19.99 once for up to two Macs, while Screen Studio renews at $9 to $29 per month. Screen Studio has a longer feature list today, including iPhone capture, and Autocuts adds a built-in teleprompter and transcript cleanup. More detail on the <a href="/compare/screen-studio-alternative/">Screen Studio alternative page</a>.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Does Autocuts work on MacBook Air, MacBook Pro, iMac, and Mac mini?</summary>
+              <p>Yes. Autocuts runs natively on every Apple Silicon Mac, which covers MacBook Air M1 to M4, MacBook Pro, iMac, and Mac mini. It records the full Retina resolution of your display, and one licence covers up to two Macs. More detail on the <a href="/features/screen-recorder-for-macbook/">MacBook support page</a>.</p>
+            </details>
+            <details class="faq__item">
+              <summary>What is the best screen recorder for tutorials on a Mac?</summary>
+              <p>A tutorial recorder needs internal audio, readable zooms on small interface details, and captions. Autocuts records the screen, camera, microphone, and internal audio in one take, then generates zooms from your real clicks so viewers can see what you clicked, and transcribes the voice track on your Mac for captions. More detail on the <a href="/use-cases/screen-recorder-for-tutorials/">tutorial recording page</a>.</p>
+            </details>
+            <details class="faq__item">
+              <summary>Where do I reach support?</summary>
+              <p>Email <a href="mailto:support@autocuts.ai">support@autocuts.ai</a>. A human reads every message.</p>
+            </details>
+          </div>
         </div>
       </div>
     </section>
@@ -540,14 +546,19 @@
     <!-- DOWNLOAD -->
     <section class="download" id="download">
       <div class="frame">
-        <div class="download__card" data-reveal>
-          <img src="img/icon-160.webp" width="72" height="72" alt="" decoding="async">
-          <h2>Get Autocuts for Mac</h2>
-          <p>Download the app to record, preview, and edit for free. Activate a $19.99 lifetime license only when you are ready to transcribe, process, or export.</p>
-          <a class="btn btn--primary btn--lg" href="/download/">
-            Download for Apple silicon
-          </a>
-          <span class="download__req">macOS Sonoma 14 or newer · license works on 2 Macs</span>
+        <div class="download__band" data-reveal>
+          <img src="img/icon-160.webp" width="64" height="64" alt="" decoding="async">
+          <div class="download__copy">
+            <h2>Get Autocuts for Mac</h2>
+            <p>Download the app to record, preview, and edit for free. Activate a $19.99 lifetime license only when you are ready to transcribe, process, or export.</p>
+          </div>
+          <div class="download__get">
+            <a class="btn btn--primary btn--lg" href="/download/">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              Download for Apple silicon
+            </a>
+            <span class="mono download__req">macOS Sonoma 14 or newer · license works on 2 Macs</span>
+          </div>
         </div>
       </div>
     </section>
@@ -558,8 +569,8 @@
     <div class="frame">
       <div class="foot-grid">
         <div class="foot-brand">
-          <a href="/" class="rail__brand"><img src="img/icon-80.webp" width="30" height="30" alt=""><b>Autocuts</b></a>
-          <p>The Mac screen recorder with a built-in motion studio.</p>
+          <a href="/" class="rail__brand"><img src="img/icon-80.webp" width="26" height="26" alt=""><b>Autocuts</b></a>
+          <p>The Mac screen recorder with the motion studio built in.</p>
         </div>
         <div class="foot-col">
           <div class="foot-col__h">Product</div>
