@@ -6,13 +6,14 @@
 
 (function () {
   "use strict";
+  document.documentElement.classList.add("js");
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* Header rail */
   var rail = document.querySelector(".rail");
   function onScroll() {
-    rail.classList.toggle("is-scrolled", window.scrollY > 8);
+    if (rail) { rail.classList.toggle("is-scrolled", window.scrollY > 8); }
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();

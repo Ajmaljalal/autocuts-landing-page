@@ -6,3 +6,6 @@
 
 # demo video build project stays local; deployed copies live in media/demos/
 videos/
+
+# local marketing assets
+marketing/

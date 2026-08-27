@@ -1,26 +1,25 @@
-/* Autocuts landing page. Theme tokens come from the desktop app:
-   shell #13161b, ink #eef2f3, accent #5b9dff / #4c8dff, record #db4238,
-   aurora wall #092f37 / #1d7f79 / #edb56f.
+/* Autocuts sub pages. Same palette as the home page (home.css):
+   a white page, one blue accent, black ink.
    Hierarchy comes from type scale, space and hairlines: no kickers,
    no step numbers, no pill rows, no tinted icon tiles, one accent. */
 
 :root {
-  --bg: #0d0f12;
-  --shell: #14171c;
-  --panel: #14171c;
-  --panel-2: #12151a;
-  --line: rgba(255, 255, 255, 0.09);
-  --line-strong: rgba(255, 255, 255, 0.16);
-  --ink: #f2f4f5;
-  --mut: #97a1a9;
-  --soft: #c2cad0;
-  --dim: #7f8990;
-  --acc: #5b9dff;
-  --acc-2: #4c8dff;
-  --on-acc: #071018;
+  --bg: #ffffff;
+  --shell: #f4f5f7;
+  --panel: #f4f5f7;
+  --panel-2: #eceef1;
+  --line: rgba(12, 15, 19, 0.08);
+  --line-strong: rgba(12, 15, 19, 0.16);
+  --ink: #0c0f13;
+  --mut: #5c646e;
+  --soft: #39414a;
+  --dim: #8b929b;
+  --acc: #2f6fdb;
+  --acc-2: #255fc2;
+  --on-acc: #ffffff;
   --teal: #1d7f79;
-  --amber: #edb56f;
-  --radius: 12px;
+  --amber: #b8791f;
+  --radius: 14px;
   --font-sans: "Instrument Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
 }
@@ -49,7 +48,7 @@ a { color: inherit; }
   border-radius: 4px;
 }
 
-::selection { background: rgba(91, 157, 255, 0.32); }
+::selection { background: rgba(47, 111, 219, 0.18); }
 
 .frame {
   max-width: 1120px;
@@ -97,7 +96,7 @@ p { text-wrap: pretty; }
   justify-content: center;
   gap: 10px;
   padding: 13px 24px;
-  border-radius: 9px;
+  border-radius: 12px;
   font-weight: 600;
   font-size: 0.98rem;
   text-decoration: none;
@@ -111,15 +110,15 @@ p { text-wrap: pretty; }
   background: var(--acc);
   color: var(--on-acc);
 }
-.btn--primary:hover { background: #7fb3ff; }
+.btn--primary:hover { background: var(--acc-2); }
 .btn--primary:active { background: var(--acc-2); }
 
 .btn--ghost {
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--line-strong);
   color: var(--ink);
-  background: transparent;
+  background: #fff;
 }
-.btn--ghost:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.28); }
+.btn--ghost:hover { background: var(--shell); border-color: rgba(12, 15, 19, 0.28); }
 
 .btn--sm { padding: 9px 18px; font-size: 0.9rem; }
 .btn--lg { padding: 15px 26px; font-size: 1.02rem; }
@@ -131,7 +130,7 @@ p { text-wrap: pretty; }
   color: var(--soft);
   text-decoration: underline;
   text-underline-offset: 5px;
-  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-decoration-color: var(--line-strong);
 }
 .tlink:hover { color: var(--ink); text-decoration-color: var(--ink); }
 
@@ -227,7 +226,7 @@ p { text-wrap: pretty; }
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  border: 1px solid var(--line);
   background: var(--shell);
   transform: translateZ(0);
 }
@@ -269,9 +268,9 @@ p { text-wrap: pretty; }
 .frow__media {
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  border: 1px solid var(--line);
   background: var(--shell);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
 }
 .frow__media video { display: block; width: 100%; height: 100%; object-fit: cover; }
 
@@ -285,7 +284,7 @@ p { text-wrap: pretty; }
   border-top: 1px solid var(--line);
   padding: 11px 0;
   font-size: 0.94rem;
-  color: #a7b0b7;
+  color: var(--soft);
 }
 
 .card__link {
@@ -298,7 +297,7 @@ p { text-wrap: pretty; }
   font-weight: 500;
   text-decoration: none;
 }
-.card__link:hover { color: #8dbaff; text-decoration: underline; }
+.card__link:hover { color: var(--acc-2); text-decoration: underline; }
 
 /* Kept for the SEO and guide pages, which still use them. */
 .ticks { list-style: none; margin-top: 18px; display: grid; gap: 11px; }
@@ -316,7 +315,7 @@ p { text-wrap: pretty; }
   width: 18px;
   height: 18px;
   border-radius: 6px;
-  background: rgba(91, 157, 255, 0.14) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%235b9dff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') center / 11px no-repeat;
+  background: rgba(47, 111, 219, 0.12) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%232f6fdb" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') center / 11px no-repeat;
 }
 
 /* ---------- who ---------- */
@@ -368,7 +367,7 @@ p { text-wrap: pretty; }
   border-top: 1px solid var(--line);
   padding: 11px 0;
   font-size: 0.94rem;
-  color: #a7b0b7;
+  color: var(--soft);
 }
 
 /* Kept for the guide pages, which still use them. */
@@ -403,7 +402,7 @@ p { text-wrap: pretty; }
 }
 .spec__row:last-child { border-bottom: 1px solid var(--line); }
 .spec__row dt { font-family: var(--font-mono); font-size: 0.79rem; letter-spacing: 0.02em; color: var(--dim); }
-.spec__row dd { font-size: 0.98rem; color: #dbe1e5; }
+.spec__row dd { font-size: 0.98rem; color: var(--soft); }
 .spec__row dd a { color: var(--acc); }
 
 /* ---------- pricing ---------- */
@@ -483,7 +482,7 @@ p { text-wrap: pretty; }
   width: 14px;
   height: 14px;
   transform: translateY(-50%);
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%237f8990" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>') center / contain no-repeat;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%238b929b" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>') center / contain no-repeat;
   transition: transform 0.2s ease;
 }
 .faq__item[open] summary::after { transform: translateY(-50%) rotate(45deg); }
@@ -515,7 +514,7 @@ p { text-wrap: pretty; }
 footer {
   border-top: 1px solid var(--line);
   padding: 64px 0 32px;
-  background: #101317;
+  background: var(--bg);
 }
 
 .foot-grid {
