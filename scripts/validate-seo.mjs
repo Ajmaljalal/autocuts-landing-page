@@ -3,7 +3,7 @@ import { dirname, extname, join, posix, relative, resolve, sep } from "node:path
 
 const root = resolve(import.meta.dirname, "..");
 const siteOrigin = "https://autocuts.ai";
-const ignoredDirectories = new Set([".git", "node_modules", ".thumbnails"]);
+const ignoredDirectories = new Set([".git", "node_modules", ".thumbnails", "marketing", "videos"]);
 const ignoredPrefixes = ["docs/", "videos/autocuts-desktop-demos/"];
 const errors = [];
 
@@ -104,7 +104,26 @@ for (const file of htmlFiles) {
   const jsonLdBlocks = [...content.matchAll(/<script\s+type=["']application\/ld\+json["']>([\s\S]*?)<\/script>/gi)];
   for (const block of jsonLdBlocks) {
     try {
-      JSON.parse(block[1]);
+      const structuredData = JSON.parse(block[1]);
+      const nodes = Array.isArray(structuredData)
+        ? structuredData
+        : Array.isArray(structuredData?.["@graph"])
+          ? structuredData["@graph"]
+          : [structuredData];
+      const visibleText = content
+        .replace(/<script\b[\s\S]*?<\/script>/gi, " ")
+        .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+      for (const node of nodes) {
+        if (node?.["@type"] !== "FAQPage") continue;
+        for (const question of node.mainEntity ?? []) {
+          if (question?.name && !visibleText.includes(question.name)) {
+            add(path, `FAQ schema question is not visible on the page: ${question.name}`);
+          }
+        }
+      }
     } catch (error) {
       add(path, `invalid JSON-LD: ${error.message}`);
     }
@@ -158,8 +177,8 @@ const homepageHeadingText = [...homepageBody.matchAll(/<h[1-3]\b[^>]*>([\s\S]*?)
   .map((heading) => stripMarkup(heading[1]))
   .join(" ");
 const homepageKeywordRequirements = [
-  [homepageTitle, /Mac Screen Recorder With Automatic Zoom/i, "primary keyword in the title"],
-  [homepageDescription, /Mac screen recorder with automatic zoom/i, "primary keyword in the meta description"],
+  [homepageTitle, /Mac Screen Recorder and Video Editor With Auto Zoom/i, "primary keyword in the title"],
+  [homepageDescription, /Mac screen recorder and video editor/i, "primary keyword in the meta description"],
   [homepageBodyText, /Mac screen recorder with automatic zoom/i, "primary keyword in visible copy"],
   [homepageHeadingText, /screen recorder for product demos/i, "product-demo keyword in a heading"],
   [homepageHeroSub, /\bscreen\b/i, "screen capture topic in the hero description"],
@@ -198,13 +217,24 @@ if (!robots.includes("Disallow: /videos/autocuts-desktop-demos/")) add("robots.t
 const redirects = readFileSync(join(root, "_redirects"), "utf8");
 for (const source of [
   "/features/ai-video-cleanup/",
-  "/features/add-motion-graphics-to-videos/",
-  "/blog/add-motion-graphics-without-editing-skills/",
   "/blog/clean-up-youtube-videos-faster/",
 ]) {
   if (!redirects.split("\n").some((line) => line.startsWith(`${source} `) && line.endsWith(" 301"))) {
     add("_redirects", `missing permanent redirect for ${source}`);
   }
+}
+
+for (const [page, requiredText] of [
+  ["features/screen-recorder-and-video-editor-for-mac/index.html", /screen recorder and video editor for Mac/i],
+  ["features/add-motion-graphics-to-videos/index.html", /lower thirds?.*stats?.*callouts?.*quotes?.*lists?.*highlights?/is],
+  ["blog/add-motion-graphics-without-editing-skills/index.html", /How to add motion graphics to screen recordings/i],
+  ["compare/autocuts-vs-focusee/index.html", /Autocuts vs FocuSee/i],
+  ["compare/autocuts-vs-camtasia/index.html", /Autocuts vs Camtasia/i],
+  ["compare/autocuts-vs-screenflow/index.html", /Autocuts vs ScreenFlow/i],
+  ["compare/autocuts-vs-shotbase/index.html", /Autocuts vs Shotbase/i],
+]) {
+  const content = readFileSync(join(root, page), "utf8");
+  if (!requiredText.test(stripMarkup(content))) add(page, "missing its mapped search-intent copy");
 }
 
 const retiredMap = readFileSync(join(root, "docs/seo/retired-url-map.md"), "utf8");

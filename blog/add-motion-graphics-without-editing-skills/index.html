@@ -1,13 +1,334 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Redirecting to /blog/how-to-make-screen-recordings-look-professional/</title>
-<link rel="canonical" href="https://autocuts.ai/blog/how-to-make-screen-recordings-look-professional/">
-<meta http-equiv="refresh" content="0; url=/blog/how-to-make-screen-recordings-look-professional/">
-</head>
-<body>
-<p>This page moved. <a href="/blog/how-to-make-screen-recordings-look-professional/">Continue to /blog/how-to-make-screen-recordings-look-professional/</a>.</p>
-<script>window.location.replace("/blog/how-to-make-screen-recordings-look-professional/");</script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Add Motion Graphics to Screen Recordings</title>
+    <meta
+      name="description"
+      content="Add lower thirds, stats, callouts, quotes, lists, and highlights to a screen recording without After Effects or manual animation keyframes."
+    />
+    <link
+      rel="canonical"
+      href="https://autocuts.ai/blog/add-motion-graphics-without-editing-skills/"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0e1114" />
+    <meta
+      property="og:title"
+      content="How to Add Motion Graphics to Screen Recordings"
+    />
+    <meta
+      property="og:description"
+      content="A practical workflow for adding useful, editable graphics to software demos and tutorials."
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://autocuts.ai/blog/add-motion-graphics-without-editing-skills/"
+    />
+    <meta property="og:image" content="https://autocuts.ai/img/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Motion graphics in an Autocuts screen recording"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="article:published_time" content="2026-08-26" />
+    <link rel="icon" href="/img/favicon-32.png" sizes="32x32" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="/site.css" />
+    <link rel="stylesheet" href="/seo-page.css" />
+    <script src="/site.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to add motion graphics to a screen recording",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Record and transcribe",
+            "text": "Record the screen and narration, then create a transcript if you want generated suggestions."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Choose the useful moment",
+            "text": "Select a point that needs a name, number, quote, sequence, or emphasis."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Add or generate a graphic",
+            "text": "Place a graphic at the playhead or use a supported coding agent to propose moments from the transcript."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Review the edit",
+            "text": "Adjust the words, timing, graphic kind, format, and theme."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Export and watch",
+            "text": "Export the video and confirm the graphic remains readable at its final viewing size."
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to add motion graphics to screen recordings",
+        "description": "A practical workflow for adding useful, editable graphics to software demos and tutorials.",
+        "url": "https://autocuts.ai/blog/add-motion-graphics-without-editing-skills/",
+        "mainEntityOfPage": "https://autocuts.ai/blog/add-motion-graphics-without-editing-skills/",
+        "image": "https://autocuts.ai/img/demos/video-editor.webp",
+        "datePublished": "2026-08-26",
+        "dateModified": "2026-08-26",
+        "author": {
+          "@type": "Organization",
+          "@id": "https://autocuts.ai/#organization",
+          "name": "Autocuts"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://autocuts.ai/#organization",
+          "name": "Autocuts",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://autocuts.ai/img/icon-160.webp"
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="rail">
+      <div class="rail__inner">
+        <a href="/" class="rail__brand"
+          ><img src="/img/icon-80.webp" width="34" height="34" alt="" /><b
+            >Autocuts</b
+          ></a
+        >
+        <nav class="rail__nav" aria-label="Main">
+          <a href="/features/">Features</a><a href="/use-cases/">Use cases</a
+          ><a href="/compare/">Compare</a><a href="/blog/">Guides</a
+          ><a href="/guide/">Help</a>
+        </nav>
+        <a class="btn btn--primary btn--sm" href="/download/">Download</a>
+      </div>
+    </header>
+    <main class="page-main">
+      <div class="frame">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a><span>/</span><a href="/blog/">Guides</a
+          ><span>/</span>Motion graphics
+        </nav>
+      </div>
+      <section class="page-hero">
+        <div class="frame">
+          <div class="page-hero__inner">
+            <div class="micro">Motion graphics guide</div>
+            <h1>How to add motion graphics to screen recordings</h1>
+            <p class="page-hero__lead">
+              Use a graphic when it helps the viewer remember a name, number,
+              quote, sequence, or result. You do not need After Effects, an
+              animation template pack, or hand-built keyframes.
+            </p>
+            <p class="article-meta">
+              By Autocuts · Published August 26, 2026 · About 6 minutes
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="frame">
+        <aside class="answer-box">
+          <strong>TL;DR</strong>
+          <p>
+            Record and transcribe the video, find one moment that needs visual
+            emphasis, add a lower third, stat, callout, quote, list, or
+            highlight, then review its timing and readability. Autocuts can
+            place graphics manually or ask a supported coding agent to suggest
+            moments from the transcript.
+          </p>
+        </aside>
+      </div>
+      <section class="content-section">
+        <div class="frame">
+          <article class="prose">
+            <h2>1. Start with the point, not the effect</h2>
+            <p>
+              Motion graphics should reduce the viewer's work. Introduce a
+              speaker with a lower third, preserve a number with a stat, label
+              an interface detail with a callout, or summarize a sequence with a
+              short list. If the narration and screen already make the point
+              obvious, leave the frame alone.
+            </p>
+            <h2>2. Record and transcribe the explanation</h2>
+            <p>
+              Capture the software path and narration first. A transcript gives
+              Autocuts both the words and their timing, which lets a supported
+              coding agent propose a graphic that arrives with the relevant
+              line.
+            </p>
+            <p>
+              If you do not want generated suggestions, skip transcript analysis
+              and add a graphic manually at the current playhead.
+            </p>
+            <figure class="article-video">
+              <div class="page-video">
+                <video
+                  data-src="/media/demos/video-editor.mp4"
+                  poster="/img/demos/video-editor.webp"
+                  muted
+                  playsinline
+                  controls
+                  loop
+                  preload="none"
+                  width="1080"
+                  height="1080"
+                  aria-label="Editing a recording on the Autocuts video timeline"
+                ></video>
+              </div>
+              <figcaption>
+                The Autocuts editor keeps clips, zooms, captions, and graphics
+                in the same reviewable workflow.
+              </figcaption>
+            </figure>
+            <h2>3. Choose the right graphic</h2>
+            <ul>
+              <li>
+                <strong>Lower third:</strong> a person, role, section, or
+                product name.
+              </li>
+              <li>
+                <strong>Stat:</strong> one number and the context needed to
+                understand it.
+              </li>
+              <li>
+                <strong>Callout:</strong> a specific detail or instruction.
+              </li>
+              <li>
+                <strong>Quote:</strong> a short line worth holding on screen.
+              </li>
+              <li>
+                <strong>List:</strong> two to four related steps or benefits.
+              </li>
+              <li>
+                <strong>Highlight:</strong> a brief phrase that deserves
+                emphasis.
+              </li>
+            </ul>
+            <h2>4. Add it manually or generate suggestions</h2>
+            <p>
+              For precise placement, move the playhead to the moment and add a
+              graphic. For a longer narrated recording, connect Claude Code,
+              Codex, Gemini, or Cursor CLI and let it propose moments from the
+              transcript. Generated suggestions require a transcript and the
+              selected coding-agent tool installed on your Mac.
+            </p>
+            <p>
+              The selected agent receives narration text and word timing. Its
+              own configuration determines whether that text is processed
+              locally or online; the recording video is not sent to the coding
+              agent.
+            </p>
+            <h2>5. Edit what the viewer will see</h2>
+            <p>
+              Check the words first. A graphic should be shorter than the
+              sentence it supports. Then adjust the start and end time, choose a
+              lower-third, corner-card, quote-band, side-panel, or full-screen
+              format, and apply a visual theme that does not compete with the
+              product interface.
+            </p>
+            <h2>6. Watch the export at the final size</h2>
+            <p>
+              A graphic that looks comfortable in a large editor can cover the
+              interface in a website embed or vertical social video. Watch the
+              final export at the likely viewing size. Shorten the copy or use a
+              smaller format when it blocks the action.
+            </p>
+            <h2>Keep the screen recording as the main story</h2>
+            <p>
+              The motion graphic should reinforce the workflow, not replace it.
+              Pair restrained graphics with
+              <a href="/features/mac-screen-recorder-with-auto-zoom/"
+                >automatic click zoom</a
+              >, a readable cursor, and accurate captions. See every supported
+              format on the
+              <a href="/features/add-motion-graphics-to-videos/"
+                >motion graphics feature page</a
+              >.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="page-cta">
+        <div class="frame">
+          <div class="page-cta__card">
+            <h2>Add the graphic where the explanation needs it.</h2>
+            <p>Record and edit the whole screen video in Autocuts for Mac.</p>
+            <a class="btn btn--primary" href="/download/">Download for Mac</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="frame">
+        <div class="foot-grid">
+          <div class="foot-brand">
+            <a href="/" class="rail__brand"
+              ><img src="/img/icon-80.webp" width="30" height="30" alt="" /><b
+                >Autocuts</b
+              ></a
+            >
+            <p>The Mac screen recorder with the motion studio built in.</p>
+          </div>
+          <div class="foot-col">
+            <div class="foot-col__h">Features</div>
+            <ul>
+              <li>
+                <a href="/features/add-motion-graphics-to-videos/"
+                  >Motion graphics</a
+                >
+              </li>
+              <li>
+                <a href="/features/screen-recorder-and-video-editor-for-mac/"
+                  >Video editor</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <div class="foot-col__h">Learn</div>
+            <ul>
+              <li>
+                <a href="/blog/how-to-make-screen-recordings-look-professional/"
+                  >Professional recordings</a
+                >
+              </li>
+              <li><a href="/blog/">All guides</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <div class="foot-col__h">Company</div>
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/privacy.html">Privacy</a></li>
+              <li><a href="/terms.html">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-bar">
+          <span>© 2026 Autocuts</span><span>Made for macOS</span>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
